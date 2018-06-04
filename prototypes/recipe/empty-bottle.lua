@@ -31,14 +31,13 @@ data:extend({
     type = "recipe",
     name = "glass",
     category = "smelting",
-    normal =
+    ingredients =
     {
-      enabled = false,
-      energy_required = 7,
-      ingredients = {{"sand", 2}},
-      result = "glass"
+      {"sand", 2}
     },
-    expensive = nil,
+    result = "glass",
+    result_count = 1,
+    enabled = false,
   },
 
   {

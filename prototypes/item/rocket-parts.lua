@@ -18,15 +18,15 @@ local function createRocketPart(name, order)
   })
 end
 
-createRocketPart("hull-component", "a")
+createRocketPart("rocketpart-hull-component", "a")
 
-createRocketPart("ion-thruster", "b1")
-createRocketPart("ion-booster", "b2")
+createRocketPart("rocketpart-ion-thruster", "b1")
+createRocketPart("rocketpart-ion-booster", "b2")
 
-createRocketPart("fusion-reactor", "c")
+createRocketPart("rocketpart-fusion-reactor", "c")
 
-createRocketPart("shield-array", "d1")
-createRocketPart("laser-array", "d2")
+createRocketPart("rocketpart-shield-array", "d1")
+createRocketPart("rocketpart-laser-array", "d2")
 
 
 -- satellite is also a rocket part

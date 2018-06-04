@@ -1,0 +1,27 @@
+{
+  "item":
+  [
+    ["hull-component", "rocketpart-hull-component"],
+    ["ion-thruster", "rocketpart-ion-thruster"],
+    ["ion-booster", "rocketpart-ion-booster"],
+    ["fusion-reactor", "rocketpart-fusion-reactor"],
+    ["shield-array", "rocketpart-shield-array"],
+    ["laser-array", "rocketpart-laser-array"]
+  ],
+  "recipe":
+  [
+    ["hull-component", "rocketpart-hull-component"],
+    ["ion-thruster", "rocketpart-ion-thruster"],
+    ["ion-booster", "rocketpart-ion-booster"],
+    ["fusion-reactor", "rocketpart-fusion-reactor"],
+    ["shield-array", "rocketpart-shield-array"],
+    ["laser-array", "rocketpart-laser-array"]
+  ],
+  "technology":
+  [
+    ["hull-component", "rocketpart-hull-component"],
+    ["ion-thruster", "rocketpart-ion-thruster"],
+    ["fusion-reactor", "rocketpart-fusion-reactor"],
+    ["shield-array", "rocketpart-shield-array"]
+  ]
+}

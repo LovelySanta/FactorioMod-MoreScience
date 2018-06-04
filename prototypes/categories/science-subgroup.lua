@@ -1,7 +1,7 @@
 require "util"
 
 -- science pack subgroup
-data.raw["item-subgroup"]["science-pack"].group = "science"
+data.raw["item-subgroup"]["science-pack"].group = "ms-science"
 
 -- science bottling
 local scienceRawMaterial = util.table.deepcopy(data.raw["item-subgroup"]["science-pack"])

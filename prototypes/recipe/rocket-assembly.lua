@@ -7,10 +7,10 @@ data.raw["recipe"]["rocket-part"].energy_required = data.raw["recipe"]["rocket-p
 data.raw["recipe"]["rocket-part"].hidden = nil
 data.raw["recipe"]["rocket-part"].ingredients =
 {
-  {"hull-component", 30},
-  {"ion-thruster", 5},
-  {"ion-booster", 1},
-  {"fusion-reactor", 2},
-  {"shield-array", 3},
-  {"laser-array", 3},
+  {"rocketpart-hull-component", 30},
+  {"rocketpart-ion-thruster", 5},
+  {"rocketpart-ion-booster", 1},
+  {"rocketpart-fusion-reactor", 2},
+  {"rocketpart-shield-array", 3},
+  {"rocketpart-laser-array", 3},
 }

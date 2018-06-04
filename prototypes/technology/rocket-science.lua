@@ -64,15 +64,15 @@ end
 data.raw["technology"]["rocket-silo"].order = data.raw["technology"]["rocket"].order .. "-a"
 
 -- Create rocket parts research
-addRocketScienceTechnology("hull-component", {"rocket"})
+addRocketScienceTechnology("rocketpart-hull-component", {"rocket"})
 
-addRocketScienceTechnology("ion-thruster", {"rocket"})
-addRecipeUnlock("ion-thruster", "ion-booster")
+addRocketScienceTechnology("rocketpart-ion-thruster", {"rocket"})
+addRecipeUnlock("rocketpart-ion-thruster", "rocketpart-ion-booster")
 
-addRocketScienceTechnology("fusion-reactor", {"rocket", "fusion-reactor-equipment", "kovarex-enrichment-process"})
+addRocketScienceTechnology("rocketpart-fusion-reactor", {"rocket", "fusion-reactor-equipment", "kovarex-enrichment-process"})
 
-addRocketScienceTechnology("shield-array", {"rocket", "energy-shield-mk2-equipment", "discharge-defense-equipment"})
-addRecipeUnlock("shield-array", "laser-array")
+addRocketScienceTechnology("rocketpart-shield-array", {"rocket", "energy-shield-mk2-equipment", "discharge-defense-equipment"})
+addRecipeUnlock("rocketpart-shield-array", "rocketpart-laser-array")
 
 
 
