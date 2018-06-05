@@ -85,9 +85,6 @@ function Debug:reseachAllTechnologies()
   -- Military: Armor upgrades
   researchTechnology("heavy-armor")
 
-  -- Military: optional research
-  researchTechnology("flammables")
-
   -- Military: bonusses
   researchTechnology("bullet-damage-2")
   researchTechnology("bullet-speed-2")
@@ -244,7 +241,6 @@ function Debug:reseachAllTechnologies()
   researchTechnology("advanced-material-processing-2")
   researchTechnology("advanced-electronics-2")
   researchTechnology("electric-engine")
-  researchTechnology("flying")
   researchTechnology("speed-module-2")
   researchTechnology("productivity-module-2")
 
@@ -499,10 +495,10 @@ function Debug:reseachAllTechnologies()
 
   -- Science: research technology
   researchTechnology("rocket")
-  researchTechnology("hull-component")
-  researchTechnology("ion-thruster")
-  researchTechnology("fusion-reactor")
-  researchTechnology("shield-array")
+  researchTechnology("rocketpart-hull-component")
+  researchTechnology("rocketpart-ion-thruster")
+  researchTechnology("rocketpart-fusion-reactor")
+  researchTechnology("rocketpart-shield-array")
   researchTechnology("rocket-silo")
 
   -- Science: research infinite science

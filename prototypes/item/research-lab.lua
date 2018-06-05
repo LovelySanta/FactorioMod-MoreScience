@@ -15,7 +15,7 @@ labBurner.place_result = "lab-burner"
 --------------------------------------------------------------------------------
 local labMK2 = util.table.deepcopy(data.raw["item"]["lab"])
 labMK2.name = "lab-mk2"
-labMK2.localised_name = {"item-name.lab-mk2", {[1] = "item-name.lab"}}
+labMK2.localised_name = {"item-name.lab-mk2", {[1] = "item-name.lab-mk1"}}
 labMK2.order = labMK2.order .. "-mk2"
 labMK2.place_result = "lab-mk2"
 

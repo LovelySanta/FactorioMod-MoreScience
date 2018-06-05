@@ -35,7 +35,7 @@ data.raw["recipe"]["science-pack-3"].energy_required = 5
 
 
 
--- basic science pack 3
+-- military science pack
 data.raw["recipe"]["military-science-pack"].category = "crafting-with-fluid"
 data.raw["recipe"]["military-science-pack"].ingredients =
 {
