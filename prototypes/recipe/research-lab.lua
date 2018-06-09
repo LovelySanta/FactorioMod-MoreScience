@@ -1,7 +1,7 @@
 require "util"
 
 --------------------------------------------------------------------------------
------ Burner lab                                                              -----
+----- Burner lab                                                           -----
 --------------------------------------------------------------------------------
 local labBurner = util.table.deepcopy(data.raw["recipe"]["lab"])
 labBurner.name = "lab-burner"
