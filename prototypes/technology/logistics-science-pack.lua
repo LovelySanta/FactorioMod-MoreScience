@@ -130,8 +130,8 @@ data:extend({
       {
         {"science-pack-1", 1},
         {"science-pack-2", 2},
-        {"science-pack-3", 3},
-        {"basic-automation-science-pack", 4},
+        {"basic-automation-science-pack", 3},
+        {"science-pack-3", 4},
         {"basic-power-science-pack", 5},
       },
       time = 30

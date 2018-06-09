@@ -8,18 +8,23 @@ function Debug:reseachAllTechnologies()
   force = game.forces["player"]
 
   local function researchTechnology(technologyName)
+    local function reportFail(technologyName)
+      log("WARNING: Could not research " .. technologyName)
+      return false
+    end
+
     if force.technologies[technologyName] and force.technologies[technologyName].enabled then
       -- check prerequisites
       for _,prerequisite in pairs(force.technologies[technologyName].prerequisites) do
         if not prerequisite.researched then
-          return false
+          return reportFail(technologyName)
         end
       end
       -- do the research
       force.technologies[technologyName].researched = true
       return true
     end
-    return false
+    return reportFail(technologyName)
   end
 
 

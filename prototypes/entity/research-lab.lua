@@ -17,7 +17,7 @@ if data.raw["lab"]["lab"] then
   table.insert(data.raw["lab"]["lab"].inputs, "basic-logistics-science-pack")
   table.insert(data.raw["lab"]["lab"].inputs, "space-science-pack")
 
-  data.raw["lab"]["lab"].localised_name = {"item-name.lab-mk1", {[1] = "item-name.lab"}}
+  data.raw["lab"]["lab"].localised_name = {"item-name.lab-mk1", {"item-name.lab"}}
 end
 
 --------------------------------------------------------------------------------
@@ -26,7 +26,7 @@ end
 local labBurner = util.table.deepcopy(data.raw["lab"]["lab"])
 labBurner.name = "lab-burner"
 labBurner.minable.result = "lab-burner"
-labBurner.localised_name = {"item-name.lab-burner", {[1] = "item-name.lab"}}
+labBurner.localised_name = {"item-name.lab-burner", {"item-name.lab"}}
 labBurner.energy_usage = "250kW"
 labBurner.energy_source =
   {
@@ -52,7 +52,7 @@ labBurner.module_specification.module_slots = 0
 local labMK2 = util.table.deepcopy(data.raw["lab"]["lab"])
 labMK2.name = "lab-mk2"
 labMK2.minable.result = "lab-mk2"
-labMK2.localised_name = {"item-name.lab-mk2", {[1] = "item-name.lab"}}
+labMK2.localised_name = {"item-name.lab-mk2", {"item-name.lab"}}
 labMK2.inputs = {
   "infused-basic-science-pack-1",
   "infused-basic-science-pack-2",

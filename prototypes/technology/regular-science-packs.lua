@@ -253,9 +253,9 @@ data:extend({
       ingredients =
       {
         {"science-pack-1", 1},
-        {"science-pack-2", 3},
-        {"science-pack-3", 5},
-        {"basic-automation-science-pack", 7},
+        {"science-pack-2", 2},
+        {"basic-automation-science-pack", 3},
+        {"science-pack-3", 4},
       },
       time = 5
     },
@@ -329,9 +329,9 @@ data:extend({
       ingredients =
       {
         {"science-pack-1", 1},
-        {"science-pack-2", 3},
-        {"science-pack-3", 5},
-        {"basic-automation-science-pack", 7},
+        {"science-pack-2", 2},
+        {"basic-automation-science-pack", 3},
+        {"science-pack-3", 4},
       },
       time = 5
     },
