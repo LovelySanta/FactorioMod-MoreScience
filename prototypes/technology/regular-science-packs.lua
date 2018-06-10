@@ -1,4 +1,3 @@
-require "lib/utilities/prototyping"
 
 local scienceResearch = {}
 scienceResearch.icon = "__MoreScience__/graphics/technology/science-symbol.png"
@@ -8,10 +7,10 @@ scienceResearch.icon_size = 2000
 ----- Basic science pack 2                                                 -----
 --------------------------------------------------------------------------------
 -- disable the recipe
-disableRecipe("science-pack-2")
+MoreScience.lib.recipe.disable("science-pack-2")
 
 -- remove recipe unlock from other technologies
-removeRecipeUnlock("oil-processing", "chemical-plant")
+MoreScience.lib.technology.removeRecipeUnlock("oil-processing", "chemical-plant")
 
 -- create research for recipes
 data:extend({
@@ -64,15 +63,15 @@ data:extend({
 })
 
 -- add prerequisites on the technology
-removePrerequisiteTechnology("research-speed-1", "electronics")
-addPrerequisiteTechnology("research-speed-1", "basic-science-research-1")
-removeScienceIngredient("research-speed-1", "science-pack-2")
+MoreScience.lib.technology.removePrerequisite("research-speed-1", "electronics")
+MoreScience.lib.technology.addPrerequisite("research-speed-1", "basic-science-research-1")
+MoreScience.lib.technology.removeIngredient("research-speed-1", "science-pack-2")
 
-addPrerequisiteTechnology("toolbelt", "basic-science-research-1")
+MoreScience.lib.technology.addPrerequisite("toolbelt", "basic-science-research-1")
 
-removePrerequisiteTechnology("electric-energy-distribution-1", "electronics")
-removePrerequisiteTechnology("electric-energy-distribution-1", "steel-processing")
-addPrerequisiteTechnology("electric-energy-distribution-1", "basic-science-research-1")
+MoreScience.lib.technology.removePrerequisite("electric-energy-distribution-1", "electronics")
+MoreScience.lib.technology.removePrerequisite("electric-energy-distribution-1", "steel-processing")
+MoreScience.lib.technology.addPrerequisite("electric-energy-distribution-1", "basic-science-research-1")
 
 
 
@@ -124,7 +123,7 @@ data:extend({
 })
 
 -- Fix research tree for bottling-research
-addPrerequisiteTechnology("research-speed-2", "bottling-research")
+MoreScience.lib.technology.addPrerequisite("research-speed-2", "bottling-research")
 
 
 
@@ -135,7 +134,7 @@ addPrerequisiteTechnology("research-speed-2", "bottling-research")
 --------------------------------------------------------------------------------
 
 -- remove recipe unlock from other technologies
-removeRecipeUnlock("advanced-electronics", "science-pack-3")
+MoreScience.lib.technology.removeRecipeUnlock("advanced-electronics", "science-pack-3")
 
 -- create research for recipes
 data:extend({
@@ -176,44 +175,44 @@ data:extend({
 })
 
 -- add prerequisites on the technology
-addPrerequisiteTechnology("research-speed-4", "basic-science-research-2")
-addPrerequisiteTechnology("battery-mk2-equipment", "advanced-electronics-2")
+MoreScience.lib.technology.addPrerequisite("research-speed-4", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("battery-mk2-equipment", "advanced-electronics-2")
 
 -- logistics network
-addPrerequisiteTechnology("electric-engine", "basic-science-research-2")
-addScienceIngredient("electric-engine", 1, "science-pack-3")
-addScienceIngredient("robotics", 1, "science-pack-3")
-addScienceIngredient("flying", 1, "science-pack-3")
-addScienceIngredient("construction-robotics", 1, "science-pack-3")
-addScienceIngredient("logistic-robotics", 1, "science-pack-3")
+MoreScience.lib.technology.addPrerequisite("electric-engine", "basic-science-research-2")
+MoreScience.lib.technology.addIngredient("electric-engine", 1, "science-pack-3")
+MoreScience.lib.technology.addIngredient("robotics", 1, "science-pack-3")
+MoreScience.lib.technology.addIngredient("flying", 1, "science-pack-3")
+MoreScience.lib.technology.addIngredient("construction-robotics", 1, "science-pack-3")
+MoreScience.lib.technology.addIngredient("logistic-robotics", 1, "science-pack-3")
 
 -- train network
---addPrerequisiteTechnology("railway", "basic-science-research-2")
---addScienceIngredient("railway", 1, "science-pack-3")
---addScienceIngredient("automated-rail-transportation", 1, "science-pack-3")
---addScienceIngredient("rail-signals", 1, "science-pack-3")
-addScienceIngredient("fluid-wagon", 1, "science-pack-3")
-addScienceIngredient("logistics-2", 1, "science-pack-3")
+--MoreScience.lib.technology.addPrerequisite("railway", "basic-science-research-2")
+--MoreScience.lib.technology.addIngredient("railway", 1, "science-pack-3")
+--MoreScience.lib.technology.addIngredient("automated-rail-transportation", 1, "science-pack-3")
+--MoreScience.lib.technology.addIngredient("rail-signals", 1, "science-pack-3")
+MoreScience.lib.technology.addIngredient("fluid-wagon", 1, "science-pack-3")
+MoreScience.lib.technology.addIngredient("logistics-2", 1, "science-pack-3")
 
 -- vehicles
-addScienceIngredient("automobilism", 1, "science-pack-3")
+MoreScience.lib.technology.addIngredient("automobilism", 1, "science-pack-3")
 
 -- automation
-addPrerequisiteTechnology("advanced-material-processing-2", "basic-science-research-2")
-addPrerequisiteTechnology("advanced-oil-processing", "basic-science-research-2")
-addPrerequisiteTechnology("advanced-electronics-2", "basic-science-research-2")
-addPrerequisiteTechnology("electric-energy-distribution-2", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("advanced-material-processing-2", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("advanced-oil-processing", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("advanced-electronics-2", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("electric-energy-distribution-2", "basic-science-research-2")
 
 -- automation: modules
-addPrerequisiteTechnology("speed-module-2", "basic-science-research-2")
-addPrerequisiteTechnology("productivity-module-2", "basic-science-research-2")
-addPrerequisiteTechnology("effectivity-module-2", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("speed-module-2", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("productivity-module-2", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("effectivity-module-2", "basic-science-research-2")
 
 -- power
-addPrerequisiteTechnology("nuclear-power", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("nuclear-power", "basic-science-research-2")
 
 -- automation bonusses
-addPrerequisiteTechnology("mining-productivity-4", "basic-science-research-2")
+MoreScience.lib.technology.addPrerequisite("mining-productivity-4", "basic-science-research-2")
 
 
 
@@ -222,7 +221,7 @@ addPrerequisiteTechnology("mining-productivity-4", "basic-science-research-2")
 --------------------------------------------------------------------------------
 
 -- remove recipe unlock from other technologies
-removeRecipeUnlock("advanced-material-processing-2", "production-science-pack")
+MoreScience.lib.technology.removeRecipeUnlock("advanced-material-processing-2", "production-science-pack")
 
 -- create research for recipes
 data:extend({
@@ -264,32 +263,32 @@ data:extend({
 })
 
 -- add prerequisites on the technology
-addPrerequisiteTechnology("research-speed-5", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("research-speed-5", "advanced-science-research-1")
 
 -- automation
-addPrerequisiteTechnology("automation-3", "advanced-science-research-1")
-addPrerequisiteTechnology("coal-liquefaction", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("automation-3", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("coal-liquefaction", "advanced-science-research-1")
 
 -- automation: modules
-addPrerequisiteTechnology("productivity-module-3", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("productivity-module-3", "advanced-science-research-1")
 
 -- logistics network
-addPrerequisiteTechnology("logistic-system", "advanced-science-research-1")
-addPrerequisiteTechnology("worker-robots-storage-2", "advanced-science-research-1")
-addPrerequisiteTechnology("worker-robots-speed-3", "advanced-science-research-1")
-addPrerequisiteTechnology("character-logistic-slots-4", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("logistic-system", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("worker-robots-storage-2", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("worker-robots-speed-3", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("character-logistic-slots-4", "advanced-science-research-1")
 
 -- power
-addPrerequisiteTechnology("nuclear-fuel-reprocessing", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("nuclear-fuel-reprocessing", "advanced-science-research-1")
 
 -- automation bonusses
-addPrerequisiteTechnology("mining-productivity-8", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("mining-productivity-8", "advanced-science-research-1")
 
 -- logistics bonusses
-addPrerequisiteTechnology("inserter-capacity-bonus-4", "advanced-science-research-1")
+MoreScience.lib.technology.addPrerequisite("inserter-capacity-bonus-4", "advanced-science-research-1")
 
 -- military bonusses
-addScienceIngredient("grenade-damage-7", 1, "production-science-pack")
+MoreScience.lib.technology.addIngredient("grenade-damage-7", 1, "production-science-pack")
 
 
 
@@ -298,7 +297,7 @@ addScienceIngredient("grenade-damage-7", 1, "production-science-pack")
 --------------------------------------------------------------------------------
 
 -- remove recipe unlock from other technologies
-removeRecipeUnlock("advanced-electronics-2", "high-tech-science-pack")
+MoreScience.lib.technology.removeRecipeUnlock("advanced-electronics-2", "high-tech-science-pack")
 
 -- create research for recipes
 data:extend({
@@ -340,28 +339,28 @@ data:extend({
 })
 
 -- add prerequisites on the technology
-addPrerequisiteTechnology("research-speed-6", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("research-speed-6", "advanced-science-research-2")
 
 -- automation: modules
-addPrerequisiteTechnology("speed-module-3", "advanced-science-research-2")
-addPrerequisiteTechnology("effectivity-module-3", "advanced-science-research-2")
-addPrerequisiteTechnology("effect-transmission", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("speed-module-3", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("effectivity-module-3", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("effect-transmission", "advanced-science-research-2")
 
 -- logistics network
-addPrerequisiteTechnology("logistic-system", "advanced-science-research-2")
-addPrerequisiteTechnology("worker-robots-storage-3", "advanced-science-research-2")
-addPrerequisiteTechnology("worker-robots-speed-5", "advanced-science-research-2")
-addPrerequisiteTechnology("character-logistic-slots-6", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("logistic-system", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("worker-robots-storage-3", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("worker-robots-speed-5", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("character-logistic-slots-6", "advanced-science-research-2")
 
 -- power
-addPrerequisiteTechnology("kovarex-enrichment-process", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("kovarex-enrichment-process", "advanced-science-research-2")
 
 -- automation bonusses
-addPrerequisiteTechnology("mining-productivity-12", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("mining-productivity-12", "advanced-science-research-2")
 
 -- logistics bonusses
-addPrerequisiteTechnology("inserter-capacity-bonus-7", "advanced-science-research-2")
-addPrerequisiteTechnology("braking-force-6", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("inserter-capacity-bonus-7", "advanced-science-research-2")
+MoreScience.lib.technology.addPrerequisite("braking-force-6", "advanced-science-research-2")
 
 
 
@@ -370,9 +369,9 @@ addPrerequisiteTechnology("braking-force-6", "advanced-science-research-2")
 --------------------------------------------------------------------------------
 
 -- edit research ingredient
-addScienceIngredient("rocket-silo", 1, "basic-automation-science-pack")
-addScienceIngredient("rocket-silo", 1, "basic-logistics-science-pack")
-addScienceIngredient("rocket-silo", 1, "basic-power-science-pack")
+MoreScience.lib.technology.addIngredient("rocket-silo", 1, "basic-automation-science-pack")
+MoreScience.lib.technology.addIngredient("rocket-silo", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("rocket-silo", 1, "basic-power-science-pack")
 
 
 
@@ -429,4 +428,4 @@ data:extend({
 })
 
 -- add prerequisites
---addPrerequisiteTechnology("infinite-science-research", "fusion-reactor-equipment")
+--MoreScience.lib.technology.addPrerequisite("infinite-science-research", "fusion-reactor-equipment")

@@ -1,4 +1,3 @@
-require "lib/utilities/prototyping"
 
 --------------------------------------------------------------------------------
 ----- ¨Purified water                                                       -----
@@ -7,16 +6,16 @@ if data.raw["recipe"]["fill-purified-water-barrel"] then
   data.raw["recipe"]["fill-purified-water-barrel"].subgroup = "science-raw-material"
   data.raw["recipe"]["fill-purified-water-barrel"].order = data.raw["fluid"]["purified-water"].order
 
-  removeRecipeUnlock("fluid-handling", "fill-purified-water-barrel")
-  addRecipeUnlock("fluid-handling-3", "fill-purified-water-barrel")
+  MoreScience.lib.technology.removeRecipeUnlock("fluid-handling", "fill-purified-water-barrel")
+  MoreScience.lib.technology.addRecipeUnlock("fluid-handling-3", "fill-purified-water-barrel")
 end
 
 if data.raw["recipe"]["empty-purified-water-barrel"] then
   data.raw["recipe"]["empty-purified-water-barrel"].subgroup = "science-raw-material"
   data.raw["recipe"]["empty-purified-water-barrel"].order = data.raw["fluid"]["purified-water"].order
 
-  removeRecipeUnlock("fluid-handling", "empty-purified-water-barrel")
-  addRecipeUnlock("fluid-handling-3", "empty-purified-water-barrel")
+  MoreScience.lib.technology.removeRecipeUnlock("fluid-handling", "empty-purified-water-barrel")
+  MoreScience.lib.technology.addRecipeUnlock("fluid-handling-3", "empty-purified-water-barrel")
 end
 
 --------------------------------------------------------------------------------
@@ -32,14 +31,14 @@ for _,oilFluid in pairs({
 }) do
   -- Filling barrel recipe
   if data.raw["recipe"]["fill-"..oilFluid.."-barrel"] then
-    removeRecipeUnlock("fluid-handling", "fill-"..oilFluid.."-barrel")
-    addRecipeUnlock("fluid-handling-2", "fill-"..oilFluid.."-barrel")
+    MoreScience.lib.technology.removeRecipeUnlock("fluid-handling", "fill-"..oilFluid.."-barrel")
+    MoreScience.lib.technology.addRecipeUnlock("fluid-handling-2", "fill-"..oilFluid.."-barrel")
   end
 
   -- Empty barrel recipe
   if data.raw["recipe"]["empty-"..oilFluid.."-barrel"] then
-    removeRecipeUnlock("fluid-handling", "empty-"..oilFluid.."-barrel")
-    addRecipeUnlock("fluid-handling-2", "empty-"..oilFluid.."-barrel")
+    MoreScience.lib.technology.removeRecipeUnlock("fluid-handling", "empty-"..oilFluid.."-barrel")
+    MoreScience.lib.technology.addRecipeUnlock("fluid-handling-2", "empty-"..oilFluid.."-barrel")
   end
 end
 
@@ -63,8 +62,8 @@ for _,scienceFluid in pairs({
     data.raw["recipe"]["fill-"..scienceFluid.."-barrel"].subgroup = "science-barrel-fill"
     data.raw["recipe"]["fill-"..scienceFluid.."-barrel"].order = data.raw["fluid"][scienceFluid].order
 
-    removeRecipeUnlock("fluid-handling", "fill-"..scienceFluid.."-barrel")
-    addRecipeUnlock("fluid-handling-3", "fill-"..scienceFluid.."-barrel")
+    MoreScience.lib.technology.removeRecipeUnlock("fluid-handling", "fill-"..scienceFluid.."-barrel")
+    MoreScience.lib.technology.addRecipeUnlock("fluid-handling-3", "fill-"..scienceFluid.."-barrel")
   end
 
   -- Empty barrel recipe
@@ -72,7 +71,7 @@ for _,scienceFluid in pairs({
     data.raw["recipe"]["empty-"..scienceFluid.."-barrel"].subgroup = "science-barrel-empty"
     data.raw["recipe"]["empty-"..scienceFluid.."-barrel"].order = data.raw["fluid"][scienceFluid].order
 
-    removeRecipeUnlock("fluid-handling", "empty-"..scienceFluid.."-barrel")
-    addRecipeUnlock("fluid-handling-3", "empty-"..scienceFluid.."-barrel")
+    MoreScience.lib.technology.removeRecipeUnlock("fluid-handling", "empty-"..scienceFluid.."-barrel")
+    MoreScience.lib.technology.addRecipeUnlock("fluid-handling-3", "empty-"..scienceFluid.."-barrel")
   end
 end

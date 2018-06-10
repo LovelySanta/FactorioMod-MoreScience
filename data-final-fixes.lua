@@ -1,3 +1,3 @@
 
-local modCompatibilityPath = "lib/mod-compatibilities/"
+local modCompatibilityPath = "mod-compatibilities/"
 require(modCompatibilityPath .. "bobrevamp")

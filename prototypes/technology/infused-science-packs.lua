@@ -1,4 +1,3 @@
-require "lib/utilities/prototyping"
 require "util"
 
 local infusedSciencePackName = {
@@ -94,8 +93,8 @@ local function addInfusedSciencePack(basicScienceName, order)
     },
   })
 
-  addScienceIngredient(infusedScienceResearch[basicScienceName], 2, basicScienceName)
-  addRecipeUnlock(infusedScienceResearch[basicScienceName], infusedSciencePackName[basicScienceName])
+  MoreScience.lib.technology.addIngredient(infusedScienceResearch[basicScienceName], 2, basicScienceName)
+  MoreScience.lib.technology.addRecipeUnlock(infusedScienceResearch[basicScienceName], infusedSciencePackName[basicScienceName])
 end
 
 addInfusedSciencePack("science-pack-1", "a1")
@@ -127,7 +126,7 @@ local function changeToInfusedSciencePack(technologyName, prerequisitesToAdd)
     -- Add prerequisites
     if prerequisitesToAdd then
       for _,basicScienceName in pairs(prerequisitesToAdd) do
-        addPrerequisiteTechnology(technologyName, infusedScienceResearch[basicScienceName])
+        MoreScience.lib.technology.addPrerequisite(technologyName, infusedScienceResearch[basicScienceName])
       end
     end
   end

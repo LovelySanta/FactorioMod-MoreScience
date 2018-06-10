@@ -1,3 +1,5 @@
+-- include library
+require("lib/lib")
 
 -- categories
 categoryPath = "prototypes/categories/"

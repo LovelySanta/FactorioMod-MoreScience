@@ -1,9 +1,8 @@
-require "lib/utilities/prototyping"
 
 --------------------------------------------------------------------------------
 ----- Landfill:                                                            -----
 --------------------------------------------------------------------------------
-addPrerequisiteTechnology("landfill", "basic-science-research-1")
+MoreScience.lib.technology.addPrerequisite("landfill", "basic-science-research-1")
 
 
 
@@ -12,14 +11,14 @@ addPrerequisiteTechnology("landfill", "basic-science-research-1")
 --------------------------------------------------------------------------------
 
 -- disable the recipes
-disableRecipe("pipe-to-ground")
+MoreScience.lib.recipe.disable("pipe-to-ground")
 
 -- remove recipe unlock
 --removeRecipeUnlock("fluid-handling", "storage-tank")
-addRecipeUnlock("fluid-handling", "pipe-to-ground")
+MoreScience.lib.technology.addRecipeUnlock("fluid-handling", "pipe-to-ground")
 
 -- add prerequisites
-addPrerequisiteTechnology("oil-processing", "fluid-handling")
+MoreScience.lib.technology.addPrerequisite("oil-processing", "fluid-handling")
 
 
 
@@ -62,8 +61,8 @@ data:extend({
     order = "d-a-a"
   },
 })
-removePrerequisiteTechnology("fluid-wagon", "fluid-handling")
-addPrerequisiteTechnology("fluid-wagon", "fluid-handling-2")
+MoreScience.lib.technology.removePrerequisite("fluid-wagon", "fluid-handling")
+MoreScience.lib.technology.addPrerequisite("fluid-wagon", "fluid-handling-2")
 
 
 
@@ -141,71 +140,71 @@ data:extend({
 })
 
 -- add prerequisites on the technology
-addPrerequisiteTechnology("logistics-2", "basic-logistics-science-research")
-addScienceIngredient("logistics-2", 1, "basic-logistics-science-pack")
-addScienceIngredient("logistics-3", 1, "basic-logistics-science-pack")
-addPrerequisiteTechnology("logistics-3", "basic-logistics-science-research")
-addScienceIngredient("automobilism", 1, "basic-logistics-science-pack")
-addScienceIngredient("tanks", 1, "basic-logistics-science-pack")
-addScienceIngredient("stack-inserter", 1, "basic-logistics-science-pack")
-addPrerequisiteTechnology("rocket-silo", "basic-logistics-science-research")
+MoreScience.lib.technology.addPrerequisite("logistics-2", "basic-logistics-science-research")
+MoreScience.lib.technology.addIngredient("logistics-2", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("logistics-3", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addPrerequisite("logistics-3", "basic-logistics-science-research")
+MoreScience.lib.technology.addIngredient("automobilism", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("tanks", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("stack-inserter", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addPrerequisite("rocket-silo", "basic-logistics-science-research")
 
 -- train network
-removePrerequisiteTechnology("railway", "logistics-2")
---addPrerequisiteTechnology("railway", "basic-logistics-science-research")
---addScienceIngredient("railway", 1, "basic-logistics-science-pack")
---addScienceIngredient("automated-rail-transportation", 1, "basic-logistics-science-pack")
---addPrerequisiteTechnology("rail-signals", "basic-logistics-science-research")
---addScienceIngredient("rail-signals", 1, "basic-logistics-science-pack")
-addScienceIngredient("fluid-wagon", 1, "basic-logistics-science-pack")
-addPrerequisiteTechnology("fluid-wagon", "basic-logistics-science-research")
+MoreScience.lib.technology.removePrerequisite("railway", "logistics-2")
+--MoreScience.lib.technology.addPrerequisite("railway", "basic-logistics-science-research")
+--MoreScience.lib.technology.addIngredient("railway", 1, "basic-logistics-science-pack")
+--MoreScience.lib.technology.addIngredient("automated-rail-transportation", 1, "basic-logistics-science-pack")
+--MoreScience.lib.technology.addPrerequisite("rail-signals", "basic-logistics-science-research")
+--MoreScience.lib.technology.addIngredient("rail-signals", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("fluid-wagon", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addPrerequisite("fluid-wagon", "basic-logistics-science-research")
 
 -- robot network
-addPrerequisiteTechnology("robotics", "basic-logistics-science-research")
-addScienceIngredient("robotics", 1, "basic-logistics-science-pack")
---addScienceIngredient("flying", 1, "basic-logistics-science-pack")
-addScienceIngredient("construction-robotics", 1, "basic-logistics-science-pack")
-addScienceIngredient("logistic-robotics", 1, "basic-logistics-science-pack")
-addScienceIngredient("logistic-system", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addPrerequisite("robotics", "basic-logistics-science-research")
+MoreScience.lib.technology.addIngredient("robotics", 1, "basic-logistics-science-pack")
+--MoreScience.lib.technology.addIngredient("flying", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("construction-robotics", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("logistic-robotics", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("logistic-system", 1, "basic-logistics-science-pack")
 
-addScienceIngredient("character-logistic-slots-1", 1, "basic-logistics-science-pack")
-addScienceIngredient("character-logistic-slots-2", 1, "basic-logistics-science-pack")
-addScienceIngredient("character-logistic-slots-3", 1, "basic-logistics-science-pack")
-addScienceIngredient("character-logistic-slots-4", 1, "basic-logistics-science-pack")
-addScienceIngredient("character-logistic-slots-5", 1, "basic-logistics-science-pack")
-addScienceIngredient("character-logistic-slots-6", 1, "basic-logistics-science-pack")
-addScienceIngredient("character-logistic-trash-slots-1", 1, "basic-logistics-science-pack")
-addScienceIngredient("character-logistic-trash-slots-2", 1, "basic-logistics-science-pack")
-addScienceIngredient("auto-character-logistic-trash-slots", 1, "basic-logistics-science-pack")
-addScienceIngredient("personal-roboport-equipment", 1, "basic-logistics-science-pack")
-addScienceIngredient("personal-roboport-equipment-2", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("character-logistic-slots-1", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("character-logistic-slots-2", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("character-logistic-slots-3", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("character-logistic-slots-4", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("character-logistic-slots-5", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("character-logistic-slots-6", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("character-logistic-trash-slots-1", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("character-logistic-trash-slots-2", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("auto-character-logistic-trash-slots", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("personal-roboport-equipment", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("personal-roboport-equipment-2", 1, "basic-logistics-science-pack")
 
 -- inserters bonus
-addScienceIngredient("inserter-capacity-bonus-1", 1, "basic-logistics-science-pack")
-addScienceIngredient("inserter-capacity-bonus-2", 1, "basic-logistics-science-pack")
-addScienceIngredient("inserter-capacity-bonus-3", 1, "basic-logistics-science-pack")
-addScienceIngredient("inserter-capacity-bonus-4", 1, "basic-logistics-science-pack")
-addScienceIngredient("inserter-capacity-bonus-5", 1, "basic-logistics-science-pack")
-addScienceIngredient("inserter-capacity-bonus-6", 1, "basic-logistics-science-pack")
-addScienceIngredient("inserter-capacity-bonus-7", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("inserter-capacity-bonus-1", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("inserter-capacity-bonus-2", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("inserter-capacity-bonus-3", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("inserter-capacity-bonus-4", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("inserter-capacity-bonus-5", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("inserter-capacity-bonus-6", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("inserter-capacity-bonus-7", 1, "basic-logistics-science-pack")
 
 -- train bonus
-addPrerequisiteTechnology("braking-force-1", "logistics-2")
-addScienceIngredient("braking-force-1", 1, "basic-logistics-science-pack")
-addScienceIngredient("braking-force-2", 1, "basic-logistics-science-pack")
-addScienceIngredient("braking-force-3", 1, "basic-logistics-science-pack")
-addScienceIngredient("braking-force-4", 1, "basic-logistics-science-pack")
-addScienceIngredient("braking-force-5", 1, "basic-logistics-science-pack")
-addScienceIngredient("braking-force-6", 1, "basic-logistics-science-pack")
-addScienceIngredient("braking-force-7", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addPrerequisite("braking-force-1", "logistics-2")
+MoreScience.lib.technology.addIngredient("braking-force-1", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("braking-force-2", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("braking-force-3", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("braking-force-4", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("braking-force-5", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("braking-force-6", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("braking-force-7", 1, "basic-logistics-science-pack")
 
 -- robot bonus
-addScienceIngredient("worker-robots-storage-1", 1, "basic-logistics-science-pack")
-addScienceIngredient("worker-robots-storage-2", 1, "basic-logistics-science-pack")
-addScienceIngredient("worker-robots-storage-3", 1, "basic-logistics-science-pack")
-addScienceIngredient("worker-robots-speed-1", 1, "basic-logistics-science-pack")
-addScienceIngredient("worker-robots-speed-2", 1, "basic-logistics-science-pack")
-addScienceIngredient("worker-robots-speed-3", 1, "basic-logistics-science-pack")
-addScienceIngredient("worker-robots-speed-4", 1, "basic-logistics-science-pack")
-addScienceIngredient("worker-robots-speed-5", 1, "basic-logistics-science-pack")
-addScienceIngredient("worker-robots-speed-6", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("worker-robots-storage-1", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("worker-robots-storage-2", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("worker-robots-storage-3", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("worker-robots-speed-1", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("worker-robots-speed-2", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("worker-robots-speed-3", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("worker-robots-speed-4", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("worker-robots-speed-5", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addIngredient("worker-robots-speed-6", 1, "basic-logistics-science-pack")

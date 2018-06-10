@@ -1,4 +1,3 @@
-require "lib/utilities/prototyping"
 require 'util'
 
 local function addRocketScienceTechnology(name, prerequisites)
@@ -26,7 +25,7 @@ local function addRocketScienceTechnology(name, prerequisites)
     }
   })
 
-  addPrerequisiteTechnology("rocket-silo", name)
+  MoreScience.lib.technology.addPrerequisite("rocket-silo", name)
 end
 
 
@@ -37,13 +36,13 @@ end
 addRocketScienceTechnology("rocket", nil)
 data.raw["technology"]["rocket"].icon_size = 250
 data.raw["technology"]["rocket"].unit.count = data.raw["technology"]["rocket"].unit.count / 2
-removeRecipeUnlock("rocket", "rocket")
-removePrerequisiteTechnology("rocket-silo", "rocket")
+MoreScience.lib.technology.removeRecipeUnlock("rocket", "rocket")
+MoreScience.lib.technology.removePrerequisite("rocket-silo", "rocket")
 
 -- Move prerequisites
 for _,prerequisite in pairs(util.table.deepcopy(data.raw["technology"]["rocket-silo"].prerequisites)) do
-  removePrerequisiteTechnology("rocket-silo", prerequisite)
-  addPrerequisiteTechnology("rocket", prerequisite)
+  MoreScience.lib.technology.removePrerequisite("rocket-silo", prerequisite)
+  MoreScience.lib.technology.addPrerequisite("rocket", prerequisite)
 end
 
 -- Move recipe unlocks
@@ -52,8 +51,8 @@ for _,recipe in pairs ({
   "rocket-fuel",
   "rocket-control-unit",
 }) do
-  removeRecipeUnlock("rocket-silo", recipe)
-  addRecipeUnlock("rocket", recipe)
+  MoreScience.lib.technology.removeRecipeUnlock("rocket-silo", recipe)
+  MoreScience.lib.technology.addRecipeUnlock("rocket", recipe)
 end
 
 --------------------------------------------------------------------------------
@@ -67,12 +66,12 @@ data.raw["technology"]["rocket-silo"].order = data.raw["technology"]["rocket"].o
 addRocketScienceTechnology("rocketpart-hull-component", {"rocket"})
 
 addRocketScienceTechnology("rocketpart-ion-thruster", {"rocket"})
-addRecipeUnlock("rocketpart-ion-thruster", "rocketpart-ion-booster")
+MoreScience.lib.technology.addRecipeUnlock("rocketpart-ion-thruster", "rocketpart-ion-booster")
 
 addRocketScienceTechnology("rocketpart-fusion-reactor", {"rocket", "fusion-reactor-equipment", "kovarex-enrichment-process"})
 
 addRocketScienceTechnology("rocketpart-shield-array", {"rocket", "energy-shield-mk2-equipment", "discharge-defense-equipment"})
-addRecipeUnlock("rocketpart-shield-array", "rocketpart-laser-array")
+MoreScience.lib.technology.addRecipeUnlock("rocketpart-shield-array", "rocketpart-laser-array")
 
 
 
@@ -83,5 +82,5 @@ addRecipeUnlock("rocketpart-shield-array", "rocketpart-laser-array")
 -- update research oder
 data.raw["technology"]["rocket-silo"].order = data.raw["technology"]["rocket"].order .. "-b"
 
---addPrerequisiteTechnology("rocket-silo", "solar-energy")
-addPrerequisiteTechnology("rocket-silo", "electric-energy-accumulators-1")
+--MoreScience.lib.technology.addPrerequisite("rocket-silo", "solar-energy")
+MoreScience.lib.technology.addPrerequisite("rocket-silo", "electric-energy-accumulators-1")
