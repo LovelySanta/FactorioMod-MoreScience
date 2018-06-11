@@ -1,4 +1,3 @@
-require "lib/utilities/util"
 require "util"
 
 local function numberToString(number)
@@ -13,7 +12,7 @@ local function alterSciencePack(oldPotionName, newPotionName, fluidName, potionN
 
   sciencePack.subgroup = "science-pack"
 
-  sciencePack.order = "z-MoreScience-" .. stringSplit(stringSplit(data.raw["fluid"][fluidName].order,"-")[3], "[")[1] .. "[" .. newPotionName .. "]"
+  sciencePack.order = "z-MoreScience-" .. MoreScience.lib.util.stringSplit(MoreScience.lib.util.stringSplit(data.raw["fluid"][fluidName].order,"-")[3], "[")[1] .. "[" .. newPotionName .. "]"
 
   data.raw["tool"][oldPotionName] = util.table.deepcopy(sciencePack)
 end
@@ -28,7 +27,7 @@ local function addSciencePack(potionName, fluidName, potionNumber)
       icon_size = 32,
       flags = {"goes-to-main-inventory"},
       subgroup = "science-pack",
-      order = "z-MoreScience-" .. stringSplit(stringSplit(data.raw["fluid"][fluidName].order,"-")[3], "[")[1] .. "[" .. potionName .. "]",
+      order = "z-MoreScience-" .. MoreScience.lib.util.stringSplit(MoreScience.lib.util.stringSplit(data.raw["fluid"][fluidName].order,"-")[3], "[")[1] .. "[" .. potionName .. "]",
       stack_size = 200,
       durability = 1,
       durability_description_key = "description.science-pack-remaining-amount-key",

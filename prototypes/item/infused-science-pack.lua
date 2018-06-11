@@ -15,7 +15,7 @@ local function addSciencePack(newPotionName, oldPotionName, potionNumber)
       icon_size = 32,
       flags = {"goes-to-main-inventory"},
       subgroup = "infused-science-pack",
-      order = "z-MoreScience-" .. stringSplit(stringSplit(data.raw["tool"][oldPotionName].order, "-")[3], "[")[1] .. "[" .. newPotionName .. "]",
+      order = "z-MoreScience-" .. MoreScience.lib.util.stringSplit(MoreScience.lib.util.stringSplit(data.raw["tool"][oldPotionName].order, "-")[3], "[")[1] .. "[" .. newPotionName .. "]",
       stack_size = 100,
       durability = 1,
       durability_description_key = "description.science-pack-remaining-amount-key",

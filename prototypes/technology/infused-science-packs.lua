@@ -111,8 +111,8 @@ addInfusedSciencePack("basic-logistics-science-pack", "c4")
 --------------------------------------------------------------------------------
 ----- Infinite science research                                            -----
 --------------------------------------------------------------------------------
-
-local function changeToInfusedSciencePack(technologyName, prerequisitesToAdd)
+if not MoreScience.infusedScience then MoreScience.infusedScience = {} end
+function MoreScience.infusedScience.changeToInfusedSciencePack(technologyName, prerequisitesToAdd)
   if data.raw["technology"][technologyName] then
     -- Update the science pack ingredients
     if data.raw["technology"][technologyName].unit then
@@ -134,28 +134,28 @@ end
 
 
 -- Worker robot
-changeToInfusedSciencePack("worker-robots-speed-6", {"production-science-pack","high-tech-science-pack","basic-logistics-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("worker-robots-speed-6", {"production-science-pack","high-tech-science-pack","basic-logistics-science-pack"})
 -- Mining productivity
-changeToInfusedSciencePack("mining-productivity-16", {"production-science-pack","high-tech-science-pack","basic-power-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("mining-productivity-16", {"production-science-pack","high-tech-science-pack","basic-power-science-pack"})
 
 -- Shells
-changeToInfusedSciencePack("shotgun-shell-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
-changeToInfusedSciencePack("cannon-shell-damage-6", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("shotgun-shell-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("cannon-shell-damage-6", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
 -- Grenade damgage
-changeToInfusedSciencePack("grenade-damage-7", {"military-science-pack","production-science-pack","high-tech-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("grenade-damage-7", {"military-science-pack","production-science-pack","high-tech-science-pack"})
 -- Rocket damgage
-changeToInfusedSciencePack("rocket-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("rocket-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
 -- Combat robotics
-changeToInfusedSciencePack("combat-robot-damage-6", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
-changeToInfusedSciencePack("follower-robot-count-7", {"military-science-pack","production-science-pack","high-tech-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("combat-robot-damage-6", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("follower-robot-count-7", {"military-science-pack","production-science-pack","high-tech-science-pack"})
 
 -- Gun turret
-changeToInfusedSciencePack("bullet-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
-changeToInfusedSciencePack("gun-turret-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("bullet-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("gun-turret-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
 -- Flamethrower
-changeToInfusedSciencePack("flamethrower-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("flamethrower-damage-7", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
 -- Laser turret
-changeToInfusedSciencePack("laser-turret-damage-8", {"military-science-pack","high-tech-science-pack","basic-power-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("laser-turret-damage-8", {"military-science-pack","high-tech-science-pack","basic-power-science-pack"})
 -- Artillery turret
-changeToInfusedSciencePack("artillery-shell-range-1", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
-changeToInfusedSciencePack("artillery-shell-speed-1", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("artillery-shell-range-1", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})
+MoreScience.infusedScience.changeToInfusedSciencePack("artillery-shell-speed-1", {"military-science-pack","high-tech-science-pack","basic-automation-science-pack"})

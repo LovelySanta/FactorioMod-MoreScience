@@ -13,16 +13,51 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
 
 
 
-  function MoreScience.lib.recipe.disable(recipe)
-     if not data.raw["recipe"][recipe] then return end
-     recipePrototypeCleanup(recipe)
+  function MoreScience.lib.recipe.isEnabled(recipe)
+    if not data.raw["recipe"][recipe] then return nil end
+    recipePrototypeCleanup(recipe)
 
-     if data.raw["recipe"][recipe].normal then
-        data.raw["recipe"][recipe].normal.enabled = false
-        data.raw["recipe"][recipe].expensive.enabled = false
-     else
-        data.raw["recipe"][recipe].enabled = false
-     end
+    local normalEnabled = false
+    local expensiveEnabled = false
+    if data.raw["recipe"][recipe].normal then
+      if not ((data.raw["recipe"][recipe].normal.enabled == false) or (data.raw["recipe"][recipe].normal.enabled == "false")) then
+        if not data.raw["recipe"][recipe].expensive then -- if no expensive recipe is enabled, it will fall back to normal
+          return {true, true}
+        end
+        normalEnabled = true
+      end
+    end
+
+    if data.raw["recipe"][recipe].expensive then
+      if not ((data.raw["recipe"][recipe].expensive.enabled == false) or (data.raw["recipe"][recipe].expensive.enabled == "false")) then
+        if not data.raw["recipe"][recipe].normal then -- if no normal recipe is enabled, it will fall back to expensive
+          return {true, true}
+        end
+        expensiveEnabled = true
+      end
+    end
+
+    if data.raw["recipe"][recipe].normal or data.raw["recipe"][recipe].expensive then return {normalEnabled, expensiveEnabled} end
+
+    if (data.raw["recipe"][recipe].enabled == false) or (data.raw["recipe"][recipe].enabled == "false") then
+      return {false, false}
+    else
+      return {true, true}
+    end
+  end
+
+
+
+  function MoreScience.lib.recipe.disable(recipe)
+    if not data.raw["recipe"][recipe] then return end
+    recipePrototypeCleanup(recipe)
+
+    if data.raw["recipe"][recipe].normal then
+      data.raw["recipe"][recipe].normal.enabled = false
+      data.raw["recipe"][recipe].expensive.enabled = false
+    else
+      data.raw["recipe"][recipe].enabled = false
+    end
   end
 
 

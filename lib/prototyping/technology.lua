@@ -26,7 +26,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
       end
       for index, prerequisite in pairs(data.raw["technology"][technologyName].prerequisites) do
         if prerequisite == prerequisiteToAdd then
-          MoreScience.lib.debug.log("WARNING: Tried adding prerequisite \'" .. prerequisiteToAdd .. "\' to \'" .. technologyName .. "\' which was already present.")
+          MoreScience.lib.debug.log(string.format("WARNING: Tried adding prerequisite %q to %q which was already present.", prerequisiteToAdd, technologyName))
           return
         end
       end
@@ -47,7 +47,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
         end
       end
       if not moved then
-        MoreScience.lib.debug.log("WARNING: Could not change '" .. oldPrerequisite .. "' in research '" .. technologyName .. "' to '" .. newPrerequisite .. "'. Adding it instead.")
+        MoreScience.lib.debug.log(string.format("WARNING: Could not change %q in research %q to %q. Adding it instead.", oldPrerequisite, technologyName, newPrerequisite))
         addPrerequisiteTechnology(technologyName, newPrerequisite)
       end
     end
@@ -107,7 +107,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
     if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].unit.ingredients then
       for index, ingredient in pairs(data.raw["technology"][technologyName].unit.ingredients) do
         if ingredient[1] == sciencePackName then
-          MoreScience.lib.debug.log("WARNING: Tried adding ingredient \'" .. sciencePackName .. "\' to \'" .. technologyName .. "\' which was already present. Increased amount instead.")
+          MoreScience.lib.debug.log(string.format("WARNING: Tried adding ingredient %q to %q which was already present. Increased amount instead.", sciencePackName, technologyName))
           data.raw["technology"][technologyName].unit.ingredients[index][2] = ingredient[2] + sciencePackAmount
           return
         end
@@ -161,7 +161,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
                 for k,v in pairs(data.raw["technology"][technologyName].prerequisites) do
                   if v == prerequisite then
                     table.remove(data.raw["technology"][technologyName].prerequisites, k)
-                    --log("TechTreeCleanup: Removing prerequisite '" .. prerequisite .. "' from technology '" .. technologyName .. "'.")
+                    MoreScience.lib.debug.log(string.format("TechTreeCleanup: Removing prerequisite %q from technology %q.", prerequisite, technologyName))
                   end
                 end
               end
