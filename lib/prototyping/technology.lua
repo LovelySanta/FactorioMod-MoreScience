@@ -118,6 +118,14 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
 
 
+  function MoreScience.lib.technology.changeCount(technologyName, amount)
+    if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].unit.count then
+      data.raw["technology"][technologyName].unit.count = amount
+    end
+  end
+
+
+
   function MoreScience.lib.technology.getAllPrerequisites(technologyName)
     if not data.raw["technology"][technologyName] then return nil end
     if not data.raw["technology"][technologyName].prerequisites then return nil end
