@@ -22,6 +22,7 @@ data.raw["recipe"]["lab"].ingredients = {
   {"lab-burner", 1},
   {"transport-belt", 4}
 }
+data.raw["recipe"]["lab"].energy_required = labBurner.energy_required * 5
 
 --------------------------------------------------------------------------------
 ----- Lab MK2                                                              -----

@@ -1,9 +1,4 @@
 
-local modCompatibilityPath = "mod-compatibilities/"
-require(modCompatibilityPath .. "bobrevamp")
-
-
-
 -- technology tree cleanup
 local containsExtension = false
 for _,extension in pairs({
