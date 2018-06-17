@@ -67,6 +67,18 @@ local infusedSciencePrerequisite = {
     infusedScienceResearch["basic-automation-science-pack"]
   },
 }
+local scienceColor = {
+  ["science-pack-1"] = "red",
+  ["science-pack-2"] = "green",
+  ["science-pack-3"] = "blue",
+  ["production-science-pack"] = "purple",
+  ["high-tech-science-pack"] = "yellow",
+  ["space-science-pack"] = "white",
+  ["military-science-pack"] = "gray",
+  ["basic-automation-science-pack"] = "orange",
+  ["basic-logistics-science-pack"] = "pink",
+  ["basic-power-science-pack"] = "lightblue",
+}
 
 local function addInfusedSciencePack(basicScienceName, order)
   data:extend({
@@ -75,8 +87,8 @@ local function addInfusedSciencePack(basicScienceName, order)
       name = util.table.deepcopy(infusedScienceResearch[basicScienceName]),
       localised_name = {"technology-name.infuse-research"},
       localised_description = {"technology-description.infuse-research"},
-      icon = "__MoreScience__/graphics/technology/science-symbol.png",
-      icon_size = 2000,
+      icon = "__MoreScience__/graphics/technology/potions/potion-" .. scienceColor[basicScienceName] .. "-infused.png",
+      icon_size = 128,
       prerequisites = util.table.deepcopy(infusedSciencePrerequisite[basicScienceName]),
       effects = nil,
       unit =

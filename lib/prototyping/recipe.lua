@@ -48,14 +48,38 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
 
 
 
+  function MoreScience.lib.recipe.enable(recipe)
+    if not data.raw["recipe"][recipe] then return end
+    recipePrototypeCleanup(recipe)
+
+    if data.raw["recipe"][recipe].normal then
+      data.raw["recipe"][recipe].normal.enabled = true
+    end
+
+    if data.raw["recipe"][recipe].expensive then
+      data.raw["recipe"][recipe].expensive.enabled = true
+    end
+
+    if data.raw["recipe"][recipe].enabled == false then
+      data.raw["recipe"][recipe].enabled = true
+    end
+  end
+
+
+
   function MoreScience.lib.recipe.disable(recipe)
     if not data.raw["recipe"][recipe] then return end
     recipePrototypeCleanup(recipe)
 
     if data.raw["recipe"][recipe].normal then
       data.raw["recipe"][recipe].normal.enabled = false
+    end
+
+    if data.raw["recipe"][recipe].expensive then
       data.raw["recipe"][recipe].expensive.enabled = false
-    else
+    end
+
+    if not (data.raw["recipe"][recipe].normal or data.raw["recipe"][recipe].expensive) then
       data.raw["recipe"][recipe].enabled = false
     end
   end

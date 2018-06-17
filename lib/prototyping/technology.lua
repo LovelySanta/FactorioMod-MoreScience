@@ -8,7 +8,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
       for index, prerequisite in pairs(data.raw["technology"][technologyName].prerequisites) do
         if prerequisite == prerequisiteToRemove then
           table.remove(data.raw["technology"][technologyName].prerequisites, index)
-          if #data.raw["technology"][technologyName].prerequisites == 0 then
+          if table_size(data.raw["technology"][technologyName].prerequisites) == 0 then
             data.raw["technology"][technologyName].prerequisites = nil
           end
           break
@@ -60,7 +60,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
       for index, effect in pairs(data.raw["technology"][technologyName].effects) do
         if effect.type == "unlock-recipe" and effect.recipe == recipeToRemove then
           table.remove(data.raw["technology"][technologyName].effects, index)
-          if #data.raw["technology"][technologyName].effects == 0 then
+          if table_size(data.raw["technology"][technologyName].effects) == 0 then
             data.raw["technology"][technologyName].effects = nil
           end
           break

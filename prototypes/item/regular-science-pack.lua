@@ -7,8 +7,19 @@ end
 local function alterSciencePack(oldPotionName, newPotionName, fluidName, potionNumber)
   sciencePack = data.raw["tool"][oldPotionName]
 
-  sciencePack.icon = "__MoreScience__/graphics/icons/potion/set-01/potion-" .. numberToString(potionNumber) .. ".png"
-  sciencePack.icon_size = 32
+  sciencePack.icon = nil
+  sciencePack.icon_size = nil
+  sciencePack.icons =
+  {
+    {
+      icon = "__MoreScience__/graphics/icons/potion/set-01/potion-" .. numberToString(potionNumber) .. ".png",
+      icon_size = 32,
+    },
+    {
+      icon = "__MoreScience__/graphics/icons/potion/cork.png",
+      icon_size = 32,
+    },
+  }
 
   sciencePack.subgroup = "science-pack"
 
@@ -23,8 +34,17 @@ local function addSciencePack(potionName, fluidName, potionNumber)
       type = "tool",
       name = potionName,
       localised_description = {"item-description.science-pack"},
-      icon = "__MoreScience__/graphics/icons/potion/set-01/potion-" .. numberToString(potionNumber) .. ".png",
-      icon_size = 32,
+      icons =
+      {
+        {
+          icon = "__MoreScience__/graphics/icons/potion/set-01/potion-" .. numberToString(potionNumber) .. ".png",
+          icon_size = 32,
+        },
+        {
+          icon = "__MoreScience__/graphics/icons/potion/cork.png",
+          icon_size = 32,
+        },
+      },
       flags = {"goes-to-main-inventory"},
       subgroup = "science-pack",
       order = "z-MoreScience-" .. MoreScience.lib.util.stringSplit(MoreScience.lib.util.stringSplit(data.raw["fluid"][fluidName].order,"-")[3], "[")[1] .. "[" .. potionName .. "]",

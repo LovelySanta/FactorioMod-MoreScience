@@ -64,8 +64,8 @@ data:extend({
   {
     type = "technology",
     name = "basic-automation-science-research",
-    icon = "__MoreScience__/graphics/technology/science-symbol.png",
-    icon_size = 2000,
+    icon = "__MoreScience__/graphics/technology/potions/potion-orange.png",
+    icon_size = 128,
     prerequisites = {
       "basic-science-research-1",
     },

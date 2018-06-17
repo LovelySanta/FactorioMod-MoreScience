@@ -11,8 +11,17 @@ local function addSciencePack(newPotionName, oldPotionName, potionNumber)
       name = newPotionName,
       localised_name = {"item-name.infused-modifier", {[1] = "item-name." .. oldPotionName}},
       localised_description = {"item-description.science-pack"},
-      icon = "__MoreScience__/graphics/icons/potion/set-02/potion-" .. numberToString(potionNumber) .. ".png",
-      icon_size = 32,
+      icons =
+      {
+        {
+          icon = "__MoreScience__/graphics/icons/potion/set-02/potion-" .. numberToString(potionNumber) .. ".png",
+          icon_size = 32,
+        },
+        {
+          icon = "__MoreScience__/graphics/icons/potion/cork.png",
+          icon_size = 32,
+        },
+      },
       flags = {"goes-to-main-inventory"},
       subgroup = "infused-science-pack",
       order = "z-MoreScience-" .. MoreScience.lib.util.stringSplit(MoreScience.lib.util.stringSplit(data.raw["tool"][oldPotionName].order, "-")[3], "[")[1] .. "[" .. newPotionName .. "]",

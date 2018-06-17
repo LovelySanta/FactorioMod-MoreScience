@@ -37,8 +37,8 @@ data:extend({
   {
     type = "technology",
     name = "basic-military-science-research",
-    icon = "__MoreScience__/graphics/technology/science-symbol.png",
-    icon_size = 2000,
+    icon = "__MoreScience__/graphics/technology/potions/potion-gray.png",
+    icon_size = 128,
     prerequisites = {
       "basic-science-research-1",
       "turrets",

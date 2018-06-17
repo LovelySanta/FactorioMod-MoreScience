@@ -8,8 +8,8 @@ data:extend({
   {
     type = "technology",
     name = "basic-power-science-research",
-    icon = "__MoreScience__/graphics/technology/science-symbol.png",
-    icon_size = 2000,
+    icon = "__MoreScience__/graphics/technology/potions/potion-lightblue.png",
+    icon_size = 128,
     prerequisites = {
       "basic-automation-science-research",
       "battery",

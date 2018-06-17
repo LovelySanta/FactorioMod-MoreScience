@@ -36,8 +36,17 @@ data:extend({
   {
     type = "item",
     name = "empty-bottle",
-    icon = "__MoreScience__/graphics/icons/potion/set-01/potion-00.png",
-    icon_size = 32,
+    icons =
+    {
+      {
+        icon = "__MoreScience__/graphics/icons/potion/set-01/potion-00.png",
+        icon_size = 32,
+      },
+      {
+        icon = "__MoreScience__/graphics/icons/potion/cork.png",
+        icon_size = 32,
+      },
+    },
     flags = {"goes-to-main-inventory"},
     subgroup = "science-bottling",
     order = "d[empty-bottle]",

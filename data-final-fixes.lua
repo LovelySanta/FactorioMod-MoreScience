@@ -3,6 +3,7 @@
 local containsExtension = false
 for _,extension in pairs({
   "BobAngelsExtension",
+  "ScienceCostTweakerExtension",
 }) do
   if mods["MoreScience-" .. extension] then
     containsExtension = true

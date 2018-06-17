@@ -1,7 +1,7 @@
 
 local scienceResearch = {}
-scienceResearch.icon = "__MoreScience__/graphics/technology/science-symbol.png"
-scienceResearch.icon_size = 2000
+scienceResearch.icon = "__MoreScience__/graphics/technology/potions/"
+scienceResearch.icon_size = 128
 
 --------------------------------------------------------------------------------
 ----- Basic science pack 2                                                 -----
@@ -17,7 +17,7 @@ data:extend({
   {
     type = "technology",
     name = "basic-science-research-1",
-    icon = scienceResearch.icon,
+    icon = scienceResearch.icon .. "potion-green.png",
     icon_size = scienceResearch.icon_size,
     prerequisites =
     {
@@ -82,7 +82,7 @@ data:extend({
   {
     type = "technology",
     name = "bottling-research",
-    icon = scienceResearch.icon,
+    icon = scienceResearch.icon .. "potion-empty.png",
     icon_size = scienceResearch.icon_size,
     prerequisites =
     {
@@ -141,7 +141,7 @@ data:extend({
   {
     type = "technology",
     name = "basic-science-research-2",
-    icon = scienceResearch.icon,
+    icon = scienceResearch.icon .. "potion-blue.png",
     icon_size = scienceResearch.icon_size,
     prerequisites =
     {
@@ -228,7 +228,7 @@ data:extend({
   {
     type = "technology",
     name = "advanced-science-research-1",
-    icon = scienceResearch.icon,
+    icon = scienceResearch.icon .. "potion-purple.png",
     icon_size = scienceResearch.icon_size,
     prerequisites =
     {
@@ -304,7 +304,7 @@ data:extend({
   {
     type = "technology",
     name = "advanced-science-research-2",
-    icon = scienceResearch.icon,
+    icon = scienceResearch.icon .. "potion-yellow.png",
     icon_size = scienceResearch.icon_size,
     prerequisites =
     {
@@ -384,7 +384,7 @@ data:extend({
   {
     type = "technology",
     name = "infinite-science-research",
-    icon = scienceResearch.icon,
+    icon = scienceResearch.icon .. "potion-white.png",
     icon_size = scienceResearch.icon_size,
     prerequisites =
     {
