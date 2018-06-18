@@ -4,18 +4,19 @@ require "util"
 ----- Basic lab                                                            -----
 --------------------------------------------------------------------------------
 if data.raw["lab"]["lab"] then
-  -- Add science packs (in correct order)
-  --for packIndex, packName in pairs(data.raw["lab"]["lab"].inputs) do
-  --  if packName == "space-science-pack" then
-  table.remove(data.raw["lab"]["lab"].inputs, #data.raw["lab"]["lab"].inputs)
-  --    table.remove(data.raw["lab"]["lab"].inputs, packIndex)
-  --  end
-  --  break
-  --end
-  table.insert(data.raw["lab"]["lab"].inputs, "basic-automation-science-pack")
-  table.insert(data.raw["lab"]["lab"].inputs, "basic-power-science-pack")
-  table.insert(data.raw["lab"]["lab"].inputs, "basic-logistics-science-pack")
-  table.insert(data.raw["lab"]["lab"].inputs, "space-science-pack")
+  data.raw["lab"]["lab"].inputs =
+  {
+    "science-pack-1",
+    "science-pack-2",
+    "military-science-pack",
+    "basic-automation-science-pack",
+    "science-pack-3",
+    "basic-power-science-pack",
+    "production-science-pack",
+    "basic-logistics-science-pack",
+    "high-tech-science-pack",
+    "space-science-pack",
+  }
 
   data.raw["lab"]["lab"].localised_name = {"item-name.lab-mk1", {[1] = "item-name.lab"}}
 end
@@ -56,13 +57,13 @@ labMK2.localised_name = {"item-name.lab-mk2", {[1] = "item-name.lab"}}
 labMK2.inputs = {
   "infused-basic-science-pack-1",
   "infused-basic-science-pack-2",
-  "infused-basic-science-pack-3",
-  "infused-advanced-science-pack-1",
-  "infused-advanced-science-pack-2",
   "infused-basic-military-science-pack",
   "infused-basic-automation-science-pack",
+  "infused-basic-science-pack-3",
   "infused-basic-power-science-pack",
+  "infused-advanced-science-pack-1",
   "infused-basic-logistics-science-pack",
+  "infused-advanced-science-pack-2",
   "infused-extreme-science-pack",
 }
 labMK2.energy_usage = "250kW"
