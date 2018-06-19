@@ -11,5 +11,6 @@ for _,extension in pairs({
   end
 end
 if not containsExtension then
+  log("cleaning up the tech tree")
   MoreScience.lib.technology.removeAllRedundantPrerequisites()
 end
