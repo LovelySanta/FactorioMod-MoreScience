@@ -1,4 +1,5 @@
 if mods["Nuclear Fuel"] then
+  
   if data.raw["technology"]["kovarex-enrichment-process"] and data.raw["technology"]["kovarex-enrichment-process"].effects then
     local enrichmentEffect = false
     local fuelEffect = false
@@ -27,5 +28,4 @@ if mods["Nuclear Fuel"] then
     end
   end
 
-  log(serpent.block(data.raw["technology"]["kovarex-enrichment-process"]))
 end
