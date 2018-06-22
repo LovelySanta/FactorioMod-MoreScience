@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.9
+Date: 23. 6. 2018
+  Major Features:
+    - Added BobsAngels extension: Seperate mod as addon that combines bobs and angels mods with more science mod
+    - Added ScienceCostTweaker extension: seperate mod as addon that changes the ingredients for the fluids
+    - Added Space extension: seperate mod as addon that converts the space extension mod to infused science
+    - Added Seablock extension: seperate mod as addon that makes sure more science is compatible with seablock
+  Features:
+    - New science pack graphics thanks to mexmer for letting me use them and Daemoria for creating those and some extra ones
+  Changes:
+    - No longer support for bobrevamp compatibility since this is in the extension now
+  Modding:
+    - Prototype functions are now as a library so it can be used by other mods (for example used by the extensions)
+    - Added mod compatibility with 'Nuclear Fuel' mod
+---------------------------------------------------------------------------------------------------
 Version: 0.1.8
 Date: 28. 5. 2018
   Changes:
