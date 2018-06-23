@@ -17,8 +17,17 @@ As I am altering all science packs, I also alter the space science pack.  You'll
 
 ![Rocket assembly recipe](https://raw.githubusercontent.com/LovelySanta/FactorioMod-MoreScience/master/graphics/screenshots/rocket-assembly-recipe.png)
 
+# Extensions
+Extensions have been made so this mod is able to work together with bigger mods/modpacks. More info on the extension page themselves:
++ [More Science - BobAngels Extension](https://mods.factorio.com/mod/MoreScience-BobAngelsExtension)
++ [More Science - ScienceCostTweaker Extension](https://mods.factorio.com/mod/MoreScience-ScienceCostTweakerExtension)
++ [More Science - Sea Block extension](https://mods.factorio.com/mod/MoreScience-SeaBlockExtension)
++ [More Science - Space Extension](https://mods.factorio.com/mod/MoreScience-SpaceExtension)
+
 # Credits
-+    Thanks to Arch666angel for providing me the graphics of the sand, glass, rocket parts and wood plantation buildings.
++ Thanks to [Arch666angel](https://mods.factorio.com/user/Arch666Angel) for providing me the graphics of the sand, glass, rocket parts and wood plantation buildings.
++ Thanks to [Mexmer](https://mods.factorio.com/user/mexmer) for letting me use the science pack graphics designed by Daemoria for the [SCT mod](https://mods.factorio.com/mod/ScienceCostTweakerM).
++ Thanks to [Daemoria](https://mods.factorio.com/user/daemoria) for designing even more graphics for the other science packs.
 
 # Changelog
 ### Future

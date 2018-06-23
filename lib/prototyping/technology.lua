@@ -158,11 +158,16 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
     -- iterate over all prerequisites to check if they are redundant
     for _,prerequisiteName in pairs(util.table.deepcopy(data.raw["technology"][technologyName].prerequisites)) do
+
+      -- STEP 1: obtain the prerequisites of a prerequisite
       local prerequisites = MoreScience.lib.technology.getAllPrerequisites(prerequisiteName)
       if prerequisites then
-        -- check for all the other prerequisites if they are in the prerequisites list
-        for _,prerequisite in pairs(data.raw["technology"][technologyName].prerequisites) do
-          if prerequisite ~= prerequisiteName then
+
+        -- STEP 2a: check for all the other prerequisites of the technology
+        for _,prerequisite in pairs(util.table.deepcopy(data.raw["technology"][technologyName].prerequisites)) do
+          if prerequisite ~= prerequisiteName then -- no need to check itself
+
+            -- STEP 2b: remove the technology prerequisite if the prerequisite is a prerequisite of another technology prerequisite
             for _, name in pairs(prerequisites) do
               if name == prerequisite then
                 --remove prerequisite
