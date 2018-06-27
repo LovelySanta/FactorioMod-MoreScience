@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.10
+Date: 27. 6. 2018
+  Balancing:
+    - Basic automation science fluid now uses 5 (instead of 10) assembling machines 2 each craft.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.9
 Date: 23. 6. 2018
   Major Features:
