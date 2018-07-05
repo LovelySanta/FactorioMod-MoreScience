@@ -3,11 +3,17 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
 
   local function recipePrototypeCleanup(recipeName)
     if not data.raw["recipe"][recipeName] then return end
+    if (not data.raw["recipe"][recipeName].normal) and (not data.raw["recipe"][recipeName].expensive) then return end
 
     -- clean up recipe becose other mods...
-    if data.raw["recipe"][recipeName].normal or data.raw["recipe"][recipeName].expensive then
-      data.raw["recipe"][recipeName].ingredients = nil
-      data.raw["recipe"][recipeName].energy_required = nil
+    for _, key in pairs({
+      "ingredients",
+      "energy_required",
+    }) do
+      if ( data.raw["recipe"][recipeName].normal    and data.raw["recipe"][recipeName].normal[key]    ) or
+         ( data.raw["recipe"][recipeName].expensive and data.raw["recipe"][recipeName].expensive[key] ) then
+        data.raw["recipe"][recipeName][key] = nil
+      end
     end
   end
 
@@ -91,15 +97,27 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
     recipePrototypeCleanup(recipeName)
 
     if data.raw["recipe"][recipeName].ingredients then
-      table.insert(data.raw["recipe"][recipeName].ingredients, {["type"] = itemType, ["name"] = itemName, ["amount"] = itemAmount})
+      table.insert(data.raw["recipe"][recipeName].ingredients, {
+        ["type"] = itemType,
+        ["name"] = itemName,
+        ["amount"] = itemAmount
+      })
     end
 
     if data.raw["recipe"][recipeName].normal then
-      table.insert(data.raw["recipe"][recipeName].normal.ingredients, {["type"] = itemType, ["name"] = itemName, ["amount"] = itemAmount})
+      table.insert(data.raw["recipe"][recipeName].normal.ingredients, {
+        ["type"] = itemType,
+        ["name"] = itemName,
+        ["amount"] = itemAmount
+      })
     end
 
     if data.raw["recipe"][recipeName].expensive then
-      table.insert(data.raw["recipe"][recipeName].expensive.ingredients, {["type"] = itemType, ["name"] = itemName, ["amount"] = itemAmount})
+      table.insert(data.raw["recipe"][recipeName].expensive.ingredients, {
+        ["type"] = itemType,
+        ["name"] = itemName,
+        ["amount"] = itemAmount
+      })
     end
 
   end
@@ -191,6 +209,12 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
 
 
   function MoreScience.lib.recipe.setResultCount(recipeName, resultName, resultAmount)
+    if not data.raw["recipe"][recipeName] then return end
+    recipePrototypeCleanup(recipeName)
+
+    if data.raw["recipe"][recipeName].result_count then
+      data.raw["recipe"][recipeName].result_count = resultAmount
+    end
 
     if data.raw["recipe"][recipeName].normal then
       if data.raw["recipe"][recipeName].normal.results then
@@ -219,6 +243,7 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
 
 
   function MoreScience.lib.recipe.setEngergyRequired(recipeName, energyRequired)
+    if not data.raw["recipe"][recipeName] then return end
     recipePrototypeCleanup(recipeName)
 
     if data.raw["recipe"][recipeName].ingredients then
