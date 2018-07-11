@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.12
+Date: 11. 7. 2018
+  Changes:
+    - Extended library functionality on technology: disable existing tech
+    - Extended library functionality on recipe: set crafting category
+---------------------------------------------------------------------------------------------------
 Version: 0.1.11
 Date: 5. 7. 2018
   Fixed:

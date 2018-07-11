@@ -92,6 +92,14 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
 
 
 
+  function MoreScience.lib.recipe.setCraftingCategory(recipe, category)
+    if not data.raw["recipe"][recipe] then return end
+
+    data.raw["recipe"][recipe].category = category
+  end
+
+
+
   function MoreScience.lib.recipe.addIngredient(recipeName, itemName, itemAmount, itemType)
     if not data.raw["recipe"][recipeName] then return end
     recipePrototypeCleanup(recipeName)
