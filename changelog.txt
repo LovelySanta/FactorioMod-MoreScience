@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.13
+Date: 2. 8. 2018
+  Modding:
+    - Added support for the QoL mod
+---------------------------------------------------------------------------------------------------
 Version: 0.1.12
 Date: 11. 7. 2018
   Changes:
@@ -93,7 +98,7 @@ Date: 2. 5. 2018
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 1. 5. 2018
-  Minor Features:
+  Features:
     - Added burner lab to conduct early game research
   Changes:
     - Fluid handling 2 now only require red science
