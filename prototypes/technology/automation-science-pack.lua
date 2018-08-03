@@ -108,6 +108,9 @@ MoreScience.lib.technology.addPrerequisite("advanced-material-processing", "basi
 MoreScience.lib.technology.addIngredient("advanced-material-processing", 1, "basic-automation-science-pack")
 MoreScience.lib.technology.addIngredient("advanced-material-processing-2", 1, "basic-automation-science-pack")
 MoreScience.lib.technology.addIngredient("laser", 1, "basic-automation-science-pack")
+MoreScience.lib.technology.addPrerequisite("logistics-2", "basic-automation-science-research")
+MoreScience.lib.technology.addIngredient("logistics-2", 1, "basic-automation-science-pack")
+
 
 -- nuclear
 MoreScience.lib.technology.addIngredient("nuclear-power", 1, "basic-automation-science-pack")
@@ -129,6 +132,9 @@ MoreScience.lib.technology.addIngredient("advanced-electronics", 1, "basic-autom
 MoreScience.lib.technology.addIngredient("advanced-electronics-2", 1, "basic-automation-science-pack")
 MoreScience.lib.technology.addIngredient("sulfur-processing", 1, "basic-automation-science-pack")
 MoreScience.lib.technology.addIngredient("battery", 1, "basic-automation-science-pack")
+
+-- vehicles
+MoreScience.lib.technology.addIngredient("automobilism", 1, "basic-automation-science-pack")
 
 -- train network
 MoreScience.lib.technology.addIngredient("railway", 1, "basic-automation-science-pack")

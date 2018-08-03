@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.14
+Date: 3. 8. 2018
+  Balancing:
+    - Logistics 2 research doesn't require basic logistics science pack anymore, downgraded to basic automation science pack
+    - automobilism research doesn't require basic logistics science pack anymore, downgraded to basic automation science pack
+    - stack inserter research doesn't require basic logistics science pack anymore, downgraded to basic power science pack
+---------------------------------------------------------------------------------------------------
 Version: 0.1.13
 Date: 2. 8. 2018
   Modding:

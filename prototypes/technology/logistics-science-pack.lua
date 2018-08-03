@@ -140,17 +140,20 @@ data:extend({
 })
 
 -- add prerequisites on the technology
-MoreScience.lib.technology.addPrerequisite("logistics-2", "basic-logistics-science-research")
-MoreScience.lib.technology.addIngredient("logistics-2", 1, "basic-logistics-science-pack")
+--MoreScience.lib.technology.addPrerequisite("logistics-2", "basic-logistics-science-research")
+--MoreScience.lib.technology.addIngredient("logistics-2", 1, "basic-logistics-science-pack")
+--MoreScience.lib.technology.addPrerequisite("logistics-3", "basic-logistics-science-research")
 MoreScience.lib.technology.addIngredient("logistics-3", 1, "basic-logistics-science-pack")
 MoreScience.lib.technology.addPrerequisite("logistics-3", "basic-logistics-science-research")
-MoreScience.lib.technology.addIngredient("automobilism", 1, "basic-logistics-science-pack")
+--MoreScience.lib.technology.addIngredient("automobilism", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addPrerequisite("tanks", "basic-logistics-science-research")
 MoreScience.lib.technology.addIngredient("tanks", 1, "basic-logistics-science-pack")
-MoreScience.lib.technology.addIngredient("stack-inserter", 1, "basic-logistics-science-pack")
+--MoreScience.lib.technology.addIngredient("stack-inserter", 1, "basic-logistics-science-pack")
+MoreScience.lib.technology.addPrerequisite("stack-inserter", "logistics-2")
 MoreScience.lib.technology.addPrerequisite("rocket-silo", "basic-logistics-science-research")
 
 -- train network
-MoreScience.lib.technology.removePrerequisite("railway", "logistics-2")
+--MoreScience.lib.technology.removePrerequisite("railway", "logistics-2")
 --MoreScience.lib.technology.addPrerequisite("railway", "basic-logistics-science-research")
 --MoreScience.lib.technology.addIngredient("railway", 1, "basic-logistics-science-pack")
 --MoreScience.lib.technology.addIngredient("automated-rail-transportation", 1, "basic-logistics-science-pack")
@@ -189,7 +192,7 @@ MoreScience.lib.technology.addIngredient("inserter-capacity-bonus-6", 1, "basic-
 MoreScience.lib.technology.addIngredient("inserter-capacity-bonus-7", 1, "basic-logistics-science-pack")
 
 -- train bonus
-MoreScience.lib.technology.addPrerequisite("braking-force-1", "logistics-2")
+MoreScience.lib.technology.addPrerequisite("braking-force-1", "basic-logistics-science-research")
 MoreScience.lib.technology.addIngredient("braking-force-1", 1, "basic-logistics-science-pack")
 MoreScience.lib.technology.addIngredient("braking-force-2", 1, "basic-logistics-science-pack")
 MoreScience.lib.technology.addIngredient("braking-force-3", 1, "basic-logistics-science-pack")

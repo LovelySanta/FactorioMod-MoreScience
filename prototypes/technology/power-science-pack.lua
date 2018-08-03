@@ -66,6 +66,9 @@ MoreScience.lib.technology.addIngredient("electric-engine", 1, "basic-power-scie
 MoreScience.lib.technology.addIngredient("flying", 1, "basic-power-science-pack")
 MoreScience.lib.technology.addIngredient("construction-robotics", 1, "basic-power-science-pack")
 MoreScience.lib.technology.addIngredient("logistic-robotics", 1, "basic-power-science-pack")
+MoreScience.lib.technology.addPrerequisite("stack-inserter", "basic-power-science-research")
+MoreScience.lib.technology.addIngredient("stack-inserter", 1, "basic-power-science-pack")
+
 
 -- Laser turrets
 MoreScience.lib.technology.addPrerequisite("laser-turrets", "basic-power-science-research")

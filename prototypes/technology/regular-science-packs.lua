@@ -192,10 +192,10 @@ MoreScience.lib.technology.addIngredient("logistic-robotics", 1, "science-pack-3
 --MoreScience.lib.technology.addIngredient("automated-rail-transportation", 1, "science-pack-3")
 --MoreScience.lib.technology.addIngredient("rail-signals", 1, "science-pack-3")
 MoreScience.lib.technology.addIngredient("fluid-wagon", 1, "science-pack-3")
-MoreScience.lib.technology.addIngredient("logistics-2", 1, "science-pack-3")
+--MoreScience.lib.technology.addIngredient("logistics-2", 1, "science-pack-3")
 
 -- vehicles
-MoreScience.lib.technology.addIngredient("automobilism", 1, "science-pack-3")
+--MoreScience.lib.technology.addIngredient("automobilism", 1, "science-pack-3")
 
 -- automation
 MoreScience.lib.technology.addPrerequisite("advanced-material-processing-2", "basic-science-research-2")
