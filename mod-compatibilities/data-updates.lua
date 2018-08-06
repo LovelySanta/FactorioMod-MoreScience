@@ -1,3 +1,10 @@
 
-require("mod-compatibilities.NuclearFuel.data-updates")
-require("mod-compatibilities.qol_research.data-updates")
+for _, modName in pairs({
+  "CorpseFlare",
+  "logicarts",
+  "NuclearFuel",
+  "qol_research",
+  "Vehicle Wagon"
+}) do
+  require("mod-compatibilities."..modName..".data-updates")
+end
