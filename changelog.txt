@@ -1,9 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.16
+Date: 10. 8. 2018
+  Modding:
+    - Added support for the Lumberjack mod
+---------------------------------------------------------------------------------------------------
 Version: 0.1.15
 Date: 6. 8. 2018
   Modding:
     - Added support for the corpse flare mod
-    - Added support for the logicars mod
+    - Added support for the logicarts mod
     - Added support for the vehicle wagon mod
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.14
