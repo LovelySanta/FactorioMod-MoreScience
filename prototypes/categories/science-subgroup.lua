@@ -1,6 +1,6 @@
 require "util"
 
--- science pack subgroup
+-- science pack
 data.raw["item-subgroup"]["science-pack"].group = "ms-science"
 
 -- science bottling
@@ -19,14 +19,15 @@ scienceFluid.name = "science-fluid"
 scienceFluid.order = scienceFluid.order .. "-b-a"
 
 -- science fluid barreling
-local scienceBarrelFill = util.table.deepcopy(data.raw["item-subgroup"]["science-pack"])
-scienceBarrelFill.name = "science-barrel-fill"
-scienceBarrelFill.order = scienceBarrelFill.order .. "-b-b"
-
--- science fluid barreling
-local scienceBarrelEmpty = util.table.deepcopy(data.raw["item-subgroup"]["science-pack"])
-scienceBarrelEmpty.name = "science-barrel-empty"
-scienceBarrelEmpty.order = scienceBarrelEmpty.order .. "-b-c"
+local scienceBarrel = util.table.deepcopy(data.raw["item-subgroup"]["science-pack"])
+scienceBarrel.name = "science-barrel"
+scienceBarrel.order = scienceBarrel.order .. "-b-b"
+local scienceBarrelFill = util.table.deepcopy(scienceBarrel)
+scienceBarrelFill.name = scienceBarrelFill.name .. "-fill"
+scienceBarrelFill.order = scienceBarrelFill.order .. "[fill]"
+local scienceBarrelEmpty = util.table.deepcopy(scienceBarrel)
+scienceBarrelEmpty.name = scienceBarrelEmpty.name .. "-empty"
+scienceBarrelEmpty.order = scienceBarrelEmpty.order .. "[empty]"
 
 -- infused science pack
 local infusedSciencePack = util.table.deepcopy(data.raw["item-subgroup"]["science-pack"])
@@ -53,6 +54,7 @@ data:extend({
   scienceBottling,
 
   scienceFluid,
+  scienceBarrel,
   scienceBarrelFill,
   scienceBarrelEmpty,
 

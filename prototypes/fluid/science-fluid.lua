@@ -1,7 +1,8 @@
 
 local function createScienceFluid(fluidName, order, fluidNumber, baseColor, flowColor)
   local function numberToString(number)
-    if number >= 10 then return "" .. number else return "0" .. number end
+    --if number >= 10 then return "" .. number else return "0" .. number end
+    return ((number >= 10) and ("" .. number) or ("0" .. number))
   end
 
   data:extend({
@@ -31,6 +32,7 @@ local function createScienceFluid(fluidName, order, fluidNumber, baseColor, flow
       pressure_to_speed_ratio = 0.4,
       flow_to_energy_ratio = 0.59,
       -- fuel_value = "8MJ",
+      subgroup = "science-fluid",
       order = "z-MoreScience-" .. order .. "[" .. fluidName .. "]"
     },
   })
@@ -38,6 +40,7 @@ end
 
 -- purified water
 createScienceFluid("purified-water", "a", 0, {r=109, g=255, b=252}, {r=109, g=255, b=252})
+data.raw["fluid"]["purified-water"].subgroup = "science-raw-material"
 
 -- basic science fluid 1
 createScienceFluid("basic-science-fluid-1", "b1", 14, {r=191, g=19, b=19}, {r=200, g=48, b=48})
