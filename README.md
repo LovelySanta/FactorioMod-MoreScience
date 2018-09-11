@@ -33,4 +33,4 @@ Extensions have been made so this mod is able to work together with bigger mods/
 ### Future
 This mod is still in development, changes may occur and also balancing recipes out.
 ### Latest release
-See ingame changelog or find it [here on github](https://github.com/LovelySanta/FactorioMod-MoreScience/blob/master/changelog.txt).
+See [ingame changelog](https://mods.factorio.com/mod/MoreScience/changelog) or find it [here on github](https://github.com/LovelySanta/FactorioMod-MoreScience/blob/master/changelog.txt).
