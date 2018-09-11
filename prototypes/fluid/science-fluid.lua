@@ -39,7 +39,7 @@ local function createScienceFluid(fluidName, order, fluidNumber, baseColor, flow
 end
 
 -- purified water
-createScienceFluid("purified-water", "a", 0, {r=109, g=255, b=252}, {r=109, g=255, b=252})
+createScienceFluid("purified-water", "a", 0, {r=155, g=255, b=246}, {r=155, g=255, b=246})
 data.raw["fluid"]["purified-water"].subgroup = "science-raw-material"
 
 -- basic science fluid 1
@@ -50,18 +50,18 @@ createScienceFluid("basic-science-fluid-2", "c1", 3, {r=63, g=187, b=63}, {r=63,
 createScienceFluid("basic-science-fluid-3", "d1", 8, {r=12, g=70, b=206}, {r=0, g=12, b=255})
 
 -- advanced science fluid 1
-createScienceFluid("advanced-science-fluid-1", "e1", 10, {r=100, g=100, b=100}, {r=80, g=80, b=80}) -- color needs update
+createScienceFluid("advanced-science-fluid-1", "e1", 10, {r=159, g=27, b=247}, {r=159, g=27, b=247})
 -- advanced science fluid 2
-createScienceFluid("advanced-science-fluid-2", "e3", 2, {r=100, g=100, b=100}, {r=80, g=80, b=80}) -- color needs update
+createScienceFluid("advanced-science-fluid-2", "e3", 2, {r=255, g=193, b=0}, {r=255, g=193, b=0})
 
 -- extreme science fluid
-createScienceFluid("extreme-science-fluid", "f", 1, {r=100, g=100, b=100}, {r=80, g=80, b=80}) -- color needs update
+createScienceFluid("extreme-science-fluid", "f", 1, {r=200, g=200, b=200}, {r=200, g=200, b=200})
 
 -- basic military science fluid
-createScienceFluid("basic-military-science-fluid", "c2", 9, {r=100, g=100, b=100}, {r=80, g=80, b=80})
+createScienceFluid("basic-military-science-fluid", "c2", 9, {r=68, g=43, b=5}, {r=68, g=43, b=5})
 -- automation science fluid
-createScienceFluid("basic-automation-science-fluid", "c3", 15, {r=255, g=146, b=5}, {r=234, g=132, b=0})
+createScienceFluid("basic-automation-science-fluid", "c3", 15, {r=255, g=121, b=5}, {r=234, g=132, b=0})
 -- power science fluid
 createScienceFluid("basic-power-science-fluid", "d2", 5, {r=0, g=198, b=198}, {r=0, g=239, b=207})
 -- logistics science fluid
-createScienceFluid("basic-logistics-science-fluid", "e2", 13, {r=255, g=0, b=229}, {r=255, g=0, b=229})
+createScienceFluid("basic-logistics-science-fluid", "e2", 13, {r=255, g=68, b=235}, {r=255, g=68, b=235})
