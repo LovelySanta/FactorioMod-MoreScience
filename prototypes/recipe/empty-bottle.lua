@@ -30,6 +30,7 @@ data:extend({
   {
     type = "recipe",
     name = "glass",
+    energy_required = 3.5,
     category = "smelting",
     ingredients =
     {
