@@ -3,7 +3,6 @@ data:extend({
   {
     type = "recipe",
     name = "purified-water",
-    subgroup = "science-raw-material",
     category = "chemistry",
     icon = "__MoreScience__/graphics/icons/fluid/fluid-00.png",
     icon_size = 32,
@@ -18,6 +17,7 @@ data:extend({
       {type="fluid", name="purified-water", amount = 10},
       {type="item", name="sand", amount = 1, probability = .5},
     },
+    main_product = "purified-water",
     crafting_machine_tint =
     {
       primary = {r = 0.331, g = 0.075, b = 0.510, a = 0.000}, -- #54138200
@@ -31,7 +31,6 @@ data:extend({
   {
     type = "recipe",
     name = "basic-science-fluid-1",
-    subgroup = "science-fluid",
     category = "crafting-with-fluid",
     energy_required = 10,
     ingredients =
@@ -51,13 +50,12 @@ data:extend({
   {
     type = "recipe",
     name = "basic-science-fluid-2",
-    subgroup = "science-fluid",
     category = "chemistry",
     energy_required = 5,
     enabled = false,
     ingredients =
     {
-      {type="fluid", name="basic-science-fluid-1", amount=100},
+      {type="fluid", name="basic-science-fluid-1", amount=50},
       {type="fluid", name="purified-water", amount=50},
       {type="item", name="fast-inserter", amount=5},
     },
@@ -78,13 +76,12 @@ data:extend({
   {
     type = "recipe",
     name = "basic-science-fluid-3",
-    subgroup = "science-fluid",
     category = "chemistry",
-    energy_required = 5,
+    energy_required = 20,
     enabled = false,
     ingredients =
     {
-      {type="fluid", name="basic-science-fluid-2", amount=100},
+      {type="fluid", name="basic-science-fluid-2", amount=50},
       {type="fluid", name="purified-water", amount=50},
       {type="item", name="advanced-circuit", amount=10},
     },
@@ -105,13 +102,12 @@ data:extend({
   {
     type = "recipe",
     name = "advanced-science-fluid-1",
-    subgroup = "science-fluid",
     category = "chemistry",
     energy_required = 40,
     enabled = false,
     ingredients =
     {
-      {type="fluid", name="basic-science-fluid-3", amount=100},
+      {type="fluid", name="basic-science-fluid-3", amount=50},
       {type="fluid", name="purified-water", amount=50},
       {type="item", name="electric-furnace", amount=5},
     },
@@ -132,13 +128,12 @@ data:extend({
   {
     type = "recipe",
     name = "advanced-science-fluid-2",
-    subgroup = "science-fluid",
     category = "chemistry",
-    energy_required = 40,
+    energy_required = 60,
     enabled = false,
     ingredients =
     {
-      {type="fluid", name="basic-science-fluid-3", amount=100},
+      {type="fluid", name="basic-science-fluid-3", amount=50},
       {type="fluid", name="purified-water", amount=50},
       {type="item", name="processing-unit", amount=15},
     },
@@ -159,13 +154,12 @@ data:extend({
   {
     type = "recipe",
     name = "basic-military-science-fluid",
-    subgroup = "science-fluid",
     category = "chemistry",
     energy_required = 10,
     enabled = false,
     ingredients =
     {
-      {type="fluid", name="basic-science-fluid-2", amount=100},
+      {type="fluid", name="basic-science-fluid-2", amount=50},
       {type="fluid", name="purified-water", amount=50},
       {type="item", name="gun-turret", amount=5},
       {type="item", name="piercing-rounds-magazine", amount=10},
@@ -187,15 +181,15 @@ data:extend({
   {
     type = "recipe",
     name = "basic-automation-science-fluid",
-    subgroup = "science-fluid",
     category = "chemistry",
     energy_required = 10,
     enabled = false,
     ingredients =
     {
-      {type="fluid", name="basic-science-fluid-2", amount=100},
+      {type="fluid", name="basic-science-fluid-2", amount=50},
       {type="fluid", name="purified-water", amount=50},
-      {type="item", name="assembling-machine-2", amount=5},
+      {type="item", name="assembling-machine-1", amount=5},
+      {type="item", name="small-lamp", amount=5},
     },
     results =
     {
@@ -214,13 +208,12 @@ data:extend({
   {
     type = "recipe",
     name = "basic-power-science-fluid",
-    subgroup = "science-fluid",
     category = "chemistry",
-    energy_required = 10,
+    energy_required = 20,
     enabled = false,
     ingredients =
     {
-      {type="fluid", name="basic-automation-science-fluid", amount=100},
+      {type="fluid", name="basic-automation-science-fluid", amount=50},
       {type="fluid", name="purified-water", amount=50},
       {type="item", name="battery", amount=25},
     },
@@ -241,13 +234,12 @@ data:extend({
   {
     type = "recipe",
     name = "basic-logistics-science-fluid",
-    subgroup = "science-fluid",
     category = "chemistry",
-    energy_required = 20,
+    energy_required = 40,
     enabled = false,
     ingredients =
     {
-      {type="fluid", name="basic-power-science-fluid", amount=100},
+      {type="fluid", name="basic-power-science-fluid", amount=50},
       {type="fluid", name="purified-water", amount=50},
       {type="item", name="electric-engine-unit", amount=5},
     },
@@ -268,9 +260,9 @@ data:extend({
   {
     type = "recipe",
     name = "extreme-science-fluid",
-    subgroup = "science-fluid",
     category = "crafting-with-fluid",
     energy_required = 10,
+    enabled = false,
     ingredients =
     {
       {"space-science-pack", 10},
@@ -280,6 +272,5 @@ data:extend({
     {
       {type="fluid", name= "extreme-science-fluid", amount = 100},
     },
-    enabled = false,
   },
 })

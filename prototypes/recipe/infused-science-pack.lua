@@ -7,7 +7,7 @@ data:extend({
     type = "recipe",
     name = "infused-basic-science-pack-1",
     category = "crafting-with-fluid",
-    energy_required = 5,
+    energy_required = 60,
     ingredients =
     {
       {type="fluid", name="extreme-science-fluid", amount=10},
@@ -23,7 +23,7 @@ data:extend({
     type = "recipe",
     name = "infused-basic-science-pack-2",
     category = "crafting-with-fluid",
-    energy_required = 5,
+    energy_required = 60,
     ingredients =
     {
       {type="fluid", name="extreme-science-fluid", amount=10},
@@ -39,7 +39,7 @@ data:extend({
     type = "recipe",
     name = "infused-basic-science-pack-3",
     category = "crafting-with-fluid",
-    energy_required = 5,
+    energy_required = 60,
     ingredients =
     {
       {type="fluid", name="extreme-science-fluid", amount=10},
@@ -55,7 +55,7 @@ data:extend({
     type = "recipe",
     name = "infused-advanced-science-pack-1",
     category = "crafting-with-fluid",
-    energy_required = 5,
+    energy_required = 60,
     ingredients =
     {
       {type="fluid", name="extreme-science-fluid", amount=10},
@@ -71,7 +71,7 @@ data:extend({
     type = "recipe",
     name = "infused-advanced-science-pack-2",
     category = "crafting-with-fluid",
-    energy_required = 5,
+    energy_required = 60,
     ingredients =
     {
       {type="fluid", name="extreme-science-fluid", amount=10},
@@ -86,9 +86,8 @@ data:extend({
   {
     type = "recipe",
     name = "infused-extreme-science-pack",
-    subgroup = "infused-science-pack",
     category = "chemistry",
-    energy_required = 5,
+    energy_required = 60,
     enabled = false,
     ingredients =
     {
@@ -114,7 +113,7 @@ data:extend({
     type = "recipe",
     name = "infused-basic-military-science-pack",
     category = "crafting-with-fluid",
-    energy_required = 5,
+    energy_required = 60,
     ingredients =
     {
       {type="fluid", name="extreme-science-fluid", amount=10},
@@ -130,7 +129,7 @@ data:extend({
     type = "recipe",
     name = "infused-basic-automation-science-pack",
     category = "crafting-with-fluid",
-    energy_required = 5,
+    energy_required = 60,
     ingredients =
     {
       {type="fluid", name="extreme-science-fluid", amount=10},
@@ -146,7 +145,7 @@ data:extend({
     type = "recipe",
     name = "infused-basic-power-science-pack",
     category = "crafting-with-fluid",
-    energy_required = 5,
+    energy_required = 60,
     ingredients =
     {
       {type="fluid", name="extreme-science-fluid", amount=10},
@@ -162,7 +161,7 @@ data:extend({
     type = "recipe",
     name = "infused-basic-logistics-science-pack",
     category = "crafting-with-fluid",
-    energy_required = 5,
+    energy_required = 60,
     ingredients =
     {
       {type="fluid", name="extreme-science-fluid", amount=10},

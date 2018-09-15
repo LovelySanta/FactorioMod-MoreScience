@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.18
+Date: 15. 9. 2018
+  Balancing:
+    - Basic automation science fluid recipe requires less materials
+    - Science fluid recipes requires less previous science fluids
+    - Bottling of science takes more time to balance out the buildings
+---------------------------------------------------------------------------------------------------
 Version: 0.1.17
 Date: 11. 9. 2018
   Changes:

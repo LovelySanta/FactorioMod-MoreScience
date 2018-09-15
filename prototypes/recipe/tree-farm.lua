@@ -118,6 +118,7 @@ local treeSeedCreator =
     {type="item", name="sand", amount = 5},
     {type="item", name=treeSeed.result, amount = 1, probability = .025},
   },
+  main_product = treeSeed.result,
 }
 
 
