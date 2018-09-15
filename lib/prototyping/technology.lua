@@ -2,7 +2,7 @@ require('util')
 
 if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
-  function MoreScience.lib.technology.disable(technologyName, prerequisiteToRemove)
+  function MoreScience.lib.technology.disable(technologyName)
     if not data.raw["technology"][technologyName] then return end
       data.raw["technology"][technologyName].enabled = false
   end
