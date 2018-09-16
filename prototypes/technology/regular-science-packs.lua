@@ -3,6 +3,80 @@ local scienceResearch = {}
 scienceResearch.icon = "__MoreScience__/graphics/technology/potions/"
 scienceResearch.icon_size = 128
 
+
+--------------------------------------------------------------------------------
+----- Basic science pack 1 (bottling)                                      -----
+--------------------------------------------------------------------------------
+data:extend({
+  {
+    type = "technology",
+    name = "bottling-research",
+    icon = scienceResearch.icon .. "potion-empty.png",
+    icon_size = scienceResearch.icon_size,
+    prerequisites =
+    {
+      --"basic-science-research-1",
+      "fluid-handling",
+      --"automation-2",
+      "logistics",
+      --"steel-processing",
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "purified-water",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "sand",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "glass",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "cork",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "empty-bottle",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "chemical-plant",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "basic-science-fluid-1",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "science-pack-1-advanced",
+      },
+    },
+    unit =
+    {
+      count = 30,
+      ingredients =
+      {
+        {"science-pack-1", 2},
+      },
+      time = 5
+    },
+    upgrade = false,
+    order = "c-a"
+  },
+})
+
+-- Fix research tree for bottling-research
+MoreScience.lib.technology.removePrerequisite("research-speed-1", "electronics")
+MoreScience.lib.technology.addPrerequisite("research-speed-1", "bottling-research")
+MoreScience.lib.technology.removeIngredient("research-speed-1", "science-pack-2")
+
+
+
 --------------------------------------------------------------------------------
 ----- Basic science pack 2                                                 -----
 --------------------------------------------------------------------------------
@@ -21,16 +95,16 @@ data:extend({
     icon_size = scienceResearch.icon_size,
     prerequisites =
     {
-      "automation-2",
-      "logistics",
-      "steel-processing",
+      "bottling-research",
     },
     effects =
     {
+      --[[
       {
         type = "unlock-recipe",
         recipe = "basic-science-fluid-1",
       },
+      ]]
       {
         type = "unlock-recipe",
         recipe = "basic-science-fluid-2",
@@ -39,6 +113,7 @@ data:extend({
         type = "unlock-recipe",
         recipe = "science-pack-2",
       },
+      --[[
       {
         type = "unlock-recipe",
         recipe = "chemical-plant",
@@ -47,6 +122,7 @@ data:extend({
         type = "unlock-recipe",
         recipe = "purified-water",
       },
+      ]]
     },
     unit =
     {
@@ -63,69 +139,13 @@ data:extend({
 })
 
 -- add prerequisites on the technology
-MoreScience.lib.technology.removePrerequisite("research-speed-1", "electronics")
-MoreScience.lib.technology.addPrerequisite("research-speed-1", "basic-science-research-1")
-MoreScience.lib.technology.removeIngredient("research-speed-1", "science-pack-2")
+MoreScience.lib.technology.addPrerequisite("research-speed-2", "bottling-research")
 
 MoreScience.lib.technology.addPrerequisite("toolbelt", "basic-science-research-1")
 
 MoreScience.lib.technology.removePrerequisite("electric-energy-distribution-1", "electronics")
 MoreScience.lib.technology.removePrerequisite("electric-energy-distribution-1", "steel-processing")
 MoreScience.lib.technology.addPrerequisite("electric-energy-distribution-1", "basic-science-research-1")
-
-
-
---------------------------------------------------------------------------------
------ Basic science pack 2 - bottling                                      -----
---------------------------------------------------------------------------------
-data:extend({
-  {
-    type = "technology",
-    name = "bottling-research",
-    icon = scienceResearch.icon .. "potion-empty.png",
-    icon_size = scienceResearch.icon_size,
-    prerequisites =
-    {
-      "basic-science-research-1",
-      "fluid-handling",
-    },
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "sand",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "glass",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "cork",
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "empty-bottle",
-      },
-    },
-    unit =
-    {
-      count = 30,
-      ingredients =
-      {
-        {"science-pack-1", 2},
-      },
-      time = 5
-    },
-    upgrade = false,
-    order = "c-a"
-  },
-})
-
--- Fix research tree for bottling-research
-MoreScience.lib.technology.addPrerequisite("research-speed-2", "bottling-research")
-
-
 
 
 

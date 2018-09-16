@@ -32,17 +32,19 @@ data:extend({
     type = "recipe",
     name = "basic-science-fluid-1",
     category = "crafting-with-fluid",
-    energy_required = 10,
+    energy_required = 5,
+    enabled = false,
     ingredients =
     {
-      {"science-pack-1", 10},
-      {"iron-axe", 1},
+      {type="fluid", name="purified-water", amount=50},
+      {type="item", name="copper-plate", amount=10},
+      {type="item", name="iron-gear-wheel", amount=5},
     },
     results =
     {
-      {type="fluid", name= "basic-science-fluid-1", amount = 100},
+      {type="fluid", name= "basic-science-fluid-1", amount = 50},
     },
-    enabled = false,
+    always_show_products = true,
   },
 
 
@@ -63,6 +65,7 @@ data:extend({
     {
       {type="fluid", name= "basic-science-fluid-2", amount = 50},
     },
+    always_show_products = true,
     crafting_machine_tint =
     {
       primary = {r = 0.331, g = 0.075, b = 0.510, a = 0.000}, -- #54138200
@@ -89,6 +92,7 @@ data:extend({
     {
       {type="fluid", name= "basic-science-fluid-3", amount = 50},
     },
+    always_show_products = true,
     crafting_machine_tint =
     {
       primary = {r = 0.331, g = 0.075, b = 0.510, a = 0.000}, -- #54138200
@@ -115,6 +119,7 @@ data:extend({
     {
       {type="fluid", name= "advanced-science-fluid-1", amount = 50},
     },
+    always_show_products = true,
     crafting_machine_tint =
     {
       primary = {r = 0.331, g = 0.075, b = 0.510, a = 0.000}, -- #54138200
@@ -141,6 +146,7 @@ data:extend({
     {
       {type="fluid", name= "advanced-science-fluid-2", amount = 50},
     },
+    always_show_products = true,
     crafting_machine_tint =
     {
       primary = {r = 0.331, g = 0.075, b = 0.510, a = 0.000}, -- #54138200
@@ -168,6 +174,7 @@ data:extend({
     {
       {type="fluid", name= "basic-military-science-fluid", amount = 50},
     },
+    always_show_products = true,
     crafting_machine_tint =
     {
       primary = {r = 0.331, g = 0.075, b = 0.510, a = 0.000}, -- #54138200
@@ -195,6 +202,7 @@ data:extend({
     {
       {type="fluid", name= "basic-automation-science-fluid", amount = 50},
     },
+    always_show_products = true,
     crafting_machine_tint =
     {
       primary = {r = 0.331, g = 0.075, b = 0.510, a = 0.000}, -- #54138200
@@ -221,6 +229,7 @@ data:extend({
     {
       {type="fluid", name= "basic-power-science-fluid", amount = 50},
     },
+    always_show_products = true,
     crafting_machine_tint =
     {
       primary = {r = 0.331, g = 0.075, b = 0.510, a = 0.000}, -- #54138200
@@ -247,6 +256,7 @@ data:extend({
     {
       {type="fluid", name= "basic-logistics-science-fluid", amount = 50},
     },
+    always_show_products = true,
     crafting_machine_tint =
     {
       primary = {r = 0.331, g = 0.075, b = 0.510, a = 0.000}, -- #54138200
@@ -272,5 +282,6 @@ data:extend({
     {
       {type="fluid", name= "extreme-science-fluid", amount = 100},
     },
+    always_show_products = true,
   },
 })

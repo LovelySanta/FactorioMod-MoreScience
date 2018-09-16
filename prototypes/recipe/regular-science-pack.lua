@@ -2,14 +2,36 @@
 ----- Regular science packs                                                -----
 --------------------------------------------------------------------------------
 
--- basic science pack 1
+-- basic science pack 1 (handcrafting)
 data.raw["recipe"]["science-pack-1"].ingredients =
 {
   {"copper-plate", 2},
   {"iron-gear-wheel", 1},
-  --{type="fluid", name="lubricant", amount=40},
 }
 data.raw["recipe"]["science-pack-1"].energy_required = 1
+data.raw["recipe"]["science-pack-1"].category = "ms-basic-crafting"
+data.raw["recipe"]["science-pack-1"].subgroup = "science-bottling"
+data.raw["recipe"]["science-pack-1"].order = "e[science-pack-1]"
+data.raw["recipe"]["science-pack-1"].always_show_made_in = true
+table.insert(data.raw["player"]["player"].crafting_categories, "ms-basic-crafting")
+table.insert(data.raw["assembling-machine"]["assembling-machine-1"].crafting_categories, "ms-basic-crafting")
+
+-- basic science pack 1 (automation)
+data:extend({
+  {
+    type = "recipe",
+    name = "science-pack-1-advanced",
+    category = "crafting-with-fluid",
+    energy_required = 2.5,
+    ingredients =
+    {
+      {"empty-bottle", 1},
+      {type="fluid", name="basic-science-fluid-1", amount=10},
+    },
+    result = "science-pack-1",
+    enabled = false
+  },
+})
 
 
 

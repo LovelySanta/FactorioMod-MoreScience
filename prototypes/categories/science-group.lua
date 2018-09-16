@@ -7,4 +7,9 @@ data:extend({
     icon = "__MoreScience__/graphics/item-group/science-bottles.png",
     icon_size = 512,
   },
+  {
+    -- early game red science crafting
+    type = "recipe-category",
+    name = "ms-basic-crafting"
+  },
 })
