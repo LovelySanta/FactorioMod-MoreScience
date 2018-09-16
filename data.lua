@@ -27,6 +27,10 @@ require(itemPath .. "rocket-parts")
 require(itemPath .. "rocket-assembly")
 require(itemPath .. "tree-farm")
 
+-- signals
+signalPath = "prototypes/signal/"
+require(signalPath .. "color-signal")
+
 -- recipes
 recipePath = "prototypes/recipe/"
 require(recipePath .. "empty-bottle")
