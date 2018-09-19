@@ -3,6 +3,8 @@ Version: 0.1.19
 Date: 17. 9. 2018
   Changes:
     - Removed iron pickaxe required for red science fluid.
+  Fixes:
+    - Fixed missing localisation on the lamp color setting.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.18
 Date: 15. 9. 2018
