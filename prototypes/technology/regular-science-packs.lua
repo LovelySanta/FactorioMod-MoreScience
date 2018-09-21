@@ -139,7 +139,7 @@ data:extend({
 })
 
 -- add prerequisites on the technology
-MoreScience.lib.technology.addPrerequisite("research-speed-2", "bottling-research")
+MoreScience.lib.technology.addPrerequisite("research-speed-2", "basic-science-research-1")
 
 MoreScience.lib.technology.addPrerequisite("toolbelt", "basic-science-research-1")
 

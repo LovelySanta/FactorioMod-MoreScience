@@ -31,7 +31,8 @@ data:extend({
   {
     type = "recipe",
     name = "basic-science-fluid-1",
-    category = "crafting-with-fluid",
+    --category = "crafting-with-fluid",
+    category = "chemistry",
     energy_required = 5,
     enabled = false,
     ingredients =
