@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.20
+Date: 7. 11. 2018
+  Features:
+    - Added support for MadClown01's Nuclear Extension
+  Modding:
+    - Extended library functionality
+---------------------------------------------------------------------------------------------------
 Version: 0.1.19
 Date: 22. 9. 2018
   Changes:
@@ -28,7 +35,7 @@ Date: 10. 8. 2018
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.15
 Date: 6. 8. 2018
-  Modding:
+  Features:
     - Added support for the corpse flare mod
     - Added support for the logicarts mod
     - Added support for the vehicle wagon mod
@@ -47,13 +54,13 @@ Date: 2. 8. 2018
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.12
 Date: 11. 7. 2018
-  Changes:
+  Modding:
     - Extended library functionality on technology: disable existing tech
     - Extended library functionality on recipe: set crafting category
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.11
 Date: 5. 7. 2018
-  Fixed:
+  Modding:
     - Lib function setResultCount didn't work as intended
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.10

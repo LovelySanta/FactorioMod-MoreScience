@@ -1,4 +1,4 @@
-require('util')
+require('lib/utilities/log')
 
 if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
@@ -32,7 +32,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
       end
       for index, prerequisite in pairs(data.raw["technology"][technologyName].prerequisites) do
         if prerequisite == prerequisiteToAdd then
-          MoreScience.lib.debug.log(string.format("WARNING: Tried adding prerequisite %q to %q which was already present.", prerequisiteToAdd, technologyName))
+          MoreScience.lib.debug.log(string.format("WARNING: Tried adding prerequisite %q to %q, which was already present.", prerequisiteToAdd, technologyName))
           return
         end
       end
@@ -53,7 +53,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
         end
       end
       if not moved then
-        MoreScience.lib.debug.log(string.format("WARNING: Could not change %q in research %q to %q. Adding it instead.", oldPrerequisite, technologyName, newPrerequisite))
+        MoreScience.lib.debug.log(string.format("WARNING: Could not move prerequisite %q from technology %q to %q. Adding it instead.", oldPrerequisite, technologyName, newPrerequisite))
         addPrerequisiteTechnology(technologyName, newPrerequisite)
       end
     end
@@ -78,17 +78,50 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
 
   function MoreScience.lib.technology.addRecipeUnlock(technologyName, recipeToAdd)
+    if not data.raw["recipe"][recipeToAdd] then
+      MoreScience.lib.debug.log(string.format("WARNING: Tried adding recipe-unlock %q to %q, but the recipe doesn't exist.", recipeToAdd, technologyName))
+      return
+    end
+
     if data.raw["technology"][technologyName] then
       if not data.raw["technology"][technologyName].effects then
         data.raw["technology"][technologyName].effects = {}
       end
       for index, effect in pairs(data.raw["technology"][technologyName].effects) do
         if effect.type == "unlock-recipe" and effect.recipe == recipeToAdd then
+          MoreScience.lib.debug.log(string.format("WARNING: Tried adding recipe-unlock %q to %q, which was already present.", recipeToAdd, technologyName))
           return
         end
       end
       table.insert(data.raw["technology"][technologyName].effects, {type = "unlock-recipe", recipe = recipeToAdd})
     end
+  end
+
+
+
+  function MoreScience.lib.technology.moveRecipeUnlock(oldTechnologyName, newTechnologyName, recipeToMove)
+    if not data.raw["technology"][newTechnologyName] then
+      MoreScience.lib.debug.log(string.format("WARNING: Tried moving recipe-unlock %q to technology %q, which doesn't exist, removing it from %q anyway.", recipeToMove, newTechnologyName, oldTechnologyName))
+      MoreScience.lib.technology.removeRecipeUnlock(oldTechnologyName, recipeToMove)
+      return
+    end
+
+    if data.raw["technology"][oldTechnologyName] then
+      local removed = false
+      for index, effect in pairs(data.raw["technology"][oldTechnologyName].effects) do
+        if effect.type == "unlock-recipe" and effect.recipe == recipeToMove then
+          table.remove(data.raw["technology"][oldTechnologyName].effects, index)
+          removed = true
+          break
+        end
+      end
+      if not moved then
+        MoreScience.lib.debug.log(string.format("WARNING: Tried moving recipe-unlock %q from %q, which wasn't present, adding it to %q instead.", recipeToMove, oldTechnologyName, newTechnologyName))
+      end
+    else
+      MoreScience.lib.debug.log(string.format("WARNING: Tried moving recipe-unlock %q from none existing technology %q, adding it to %q instead.", recipeToMove, oldTechnologyName, newTechnologyName))
+    end
+    MoreScience.lib.technology.addRecipeUnlock(newTechnologyName, recipeToMove)
   end
 
 

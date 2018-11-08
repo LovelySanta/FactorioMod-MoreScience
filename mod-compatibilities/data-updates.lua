@@ -1,5 +1,6 @@
 
 for _, modName in pairs({
+  "Clowns-Nuclear",
   "CorpseFlare",
   "LandMover",
   "logicarts",

@@ -4,7 +4,7 @@ local animationLayer = {}
 --------------------------------------------------------------------------------
 ----- seed-extractor                                                       -----
 --------------------------------------------------------------------------------
-local seedExtractor = util.table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
+local seedExtractor = util.table.deepcopy(data.raw["assembling-machine"]["assembling-machine-2"])
 seedExtractor.name = "seed-extractor"
 seedExtractor.icon = "__MoreScience__/graphics/icons/" .. seedExtractor.name .. ".png"
 seedExtractor.icon_size = 32
