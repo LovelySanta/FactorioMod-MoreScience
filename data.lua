@@ -4,11 +4,12 @@ MoreScience.lib.debug.enable() -- enable logging to factorio-current.log
 
 -- categories
 categoryPath = "prototypes/categories/"
---require(categoryPath .. "")
+require(categoryPath .. "crafting-categories")
+require(categoryPath .. "item-groups")
 
 -- entities
 entityPath = "prototypes/entity/"
---require(entityPath .. "")
+require(entityPath .. "assembling-machines")
 
 -- fluids
 fluidPath = "prototypes/fluid/"
@@ -16,7 +17,7 @@ fluidPath = "prototypes/fluid/"
 
 -- items
 itemPath = "prototypes/item/"
---require(itemPath .. "")
+require(itemPath .. "assembling-machines")
 
 -- signals
 signalPath = "prototypes/signal/"
@@ -24,8 +25,8 @@ signalPath = "prototypes/signal/"
 
 -- recipes
 recipePath = "prototypes/recipe/"
---require(recipePath .. "")
+require(recipePath .. "assembling-machines")
 
 -- technology
 technologyPath = "prototypes/technology/"
---require(technologyPath .. "")
+require(technologyPath .. "assembling-machines")
