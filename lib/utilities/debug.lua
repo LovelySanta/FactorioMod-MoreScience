@@ -2,7 +2,7 @@
 Debug = {}
 
 Debug.enabled = false
-Debug.returnValue = 10
+Debug.returnValue = 1
 
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
