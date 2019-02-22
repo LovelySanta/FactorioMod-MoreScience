@@ -7,8 +7,13 @@ categoryPath = "prototypes/categories/"
 require(categoryPath .. "crafting-categories")
 require(categoryPath .. "item-groups")
 
+-- signals
+signalPath = "prototypes/signal/"
+--require(signalPath .. "")
+
 -- entities
 entityPath = "prototypes/entity/"
+require(entityPath .. "research-labs")
 require(entityPath .. "assembling-machines")
 
 -- fluids
@@ -17,16 +22,15 @@ fluidPath = "prototypes/fluid/"
 
 -- items
 itemPath = "prototypes/item/"
+require(itemPath .. "research-labs")
 require(itemPath .. "assembling-machines")
-
--- signals
-signalPath = "prototypes/signal/"
---require(signalPath .. "")
 
 -- recipes
 recipePath = "prototypes/recipe/"
+require(recipePath .. "research-labs")
 require(recipePath .. "assembling-machines")
 
 -- technology
 technologyPath = "prototypes/technology/"
+require(technologyPath .. "basic-automation")
 require(technologyPath .. "assembling-machines")
