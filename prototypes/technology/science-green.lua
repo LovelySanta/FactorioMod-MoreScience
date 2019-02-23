@@ -48,6 +48,7 @@ for _,techName in pairs{
   "research-speed-2",
   "electric-energy-distribution-1",
   "military-2",
+  "engine"
 } do
   MoreScience.lib.technology.addPrerequisite(techName, greenTechName)
 end

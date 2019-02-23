@@ -20,11 +20,13 @@ data:extend{earlySciencePack}
 --------------------------------------------------------------------------------
 ----- orange science pack                                                  -----
 --------------------------------------------------------------------------------
---[[
+
 local orangePackName = "ms-science-pack-1"
-MoreScience.lib.recipe.create(orangePackName)
-MoreScience.lib.recipe.disable(orangePackName)
-]]
+MoreScience.lib.recipe.create       (orangePackName)
+MoreScience.lib.recipe.addIngredient(orangePackName, "small-lamp"          , 02 ,"item")
+MoreScience.lib.recipe.addIngredient(orangePackName, "assembling-machine-1", 01 ,"item")
+MoreScience.lib.recipe.addIngredient(orangePackName, "concrete"            , 10 ,"item")
+MoreScience.lib.recipe.addResult    (orangePackName, orangePackName        , 01, "item")
 
 
 
@@ -35,7 +37,7 @@ for sciencePackName,craftingTime in pairs{
   ["science-pack-1"               ] = 2.5,
   ["science-pack-2"               ] = 3,
   ["military-science-pack"        ] = 5,
-  --[orangePackName                 ] = 5,
+  [orangePackName                 ] = 5,
   ["science-pack-3"               ] = 10,
   --["basic-power-science-pack"     ] = 10,
   ["production-science-pack"      ] = 20,

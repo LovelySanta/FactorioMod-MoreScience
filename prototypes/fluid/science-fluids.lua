@@ -47,5 +47,6 @@ data.raw["fluid"]["purified-water"].localised_name = nil
 data.raw["fluid"]["purified-water"].subgroup = "ms-science-raw-material"
 
 -- science fluids
-createScienceFluid("science-pack-1", "-fluid", "b1", 14, {r=191, g=019, b=019}, {r=200, g=048, b=048})
-createScienceFluid("science-pack-2", "-fluid", "c1", 3 , {r=063, g=187, b=063}, {r=063, g=187, b=063})
+createScienceFluid("science-pack-1"   , "-fluid", "b1", 14, {r=191, g=019, b=019}, {r=200, g=048, b=048})
+createScienceFluid("science-pack-2"   , "-fluid", "c1", 03, {r=063, g=187, b=063}, {r=063, g=187, b=063})
+createScienceFluid("ms-science-pack-1", "-fluid", "c3", 15, {r=255, g=121, b=005}, {r=234, g=132, b=000})

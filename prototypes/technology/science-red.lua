@@ -57,10 +57,13 @@ data:extend{
     upgrade = false,
     order = "c-a"
   },
+}
+MoreScience.lib.technology.removeRecipeUnlock("oil-processing", "chemical-plant")
 
 --------------------------------------------------------------------------------
 ----- bottling research                                                    -----
 --------------------------------------------------------------------------------
+data:extend{
   {
     type = "technology",
     name = "bottling-research",

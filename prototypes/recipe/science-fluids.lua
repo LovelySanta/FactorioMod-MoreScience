@@ -2,13 +2,16 @@ local recipeMultiplier = 5
 local fluidPerPack = 10
 
 local previousFluid = {
-  ["science-pack-1"] = nil,
+  ["science-pack-1"   ] = nil,
+  ["science-pack-2"   ] = "science-pack-1",
+  ["ms-science-pack-1"] = "science-pack-2",
 }
 
 
 for _,packName in pairs{
   "science-pack-1",
   "science-pack-2",
+  "ms-science-pack-1",
 } do
   -- STEP 1: create basic recipe -----------------------------------------------
   MoreScience.lib.recipe.create(packName .. "-fluid")
@@ -25,7 +28,7 @@ for _,packName in pairs{
   -- STEP 2a: basic ingredients ------------------------------------------------
   MoreScience.lib.recipe.addIngredient(packName .. "-fluid", "purified-water", fluidPerPack*recipeMultiplier, "fluid")
   if previousFluid[packName] then
-    MoreScience.lib.recipe.addIngredient(packName .. "-fluid", previousFluid[packName], fluidPerPack*recipeMultiplier, "fluid")
+    MoreScience.lib.recipe.addIngredient(packName .. "-fluid", previousFluid[packName] .. "-fluid", fluidPerPack*recipeMultiplier, "fluid")
   end
 
 
