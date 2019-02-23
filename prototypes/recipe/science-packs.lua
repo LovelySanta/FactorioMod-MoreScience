@@ -55,7 +55,7 @@ end
 -- TEMPORARY REMOVE IT AGAIN
 for sciencePackName,craftingTime in pairs{
   --["science-pack-1"               ] = 2.5,
-  ["science-pack-2"               ] = 3,
+  --["science-pack-2"               ] = 3,
   ["military-science-pack"        ] = 5,
   --[orangePackName                 ] = 5,
   ["science-pack-3"               ] = 10,

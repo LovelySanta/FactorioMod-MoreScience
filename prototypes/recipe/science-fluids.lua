@@ -8,6 +8,7 @@ local previousFluid = {
 
 for _,packName in pairs{
   "science-pack-1",
+  "science-pack-2",
 } do
   -- STEP 1: create basic recipe -----------------------------------------------
   MoreScience.lib.recipe.create(packName .. "-fluid")

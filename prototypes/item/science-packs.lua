@@ -63,7 +63,7 @@ end
 
 
 alterSciencePack("science-pack-1", 14)
---alterSciencePack("science-pack-2", 3)
+alterSciencePack("science-pack-2", 3)
 --alterSciencePack("military-science-pack", 9)
 --addSciencePack("basic-automation-science-pack", 15)
 --alterSciencePack("science-pack-3", 8)

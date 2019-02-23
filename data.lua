@@ -39,5 +39,7 @@ require(recipePath .. "assembling-machines")
 technologyPath = "prototypes/technology/"
 require(technologyPath .. "basic-automation")
 require(technologyPath .. "fluid-handling")
+require(technologyPath .. "military")
 require(technologyPath .. "science-red")
+require(technologyPath .. "science-green")
 require(technologyPath .. "assembling-machines")

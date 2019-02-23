@@ -10,6 +10,6 @@ for _,extension in pairs({
   end
 end
 if not containsExtension then
-  MoreScience.lib.debug.log("cleaning up the tech tree")
+  MoreScience.lib.debug.log("----- Cleaning up the tech tree -----")
   MoreScience.lib.technology.removeAllRedundantPrerequisites()
 end
