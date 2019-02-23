@@ -4,7 +4,7 @@ data:extend{
     type = "recipe",
     name = "rocket-assembling-machine",
     energy_required = 25,
-    category = "advanced-crafting",
+    category = "crafting",
     ingredients =
     {
       {"assembling-machine-3", 1},

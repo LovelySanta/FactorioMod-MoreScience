@@ -9,6 +9,7 @@ if not assemblingMachine1.fluid_boxes then
       fluidBox.pipe_covers = nil
     end
   end
+  table.insert(assemblingMachine1.crafting_categories, "crafting-with-fluid")
 end
 table.insert(assemblingMachine1.crafting_categories, "ms-manual-crafting")
 data.raw["assembling-machine"]["assembling-machine-1"] = assemblingMachine1
@@ -22,6 +23,13 @@ for _,assemblingName in pairs{
   "assembling-machine-3",
 } do
   table.insert(data.raw["assembling-machine"][assemblingName].crafting_categories, "ms-advanced-crafting")
+end
+
+-- all plants must be able to craft science fluids
+for _,assemblingName in pairs{
+  "chemical-plant",
+} do
+  table.insert(data.raw["assembling-machine"][assemblingName].crafting_categories, "ms-chemical-crafting")
 end
 
 

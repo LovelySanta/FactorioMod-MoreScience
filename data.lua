@@ -18,19 +18,23 @@ require(entityPath .. "assembling-machines")
 
 -- fluids
 fluidPath = "prototypes/fluid/"
---require(fluidPath .. "")
+require(fluidPath .. "science-fluids")
 
 -- items
 itemPath = "prototypes/item/"
 require(itemPath .. "research-labs")
+require(itemPath .. "science-fluids-bottling")
 require(itemPath .. "assembling-machines")
 
 -- recipes
 recipePath = "prototypes/recipe/"
 require(recipePath .. "research-labs")
+require(recipePath .. "science-fluids-bottling")
 require(recipePath .. "assembling-machines")
 
 -- technology
 technologyPath = "prototypes/technology/"
 require(technologyPath .. "basic-automation")
+require(technologyPath .. "fluid-handling")
+require(technologyPath .. "science-fluids-bottling")
 require(technologyPath .. "assembling-machines")

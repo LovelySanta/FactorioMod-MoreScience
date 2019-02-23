@@ -10,5 +10,9 @@ data:extend{
   {
     type = "recipe-category",
     name = "ms-rocket-crafting"
-  }
+  },
+  {
+    type = "recipe-category",
+    name = "ms-chemical-crafting"
+  },
 }

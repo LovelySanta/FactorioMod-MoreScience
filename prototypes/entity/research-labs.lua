@@ -33,7 +33,7 @@ if data.raw["lab"]["lab"] then
     data.raw["lab"]["lab"].inputs[sciencePackLocation] = sciencePackName
   end
 
-  data.raw["lab"]["lab"].localised_name = {"entity-name.lab-mk1", {[1] = "item-name.lab"}}
+  data.raw["lab"]["lab"].localised_name = {"item-tier-name.mk1", {[1] = "item-name.lab"}}
 end
 
 
@@ -44,7 +44,7 @@ end
 local labMK0 = util.table.deepcopy(data.raw["lab"]["lab"])
 labMK0.name = "lab-mk0"
 labMK0.minable.result = "lab-mk0"
-labMK0.localised_name = {"entity-name.lab-mk0", {[1] = "item-name.lab"}}
+labMK0.localised_name = {"item-tier-name.mk0", {[1] = "item-name.lab"}}
 labMK0.energy_usage = "250kW"
 labMK0.energy_source =
   {

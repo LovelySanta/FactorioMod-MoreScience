@@ -115,7 +115,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
           break
         end
       end
-      if not moved then
+      if not removed then
         MoreScience.lib.debug.log(string.format("WARNING: Tried moving recipe-unlock %q from %q, which wasn't present, adding it to %q instead.", recipeToMove, oldTechnologyName, newTechnologyName))
       end
     else
