@@ -162,12 +162,6 @@ end
 --------------------------------------------------------------------------------
 ----- other red science technologies                                       -----
 --------------------------------------------------------------------------------
-for _,techName in pairs{
-  "turrets",
-  "stone-walls",
-} do
-  MoreScience.lib.technology.addPrerequisite(techName, "military")
-end
 
 -- research speed 1
 MoreScience.lib.technology.removePrerequisite("research-speed-1", "electronics")

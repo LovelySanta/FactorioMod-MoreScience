@@ -49,7 +49,7 @@ for sciencePackName,craftingTime in pairs{
   MoreScience.lib.recipe.setEngergyRequired (sciencePackName, craftingTime)
 
   MoreScience.lib.recipe.addIngredient      (sciencePackName, "empty-bottle"    , 1 , "item")
-  MoreScience.lib.recipe.addIngredient      (sciencePackName, "ms-science-fluid", 10, "fluid")
+  MoreScience.lib.recipe.addIngredient      (sciencePackName, "ms-science-fluid", 1, "fluid")
 end
 
 -- TEMPORARY REMOVE IT AGAIN
