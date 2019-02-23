@@ -9,6 +9,17 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
 
 
+  function MoreScience.lib.technology.changeIcon(technologyName, newIconFile, newIconSize)
+    if not data.raw["technology"] then return end
+    if not data.raw["technology"][technologyName] then return end
+
+    data.raw["technology"][technologyName].icon = newIconFile
+    data.raw["technology"][technologyName].icon_size = newIconSize
+    data.raw["technology"][technologyName].icons = nil
+  end
+
+
+
   function MoreScience.lib.technology.removePrerequisite(technologyName, prerequisiteToRemove)
     if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].prerequisites then
       for index, prerequisite in pairs(data.raw["technology"][technologyName].prerequisites) do

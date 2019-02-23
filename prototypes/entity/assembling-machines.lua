@@ -1,20 +1,47 @@
 
+--------------------------------------------------------------------------------
+----- Assembling machine 0 (represents hand crafting)                      -----
+--------------------------------------------------------------------------------
+local assemblingMachine0 = util.table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
+assemblingMachine0.name = "assembling-machine-manual"
+
+assemblingMachine0.icon = "__core__/graphics/hand.png"
+assemblingMachine0.icon_size = 32
+assemblingMachine0.icons = nil
+
+table.insert(data.raw["player"]["player"].crafting_categories, "ms-manual-crafting")
+assemblingMachine0.crafting_categories = data.raw["player"]["player"].crafting_categories
+
+assemblingMachine0.flags = {"not-on-map"}
+assemblingMachine0.minable = nil
+
+assemblingMachine0.subgroup = data.raw["item"]["assembling-machine-1"].subgroup
+assemblingMachine0.order = "a[assembling-machine-0]"
+
+data:extend{assemblingMachine0}
+
+
+
+--------------------------------------------------------------------------------
+----- Assembling machine 1,2,3                                             -----
+--------------------------------------------------------------------------------
+
 -- assembling machine 1 must have fluid connections
 local assemblingMachine1 = data.raw["assembling-machine"]["assembling-machine-1"]
 if not assemblingMachine1.fluid_boxes then
   assemblingMachine1.fluid_boxes = util.table.deepcopy(data.raw["assembling-machine"]["assembling-machine-2"].fluid_boxes)
+  --[[
   for _,fluidBox in pairs(assemblingMachine1.fluid_boxes) do
     if type(fluidBox) == "table" then
       fluidBox.pipe_picture = nil
       fluidBox.pipe_covers = nil
     end
   end
+  ]]
   table.insert(assemblingMachine1.crafting_categories, "crafting-with-fluid")
 end
 table.insert(assemblingMachine1.crafting_categories, "ms-manual-crafting")
 data.raw["assembling-machine"]["assembling-machine-1"] = assemblingMachine1
-
-
 
 -- all assemblers must be able to craft science packs
 for _,assemblingName in pairs{
@@ -34,6 +61,9 @@ end
 
 
 
+--------------------------------------------------------------------------------
+----- Assembling machine 4 (rocket assembling)                             -----
+--------------------------------------------------------------------------------
 -- rocket-assembling-machine (no fluid connections)
 local rocketAssembling = util.table.deepcopy(assemblingMachine1)
 rocketAssembling.name = "rocket-assembling-machine"

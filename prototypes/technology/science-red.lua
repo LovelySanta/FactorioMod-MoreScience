@@ -11,8 +11,18 @@ data:extend{
   {
     type = "technology",
     name = "purification-research",
-    icon = "__MoreScience__/graphics/technology/chemical-plant-tech.png",
-    icon_size = scienceResearch.icon_size,
+    icons =
+    {
+      {
+        icon = "__MoreScience__/graphics/technology/chemical-plant-tech.png",
+        icon_size = 128,
+      },
+      {
+        icon = "__MoreScience__/graphics/technology/water-purification-tech.png",
+        icon_size = 64,
+        shift = {32, 32},
+      },
+    },
     prerequisites =
     {
       --"logistics",
@@ -91,14 +101,14 @@ data:extend{
         type = "unlock-recipe",
         recipe = "chemical-plant",
       },]]
-      --[[{
+      {
         type = "unlock-recipe",
-        recipe = "basic-science-fluid-1",
+        recipe = "science-pack-1-fluid",
       },
       {
         type = "unlock-recipe",
-        recipe = "science-pack-1-advanced",
-      },]] --TODO
+        recipe = "science-pack-1",
+      },
     },
     unit =
     {
@@ -113,3 +123,53 @@ data:extend{
     order = "c-a"
   },
 }
+
+--------------------------------------------------------------------------------
+----- stone brick research                                                 -----
+--------------------------------------------------------------------------------
+local brick = util.table.deepcopy(data.raw["technology"]["concrete"])
+brick.name = "brick"
+
+brick.prerequisites =
+{
+  "basic-automation",
+}
+brick.effects = nil
+brick.unit = util.table.deepcopy(data.raw["technology"]["logistics"].unit)
+
+brick.order                                 = data.raw["technology"]["stone-walls"].order .. "[brick]"
+data.raw["technology"]["stone-walls"].order = data.raw["technology"]["stone-walls"].order .. "[wall]"
+data:extend{brick}
+
+for _,recipeName in pairs{
+  "stone-brick"
+} do
+  MoreScience.lib.recipe.disable(recipeName)
+  MoreScience.lib.technology.addRecipeUnlock(brick.name, recipeName)
+end
+
+-- other technologies that depend on this one
+for _,techName in pairs{
+  "stone-walls",
+  "oil-processing",
+  "advanced-material-processing",
+} do
+  MoreScience.lib.technology.addPrerequisite(techName, brick.name)
+end
+
+
+
+--------------------------------------------------------------------------------
+----- other red science technologies                                       -----
+--------------------------------------------------------------------------------
+for _,techName in pairs{
+  "turrets",
+  "stone-walls",
+} do
+  MoreScience.lib.technology.addPrerequisite(techName, "military")
+end
+
+-- research speed 1
+MoreScience.lib.technology.removePrerequisite("research-speed-1", "electronics")
+MoreScience.lib.technology.addPrerequisite("research-speed-1", "bottling-research")
+MoreScience.lib.technology.removeIngredient("research-speed-1", "science-pack-2")

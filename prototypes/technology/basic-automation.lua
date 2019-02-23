@@ -33,3 +33,4 @@ end
 MoreScience.lib.technology.addPrerequisite("automation"      , "basic-automation")
 MoreScience.lib.technology.addPrerequisite("logistics"       , "basic-automation")
 MoreScience.lib.technology.addPrerequisite("steel-processing", "basic-automation")
+MoreScience.lib.technology.addPrerequisite("optics"          , "basic-automation")

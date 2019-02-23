@@ -1,5 +1,5 @@
 
-function createScienceFluid(fluidName, order, fluidNumber, baseColor, flowColor)
+function createScienceFluid(packName, fluidName, order, fluidNumber, baseColor, flowColor)
   local function numberToString(number)
     --if number >= 10 then return "" .. number else return "0" .. number end
     return ((number >= 10) and ("" .. number) or ("0" .. number))
@@ -8,7 +8,8 @@ function createScienceFluid(fluidName, order, fluidNumber, baseColor, flowColor)
   data:extend({
     {
       type = "fluid",
-      name = fluidName,
+      name = packName .. fluidName,
+      localised_name = {"fluid-name.science-fluid", {"item-name." .. packName}},
       icon = "__MoreScience__/graphics/icons/fluid/fluid-" .. numberToString(fluidNumber) .. ".png",
       icon_size = 32,
 
@@ -33,7 +34,7 @@ function createScienceFluid(fluidName, order, fluidNumber, baseColor, flowColor)
       flow_to_energy_ratio = 0.59,
       -- fuel_value = "8MJ",
       subgroup = "ms-science-fluid",
-      order = "z-MoreScience-" .. order .. "[" .. fluidName .. "]"
+      order = "z-MoreScience-" .. order .. "[" .. packName .. fluidName .. "]"
     },
   })
 end
@@ -41,5 +42,9 @@ end
 
 
 -- purified water
-createScienceFluid("purified-water", "a", 0, {r=155, g=255, b=246}, {r=155, g=255, b=246})
+createScienceFluid("purified-water", "", "a", 0, {r=155, g=255, b=246}, {r=155, g=255, b=246})
+data.raw["fluid"]["purified-water"].localised_name = nil
 data.raw["fluid"]["purified-water"].subgroup = "ms-science-raw-material"
+
+-- science fluids
+createScienceFluid("science-pack-1", "-fluid", "b1", 14, {r=191, g=19, b=19}, {r=200, g=48, b=48})

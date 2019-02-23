@@ -627,4 +627,12 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
     MoreScience.lib.item.setOrderstring("recipe", recipeName, orderstring)
   end
 
+
+
+  function MoreScience.lib.recipe.setShowMadeIn(recipeName, enableShowMadeIn)
+    if not data.raw["recipe"][recipeName] then return end
+
+    data.raw["recipe"][recipeName].always_show_made_in = enableShowMadeIn
+  end
+
 end -- end of MoreScience.lib.recipe

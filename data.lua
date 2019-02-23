@@ -23,18 +23,21 @@ require(fluidPath .. "science-fluids")
 -- items
 itemPath = "prototypes/item/"
 require(itemPath .. "research-labs")
-require(itemPath .. "science-fluids-bottling")
+require(itemPath .. "science-bottles")
+require(itemPath .. "science-packs")
 require(itemPath .. "assembling-machines")
 
 -- recipes
 recipePath = "prototypes/recipe/"
 require(recipePath .. "research-labs")
-require(recipePath .. "science-fluids-bottling")
+require(recipePath .. "science-bottles")
+require(recipePath .. "science-packs")
+require(recipePath .. "science-fluids")
 require(recipePath .. "assembling-machines")
 
 -- technology
 technologyPath = "prototypes/technology/"
 require(technologyPath .. "basic-automation")
 require(technologyPath .. "fluid-handling")
-require(technologyPath .. "science-fluids-bottling")
+require(technologyPath .. "science-red")
 require(technologyPath .. "assembling-machines")
