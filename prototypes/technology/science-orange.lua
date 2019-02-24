@@ -51,54 +51,61 @@ for _,techName in pairs{
   "research-speed-3",
   "oil-processing",
   "automated-rail-transportation",
+  "automobilism",
 } do
   MoreScience.lib.technology.addPrerequisite(techName, orangeTechName)
 end
 
-for _,techName in pairs{
-  "fluid-handling-2",
-  "oil-processing",
-  "advanced-oil-processing",
-  "plastics",
-  "sulfur-processing",
-  "batteries",
-  "explosives",
-  "flammables",
-  "advanced-electronics",
-  "coal-liquefaction",
+for techName,techLevels in pairs{
+  -- Oil related stuff
+  ["fluid-handling-%i"            ] = {2},
+  ["oil-processing"               ] = {},
+  ["advanced-oil-processing"      ] = {},
+  ["plastics"                     ] = {},
+  ["sulfur-processing"            ] = {},
+  ["batteries"                    ] = {},
+  ["explosives"                   ] = {},
+  ["flammables"                   ] = {},
+  ["advanced-electronics"         ] = {},
+  ["coal-liquefaction"            ] = {},
 
-  "stack-inserter",
-  "inserter-capacity-bonus-1",
-  "inserter-capacity-bonus-2",
-  "inserter-capacity-bonus-3",
-  "inserter-capacity-bonus-4",
-  "inserter-capacity-bonus-5",
-  "inserter-capacity-bonus-6",
-  "inserter-capacity-bonus-7",
+  ["stack-inserter"               ] = {},
+  ["inserter-capacity-bonus-%i"   ] = {1, 2, 3, 4, 5, 6, 7},
+  ["mining-productivity-%i"       ] = {1, 4, 8, 12, 16},
+  ["research-speed-%i"            ] = {3, 4, 5, 6},
 
-  "mining-productivity-1",
-  "mining-productivity-4",
-  "mining-productivity-8",
-  "mining-productivity-12",
-  "mining-productivity-16",
+  -- logistics
+  ["automobilism"                 ] = {},
+  ["automated-rail-transportation"] = {},
+  ["rail-signals"                 ] = {},
+  ["fluid-wagon"                  ] = {},
+  ["braking-force-%i"             ] = {1, 2, 3, 4, 5, 6, 7},
 
-  "research-speed-3",
-  "research-speed-4",
-  "research-speed-5",
-  "research-speed-6",
+  -- military
+  ["military-%i"                  ] = {3, 4},
+  ["personal-laser-defence"       ] = {},
+  ["discharge-defence"            ] = {},
+  ["explosive-rocketry"           ] = {},
 
-  "automated-rail-transportation",
-  "rail-signals",
-  "fluid-wagon",
-  "braking-force-1",
-  "braking-force-2",
-  "braking-force-3",
-  "braking-force-4",
-  "braking-force-5",
-  "braking-force-6",
-  "braking-force-7",
+  ["laser"                        ] = {},
+  ["laser-turrets"                ] = {},
+  ["laser-turret-damage-%i"       ] = {1, 2, 3, 4, 5, 6, 7, 8},
+  ["laser-turret-speed-%i"        ] = {1, 2, 3, 4, 5, 6, 7},
+
+  ["tanks"                        ] = {},
+  ["cannon-shell-damage-%i"       ] = {1, 2, 3, 4, 5, 6},
+  ["cannon-shell-speed-%i"        ] = {1, 2, 3, 4, 5},
+
+  ["combat-robotics-%i"           ] = {2, 3},
 } do
-  MoreScience.lib.technology.addIngredient(techName, 1, orangePackName)
+  if MoreScience.lib.table.isEmpty(techLevels) then
+    MoreScience.lib.technology.addIngredient(techName, 1, orangePackName)
+  else
+    for _,techLevel in pairs(techLevels) do
+      MoreScience.lib.technology.addIngredient(string.format(techName, techLevel), 1, orangePackName)
+
+    end
+  end
 end
 
 MoreScience.lib.technology.removeIngredient("research-speed-3", "science-pack-3")
