@@ -2,7 +2,7 @@ local scienceResearch = {}
 scienceResearch.icon = "__MoreScience__/graphics/technology/potions/"
 scienceResearch.icon_size = 128
 local orangePackName = "ms-science-pack-1"
-local orangeTechName = orangePackName.."-research"
+local orangeTechName = orangePackName
 
 --------------------------------------------------------------------------------
 ----- orange science research                                               -----
@@ -15,7 +15,9 @@ data:extend({
     icon = scienceResearch.icon .. "potion-orange.png",
     icon_size = scienceResearch.icon_size,
     prerequisites = {
-      "basic-science-research-1",
+      "logistic-science-pack",
+      "concrete",
+      "optics",
     },
     effects =
     {
@@ -32,8 +34,8 @@ data:extend({
     {
       count = 50,
       ingredients = {
-        {"science-pack-1", 1},
-        {"science-pack-2", 3},
+        {"automation-science-pack", 1},
+        {"logistic-science-pack"  , 3},
       },
       time = 10
     },
@@ -56,7 +58,11 @@ for _,techName in pairs{
   MoreScience.lib.technology.addPrerequisite(techName, orangeTechName)
 end
 
+-- add tech ingredient to other science packs
 for techName,techLevels in pairs{
+  -- science related
+  ["research-speed-%i"            ] = {3, 4, 5, 6},
+
   -- Oil related stuff
   ["fluid-handling-%i"            ] = {2},
   ["oil-processing"               ] = {},
@@ -64,6 +70,7 @@ for techName,techLevels in pairs{
   ["plastics"                     ] = {},
   ["sulfur-processing"            ] = {},
   ["batteries"                    ] = {},
+  ["lubricant"                    ] = {},
   ["explosives"                   ] = {},
   ["flammables"                   ] = {},
   ["advanced-electronics"         ] = {},
@@ -72,7 +79,6 @@ for techName,techLevels in pairs{
   ["stack-inserter"               ] = {},
   ["inserter-capacity-bonus-%i"   ] = {1, 2, 3, 4, 5, 6, 7},
   ["mining-productivity-%i"       ] = {1, 4, 8, 12, 16},
-  ["research-speed-%i"            ] = {3, 4, 5, 6},
 
   -- logistics
   ["automobilism"                 ] = {},
@@ -83,19 +89,27 @@ for techName,techLevels in pairs{
 
   -- military
   ["military-%i"                  ] = {3, 4},
-  ["personal-laser-defence"       ] = {},
-  ["discharge-defence"            ] = {},
-  ["explosive-rocketry"           ] = {},
+  ["land-mine"                    ] = {},
+  ["weapon-shooting-speed-%i"     ] = {3, 4, 5, 6},
+  ["physical-projectile-damage-%i"] = {4, 5, 6, 7},
+  ["stronger-explosives-%i"       ] = {3, 4, 5, 6, 7},
+  --["personal-laser-defence"       ] = {},
+  --["discharge-defence"            ] = {},
+  --["explosive-rocketry"           ] = {},
 
   ["laser"                        ] = {},
   ["laser-turrets"                ] = {},
-  ["laser-turret-damage-%i"       ] = {1, 2, 3, 4, 5, 6, 7, 8},
   ["laser-turret-speed-%i"        ] = {1, 2, 3, 4, 5, 6, 7},
+  ["energy-weapons-damage-%i"     ] = {1, 2, 3, 4, 5, 6, 7},
 
-  ["tanks"                        ] = {},
-  ["cannon-shell-damage-%i"       ] = {1, 2, 3, 4, 5, 6},
-  ["cannon-shell-speed-%i"        ] = {1, 2, 3, 4, 5},
+  ["flamethrower"                 ] = {},
 
+
+  --["tanks"                        ] = {},
+  --["cannon-shell-damage-%i"       ] = {1, 2, 3, 4, 5, 6},
+  --["cannon-shell-speed-%i"        ] = {1, 2, 3, 4, 5},
+
+  ["combat-robotics"              ] = {},
   ["combat-robotics-%i"           ] = {2, 3},
 } do
   if MoreScience.lib.table.isEmpty(techLevels) then
@@ -108,4 +122,15 @@ for techName,techLevels in pairs{
   end
 end
 
-MoreScience.lib.technology.removeIngredient("research-speed-3", "science-pack-3")
+MoreScience.lib.technology.removeIngredient("research-speed-3", "chemical-science-pack")
+
+MoreScience.lib.technology.removeIngredient("braking-force-1", "chemical-science-pack")
+MoreScience.lib.technology.movePrerequisite("braking-force-1", "chemical-science-pack", "automated-rail-transportation")
+MoreScience.lib.technology.addPrerequisite("braking-force-2", "chemical-science-pack")
+
+MoreScience.lib.technology.addPrerequisite("stronger-explosives-3", "explosives")
+MoreScience.lib.technology.removeIngredient("stronger-explosives-3", "chemical-science-pack")
+MoreScience.lib.technology.addPrerequisite("stronger-explosives-4", "rocketry")
+
+MoreScience.lib.technology.addPrerequisite("weapon-shooting-speed-3", "rocketry")
+MoreScience.lib.technology.addPrerequisite("physical-projectile-damage-4", "explosives")

@@ -50,7 +50,7 @@ data:extend{
       count = 35,
       ingredients =
       {
-        {"science-pack-1", 1},
+        {"automation-science-pack", 1},
       },
       time = 5,
     },
@@ -71,7 +71,7 @@ data:extend{
     icon_size = scienceResearch.icon_size,
     prerequisites =
     {
-      "automation-2",
+      --"automation-2",
       --"logistics",
       --"steel-processing",
       --"fluid-handling",
@@ -106,11 +106,11 @@ data:extend{
       },]]
       {
         type = "unlock-recipe",
-        recipe = "science-pack-1-fluid",
+        recipe = "automation-science-pack-fluid",
       },
       {
         type = "unlock-recipe",
-        recipe = "science-pack-1",
+        recipe = "automation-science-pack",
       },
     },
     unit =
@@ -118,7 +118,7 @@ data:extend{
       count = 40,
       ingredients =
       {
-        {"science-pack-1", 2},
+        {"automation-science-pack", 2},
       },
       time = 10,
     },
@@ -131,7 +131,7 @@ data:extend{
 ----- stone brick research                                                 -----
 --------------------------------------------------------------------------------
 local brick = util.table.deepcopy(data.raw["technology"]["concrete"])
-brick.name = "brick"
+brick.name = "brick-processing"
 
 brick.prerequisites =
 {
@@ -167,6 +167,8 @@ end
 --------------------------------------------------------------------------------
 
 -- research speed 1
-MoreScience.lib.technology.removePrerequisite("research-speed-1", "electronics")
+MoreScience.lib.technology.removePrerequisite("research-speed-1", "automation-2")
 MoreScience.lib.technology.addPrerequisite("research-speed-1", "bottling-research")
-MoreScience.lib.technology.removeIngredient("research-speed-1", "science-pack-2")
+MoreScience.lib.technology.removeIngredient("research-speed-1", "logistic-science-pack")
+
+MoreScience.lib.technology.addPrerequisite("fast-inserter", "logistics")

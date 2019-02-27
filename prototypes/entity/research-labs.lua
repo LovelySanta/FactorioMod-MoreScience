@@ -1,13 +1,13 @@
 local ms_science_packs = {
-  ["science-pack-1"               ] = 1,
-  ["science-pack-2"               ] = 2,
+  ["automation-science-pack"      ] = 1,
+  ["logistic-science-pack"        ] = 2,
   ["military-science-pack"        ] = 3,
   --["basic-automation-science-pack"] = 4,
-  ["science-pack-3"               ] = 5,
+  ["chemical-science-pack"        ] = 5,
   --["basic-power-science-pack"     ] = 6,
   ["production-science-pack"      ] = 7,
   --["basic-logistics-science-pack" ] = 8,
-  ["high-tech-science-pack"       ] = 9,
+  ["utility-science-pack"         ] = 9,
   ["space-science-pack"           ] = 10,
 }
 

@@ -13,6 +13,7 @@ table.insert(data.raw["player"]["player"].crafting_categories, "ms-manual-crafti
 assemblingMachine0.crafting_categories = data.raw["player"]["player"].crafting_categories
 
 assemblingMachine0.flags = {"not-on-map"}
+assemblingMachine0.next_upgrade = nil
 assemblingMachine0.minable = nil
 
 assemblingMachine0.subgroup = data.raw["item"]["assembling-machine-1"].subgroup

@@ -4,7 +4,7 @@ data:extend{
     name = "sand",
     icon = "__MoreScience__/graphics/icons/sand.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    --flags = {},
     subgroup = "ms-science-raw-material",
     order = "z-MoreScience-z[sand]",
     stack_size = 100
@@ -15,7 +15,7 @@ data:extend{
     name = "glass",
     icon = "__MoreScience__/graphics/icons/glass.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    --flags = {},
     subgroup = "ms-science-bottling",
     order = "c[glass]",
     stack_size = 50
@@ -26,7 +26,7 @@ data:extend{
     name = "cork",
     icon = "__MoreScience__/graphics/icons/cork.png",
     icon_size = 128,
-    flags = {"goes-to-main-inventory"},
+    --flags = {},
     subgroup = "ms-science-bottling",
     order = "d[cork]",
     stack_size = 50
@@ -46,7 +46,7 @@ data:extend{
         icon_size = 32,
       },
     },
-    flags = {"goes-to-main-inventory"},
+    --flags = {},
     subgroup = "ms-science-bottling",
     order = "d[empty-bottle]",
     stack_size = 50,

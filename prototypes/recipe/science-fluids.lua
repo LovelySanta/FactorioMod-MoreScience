@@ -2,19 +2,14 @@ local recipeMultiplier = 5
 local fluidPerPack = 10
 
 local previousFluid = {
-  ["science-pack-1"       ] = nil,
-  ["science-pack-2"       ] = "science-pack-1",
-  ["military-science-pack"] = "science-pack-1",
-  ["ms-science-pack-1"    ] = "science-pack-2",
+  ["automation-science-pack"] = false,
+  ["logistic-science-pack"  ] = "automation-science-pack",
+  ["military-science-pack"  ] = "automation-science-pack",
+  ["ms-science-pack-1"      ] = "logistic-science-pack",
 }
 
 
-for _,packName in pairs({
-  "science-pack-1"       ,
-  "science-pack-2"       ,
-  "military-science-pack",
-  "ms-science-pack-1"    ,
-}) do
+for packName,_ in pairs(previousFluid) do
   -- STEP 1: create basic recipe -----------------------------------------------
   MoreScience.lib.recipe.create(packName .. "-fluid")
   --MoreScience.lib.recipe.disable(packName .. "-fluid")

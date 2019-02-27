@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------------
 ----- red science pack basic (manual craftable)                            -----
 --------------------------------------------------------------------------------
-local earlySciencePack = util.table.deepcopy(data.raw["recipe"]["science-pack-1"])
+local earlySciencePack = util.table.deepcopy(data.raw["recipe"]["automation-science-pack"])
 earlySciencePack.name = earlySciencePack.name .. "-basic"
 earlySciencePack.energy_required = 1
 earlySciencePack.category = "ms-manual-crafting"
@@ -34,15 +34,15 @@ MoreScience.lib.recipe.addResult    (orangePackName, orangePackName        , 01,
 ----- organise all science pack recipes                                    -----
 --------------------------------------------------------------------------------
 for sciencePackName,craftingTime in pairs{
-  ["science-pack-1"               ] = 2.5,
-  ["science-pack-2"               ] = 3,
+  ["automation-science-pack"      ] = 2.5,
+  ["logistic-science-pack"        ] = 3,
   ["military-science-pack"        ] = 5,
   [orangePackName                 ] = 5,
-  ["science-pack-3"               ] = 10,
+  ["chemical-science-pack"        ] = 10,
   --["basic-power-science-pack"     ] = 10,
   ["production-science-pack"      ] = 20,
   --["basic-logistics-science-pack" ] = 20,
-  ["high-tech-science-pack"       ] = 30,
+  ["utility-science-pack"         ] = 30,
   --["space-science-pack"           ] = 50,
 } do
   MoreScience.lib.recipe.disable            (sciencePackName)
@@ -56,15 +56,15 @@ end
 
 -- TEMPORARY REMOVE IT AGAIN
 for sciencePackName,craftingTime in pairs{
-  --["science-pack-1"               ] = 2.5,
-  --["science-pack-2"               ] = 3,
+  --["automation-science-pack"      ] = 2.5,
+  --["logistic-science-pack"        ] = 3,
   --["military-science-pack"        ] = 5,
   --[orangePackName                 ] = 5,
-  ["science-pack-3"               ] = 10,
+  ["chemical-science-pack"        ] = 10,
   --["basic-power-science-pack"     ] = 10,
   ["production-science-pack"      ] = 20,
   --["basic-logistics-science-pack" ] = 20,
-  ["high-tech-science-pack"       ] = 30,
+  ["utility-science-pack"         ] = 30,
   --["space-science-pack"           ] = 50,
 } do
   MoreScience.lib.recipe.removeIngredient(sciencePackName, "ms-science-fluid")

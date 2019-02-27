@@ -49,7 +49,7 @@ local function addSciencePack(potionName, potionNumber)
           icon_size = 32,
         },
       },
-      flags = {"goes-to-main-inventory"},
+      --flags = {},
       subgroup = "science-pack",
       order = "z-MoreScience-" .. getFluidOrder(potionName) .. "[" .. potionName .. "]",
       stack_size = 200,
@@ -62,10 +62,10 @@ end
 
 
 
-alterSciencePack("science-pack-1"       , 14)
-alterSciencePack("science-pack-2"       , 03)
-alterSciencePack("military-science-pack", 09)
-addSciencePack  ("ms-science-pack-1"    , 15)
+alterSciencePack("automation-science-pack", 14)
+alterSciencePack("logistic-science-pack"  , 03)
+alterSciencePack("military-science-pack"  , 09)
+addSciencePack  ("ms-science-pack-1"      , 15)
 --alterSciencePack("science-pack-3", 8)
 --addSciencePack("basic-power-science-pack", 5)
 --alterSciencePack("production-science-pack", 10)

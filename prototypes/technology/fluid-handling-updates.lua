@@ -1,4 +1,5 @@
 local techName = "fluid-handling"
+MoreScience.lib.technology.moveRecipeUnlock("sulfur-processing", "sulfur-processing", "sulfuric-acid") -- this is just for unlock ordening
 
 --------------------------------------------------------------------------------
 ----- Fluid handling 1                                                     -----
@@ -10,6 +11,7 @@ for fluidName,newTechName in pairs{
   ["purified-water"] = "purification-research", -- purified water needs to move to purification research
   ["crude-oil"     ] = "oil-processing"       , -- crude oil needs to move to oil processing
   ["sulfuric-acid" ] = "sulfur-processing"    , -- sulfuric acid needs to move to sulfer processing
+  ["lubricant"     ] = "lubricant"
 } do
   for _,barrelingRecipe in pairs{
     "fill-%s-barrel",
@@ -38,7 +40,7 @@ for _,oilFluid in pairs{
   "petroleum-gas",
   "light-oil"    ,
   "heavy-oil"    ,
-  "lubricant"    ,
+  --"lubricant"    ,
   --"sulfuric-acid",
 } do
   for _,barrelingRecipe in pairs{
