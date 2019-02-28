@@ -49,10 +49,22 @@ MoreScience.lib.technology.addPrerequisite(techName .. "-2", "oil-processing")
 for _,tech in pairs{
   "fluid-wagon",
   "lubricant",
+  "sulfur-processing",
 } do
   MoreScience.lib.technology.addPrerequisite(tech, techName .. "-2")
 end
 
-
 -- add recipe unlocks
 MoreScience.lib.technology.moveRecipeUnlock(techName, techName.."-2", "pump")
+
+-- split sulfur processing
+local sulfur = util.table.deepcopy(data.raw["technology"]["sulfur-processing"])
+sulfur.name = "sulfur"
+sulfur.effects = nil
+sulfur.prerequisites = {}
+sulfur.unit = util.table.deepcopy(fluidHandling2.unit)
+data:extend{sulfur}
+MoreScience.lib.technology.addPrerequisite(sulfur.name, "oil-processing")
+MoreScience.lib.technology.moveRecipeUnlock(sulfur.name.."-processing", sulfur.name, "sulfur")
+MoreScience.lib.technology.movePrerequisite(sulfur.name.."-processing", "oil-processing", sulfur.name)
+MoreScience.lib.technology.movePrerequisite("explosives", sulfur.name.."-processing", sulfur.name)

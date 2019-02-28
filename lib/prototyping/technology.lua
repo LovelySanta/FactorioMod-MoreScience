@@ -65,7 +65,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
       end
       if not moved then
         MoreScience.lib.debug.log(string.format("WARNING: Could not move prerequisite %q from technology %q to %q. Adding it instead.", oldPrerequisite, technologyName, newPrerequisite))
-        addPrerequisiteTechnology(technologyName, newPrerequisite)
+        MoreScience.lib.technology.addPrerequisite(technologyName, newPrerequisite)
       end
     end
   end

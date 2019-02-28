@@ -62,10 +62,10 @@ end
 
 
 
-alterSciencePack("automation-science-pack", 14)
-alterSciencePack("logistic-science-pack"  , 03)
-alterSciencePack("military-science-pack"  , 09)
-addSciencePack  ("ms-science-pack-1"      , 15)
+alterSciencePack("automation-science-pack"         , 14)
+alterSciencePack("logistic-science-pack"           , 03)
+alterSciencePack("military-science-pack"           , 09)
+addSciencePack  ("advanced-automation-science-pack", 15)
 --alterSciencePack("science-pack-3", 8)
 --addSciencePack("basic-power-science-pack", 5)
 --alterSciencePack("production-science-pack", 10)

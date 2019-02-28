@@ -32,3 +32,5 @@ end
 MoreScience.lib.technology.addPrerequisite("steel-axe", "toolbelt")
 MoreScience.lib.technology.addIngredient("steel-axe", 1, "logistic-science-pack")
 MoreScience.lib.technology.changeCount("steel-axe", 100)
+
+MoreScience.lib.technology.addPrerequisite("railway", "automobilism")

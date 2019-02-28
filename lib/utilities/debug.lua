@@ -2,7 +2,7 @@
 Debug = {}
 
 Debug.enabled = true
-Debug.returnValue = 3
+Debug.returnValue = 4
 
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
@@ -69,12 +69,15 @@ function Debug:reseachAllTechnologies()
   researchTechnology("toolbelt")
   researchTechnology("steel-axe")
   researchTechnology("circuit-network")
+  researchTechnology("solar-energy")
   researchTechnology("advanced-material-processing")
   researchTechnology("concrete")
   researchTechnology("landfill")
 
   researchTechnology("engine")
   researchTechnology("logistics-2")
+  researchTechnology("inserter-capacity-bonus-1")
+  researchTechnology("automobilism")
   researchTechnology("railway")
 
   researchTechnology("research-speed-2")
@@ -97,11 +100,61 @@ function Debug:reseachAllTechnologies()
 
   researchTechnology("military-science-pack")
 
-  researchTechnology("weapon-shooting-speed-3")
   researchTechnology("physical-projectile-damage-3")
   researchTechnology("stronger-explosives-2")
 
   if self.returnValue == 3 then
+    return
+  end
+
+--------------------------------------------------------------------------------
+----- Orange science                                                       -----
+--------------------------------------------------------------------------------
+
+  researchTechnology("advanced-automation-science-pack")
+  researchTechnology("research-speed-3")
+
+  researchTechnology("automated-rail-transportation")
+  researchTechnology("rail-signals")
+  researchTechnology("braking-force-1")
+
+  researchTechnology("oil-processing")
+  researchTechnology("fluid-handling-2")
+  researchTechnology("lubricant")
+
+  researchTechnology("sulfur")
+  researchTechnology("explosives")
+  researchTechnology("cliff-explosives")
+  researchTechnology("sulfur-processing")
+
+  researchTechnology("plastics")
+  researchTechnology("advanced-electronics")
+  researchTechnology("stack-inserter")
+  researchTechnology("inserter-capacity-bonus-2")
+
+  researchTechnology("modules")
+  researchTechnology("productivity-module")
+  researchTechnology("speed-module")
+  researchTechnology("effectivity-module")
+
+
+  researchTechnology("flammables")
+  researchTechnology("rocket-fuel")
+  researchTechnology("rocketry")
+  researchTechnology("weapon-shooting-speed-3")
+  researchTechnology("weapon-shooting-speed-4")
+
+  researchTechnology("land-mine")
+  researchTechnology("stronger-explosives-3")
+  researchTechnology("stronger-explosives-4")
+
+  researchTechnology("flamethrower")
+  researchTechnology("refined-flammables-1")
+  researchTechnology("refined-flammables-2")
+
+  researchTechnology("mining-productivity-1")
+
+  if self.returnValue == 4 then
     return
   end
 

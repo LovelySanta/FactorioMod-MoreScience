@@ -21,7 +21,7 @@ data:extend{earlySciencePack}
 ----- orange science pack                                                  -----
 --------------------------------------------------------------------------------
 
-local orangePackName = "ms-science-pack-1"
+local orangePackName = "advanced-automation-science-pack"
 MoreScience.lib.recipe.create       (orangePackName)
 MoreScience.lib.recipe.addIngredient(orangePackName, "small-lamp"          , 02 ,"item")
 MoreScience.lib.recipe.addIngredient(orangePackName, "assembling-machine-1", 01 ,"item")

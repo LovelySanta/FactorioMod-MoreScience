@@ -2,10 +2,10 @@ local recipeMultiplier = 5
 local fluidPerPack = 10
 
 local previousFluid = {
-  ["automation-science-pack"] = false,
-  ["logistic-science-pack"  ] = "automation-science-pack",
-  ["military-science-pack"  ] = "automation-science-pack",
-  ["ms-science-pack-1"      ] = "logistic-science-pack",
+  ["automation-science-pack"         ] = false,
+  ["logistic-science-pack"           ] = "automation-science-pack",
+  ["military-science-pack"           ] = "automation-science-pack",
+  ["advanced-automation-science-pack"] = "logistic-science-pack",
 }
 
 

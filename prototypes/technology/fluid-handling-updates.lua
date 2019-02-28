@@ -1,5 +1,4 @@
 local techName = "fluid-handling"
-MoreScience.lib.technology.moveRecipeUnlock("sulfur-processing", "sulfur-processing", "sulfuric-acid") -- this is just for unlock ordening
 
 --------------------------------------------------------------------------------
 ----- Fluid handling 1                                                     -----
@@ -50,6 +49,3 @@ for _,oilFluid in pairs{
     MoreScience.lib.technology.moveRecipeUnlock(techName, techName.."-2", string.format(barrelingRecipe, oilFluid))
   end
 end
-
--- sulfuric acid barreling gets unlocked with sulfur processing
-MoreScience.lib.technology.addPrerequisite("sulfur-processing", techName.."-2")

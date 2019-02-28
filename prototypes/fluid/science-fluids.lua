@@ -47,7 +47,7 @@ MoreScience.lib.item.setLocalisedName("fluid", "purified-water", nil            
 MoreScience.lib.item.setSubgroup     ("fluid", "purified-water", "ms-science-raw-material")
 
 -- science fluids
-createScienceFluid("automation-science-pack", "-fluid", "b1", 14, {r=191, g=019, b=019}, {r=200, g=048, b=048})
-createScienceFluid("logistic-science-pack"  , "-fluid", "c1", 03, {r=063, g=187, b=063}, {r=063, g=187, b=063})
-createScienceFluid("military-science-pack"  , "-fluid", "c2", 09, {r=068, g=043, b=005}, {r=068, g=043, b=005})
-createScienceFluid("ms-science-pack-1"      , "-fluid", "c3", 15, {r=255, g=121, b=005}, {r=234, g=132, b=000})
+createScienceFluid("automation-science-pack"         , "-fluid", "b1", 14, {r=191, g=019, b=019}, {r=200, g=048, b=048})
+createScienceFluid("logistic-science-pack"           , "-fluid", "c1", 03, {r=063, g=187, b=063}, {r=063, g=187, b=063})
+createScienceFluid("military-science-pack"           , "-fluid", "c2", 09, {r=068, g=043, b=005}, {r=068, g=043, b=005})
+createScienceFluid("advanced-automation-science-pack", "-fluid", "c3", 15, {r=255, g=121, b=005}, {r=234, g=132, b=000})
