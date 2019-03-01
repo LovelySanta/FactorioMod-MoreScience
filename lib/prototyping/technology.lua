@@ -74,14 +74,19 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
   function MoreScience.lib.technology.removeRecipeUnlock(technologyName, recipeToRemove)
     if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].effects then
+      local removed = false
       for index, effect in pairs(data.raw["technology"][technologyName].effects) do
         if effect.type == "unlock-recipe" and effect.recipe == recipeToRemove then
           table.remove(data.raw["technology"][technologyName].effects, index)
+          removed = true
           if table_size(data.raw["technology"][technologyName].effects) == 0 then
             data.raw["technology"][technologyName].effects = nil
           end
           break
         end
+      end
+      if not removed then
+        MoreScience.lib.debug.log(string.format("WARNING: Could not remove recipe unlock %q from technology %q.", recipeToRemove, technologyName))
       end
     end
   end

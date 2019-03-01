@@ -3,9 +3,21 @@ local fluidPerPack = 10
 
 local previousFluid = {
   ["automation-science-pack"         ] = false,
+
   ["logistic-science-pack"           ] = "automation-science-pack",
   ["military-science-pack"           ] = "automation-science-pack",
+
   ["advanced-automation-science-pack"] = "logistic-science-pack",
+  ["electric-power-science-pack"     ] = "logistic-science-pack",
+}
+local ingredientMultiplier = {
+  ["automation-science-pack"         ] = 5,
+
+  ["logistic-science-pack"           ] = 5,
+  ["military-science-pack"           ] = 5,
+
+  ["advanced-automation-science-pack"] = 1,
+  ["electric-power-science-pack"     ] = 1,
 }
 
 
@@ -49,7 +61,9 @@ for packName,_ in pairs(previousFluid) do
 
   -- STEP 2c: move the ingredients over to the fluid
   for _,ingredient in pairs(ingredients) do
-    MoreScience.lib.recipe.addIngredient   (packName .. "-fluid", ingredient.name, ingredient.amount*recipeMultiplier, ingredient.type)
+    local amount = math.floor((ingredient.amount + 0.5) * ingredientMultiplier[packName])
+    amount = amount > 0 and amount or 1 -- minimal require 1
+    MoreScience.lib.recipe.addIngredient   (packName .. "-fluid", ingredient.name, ingredient.amount*ingredientMultiplier[packName], ingredient.type)
     MoreScience.lib.recipe.removeIngredient(packName            , ingredient.name)
   end
 

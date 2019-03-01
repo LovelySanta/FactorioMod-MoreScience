@@ -2,7 +2,7 @@
 Debug = {}
 
 Debug.enabled = true
-Debug.returnValue = 4
+Debug.returnValue = 5
 
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
@@ -112,7 +112,6 @@ function Debug:reseachAllTechnologies()
 --------------------------------------------------------------------------------
 
   researchTechnology("advanced-automation-science-pack")
-  researchTechnology("research-speed-3")
 
   researchTechnology("automated-rail-transportation")
   researchTechnology("rail-signals")
@@ -137,12 +136,13 @@ function Debug:reseachAllTechnologies()
   researchTechnology("speed-module")
   researchTechnology("effectivity-module")
 
-
   researchTechnology("flammables")
   researchTechnology("rocket-fuel")
   researchTechnology("rocketry")
   researchTechnology("weapon-shooting-speed-3")
   researchTechnology("weapon-shooting-speed-4")
+  researchTechnology("physical-projectile-damage-3")
+  researchTechnology("physical-projectile-damage-4")
 
   researchTechnology("land-mine")
   researchTechnology("stronger-explosives-3")
@@ -152,9 +152,47 @@ function Debug:reseachAllTechnologies()
   researchTechnology("refined-flammables-1")
   researchTechnology("refined-flammables-2")
 
-  researchTechnology("mining-productivity-1")
-
   if self.returnValue == 4 then
+    return
+  end
+
+--------------------------------------------------------------------------------
+----- Cyan science                                                         -----
+--------------------------------------------------------------------------------
+
+  researchTechnology("electric-power-science-pack")
+  researchTechnology("research-speed-3")
+
+  researchTechnology("mining-productivity-1")
+  researchTechnology("braking-force-2")
+
+  researchTechnology("battery")
+  researchTechnology("electric-energy-accumulators-1")
+  researchTechnology("electric-engine")
+
+  researchTechnology("flight")
+  researchTechnology("robotics")
+  researchTechnology("construction-robotics")
+
+  researchTechnology("combat-robotics")
+
+  researchTechnology("laser")
+  researchTechnology("laser-turrets")
+  researchTechnology("energy-weapons-damage-1")
+  researchTechnology("energy-weapons-damage-2")
+  researchTechnology("energy-weapons-damage-3")
+  researchTechnology("laser-turret-speed-1")
+  researchTechnology("laser-turret-speed-2")
+
+  researchTechnology("modular-armor")
+  researchTechnology("solar-panel-equipment")
+  researchTechnology("battery-equipment")
+  researchTechnology("belt-immunity-equipment")
+  researchTechnology("night-vision-equipment")
+  researchTechnology("personal-roboport-equipment")
+  researchTechnology("energy-shield-equipment")
+
+  if self.returnValue == 5 then
     return
   end
 

@@ -37,11 +37,14 @@ require(recipePath .. "assembling-machines")
 
 -- technology
 technologyPath = "prototypes/technology/"
+require(technologyPath .. "assembling-machines")
 require(technologyPath .. "basic-automation")
 require(technologyPath .. "fluid-handling")
 require(technologyPath .. "military")
+require(technologyPath .. "flight")
+
 require(technologyPath .. "science-red")
 require(technologyPath .. "science-green")
 require(technologyPath .. "science-gray")
 require(technologyPath .. "science-orange")
-require(technologyPath .. "assembling-machines")
+require(technologyPath .. "science-cyan")

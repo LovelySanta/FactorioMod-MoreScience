@@ -24,6 +24,7 @@ for prerequisite,techName in pairs{
     "weapon-shooting-speed-3"     ,
     "physical-projectile-damage-3",
     "stronger-explosives-2"       ,
+    "flight"                      ,
   },
 
 } do

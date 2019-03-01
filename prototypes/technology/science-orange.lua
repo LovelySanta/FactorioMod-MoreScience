@@ -17,7 +17,7 @@ data:extend({
     prerequisites = {
       "logistic-science-pack",
       "concrete",
-      "optics",
+      "fast-inserter",
     },
     effects =
     {
@@ -45,12 +45,11 @@ data:extend({
 })
 
 --------------------------------------------------------------------------------
------ other orange science technologies                                       -----
+----- other orange science technologies                                    -----
 --------------------------------------------------------------------------------
 
 -- other technologies that depend on this one
 for _,techName in pairs{
-  "research-speed-3",
   "oil-processing",
   "automated-rail-transportation",
   --"automobilism",
@@ -60,72 +59,91 @@ end
 
 -- add tech ingredient to other science packs
 for techName,techLevels in pairs{
-  -- science related
-  ["research-speed-%i"            ] = {3, 4, 5, 6},
-
   -- Oil related stuff
-  ["fluid-handling-%i"            ] = {2},
-  ["oil-processing"               ] = {},
-  ["advanced-oil-processing"      ] = {},
-  ["plastics"                     ] = {},
-  ["sulfur"                       ] = {},
-  ["sulfur-processing"            ] = {},
-  ["battery"                      ] = {},
-  ["lubricant"                    ] = {},
-  ["explosives"                   ] = {},
-  ["flammables"                   ] = {},
-  ["rocket-fuel"                  ] = {},
-  ["advanced-electronics"         ] = {},
-  ["coal-liquefaction"            ] = {},
+  ["fluid-handling-%i"             ] = {2},
+  ["oil-processing"                ] = {},
+  ["advanced-oil-processing"       ] = {},
+  ["plastics"                      ] = {},
+  ["sulfur"                        ] = {},
+  ["sulfur-processing"             ] = {},
+  ["battery"                       ] = {},
+  ["lubricant"                     ] = {},
+  ["electric-engine"               ] = {},
+  ["explosives"                    ] = {},
+  ["flammables"                    ] = {},
+  ["rocket-fuel"                   ] = {},
+  ["advanced-electronics"          ] = {},
+  ["coal-liquefaction"             ] = {},
 
-  ["stack-inserter"               ] = {},
-  ["inserter-capacity-bonus-%i"   ] = {2, 3, 4, 5, 6, 7},
-  ["mining-productivity-%i"       ] = {1, 4, 8, 12, 16},
+  ["stack-inserter"                ] = {},
+  ["inserter-capacity-bonus-%i"    ] = {2, 3, 4, 5, 6, 7},
+  --["mining-productivity-%i"        ] = {1, 4, 8, 12, 16},
+
+  ["electric-energy-accumulators-1" ] = {},
 
   -- logistics
-  --["automobilism"                 ] = {},
-  ["automated-rail-transportation"] = {},
-  ["rail-signals"                 ] = {},
-  ["fluid-wagon"                  ] = {},
-  ["braking-force-%i"             ] = {1, 2, 3, 4, 5, 6, 7},
+  --["automobilism"                  ] = {},
+  ["automated-rail-transportation" ] = {},
+  ["rail-signals"                  ] = {},
+  ["fluid-wagon"                   ] = {},
+  ["braking-force-%i"              ] = {1, 2, 3, 4, 5, 6, 7},
 
   -- modules
-  ["modules"                      ] = {},
-  ["speed-module"                ] = {},
-  ["speed-module-%i"             ] = {2, 3},
-  ["productivity-module"         ] = {},
-  ["productivity-module-%i"      ] = {2, 3},
-  ["effectivity-module"          ] = {},
-  ["effectivity-module-%i"       ] = {2, 3},
+  ["modules"                       ] = {},
+  ["speed-module"                  ] = {},
+  ["speed-module-%i"               ] = {2, 3},
+  ["productivity-module"           ] = {},
+  ["productivity-module-%i"        ] = {2, 3},
+  ["effectivity-module"            ] = {},
+  ["effectivity-module-%i"         ] = {2, 3},
 
   -- power
-  --["solar-energy"                 ] = {},
-  ["portable-solar-panel"         ] = {},
+  --["solar-energy"                   ] = {},
+  ["portable-solar-panel"           ] = {},
 
   -- military
-  ["military-%i"                  ] = {3, 4},
-  ["cliff-explosives"             ] = {},
-  ["land-mine"                    ] = {},
-  ["weapon-shooting-speed-%i"     ] = {3, 4, 5, 6},
-  ["physical-projectile-damage-%i"] = {4, 5, 6, 7},
-  ["stronger-explosives-%i"       ] = {3, 4, 5, 6, 7},
+  ["military-%i"                    ] = {3, 4},
+  ["cliff-explosives"               ] = {},
+  ["land-mine"                      ] = {},
+  ["weapon-shooting-speed-%i"       ] = {3, 4, 5, 6},
+  ["physical-projectile-damage-%i"  ] = {4, 5, 6, 7},
+  ["stronger-explosives-%i"         ] = {3, 4, 5, 6, 7},
 
-  ["laser"                        ] = {},
-  ["laser-turrets"                ] = {},
-  ["laser-turret-speed-%i"        ] = {1, 2, 3, 4, 5, 6, 7},
-  ["energy-weapons-damage-%i"     ] = {1, 2, 3, 4, 5, 6, 7},
+  ["laser"                          ] = {},
+  ["laser-turrets"                  ] = {},
+  ["laser-turret-speed-%i"          ] = {1, 2, 3, 4, 5, 6, 7},
+  ["energy-weapons-damage-%i"       ] = {1, 2, 3, 4, 5, 6, 7},
 
-  ["flamethrower"                 ] = {},
-  ["refined-flammables-%i"        ] = {1, 2, 3, 4, 5, 6, 7},
-  ["rocketry"                     ] = {},
-  ["explosive-rocketry"           ] = {},
+  ["flamethrower"                   ] = {},
+  ["refined-flammables-%i"          ] = {1, 2, 3, 4, 5, 6, 7},
+  ["rocketry"                       ] = {},
+  ["explosive-rocketry"             ] = {},
 
-  --["tanks"                        ] = {},
-  --["cannon-shell-damage-%i"       ] = {1, 2, 3, 4, 5, 6},
-  --["cannon-shell-speed-%i"        ] = {1, 2, 3, 4, 5},
+  --["tanks"                          ] = {},
+  --["cannon-shell-damage-%i"         ] = {1, 2, 3, 4, 5, 6},
+  --["cannon-shell-speed-%i"          ] = {1, 2, 3, 4, 5},
 
-  ["combat-robotics"              ] = {},
-  ["combat-robotics-%i"           ] = {2, 3},
+  -- bots
+  ["robotics"                       ] = {},
+  ["worker-robots-speed-%i"         ] = {1, 2, 3, 4, 5, 6},
+  ["construction-robotics"          ] = {},
+  ["logistic-robotics"              ] = {},
+  ["combat-robotics%s"              ] = {"", "-2", "-3"},
+  ["combat-robotics%s"              ] = {"", "-2", "-3"},
+  ["follower-robot-count-%i"        ] = {1, 2, 3, 4, 5, 6, 7},
+
+  -- armor
+  ["modular-armor"                  ] = {},
+  ["power-armor"                    ] = {},
+  ["power-armor-%i"                 ] = {1},
+
+  -- equipment
+  ["solar-panel-equipment"          ] = {},
+  ["belt-immunity-equipment"        ] = {},
+  ["night-vision-equipment"         ] = {},
+  ["battery%s-equipment"            ] = {"", "-MK2"},
+  ["personal-roboport-equipment%s"  ] = {"", "-2"},
+  ["energy-shield%s-equipment"      ] = {"", "-mk2"},
 } do
   if MoreScience.lib.table.isEmpty(techLevels) then
     MoreScience.lib.technology.addIngredient(techName, 1, orangePackName)
@@ -137,11 +155,9 @@ for techName,techLevels in pairs{
   end
 end
 
-MoreScience.lib.technology.removeIngredient("research-speed-3", "chemical-science-pack")
-
 MoreScience.lib.technology.removeIngredient("braking-force-1", "chemical-science-pack"                                 )
 MoreScience.lib.technology.movePrerequisite("braking-force-1", "chemical-science-pack", "automated-rail-transportation")
-MoreScience.lib.technology.addPrerequisite ("braking-force-2", "chemical-science-pack"                                 )
+MoreScience.lib.technology.addPrerequisite ("braking-force-3", "chemical-science-pack"                                 )
 
 MoreScience.lib.technology.addPrerequisite ("stronger-explosives-3", "explosives"           )
 MoreScience.lib.technology.removeIngredient("stronger-explosives-3", "chemical-science-pack")
