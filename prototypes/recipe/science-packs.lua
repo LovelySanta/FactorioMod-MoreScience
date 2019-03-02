@@ -1,8 +1,9 @@
+local scienceNames = require("prototypes/settings").scienceNames
 
 --------------------------------------------------------------------------------
 ----- red science pack basic (manual craftable)                            -----
 --------------------------------------------------------------------------------
-local earlySciencePack = util.table.deepcopy(data.raw["recipe"]["automation-science-pack"])
+local earlySciencePack = util.table.deepcopy(data.raw["recipe"][string.format(scienceNames.red, "pack")])
 earlySciencePack.name = earlySciencePack.name .. "-basic"
 earlySciencePack.energy_required = 1
 earlySciencePack.category = "ms-manual-crafting"
@@ -21,7 +22,7 @@ data:extend{earlySciencePack}
 ----- orange science pack                                                  -----
 --------------------------------------------------------------------------------
 
-local orangePackName = "advanced-automation-science-pack"
+local orangePackName = string.format(scienceNames.orange, "pack")
 MoreScience.lib.recipe.create       (orangePackName)
 MoreScience.lib.recipe.addIngredient(orangePackName, "fast-inserter"       , 02 ,"item")
 MoreScience.lib.recipe.addIngredient(orangePackName, "assembling-machine-1", 01 ,"item")
@@ -34,7 +35,7 @@ MoreScience.lib.recipe.addResult    (orangePackName, orangePackName        , 01,
 ----- cyan science pack                                                    -----
 --------------------------------------------------------------------------------
 
-local cyanPackName = "electric-power-science-pack"
+local cyanPackName = string.format(scienceNames.cyan, "pack")
 MoreScience.lib.recipe.create       (cyanPackName)
 MoreScience.lib.recipe.addIngredient(cyanPackName, "small-lamp"          , 03 ,"item")
 MoreScience.lib.recipe.addIngredient(cyanPackName, "medium-electric-pole", 01 ,"item")
@@ -46,29 +47,30 @@ MoreScience.lib.recipe.addResult    (cyanPackName, cyanPackName          , 01, "
 ----- organise all science pack recipes                                    -----
 --------------------------------------------------------------------------------
 for sciencePackName,craftingTime in pairs{
-  ["automation-science-pack"      ] = 2.5,
-  ["logistic-science-pack"        ] = 3,
-  ["military-science-pack"        ] = 5,
-  [orangePackName                 ] = 5,
-  [cyanPackName                   ] = 10,
-  ["chemical-science-pack"        ] = 10,
-  ["production-science-pack"      ] = 20,
-  --["basic-logistics-science-pack" ] = 20,
-  ["utility-science-pack"         ] = 30,
-  --["space-science-pack"           ] = 50,
+  [string.format(scienceNames.red   , "pack")] = 2.5,
+  [string.format(scienceNames.green , "pack")] = 3,
+  [string.format(scienceNames.gray  , "pack")] = 5,
+  [orangePackName                            ] = 5,
+  [cyanPackName                              ] = 10,
+  [string.format(scienceNames.blue  , "pack")] = 10,
+  [string.format(scienceNames.purple, "pack")] = 20,
+  ["basic-logistics-science-pack"            ] = 20,
+  [string.format(scienceNames.yellow, "pack")] = 30,
+  [string.format(scienceNames.white , "pack")] = 50,
 } do
-  MoreScience.lib.recipe.disable            (sciencePackName)
-  MoreScience.lib.recipe.setCraftingCategory(sciencePackName, "ms-advanced-crafting")
-  MoreScience.lib.recipe.setShowMadeIn      (sciencePackName, true)
-  MoreScience.lib.recipe.setEngergyRequired (sciencePackName, craftingTime)
+  if data.raw.recipe[sciencePackName] then
+    MoreScience.lib.recipe.disable            (sciencePackName)
+    MoreScience.lib.recipe.setCraftingCategory(sciencePackName, "ms-advanced-crafting")
+    MoreScience.lib.recipe.setShowMadeIn      (sciencePackName, true)
+    MoreScience.lib.recipe.setEngergyRequired (sciencePackName, craftingTime)
 
-  MoreScience.lib.recipe.addIngredient      (sciencePackName, "empty-bottle"    , 1 , "item")
-  MoreScience.lib.recipe.addIngredient      (sciencePackName, "ms-science-fluid", 1, "fluid")
+    MoreScience.lib.recipe.addIngredient      (sciencePackName, "empty-bottle"    , 1 , "item")
+    MoreScience.lib.recipe.addIngredient      (sciencePackName, "ms-science-fluid", 1, "fluid")
+  end
 end
 
 -- TEMPORARY REMOVE IT AGAIN
 for sciencePackName,craftingTime in pairs{
-  ["chemical-science-pack"        ] = 10,
   ["production-science-pack"      ] = 20,
   ["utility-science-pack"         ] = 30,
   --["space-science-pack"           ] = 50,

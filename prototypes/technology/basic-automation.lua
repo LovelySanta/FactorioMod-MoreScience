@@ -1,3 +1,5 @@
+local scienceNames = require("prototypes/settings").scienceNames
+
 data:extend({
   {
     type = "technology",
@@ -10,7 +12,7 @@ data:extend({
       count = 5,
       ingredients =
       {
-        {"automation-science-pack", 1}
+        {string.format(scienceNames.red, "pack"), 1}
       },
       time = 5
     },

@@ -86,7 +86,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
         end
       end
       if not removed then
-        MoreScience.lib.debug.log(string.format("WARNING: Could not remove recipe unlock %q from technology %q.", recipeToRemove, technologyName))
+        MoreScience.lib.debug.log(string.format("WARNING: Could not remove recipe-unlock %q from technology %q.", recipeToRemove, technologyName))
       end
     end
   end
@@ -143,7 +143,12 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
 
   function MoreScience.lib.technology.removeIngredient(technologyName, sciencePackName)
-    if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].unit.ingredients then
+    if not data.raw["technology"][technologyName] then
+      MoreScience.lib.debug.log(string.format("WARNING: Tried removing ingredient %q to technology %q, which doesn't exist.", sciencePackName, technologyName))
+      return
+    end
+
+    if data.raw["technology"][technologyName].unit.ingredients then
       for index, ingredient in pairs(data.raw["technology"][technologyName].unit.ingredients) do
         if ingredient[1] == sciencePackName then
           table.remove(data.raw["technology"][technologyName].unit.ingredients, index)
@@ -153,13 +158,21 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
           break
         end
       end
+    else
+      MoreScience.lib.debug.log(string.format("WARNING: Tried removing ingredient %q to technology %q, but no ingredients present in the technology.", sciencePackName, technologyName))
+      return
     end
   end
 
 
 
   function MoreScience.lib.technology.addIngredient(technologyName, sciencePackAmount, sciencePackName)
-    if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].unit.ingredients then
+    if not data.raw["technology"][technologyName] then
+      MoreScience.lib.debug.log(string.format("WARNING: Tried adding ingredient %q to technology %q, which doesn't exist.", sciencePackName, technologyName))
+      return
+    end
+
+    if data.raw["technology"][technologyName].unit.ingredients then
       for index, ingredient in pairs(data.raw["technology"][technologyName].unit.ingredients) do
         if ingredient[1] == sciencePackName then
           MoreScience.lib.debug.log(string.format("WARNING: Tried adding ingredient %q to %q which was already present. Increased amount instead.", sciencePackName, technologyName))
@@ -168,6 +181,9 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
         end
       end
       table.insert(data.raw["technology"][technologyName].unit.ingredients, {sciencePackName, sciencePackAmount})
+    else
+      MoreScience.lib.debug.log(string.format("WARNING: Tried adding ingredient %q to technology %q, but no ingredients present in the technology.", sciencePackName, technologyName))
+      return
     end
   end
 

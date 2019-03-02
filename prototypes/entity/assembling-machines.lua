@@ -1,25 +1,9 @@
 
 --------------------------------------------------------------------------------
------ Assembling machine 0 (represents hand crafting)                      -----
+----- Assembling machine 0 (hand crafting)                      -----
 --------------------------------------------------------------------------------
-local assemblingMachine0 = util.table.deepcopy(data.raw["assembling-machine"]["assembling-machine-1"])
-assemblingMachine0.name = "assembling-machine-manual"
-
-assemblingMachine0.icon = "__core__/graphics/hand.png"
-assemblingMachine0.icon_size = 32
-assemblingMachine0.icons = nil
 
 table.insert(data.raw["player"]["player"].crafting_categories, "ms-manual-crafting")
-assemblingMachine0.crafting_categories = data.raw["player"]["player"].crafting_categories
-
-assemblingMachine0.flags = {"not-on-map"}
-assemblingMachine0.next_upgrade = nil
-assemblingMachine0.minable = nil
-
-assemblingMachine0.subgroup = data.raw["item"]["assembling-machine-1"].subgroup
-assemblingMachine0.order = "a[assembling-machine-0]"
-
-data:extend{assemblingMachine0}
 
 
 

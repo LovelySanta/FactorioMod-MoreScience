@@ -2,7 +2,7 @@
 Debug = {}
 
 Debug.enabled = true
-Debug.returnValue = 5
+Debug.returnValue = 6
 
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
@@ -113,13 +113,14 @@ function Debug:reseachAllTechnologies()
 
   researchTechnology("advanced-automation-science-pack")
 
-  researchTechnology("automated-rail-transportation")
-  researchTechnology("rail-signals")
-  researchTechnology("braking-force-1")
-
   researchTechnology("oil-processing")
   researchTechnology("fluid-handling-2")
   researchTechnology("lubricant")
+
+  researchTechnology("automated-rail-transportation")
+  researchTechnology("rail-signals")
+  researchTechnology("braking-force-1")
+  researchTechnology("braking-force-2")
 
   researchTechnology("sulfur")
   researchTechnology("explosives")
@@ -164,7 +165,7 @@ function Debug:reseachAllTechnologies()
   researchTechnology("research-speed-3")
 
   researchTechnology("mining-productivity-1")
-  researchTechnology("braking-force-2")
+  researchTechnology("braking-force-3")
 
   researchTechnology("battery")
   researchTechnology("electric-energy-accumulators-1")
@@ -175,6 +176,8 @@ function Debug:reseachAllTechnologies()
   researchTechnology("construction-robotics")
 
   researchTechnology("combat-robotics")
+  researchTechnology("follower-robot-count-1")
+  researchTechnology("follower-robot-count-2")
 
   researchTechnology("laser")
   researchTechnology("laser-turrets")
@@ -193,6 +196,75 @@ function Debug:reseachAllTechnologies()
   researchTechnology("energy-shield-equipment")
 
   if self.returnValue == 5 then
+    return
+  end
+
+--------------------------------------------------------------------------------
+----- Blue science                                                         -----
+--------------------------------------------------------------------------------
+
+  researchTechnology("chemical-science-pack")
+  researchTechnology("research-speed-4")
+
+  researchTechnology("mining-productivity-4")
+  researchTechnology("fluid-handling-3")
+  researchTechnology("fluid-wagon")
+  researchTechnology("braking-force-4")
+
+  researchTechnology("advanced-oil-processing")
+  researchTechnology("advanced-material-processing-2")
+  researchTechnology("concrete-2")
+
+  researchTechnology("electric-energy-distribution-2")
+  researchTechnology("uranium-processing")
+  researchTechnology("nuclear-power")
+
+  researchTechnology("advanced-electronics-2")
+  researchTechnology("productivity-module-2")
+  researchTechnology("speed-module-2")
+  researchTechnology("effectivity-module-2")
+
+  researchTechnology("inserter-capacity-bonus-3")
+  researchTechnology("inserter-capacity-bonus-4")
+
+  researchTechnology("military-3")
+  researchTechnology("refined-flammables-3")
+
+  researchTechnology("explosive-rocketry")
+  researchTechnology("stronger-explosives-5")
+
+  researchTechnology("tanks")
+  researchTechnology("weapon-shooting-speed-5")
+  researchTechnology("physical-projectile-damage-5")
+
+  researchTechnology("combat-robotics-2")
+  researchTechnology("follower-robot-count-3")
+  researchTechnology("follower-robot-count-4")
+  researchTechnology("energy-weapons-damage-4")
+  researchTechnology("laser-turret-speed-3")
+  researchTechnology("laser-turret-speed-4")
+
+  researchTechnology("low-density-structure")
+  researchTechnology("roboports")
+  researchTechnology("logistic-robotics")
+  researchTechnology("worker-robots-storage-1")
+  researchTechnology("worker-robots-speed-1")
+  researchTechnology("worker-robots-speed-2")
+  researchTechnology("character-logistic-slots-1")
+  researchTechnology("character-logistic-slots-2")
+  researchTechnology("character-logistic-slots-3")
+  researchTechnology("character-logistic-trash-slots-1")
+  researchTechnology("character-logistic-trash-slots-2")
+  researchTechnology("auto-character-logistic-trash-slots")
+
+  researchTechnology("power-armor")
+  researchTechnology("energy-shield-mk2-equipment")
+  researchTechnology("discharge-defense-equipment")
+  researchTechnology("personal-laser-defense-equipment")
+  researchTechnology("exoskeleton-equipment")
+  researchTechnology("battery-mk2-equipment")
+
+  if self.returnValue == 6 then
     return
   end
 

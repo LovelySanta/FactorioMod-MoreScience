@@ -1,8 +1,6 @@
-local scienceResearch = {}
-scienceResearch.icon = "__MoreScience__/graphics/technology/potions/"
-scienceResearch.icon_size = 128
-
-
+local scienceTech    = require("prototypes/settings").techIcons
+local scienceNames   = require("prototypes/settings").scienceNames
+local redScienceName = scienceNames.red
 
 data:extend{
 --------------------------------------------------------------------------------
@@ -50,7 +48,7 @@ data:extend{
       count = 35,
       ingredients =
       {
-        {"automation-science-pack", 1},
+        {string.format(redScienceName, "pack"), 1},
       },
       time = 5,
     },
@@ -67,8 +65,8 @@ data:extend{
   {
     type = "technology",
     name = "bottling-research",
-    icon = scienceResearch.icon .. "potion-empty.png",
-    icon_size = scienceResearch.icon_size,
+    icon = scienceTech.icon .. "potion-empty.png",
+    icon_size = scienceTech.icon_size,
     prerequisites =
     {
       --"automation-2",
@@ -106,11 +104,11 @@ data:extend{
       },]]
       {
         type = "unlock-recipe",
-        recipe = "automation-science-pack-fluid",
+        recipe = string.format(redScienceName, "fluid"),
       },
       {
         type = "unlock-recipe",
-        recipe = "automation-science-pack",
+        recipe = string.format(redScienceName, "pack"),
       },
     },
     unit =
@@ -118,7 +116,7 @@ data:extend{
       count = 40,
       ingredients =
       {
-        {"automation-science-pack", 2},
+        {string.format(redScienceName, "pack"), 2},
       },
       time = 10,
     },
@@ -167,8 +165,8 @@ end
 --------------------------------------------------------------------------------
 
 -- research speed 1
-MoreScience.lib.technology.removePrerequisite("research-speed-1", "automation-2")
-MoreScience.lib.technology.addPrerequisite("research-speed-1", "bottling-research")
-MoreScience.lib.technology.removeIngredient("research-speed-1", "logistic-science-pack")
+MoreScience.lib.technology.removePrerequisite("research-speed-1", "automation-2"         )
+MoreScience.lib.technology.addPrerequisite   ("research-speed-1", "bottling-research"    )
+MoreScience.lib.technology.removeIngredient  ("research-speed-1", "logistic-science-pack")
 
 MoreScience.lib.technology.addPrerequisite("fast-inserter", "logistics")

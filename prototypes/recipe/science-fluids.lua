@@ -2,42 +2,47 @@ local recipeMultiplier = 5
 local fluidPerPack = 10
 
 local previousFluid = {
-  ["automation-science-pack"         ] = false,
+  ["automation-science-%s"         ] = false,
 
-  ["logistic-science-pack"           ] = "automation-science-pack",
-  ["military-science-pack"           ] = "automation-science-pack",
+  ["logistic-science-%s"           ] = "automation-science-%s",
+  ["military-science-%s"           ] = "automation-science-%s",
 
-  ["advanced-automation-science-pack"] = "logistic-science-pack",
-  ["electric-power-science-pack"     ] = "logistic-science-pack",
+  ["advanced-automation-science-%s"] = "logistic-science-%s",
+  ["electric-power-science-%s"     ] = "logistic-science-%s",
+
+  ["chemical-science-%s"           ] = "advanced-automation-science-%s",
 }
 local ingredientMultiplier = {
-  ["automation-science-pack"         ] = 5,
+  ["automation-science-%s"         ] = 5,
 
-  ["logistic-science-pack"           ] = 5,
-  ["military-science-pack"           ] = 5,
+  ["logistic-science-%s"           ] = 5,
+  ["military-science-%s"           ] = 5,
 
-  ["advanced-automation-science-pack"] = 1,
-  ["electric-power-science-pack"     ] = 1,
+  ["advanced-automation-science-%s"] = 1,
+  ["electric-power-science-%s"     ] = 1,
+
+  ["chemical-science-%s"           ] = 3,
 }
 
 
-for packName,_ in pairs(previousFluid) do
+for scienceName,_ in pairs(previousFluid) do
+  local packName  = string.format(scienceName, "pack" )
+  local fluidName = string.format(scienceName, "fluid")
+  
   -- STEP 1: create basic recipe -----------------------------------------------
-  MoreScience.lib.recipe.create(packName .. "-fluid")
-  --MoreScience.lib.recipe.disable(packName .. "-fluid")
-  MoreScience.lib.recipe.setEngergyRequired(packName .. "-fluid",
-    (data.raw["recipe"][packName]          .energy_required or
-     data.raw["recipe"][packName].normal   .energy_required or
-     data.raw["recipe"][packName].expensive.energy_required ) * recipeMultiplier)
-  MoreScience.lib.recipe.setCraftingCategory(packName .. "-fluid", "ms-chemical-crafting")
-  MoreScience.lib.recipe.addResult(packName .. "-fluid", packName .. "-fluid", fluidPerPack*recipeMultiplier, "fluid")
+  MoreScience.lib.recipe.create(fluidName)
+  MoreScience.lib.recipe.disable(fluidName)
+  MoreScience.lib.recipe.setEngergyRequired(fluidName,
+    MoreScience.lib.recipe.getEngergyRequired(packName) * recipeMultiplier)
+  MoreScience.lib.recipe.setCraftingCategory(fluidName, "ms-chemical-crafting")
+  MoreScience.lib.recipe.addResult(fluidName, fluidName, fluidPerPack*recipeMultiplier, "fluid")
 
 
 
   -- STEP 2a: basic ingredients ------------------------------------------------
-  MoreScience.lib.recipe.addIngredient(packName .. "-fluid", "purified-water", fluidPerPack*recipeMultiplier, "fluid")
-  if previousFluid[packName] then
-    MoreScience.lib.recipe.addIngredient(packName .. "-fluid", previousFluid[packName] .. "-fluid", fluidPerPack*recipeMultiplier, "fluid")
+  MoreScience.lib.recipe.addIngredient(fluidName, "purified-water", fluidPerPack * recipeMultiplier, "fluid")
+  if previousFluid[scienceName] then
+    MoreScience.lib.recipe.addIngredient(fluidName, string.format(previousFluid[scienceName], "fluid"), fluidPerPack * recipeMultiplier, "fluid")
   end
 
 
@@ -51,7 +56,7 @@ for packName,_ in pairs(previousFluid) do
     if not (ingredientName == "empty-bottle" or ingredientName == "ms-science-fluid") then
       table.insert(ingredients, {
         type   = ingredient["type"  ] or "item"       ,
-        name   = ingredientName,
+        name   = ingredientName                       ,
         amount = ingredient["amount"] or ingredient[2],
       })
     end
@@ -61,15 +66,15 @@ for packName,_ in pairs(previousFluid) do
 
   -- STEP 2c: move the ingredients over to the fluid
   for _,ingredient in pairs(ingredients) do
-    local amount = math.floor((ingredient.amount + 0.5) * ingredientMultiplier[packName])
+    local amount = math.floor((ingredient.amount + 0.5) * ingredientMultiplier[scienceName])
     amount = amount > 0 and amount or 1 -- minimal require 1
-    MoreScience.lib.recipe.addIngredient   (packName .. "-fluid", ingredient.name, ingredient.amount*ingredientMultiplier[packName], ingredient.type)
-    MoreScience.lib.recipe.removeIngredient(packName            , ingredient.name)
+    MoreScience.lib.recipe.addIngredient   (fluidName, ingredient.name, ingredient.amount*ingredientMultiplier[scienceName], ingredient.type)
+    MoreScience.lib.recipe.removeIngredient(packName , ingredient.name)
   end
 
 
 
   -- STEP 3: add the fluid to the pack recipe instead
-  MoreScience.lib.recipe.editIngredient(packName, "ms-science-fluid", packName .. "-fluid", fluidPerPack)
+  MoreScience.lib.recipe.editIngredient(packName, "ms-science-fluid", fluidName, fluidPerPack)
 
 end

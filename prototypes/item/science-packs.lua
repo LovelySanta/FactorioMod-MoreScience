@@ -2,23 +2,23 @@ local function numberToString(number)
   if number >= 10 then return "" .. number else return "0" .. number end
 end
 
-local function getFluidOrder(potionName)
+local function getFluidOrder(scienceName)
   return MoreScience.lib.util.stringSplit(
            MoreScience.lib.util.stringSplit(
-             data.raw["fluid"][potionName .. "-fluid"].order,
+             data.raw["fluid"][string.format(scienceName, "fluid")].order,
            "-")[3],
          "[")[1]
 end
 
-local function alterSciencePack(potionName, potionNumber)
-  sciencePack = data.raw["tool"][potionName]
+local function alterSciencePack(scienceName, scienceNumber)
+  sciencePack = data.raw["tool"][string.format(scienceName, "pack")]
 
   sciencePack.icon = nil
   sciencePack.icon_size = nil
   sciencePack.icons =
   {
     {
-      icon = "__MoreScience__/graphics/icons/potion/set-01/potion-" .. numberToString(potionNumber) .. ".png",
+      icon = "__MoreScience__/graphics/icons/potion/set-01/potion-" .. numberToString(scienceNumber) .. ".png",
       icon_size = 32,
     },
     {
@@ -26,22 +26,22 @@ local function alterSciencePack(potionName, potionNumber)
       icon_size = 32,
     },
   }
-  data.raw["tool"][potionName] = util.table.deepcopy(sciencePack)
+  data.raw["tool"][ sciencePack.name] = util.table.deepcopy(sciencePack)
 
   MoreScience.lib.item.setSubgroup   ("tool", sciencePack.name, "science-pack")
-  MoreScience.lib.item.setOrderstring("tool", sciencePack.name, "z-MoreScience-" .. getFluidOrder(potionName) .. "[" .. potionName .. "]")
+  MoreScience.lib.item.setOrderstring("tool", sciencePack.name, "z-MoreScience-" .. getFluidOrder(scienceName) .. "[" ..  sciencePack.name .. "]")
 end
 
-local function addSciencePack(potionName, potionNumber)
+local function addSciencePack(scienceName, scienceNumber)
   data:extend({
     {
       type = "tool",
-      name = potionName,
+      name = string.format(scienceName, "pack"),
       localised_description = {"item-description.science-pack"},
       icons =
       {
         {
-          icon = "__MoreScience__/graphics/icons/potion/set-01/potion-" .. numberToString(potionNumber) .. ".png",
+          icon = "__MoreScience__/graphics/icons/potion/set-01/potion-" .. numberToString(scienceNumber) .. ".png",
           icon_size = 32,
         },
         {
@@ -51,7 +51,7 @@ local function addSciencePack(potionName, potionNumber)
       },
       --flags = {},
       subgroup = "science-pack",
-      order = "z-MoreScience-" .. getFluidOrder(potionName) .. "[" .. potionName .. "]",
+      order = "z-MoreScience-" .. getFluidOrder(scienceName) .. "[" .. string.format(scienceName, "pack") .. "]",
       stack_size = 200,
       durability = 1,
       durability_description_key = "description.science-pack-remaining-amount-key",
@@ -62,13 +62,13 @@ end
 
 
 
-alterSciencePack("automation-science-pack"         , 14)
-alterSciencePack("logistic-science-pack"           , 03)
-alterSciencePack("military-science-pack"           , 09)
-addSciencePack  ("advanced-automation-science-pack", 15)
-addSciencePack  ("electric-power-science-pack"     , 05)
---alterSciencePack("science-pack-3", 8)
---alterSciencePack("production-science-pack", 10)
---alterSciencePack("high-tech-science-pack", 2)
---addSciencePack("basic-logistics-science-pack", 13)
---alterSciencePack("space-science-pack", 1)
+alterSciencePack("automation-science-%s"         , 14)
+alterSciencePack("logistic-science-%s"           , 03)
+alterSciencePack("military-science-%s"           , 09)
+addSciencePack  ("advanced-automation-science-%s", 15)
+addSciencePack  ("electric-power-science-%s"     , 05)
+alterSciencePack("chemical-science-%s"           , 08)
+--alterSciencePack("production-science-%s", 10)
+--alterSciencePack("high-tech-science-%s", 2)
+--addSciencePack("basic-logistics-science-%s", 13)
+--alterSciencePack("space-science-%s", 1)

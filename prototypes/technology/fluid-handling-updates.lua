@@ -1,4 +1,5 @@
 local techName = "fluid-handling"
+local scienceNames = require("prototypes/settings").scienceNames
 
 --------------------------------------------------------------------------------
 ----- Fluid handling 1                                                     -----
@@ -29,8 +30,6 @@ for _,barrelingRecipe in pairs{
   MoreScience.lib.recipe.setOrderstring(string.format(barrelingRecipe, "purified-water"), data.raw["fluid"]["purified-water"].order)
 end
 
-
-
 --------------------------------------------------------------------------------
 ----- Fluid handling 2 (barreling refined oil products)                    -----
 --------------------------------------------------------------------------------
@@ -47,5 +46,28 @@ for _,oilFluid in pairs{
     "empty-%s-barrel",
   } do
     MoreScience.lib.technology.moveRecipeUnlock(techName, techName.."-2", string.format(barrelingRecipe, oilFluid))
+  end
+end
+
+--------------------------------------------------------------------------------
+----- Fluid handling 3 (barreling science fluids)                          -----
+--------------------------------------------------------------------------------
+for _,scienceFluid in pairs{
+  string.format(scienceNames.red   , "fluid"),
+  string.format(scienceNames.green , "fluid"),
+  string.format(scienceNames.gray  , "fluid"),
+  string.format(scienceNames.orange, "fluid"),
+  string.format(scienceNames.cyan  , "fluid"),
+  string.format(scienceNames.blue  , "fluid"),
+  --string.format(scienceNames.pink  , "fluid"),
+  --string.format(scienceNames.purple, "fluid"),
+  --string.format(scienceNames.yellow, "fluid"),
+  --string.format(scienceNames.white , "fluid"),
+} do
+  for _,barrelingRecipe in pairs{
+    "fill-%s-barrel",
+    "empty-%s-barrel",
+  } do
+    MoreScience.lib.technology.moveRecipeUnlock(techName, techName.."-3", string.format(barrelingRecipe, scienceFluid))
   end
 end

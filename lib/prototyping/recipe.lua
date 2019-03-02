@@ -605,6 +605,17 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
 
 
 
+  function MoreScience.lib.recipe.getEngergyRequired(recipeName)
+    if not data.raw["recipe"][recipeName] then return end
+    recipePrototypeCleanup(recipeName)
+
+    return data.raw["recipe"][recipeName]          .energy_required or
+           data.raw["recipe"][recipeName].normal   .energy_required or
+           data.raw["recipe"][recipeName].expensive.energy_required
+  end
+
+
+
   function MoreScience.lib.recipe.setLocalisedName(recipeName, localeString)
     if not data.raw["recipe"][recipeName] then return end
 

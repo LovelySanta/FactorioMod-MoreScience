@@ -1,5 +1,5 @@
 
-function createScienceFluid(packName, fluidName, order, fluidNumber, baseColor, flowColor)
+function createScienceFluid(scienceName, order, fluidNumber, baseColor, flowColor)
   local function numberToString(number)
     --if number >= 10 then return "" .. number else return "0" .. number end
     return ((number >= 10) and ("" .. number) or ("0" .. number))
@@ -8,8 +8,8 @@ function createScienceFluid(packName, fluidName, order, fluidNumber, baseColor, 
   data:extend({
     {
       type = "fluid",
-      name = packName .. fluidName,
-      localised_name = {"fluid-name.science-fluid", {"item-name." .. packName}},
+      name = string.format(scienceName, "fluid"),
+      localised_name = {"fluid-name.science-fluid", {"item-name." .. string.format(scienceName, "pack")}},
       icon = "__MoreScience__/graphics/icons/fluid/fluid-" .. numberToString(fluidNumber) .. ".png",
       icon_size = 32,
 
@@ -34,7 +34,7 @@ function createScienceFluid(packName, fluidName, order, fluidNumber, baseColor, 
       flow_to_energy_ratio = 0.59,
       -- fuel_value = "8MJ",
       subgroup = "ms-science-fluid",
-      order = "z-MoreScience-" .. order .. "[" .. packName .. fluidName .. "]"
+      order = "z-MoreScience-" .. order .. "[" .. string.format(scienceName, "fluid") .. "]"
     },
   })
 end
@@ -42,15 +42,17 @@ end
 
 
 -- purified water
-createScienceFluid("purified-water", "", "a", 0, {r=155, g=255, b=246}, {r=155, g=255, b=246})
+createScienceFluid("purified-water"                , "a" , 00, {r=155, g=255, b=246}, {r=155, g=255, b=246})
 MoreScience.lib.item.setLocalisedName("fluid", "purified-water", nil                      )
 MoreScience.lib.item.setSubgroup     ("fluid", "purified-water", "ms-science-raw-material")
 
 -- science fluids
-createScienceFluid("automation-science-pack"         , "-fluid", "a1", 14, {r=191, g=019, b=019}, {r=200, g=048, b=048})
+createScienceFluid("automation-science-%s"         , "a1", 14, {r=191, g=019, b=019}, {r=200, g=048, b=048})
 
-createScienceFluid("logistic-science-pack"           , "-fluid", "b1", 03, {r=063, g=187, b=063}, {r=063, g=187, b=063})
-createScienceFluid("military-science-pack"           , "-fluid", "b2", 09, {r=068, g=043, b=005}, {r=068, g=043, b=005})
+createScienceFluid("logistic-science-%s"           , "b1", 03, {r=063, g=187, b=063}, {r=063, g=187, b=063})
+createScienceFluid("military-science-%s"           , "b2", 09, {r=068, g=043, b=005}, {r=068, g=043, b=005})
 
-createScienceFluid("advanced-automation-science-pack", "-fluid", "c1", 15, {r=255, g=121, b=005}, {r=234, g=132, b=000})
-createScienceFluid("electric-power-science-pack"     , "-fluid", "c2", 05, {r=000, g=198, b=198}, {r=000, g=239, b=207})
+createScienceFluid("advanced-automation-science-%s", "c1", 15, {r=255, g=121, b=005}, {r=234, g=132, b=000})
+createScienceFluid("electric-power-science-%s"     , "c2", 05, {r=000, g=198, b=198}, {r=000, g=239, b=207})
+
+createScienceFluid("chemical-science-%s"           , "d1", 8, {r=12, g=70, b=206}, {r=0, g=12, b=255})

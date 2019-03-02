@@ -1,8 +1,6 @@
-local scienceResearch = {}
-scienceResearch.icon = "__MoreScience__/graphics/technology/potions/"
-scienceResearch.icon_size = 128
-local orangePackName = "advanced-automation-science-pack"
-local orangeTechName = orangePackName
+local scienceTech       = require("prototypes/settings").techIcons
+local scienceNames      = require("prototypes/settings").scienceNames
+local orangeScienceName = scienceNames.orange
 
 --------------------------------------------------------------------------------
 ----- orange science research                                               -----
@@ -11,9 +9,9 @@ local orangeTechName = orangePackName
 data:extend({
   {
     type = "technology",
-    name = orangeTechName,
-    icon = scienceResearch.icon .. "potion-orange.png",
-    icon_size = scienceResearch.icon_size,
+    name = string.format(orangeScienceName, "pack"),
+    icon = scienceTech.icon .. "potion-orange.png",
+    icon_size = scienceTech.icon_size,
     prerequisites = {
       "logistic-science-pack",
       "concrete",
@@ -23,19 +21,19 @@ data:extend({
     {
       {
         type = "unlock-recipe",
-        recipe = orangePackName.."-fluid"
+        recipe = string.format(orangeScienceName, "fluid")
       },
       {
         type = "unlock-recipe",
-        recipe = orangePackName
+        recipe = string.format(orangeScienceName, "pack")
       },
     },
     unit =
     {
       count = 50,
       ingredients = {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack"  , 3},
+        {string.format(scienceNames.red  , "pack"), 1},
+        {string.format(scienceNames.green, "pack"), 3},
       },
       time = 10
     },
@@ -54,117 +52,132 @@ for _,techName in pairs{
   "automated-rail-transportation",
   --"automobilism",
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, orangeTechName)
+  MoreScience.lib.technology.addPrerequisite(techName, string.format(orangeScienceName, "pack"))
 end
 
 -- add tech ingredient to other science packs
 for techName,techLevels in pairs{
+  ["research-speed-%i"                      ] = {4, 5, 6},
+  ["mining-productivity-%i"                 ] = {4, 8, 12, 16},
+
   -- Oil related stuff
-  ["fluid-handling-%i"             ] = {2},
-  ["oil-processing"                ] = {},
-  ["advanced-oil-processing"       ] = {},
-  ["plastics"                      ] = {},
-  ["sulfur"                        ] = {},
-  ["sulfur-processing"             ] = {},
-  ["battery"                       ] = {},
-  ["lubricant"                     ] = {},
-  ["electric-engine"               ] = {},
-  ["explosives"                    ] = {},
-  ["flammables"                    ] = {},
-  ["rocket-fuel"                   ] = {},
-  ["advanced-electronics"          ] = {},
-  ["coal-liquefaction"             ] = {},
+  ["fluid-handling-%i"                      ] = {2, 3},
+  ["oil-processing"                         ] = {},
+  ["advanced-oil-processing"                ] = {},
+  ["plastics"                               ] = {},
+  ["low-density-structure"                  ] = {},
+  ["sulfur"                                 ] = {},
+  ["sulfur-processing"                      ] = {},
+  ["battery"                                ] = {},
+  ["lubricant"                              ] = {},
+  ["electric-engine"                        ] = {},
+  ["explosives"                             ] = {},
+  ["flammables"                             ] = {},
+  ["rocket-fuel"                            ] = {},
+  ["advanced-electronics%s"                 ] = {"", "-2"},
+  ["coal-liquefaction"                      ] = {},
 
-  ["stack-inserter"                ] = {},
-  ["inserter-capacity-bonus-%i"    ] = {2, 3, 4, 5, 6, 7},
-  --["mining-productivity-%i"        ] = {1, 4, 8, 12, 16},
+  ["stack-inserter"                         ] = {},
+  ["inserter-capacity-bonus-%i"             ] = {2, 3, 4, 5, 6, 7},
+  --["mining-productivity-%i"                 ] = {1, 4, 8, 12, 16},
 
-  ["electric-energy-accumulators-1" ] = {},
+  ["electric-energy-accumulators-%i"        ] = {1},
+  ["electric-energy-distribution-%i"        ] = {2},
+  ["advanced-material-processing-%i"        ] = {2},
 
   -- logistics
-  --["automobilism"                  ] = {},
-  ["automated-rail-transportation" ] = {},
-  ["rail-signals"                  ] = {},
-  ["fluid-wagon"                   ] = {},
-  ["braking-force-%i"              ] = {1, 2, 3, 4, 5, 6, 7},
+  --["automobilism"                           ] = {},
+  ["automated-rail-transportation"          ] = {},
+  ["rail-signals"                           ] = {},
+  ["fluid-wagon"                            ] = {},
+  ["braking-force-%i"                       ] = {1, 2, 3, 4, 5, 6, 7},
 
   -- modules
-  ["modules"                       ] = {},
-  ["speed-module"                  ] = {},
-  ["speed-module-%i"               ] = {2, 3},
-  ["productivity-module"           ] = {},
-  ["productivity-module-%i"        ] = {2, 3},
-  ["effectivity-module"            ] = {},
-  ["effectivity-module-%i"         ] = {2, 3},
-
-  -- power
-  --["solar-energy"                   ] = {},
-  ["portable-solar-panel"           ] = {},
+  ["modules"                                ] = {},
+  ["speed-module%s"                         ] = {"", "-2", "-3"},
+  ["productivity-module%s"                  ] = {"", "-2", "-3"},
+  ["effectivity-module%s"                   ] = {"", "-2", "-3"},
 
   -- military
-  ["military-%i"                    ] = {3, 4},
-  ["cliff-explosives"               ] = {},
-  ["land-mine"                      ] = {},
-  ["weapon-shooting-speed-%i"       ] = {3, 4, 5, 6},
-  ["physical-projectile-damage-%i"  ] = {4, 5, 6, 7},
-  ["stronger-explosives-%i"         ] = {3, 4, 5, 6, 7},
+  ["military-%i"                            ] = {3, 4},
+  ["cliff-explosives"                       ] = {},
+  ["land-mine"                              ] = {},
+  ["weapon-shooting-speed-%i"               ] = {3, 4, 5, 6},
+  ["physical-projectile-damage-%i"          ] = {4, 5, 6, 7},
+  ["stronger-explosives-%i"                 ] = {3, 4, 5, 6, 7},
+  ["tanks"                                  ] = {},
 
-  ["laser"                          ] = {},
-  ["laser-turrets"                  ] = {},
-  ["laser-turret-speed-%i"          ] = {1, 2, 3, 4, 5, 6, 7},
-  ["energy-weapons-damage-%i"       ] = {1, 2, 3, 4, 5, 6, 7},
+  ["laser"                                  ] = {},
+  ["laser-turrets"                          ] = {},
+  ["laser-turret-speed-%i"                  ] = {1, 2, 3, 4, 5, 6, 7},
+  ["energy-weapons-damage-%i"               ] = {1, 2, 3, 4, 5, 6, 7},
 
-  ["flamethrower"                   ] = {},
-  ["refined-flammables-%i"          ] = {1, 2, 3, 4, 5, 6, 7},
-  ["rocketry"                       ] = {},
-  ["explosive-rocketry"             ] = {},
+  ["flamethrower"                           ] = {},
+  ["refined-flammables-%i"                  ] = {1, 2, 3, 4, 5, 6, 7},
+  ["rocketry"                               ] = {},
+  ["explosive-rocketry"                     ] = {},
 
-  --["tanks"                          ] = {},
-  --["cannon-shell-damage-%i"         ] = {1, 2, 3, 4, 5, 6},
-  --["cannon-shell-speed-%i"          ] = {1, 2, 3, 4, 5},
+  --["tanks"                                  ] = {},
+  --["cannon-shell-damage-%i"                 ] = {1, 2, 3, 4, 5, 6},
+  --["cannon-shell-speed-%i"                  ] = {1, 2, 3, 4, 5},
 
   -- bots
-  ["robotics"                       ] = {},
-  ["worker-robots-speed-%i"         ] = {1, 2, 3, 4, 5, 6},
-  ["construction-robotics"          ] = {},
-  ["logistic-robotics"              ] = {},
-  ["combat-robotics%s"              ] = {"", "-2", "-3"},
-  ["combat-robotics%s"              ] = {"", "-2", "-3"},
-  ["follower-robot-count-%i"        ] = {1, 2, 3, 4, 5, 6, 7},
+  ["robotics"                               ] = {},
+  ["worker-robots-speed-%i"                 ] = {1, 2, 3, 4, 5, 6},
+  ["worker-robots-storage-%i"               ] = {1, 2, 3},
+  ["construction-robotics"                  ] = {},
+  ["logistic-robotics"                      ] = {},
+  ["roboports"                              ] = {},
+  ["character-logistic-slots-%i"            ] = {1, 2, 3, 4, 5, 6},
+  ["character-logistic-trash-slots-%i"      ] = {1, 2, 3, 4, 5},
+  ["auto-character-logistic-trash-slots"    ] = {},
+  ["combat-robotics%s"                      ] = {"", "-2", "-3"},
+  ["combat-robotics%s"                      ] = {"", "-2", "-3"},
+  ["follower-robot-count-%i"                ] = {1, 2, 3, 4, 5, 6, 7},
 
   -- armor
-  ["modular-armor"                  ] = {},
-  ["power-armor"                    ] = {},
-  ["power-armor-%i"                 ] = {1},
+  ["modular-armor"                          ] = {},
+  ["power-armor%s"                          ] = {"", "-2"},
 
   -- equipment
-  ["solar-panel-equipment"          ] = {},
-  ["belt-immunity-equipment"        ] = {},
-  ["night-vision-equipment"         ] = {},
-  ["battery%s-equipment"            ] = {"", "-MK2"},
-  ["personal-roboport-equipment%s"  ] = {"", "-2"},
-  ["energy-shield%s-equipment"      ] = {"", "-mk2"},
+  ["solar-panel-equipment"                  ] = {},
+  ["belt-immunity-equipment"                ] = {},
+  ["night-vision-equipment"                 ] = {},
+  ["battery%s-equipment"                    ] = {"", "-mk2"},
+  ["personal-roboport-equipment%s"          ] = {"", "-2"},
+  ["energy-shield%s-equipment"              ] = {"", "-mk2"},
+  ["discharge-defense-equipment"            ] = {},
+  ["personal-laser-defense-equipment"       ] = {},
+  ["exoskeleton-equipment"                  ] = {},
+
+  -- uranium stuff
+  ["uranium-processing"                     ] = {},
+  ["nuclear-power"                          ] = {},
+  ["nuclear-fuel-reprocessing"              ] = {},
+  ["kovarex-enrichment-process"             ] = {},
+  ["uranium-ammo"                           ] = {},
+  ["atomic-bomb"                            ] = {},
 } do
   if MoreScience.lib.table.isEmpty(techLevels) then
-    MoreScience.lib.technology.addIngredient(techName, 1, orangePackName)
+    MoreScience.lib.technology.addIngredient(techName, 1, string.format(orangeScienceName, "pack"))
   else
     for _,techLevel in pairs(techLevels) do
-      MoreScience.lib.technology.addIngredient(string.format(techName, techLevel), 1, orangePackName)
+      MoreScience.lib.technology.addIngredient(string.format(techName, techLevel), 1, string.format(orangeScienceName, "pack"))
 
     end
   end
 end
 
-MoreScience.lib.technology.removeIngredient("braking-force-1", "chemical-science-pack"                                 )
-MoreScience.lib.technology.movePrerequisite("braking-force-1", "chemical-science-pack", "automated-rail-transportation")
-MoreScience.lib.technology.addPrerequisite ("braking-force-3", "chemical-science-pack"                                 )
+MoreScience.lib.technology.removeIngredient("braking-force-1", string.format(scienceNames.blue, "pack")                                 )
+MoreScience.lib.technology.movePrerequisite("braking-force-1", string.format(scienceNames.blue, "pack"), "automated-rail-transportation")
+MoreScience.lib.technology.addPrerequisite ("braking-force-2", "lubricant"                                                              )
+MoreScience.lib.technology.removeIngredient("braking-force-2", string.format(scienceNames.blue, "pack")                                 )
 
-MoreScience.lib.technology.addPrerequisite ("stronger-explosives-3", "explosives"           )
-MoreScience.lib.technology.removeIngredient("stronger-explosives-3", "chemical-science-pack")
-MoreScience.lib.technology.addPrerequisite ("stronger-explosives-4", "rocketry"             )
-MoreScience.lib.technology.removeIngredient("stronger-explosives-4", "chemical-science-pack")
-MoreScience.lib.technology.removeIngredient("stronger-explosives-4", "utility-science-pack" )
-MoreScience.lib.technology.removeIngredient("stronger-explosives-5", "utility-science-pack")
+MoreScience.lib.technology.addPrerequisite ("stronger-explosives-3", "explosives"                              )
+MoreScience.lib.technology.removeIngredient("stronger-explosives-3", string.format(scienceNames.blue  , "pack"))
+MoreScience.lib.technology.addPrerequisite ("stronger-explosives-4", "rocketry"                                )
+MoreScience.lib.technology.removeIngredient("stronger-explosives-4", string.format(scienceNames.blue  , "pack"))
+MoreScience.lib.technology.removeIngredient("stronger-explosives-4", string.format(scienceNames.yellow, "pack"))
 
 MoreScience.lib.technology.addPrerequisite ("refined-flammables-2", "explosives")
 

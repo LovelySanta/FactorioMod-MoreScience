@@ -1,3 +1,4 @@
+local scienceNames = require("prototypes/settings").scienceNames
 
 for prerequisite,techName in pairs{
 --------------------------------------------------------------------------------
@@ -20,13 +21,21 @@ for prerequisite,techName in pairs{
 --------------------------------------------------------------------------------
 ----- military-science-pack                                                -----
 --------------------------------------------------------------------------------
-  ["military-science-pack"] = {
+  [string.format(scienceNames.gray, "pack")] = {
     "weapon-shooting-speed-3"     ,
     "physical-projectile-damage-3",
     "stronger-explosives-2"       ,
     "flight"                      ,
   },
 
+--------------------------------------------------------------------------------
+----- military-3                                                           -----
+--------------------------------------------------------------------------------
+  ["military-3"] = {
+    "laser-turret-speed-3",
+    "refined-flammables-3",
+    "power-armor"         ,
+  },
 } do
   if not MoreScience.lib.table.isTable(techName) then
     MoreScience.lib.technology.addPrerequisite(techName, prerequisite)
@@ -35,4 +44,34 @@ for prerequisite,techName in pairs{
       MoreScience.lib.technology.addPrerequisite(tech, prerequisite)
     end
   end
+end
+
+--------------------------------------------------------------------------------
+----- other military related upgrades                                      -----
+--------------------------------------------------------------------------------
+-- move rocket damage bonus from stronger explosives 3 to rocketry + update the tech icon
+local effect = {}
+if data.raw["technology"]["stronger-explosives-3"]         and
+   data.raw["technology"]["stronger-explosives-3"].effects and
+   data.raw["technology"]["stronger-explosives-2"]         and
+   data.raw["technology"]["rocketry"             ]         then
+
+  -- make sure the new tech effects exist
+  if not data.raw["technology"]["rocketry"].effects then
+    data.raw["technology"]["rocketry"].effects = {}
+  end
+
+  -- move the tech effect
+  for effectIndex, effect in pairs(data.raw["technology"]["stronger-explosives-3"].effects) do
+    if effect.type == "ammo-damage" and effect.ammo_category == "rocket" then
+      table.insert(data.raw["technology"]["rocketry"             ].effects, util.table.deepcopy(effect))
+      table.remove(data.raw["technology"]["stronger-explosives-3"].effects, effectIndex                )
+      break
+    end
+  end
+
+  -- update the tech icon
+  data.raw["technology"]["stronger-explosives-3"].icon      = data.raw["technology"]["stronger-explosives-2"].icon
+  data.raw["technology"]["stronger-explosives-3"].icon_size = data.raw["technology"]["stronger-explosives-2"].icon_size
+  data.raw["technology"]["stronger-explosives-3"].icons     = data.raw["technology"]["stronger-explosives-2"].icons
 end
