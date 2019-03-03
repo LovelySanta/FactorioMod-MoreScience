@@ -2,7 +2,7 @@
 Debug = {}
 
 Debug.enabled = true
-Debug.returnValue = 7
+Debug.returnValue = 8
 
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
@@ -250,6 +250,7 @@ function Debug:reseachAllTechnologies()
   researchTechnology("worker-robots-storage-1")
   researchTechnology("worker-robots-speed-1")
   researchTechnology("worker-robots-speed-2")
+  researchTechnology("worker-robots-speed-3")
   researchTechnology("character-logistic-slots-1")
   researchTechnology("character-logistic-slots-2")
   researchTechnology("character-logistic-slots-3")
@@ -294,6 +295,54 @@ function Debug:reseachAllTechnologies()
   researchTechnology("research-speed-5")
 
   if self.returnValue == 7 then
+    return
+  end
+
+--------------------------------------------------------------------------------
+----- Yellow science                                                       -----
+--------------------------------------------------------------------------------
+
+  researchTechnology("utility-science-pack")
+  researchTechnology("research-speed-6")
+  researchTechnology("mining-productivity-12")
+  researchTechnology("braking-force-6")
+
+  researchTechnology("military-4")
+  researchTechnology("artillery")
+  researchTechnology("rocket-control-unit")
+  researchTechnology("atomic-bomb")
+
+  researchTechnology("combat-robotics-3")
+  researchTechnology("follower-robot-count-5")
+  researchTechnology("follower-robot-count-6")
+
+  researchTechnology("refined-flammables-4")
+  researchTechnology("refined-flammables-5")
+  researchTechnology("refined-flammables-6")
+  researchTechnology("stronger-explosives-6")
+
+  researchTechnology("uranium-ammo")
+  researchTechnology("weapon-shooting-speed-6")
+  researchTechnology("physical-projectile-damage-6")
+
+  researchTechnology("energy-weapons-damage-5")
+  researchTechnology("energy-weapons-damage-6")
+  researchTechnology("laser-turret-speed-5")
+  researchTechnology("laser-turret-speed-6")
+  researchTechnology("laser-turret-speed-7")
+
+  researchTechnology("logistic-system")
+  researchTechnology("power-armor-2")
+  researchTechnology("fusion-reactor-equipment")
+  researchTechnology("personal-roboport-equipment-2")
+  researchTechnology("worker-robots-storage-3")
+  researchTechnology("worker-robots-speed-4")
+  researchTechnology("character-logistic-slots-4")
+  researchTechnology("character-logistic-trash-slots-3")
+
+
+
+  if self.returnValue == 8 then
     return
   end
 

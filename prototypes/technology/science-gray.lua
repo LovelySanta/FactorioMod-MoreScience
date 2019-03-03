@@ -25,10 +25,11 @@ end
 
 -- add tech ingredient to other science packs
 for techName,techLevels in pairs{
-  ["modular-armor"] = {},
-  ["flight"       ] = {},
-  ["roboports"    ] = {},
-  ["power-armor"  ] = {},
+  ["modular-armor"      ] = {},
+  ["flight"             ] = {},
+  ["roboports"          ] = {},
+  ["power-armor"        ] = {},
+  ["rocket-control-unit"] = {},
 } do
   if MoreScience.lib.table.isEmpty(techLevels) then
     MoreScience.lib.technology.addIngredient(techName, 1, string.format(grayScienceName, "pack"))

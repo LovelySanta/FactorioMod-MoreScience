@@ -66,7 +66,9 @@ MoreScience.lib.technology.addPrerequisite   ("energy-weapons-damage-4"         
 MoreScience.lib.technology.addPrerequisite   ("laser-turret-speed-4"               , "electric-energy-distribution-2"          )
 MoreScience.lib.technology.addPrerequisite   ("follower-robot-count-3"             , "combat-robotics-2"                       )
 
-MoreScience.lib.technology.addPrerequisite   ("worker-robots-speed-2"              , "low-density-structure"                   )
+MoreScience.lib.technology.addPrerequisite   ("worker-robots-speed-2"              , "logistic-robotics"                       )
+MoreScience.lib.technology.removeIngredient  ("worker-robots-speed-3"              , string.format(scienceNames.yellow, "pack"))
+MoreScience.lib.technology.addPrerequisite   ("worker-robots-speed-3"              , "low-density-structure"                   )
 MoreScience.lib.technology.addPrerequisite   ("inserter-capacity-bonus-3"          , "advanced-electronics-2"                  )
 MoreScience.lib.technology.removePrerequisite("auto-character-logistic-trash-slots", string.format(blueScienceName    , "pack"))
 

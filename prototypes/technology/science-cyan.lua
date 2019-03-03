@@ -83,6 +83,7 @@ for techName,techLevels in pairs{
   ["battery"                                ] = {},
   ["electric-energy-accumulators-%i"        ] = {1},
   ["electric-energy-distribution-%i"        ] = {2},
+  ["rocket-control-unit"                    ] = {},
 
   ["laser"                                  ] = {},
   ["laser-turrets"                          ] = {},
@@ -94,7 +95,7 @@ for techName,techLevels in pairs{
   ["power-armor%s"                          ] = {"", "-2"},
   ["effectivity-module-%i"                  ] = {2},
 
-  -- equpment
+  -- equipment
   ["solar-panel-equipment"                  ] = {},
   ["belt-immunity-equipment"                ] = {},
   ["night-vision-equipment"                 ] = {},
@@ -111,8 +112,9 @@ for techName,techLevels in pairs{
   ["worker-robots-speed-%i"                 ] = {1, 2, 3, 4, 5, 6},
   ["worker-robots-storage-%i"               ] = {1, 2, 3},
   ["construction-robotics"                  ] = {},
-  ["logistic-robotics"                      ] = {},
   ["roboports"                              ] = {},
+  ["logistic-robotics"                      ] = {},
+  ["logistic-system"                        ] = {},
   ["character-logistic-slots-%i"            ] = {1, 2, 3, 4, 5, 6},
   ["character-logistic-trash-slots-%i"      ] = {1, 2, 3, 4, 5},
   ["auto-character-logistic-trash-slots"    ] = {},

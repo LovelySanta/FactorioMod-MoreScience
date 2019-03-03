@@ -54,9 +54,9 @@ for sciencePackName,craftingTime in pairs{
   [cyanPackName                              ] = 10,
   [string.format(scienceNames.blue  , "pack")] = 10,
   [string.format(scienceNames.purple, "pack")] = 20,
-  ["basic-logistics-science-pack"            ] = 20,
-  [string.format(scienceNames.yellow, "pack")] = 30,
-  [string.format(scienceNames.white , "pack")] = 50,
+  [string.format(scienceNames.yellow, "pack")] = 20,
+  --["basic-logistics-science-pack"            ] = 20,
+  --[string.format(scienceNames.white , "pack")] = 50,
 } do
   if data.raw.recipe[sciencePackName] then
     MoreScience.lib.recipe.disable            (sciencePackName)
@@ -67,12 +67,4 @@ for sciencePackName,craftingTime in pairs{
     MoreScience.lib.recipe.addIngredient      (sciencePackName, "empty-bottle"    , 1 , "item")
     MoreScience.lib.recipe.addIngredient      (sciencePackName, "ms-science-fluid", 1, "fluid")
   end
-end
-
--- TEMPORARY REMOVE IT AGAIN
-for sciencePackName,craftingTime in pairs{
-  ["utility-science-pack"         ] = 30,
-  --["space-science-pack"           ] = 50,
-} do
-  MoreScience.lib.recipe.removeIngredient(sciencePackName, "ms-science-fluid")
 end

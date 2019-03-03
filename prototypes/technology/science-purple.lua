@@ -1,5 +1,5 @@
-local scienceTech     = require("prototypes/settings").techIcons
-local scienceNames    = require("prototypes/settings").scienceNames
+local scienceTech       = require("prototypes/settings").techIcons
+local scienceNames      = require("prototypes/settings").scienceNames
 local purpleScienceName = scienceNames.purple
 
 --------------------------------------------------------------------------------
@@ -12,6 +12,7 @@ MoreScience.lib.technology.removeIngredient(string.format(purpleScienceName, "pa
 MoreScience.lib.technology.addIngredient   (string.format(purpleScienceName, "pack"), 2, string.format(scienceNames.green , "pack"))
 MoreScience.lib.technology.addIngredient   (string.format(purpleScienceName, "pack"), 3, string.format(scienceNames.orange, "pack"))
 MoreScience.lib.technology.addIngredient   (string.format(purpleScienceName, "pack"), 4, string.format(scienceNames.cyan  , "pack"))
+MoreScience.lib.technology.removeIngredient(string.format(purpleScienceName, "pack"),    string.format(scienceNames.blue  , "pack"))
 MoreScience.lib.technology.addIngredient   (string.format(purpleScienceName, "pack"), 5, string.format(scienceNames.blue  , "pack"))
 
 MoreScience.lib.technology.addRecipeUnlock(string.format(purpleScienceName, "pack"), string.format(purpleScienceName, "fluid"))
@@ -50,6 +51,6 @@ MoreScience.lib.technology.movePrerequisite("effect-transmission"      , string.
 MoreScience.lib.technology.movePrerequisite("speed-module-3"           , string.format(purpleScienceName, "pack"), "effect-transmission" )
 MoreScience.lib.technology.movePrerequisite("productivity-module-3"    , string.format(purpleScienceName, "pack"), "effect-transmission" )
 
-MoreScience.lib.technology.movePrerequisite("braking-force-5"          , string.format(purpleScienceName, "pack"), "logistics-3"         )
+MoreScience.lib.technology.addPrerequisite ("braking-force-5"                                                    , "logistics-3"         )
 MoreScience.lib.technology.addPrerequisite ("inserter-capacity-bonus-6"                                          , "logistics-3"         )
-MoreScience.lib.technology.movePrerequisite("research-speed-5"         , string.format(purpleScienceName, "pack"), "automation-3"        )
+MoreScience.lib.technology.addPrerequisite ("research-speed-5"                                                   , "automation-3"        )

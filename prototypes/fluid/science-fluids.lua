@@ -58,3 +58,4 @@ createScienceFluid(scienceNames.cyan  , "c2", 05, {r=000, g=198, b=198}, {r=000,
 
 createScienceFluid(scienceNames.blue  , "d1", 08, {r=012, g=070, b=206}, {r=000, g=012, b=255})
 createScienceFluid(scienceNames.purple, "d2", 10, {r=159, g=027, b=247}, {r=159, g=027, b=247})
+createScienceFluid(scienceNames.yellow, "d3", 02, {r=255, g=193, b=000}, {r=255, g=193, b=000})

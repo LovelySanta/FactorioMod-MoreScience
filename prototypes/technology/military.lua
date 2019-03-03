@@ -36,6 +36,15 @@ for prerequisite,techName in pairs{
     "refined-flammables-3",
     "power-armor"         ,
   },
+
+--------------------------------------------------------------------------------
+----- military-3                                                           -----
+--------------------------------------------------------------------------------
+  ["military-4"] = {
+    "stronger-explosives-6"       ,
+    "refined-flammables-4"        ,
+    "laser-turret-speed-5"        ,
+  },
 } do
   if not MoreScience.lib.table.isTable(techName) then
     MoreScience.lib.technology.addPrerequisite(techName, prerequisite)

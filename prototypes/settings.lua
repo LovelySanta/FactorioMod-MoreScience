@@ -36,6 +36,7 @@ settings.previousFluid = {
   [settings.scienceNames.gray  ] = settings.scienceNames.red   ,
   [settings.scienceNames.blue  ] = settings.scienceNames.orange,
   [settings.scienceNames.purple] = settings.scienceNames.cyan  ,
+  [settings.scienceNames.yellow] = settings.scienceNames.blue  ,
 
   [settings.scienceNames.orange] = settings.scienceNames.green ,
   [settings.scienceNames.cyan  ] = settings.scienceNames.green ,
@@ -47,6 +48,7 @@ settings.ingredientMultiplier = {
   [settings.scienceNames.gray  ] = 5,
   [settings.scienceNames.blue  ] = 3,
   [settings.scienceNames.purple] = 3,
+  [settings.scienceNames.yellow] = 3,
 
   [settings.scienceNames.orange] = 1,
   [settings.scienceNames.cyan  ] = 1,

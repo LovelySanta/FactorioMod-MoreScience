@@ -119,18 +119,16 @@ for techName,techLevels in pairs{
   ["refined-flammables-%i"                  ] = {1, 2, 3, 4, 5, 6, 7},
   ["rocketry"                               ] = {},
   ["explosive-rocketry"                     ] = {},
-
-  --["tanks"                                  ] = {},
-  --["cannon-shell-damage-%i"                 ] = {1, 2, 3, 4, 5, 6},
-  --["cannon-shell-speed-%i"                  ] = {1, 2, 3, 4, 5},
+  ["rocket-control-unit"                    ] = {},
 
   -- bots
   ["robotics"                               ] = {},
   ["worker-robots-speed-%i"                 ] = {1, 2, 3, 4, 5, 6},
   ["worker-robots-storage-%i"               ] = {1, 2, 3},
   ["construction-robotics"                  ] = {},
-  ["logistic-robotics"                      ] = {},
   ["roboports"                              ] = {},
+  ["logistic-robotics"                      ] = {},
+  ["logistic-system"                        ] = {},
   ["character-logistic-slots-%i"            ] = {1, 2, 3, 4, 5, 6},
   ["character-logistic-trash-slots-%i"      ] = {1, 2, 3, 4, 5},
   ["auto-character-logistic-trash-slots"    ] = {},
