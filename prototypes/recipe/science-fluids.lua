@@ -1,34 +1,16 @@
+local scienceNames     = require("prototypes/settings").scienceNames
 local recipeMultiplier = 5
-local fluidPerPack = 10
+local fluidPerPack     = 10
 
-local previousFluid = {
-  ["automation-science-%s"         ] = false,
+local previousFluid        = require("prototypes/settings").previousFluid
+local ingredientMultiplier = require("prototypes/settings").ingredientMultiplier
 
-  ["logistic-science-%s"           ] = "automation-science-%s",
-  ["military-science-%s"           ] = "automation-science-%s",
-
-  ["advanced-automation-science-%s"] = "logistic-science-%s",
-  ["electric-power-science-%s"     ] = "logistic-science-%s",
-
-  ["chemical-science-%s"           ] = "advanced-automation-science-%s",
-}
-local ingredientMultiplier = {
-  ["automation-science-%s"         ] = 5,
-
-  ["logistic-science-%s"           ] = 5,
-  ["military-science-%s"           ] = 5,
-
-  ["advanced-automation-science-%s"] = 1,
-  ["electric-power-science-%s"     ] = 1,
-
-  ["chemical-science-%s"           ] = 3,
-}
 
 
 for scienceName,_ in pairs(previousFluid) do
   local packName  = string.format(scienceName, "pack" )
   local fluidName = string.format(scienceName, "fluid")
-  
+
   -- STEP 1: create basic recipe -----------------------------------------------
   MoreScience.lib.recipe.create(fluidName)
   MoreScience.lib.recipe.disable(fluidName)

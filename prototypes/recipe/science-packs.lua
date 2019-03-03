@@ -71,7 +71,6 @@ end
 
 -- TEMPORARY REMOVE IT AGAIN
 for sciencePackName,craftingTime in pairs{
-  ["production-science-pack"      ] = 20,
   ["utility-science-pack"         ] = 30,
   --["space-science-pack"           ] = 50,
 } do

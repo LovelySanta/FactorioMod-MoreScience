@@ -47,12 +47,14 @@ MoreScience.lib.item.setLocalisedName("fluid", "purified-water", nil            
 MoreScience.lib.item.setSubgroup     ("fluid", "purified-water", "ms-science-raw-material")
 
 -- science fluids
-createScienceFluid("automation-science-%s"         , "a1", 14, {r=191, g=019, b=019}, {r=200, g=048, b=048})
+local scienceNames = require("prototypes/settings").scienceNames
+createScienceFluid(scienceNames.red   , "a1", 14, {r=191, g=019, b=019}, {r=200, g=048, b=048})
 
-createScienceFluid("logistic-science-%s"           , "b1", 03, {r=063, g=187, b=063}, {r=063, g=187, b=063})
-createScienceFluid("military-science-%s"           , "b2", 09, {r=068, g=043, b=005}, {r=068, g=043, b=005})
+createScienceFluid(scienceNames.green , "b1", 03, {r=063, g=187, b=063}, {r=063, g=187, b=063})
+createScienceFluid(scienceNames.gray  , "b2", 09, {r=068, g=043, b=005}, {r=068, g=043, b=005})
 
-createScienceFluid("advanced-automation-science-%s", "c1", 15, {r=255, g=121, b=005}, {r=234, g=132, b=000})
-createScienceFluid("electric-power-science-%s"     , "c2", 05, {r=000, g=198, b=198}, {r=000, g=239, b=207})
+createScienceFluid(scienceNames.orange, "c1", 15, {r=255, g=121, b=005}, {r=234, g=132, b=000})
+createScienceFluid(scienceNames.cyan  , "c2", 05, {r=000, g=198, b=198}, {r=000, g=239, b=207})
 
-createScienceFluid("chemical-science-%s"           , "d1", 8, {r=12, g=70, b=206}, {r=0, g=12, b=255})
+createScienceFluid(scienceNames.blue  , "d1", 08, {r=012, g=070, b=206}, {r=000, g=012, b=255})
+createScienceFluid(scienceNames.purple, "d2", 10, {r=159, g=027, b=247}, {r=159, g=027, b=247})

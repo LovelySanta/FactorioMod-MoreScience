@@ -77,6 +77,8 @@ for techName,techLevels in pairs{
   ["advanced-electronics%s"                 ] = {"", "-2"},
   ["coal-liquefaction"                      ] = {},
 
+  ["logistics-%i"                           ] = {3},
+  ["automation-%i"                          ] = {3},
   ["stack-inserter"                         ] = {},
   ["inserter-capacity-bonus-%i"             ] = {2, 3, 4, 5, 6, 7},
   --["mining-productivity-%i"                 ] = {1, 4, 8, 12, 16},
@@ -94,6 +96,7 @@ for techName,techLevels in pairs{
 
   -- modules
   ["modules"                                ] = {},
+  ["effect-transmission"                    ] = {},
   ["speed-module%s"                         ] = {"", "-2", "-3"},
   ["productivity-module%s"                  ] = {"", "-2", "-3"},
   ["effectivity-module%s"                   ] = {"", "-2", "-3"},

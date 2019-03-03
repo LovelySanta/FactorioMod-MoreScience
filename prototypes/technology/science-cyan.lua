@@ -63,12 +63,21 @@ MoreScience.lib.technology.movePrerequisite("mining-productivity-1", "advanced-e
 -- add tech ingredient to other science packs
 for techName,techLevels in pairs{
   ["research-speed-%i"                      ] = {3, 4, 5, 6},
-  ["mining-productivity-%i"                 ] = {1, 4, 8, 12, 16},
+
+  ["automation-%i"                          ] = {3},
   ["inserter-capacity-bonus-%i"             ] = {4, 5, 6, 7},
+  ["coal-liquefaction"                      ] = {},
+  ["mining-productivity-%i"                 ] = {1, 4, 8, 12, 16},
 
   ["electric-engine"                        ] = {},
   ["braking-force-%i"                       ] = {3, 4, 5, 6, 7},
   ["advanced-material-processing-%i"        ] = {2},
+
+  -- modules
+  ["effect-transmission"                    ] = {},
+  ["speed-module%s"                         ] = {"-3"},
+  ["productivity-module%s"                  ] = {"-3"},
+  ["effectivity-module%s"                   ] = {"-3"},
 
   -- power
   ["battery"                                ] = {},

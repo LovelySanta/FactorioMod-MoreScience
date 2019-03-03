@@ -2,7 +2,7 @@
 Debug = {}
 
 Debug.enabled = true
-Debug.returnValue = 6
+Debug.returnValue = 7
 
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
@@ -265,6 +265,35 @@ function Debug:reseachAllTechnologies()
   researchTechnology("battery-mk2-equipment")
 
   if self.returnValue == 6 then
+    return
+  end
+
+--------------------------------------------------------------------------------
+----- Purple science                                                       -----
+--------------------------------------------------------------------------------
+
+  researchTechnology("production-science-pack")
+  researchTechnology("mining-productivity-8")
+
+  researchTechnology("coal-liquefaction")
+  researchTechnology("nuclear-fuel-reprocessing")
+  researchTechnology("kovarex-enrichment-process")
+
+  researchTechnology("effectivity-module-3")
+  researchTechnology("effect-transmission")
+  researchTechnology("productivity-module-3")
+  researchTechnology("speed-module-3")
+
+  researchTechnology("logistics-3")
+  researchTechnology("braking-force-5")
+  researchTechnology("inserter-capacity-bonus-5")
+  researchTechnology("inserter-capacity-bonus-6")
+  researchTechnology("worker-robots-storage-2")
+
+  researchTechnology("automation-3")
+  researchTechnology("research-speed-5")
+
+  if self.returnValue == 7 then
     return
   end
 

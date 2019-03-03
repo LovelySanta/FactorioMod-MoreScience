@@ -62,13 +62,14 @@ end
 
 
 
-alterSciencePack("automation-science-%s"         , 14)
-alterSciencePack("logistic-science-%s"           , 03)
-alterSciencePack("military-science-%s"           , 09)
-addSciencePack  ("advanced-automation-science-%s", 15)
-addSciencePack  ("electric-power-science-%s"     , 05)
-alterSciencePack("chemical-science-%s"           , 08)
---alterSciencePack("production-science-%s", 10)
+local scienceNames = require("prototypes/settings").scienceNames
+alterSciencePack(scienceNames.red   , 14)
+alterSciencePack(scienceNames.green , 03)
+alterSciencePack(scienceNames.gray  , 09)
+addSciencePack  (scienceNames.orange, 15)
+addSciencePack  (scienceNames.cyan  , 05)
+alterSciencePack(scienceNames.blue  , 08)
+alterSciencePack(scienceNames.purple, 10)
 --alterSciencePack("high-tech-science-%s", 2)
 --addSciencePack("basic-logistics-science-%s", 13)
 --alterSciencePack("space-science-%s", 1)
