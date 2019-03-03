@@ -158,6 +158,9 @@ for techName,techLevels in pairs{
   ["kovarex-enrichment-process"             ] = {},
   ["uranium-ammo"                           ] = {},
   ["atomic-bomb"                            ] = {},
+
+  ["rocket-silo"                            ] = {},
+
 } do
   if MoreScience.lib.table.isEmpty(techLevels) then
     MoreScience.lib.technology.addIngredient(techName, 1, string.format(orangeScienceName, "pack"))

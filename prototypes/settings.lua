@@ -31,16 +31,20 @@ settings.techIcons = {
 ----- science recipes                                                      -----
 --------------------------------------------------------------------------------
 settings.previousFluid = {
-  [settings.scienceNames.red   ] = false                       ,
-  [settings.scienceNames.green ] = settings.scienceNames.red   ,
-  [settings.scienceNames.gray  ] = settings.scienceNames.red   ,
-  [settings.scienceNames.blue  ] = settings.scienceNames.orange,
-  [settings.scienceNames.purple] = settings.scienceNames.cyan  ,
-  [settings.scienceNames.yellow] = settings.scienceNames.blue  ,
+  [settings.scienceNames.red   ] = false                        ,
+  [settings.scienceNames.green ] = settings.scienceNames.red    ,
+  [settings.scienceNames.gray  ] = settings.scienceNames.red    ,
+  [settings.scienceNames.blue  ] = settings.scienceNames.orange ,
+  [settings.scienceNames.purple] = settings.scienceNames.cyan   ,
+  [settings.scienceNames.yellow] = settings.scienceNames.blue   ,
 
-  [settings.scienceNames.orange] = settings.scienceNames.green ,
-  [settings.scienceNames.cyan  ] = settings.scienceNames.green ,
+  [settings.scienceNames.orange] = settings.scienceNames.green  ,
+  [settings.scienceNames.cyan  ] = settings.scienceNames.green  ,
+  [settings.scienceNames.pink  ] = settings.scienceNames.yellow ,
 }
+
+settings.recipeMultiplier = 5
+settings.fluidsPerPack    = 10
 
 settings.ingredientMultiplier = {
   [settings.scienceNames.red   ] = 5,
@@ -52,6 +56,21 @@ settings.ingredientMultiplier = {
 
   [settings.scienceNames.orange] = 1,
   [settings.scienceNames.cyan  ] = 1,
+  [settings.scienceNames.pink  ] = 1,
+}
+
+--------------------------------------------------------------------------------
+----- rocket parts                                                         -----
+--------------------------------------------------------------------------------
+settings.rocketParts = {
+  subgroup = "rocket-parts"             ,
+
+  hull     = "rocketpart-hull-component",
+  engine1  = "rocketpart-ion-thruster"  ,
+  engine2  = "rocketpart-ion-booster"   ,
+  power    = "rocketpart-fusion-reactor",
+  defence  = "rocketpart-shield-array"  ,
+  attack   = "rocketpart-laser-array"   ,
 }
 
 

@@ -43,6 +43,20 @@ MoreScience.lib.recipe.addIngredient(cyanPackName, "solar-panel"         , 01 ,"
 MoreScience.lib.recipe.addResult    (cyanPackName, cyanPackName          , 01, "item")
 
 
+
+--------------------------------------------------------------------------------
+----- pink science pack                                                   -----
+--------------------------------------------------------------------------------
+
+local pinkPackName = string.format(scienceNames.pink, "pack")
+MoreScience.lib.recipe.create       (pinkPackName)
+MoreScience.lib.recipe.addIngredient(pinkPackName, "rocket-control-unit", 01 ,"item")
+MoreScience.lib.recipe.addIngredient(pinkPackName, "effectivity-module" , 01 ,"item")
+MoreScience.lib.recipe.addIngredient(pinkPackName, "nuclear-fuel"       , 01 ,"item")
+MoreScience.lib.recipe.addResult    (pinkPackName, pinkPackName         , 01, "item")
+
+
+
 --------------------------------------------------------------------------------
 ----- organise all science pack recipes                                    -----
 --------------------------------------------------------------------------------
@@ -55,7 +69,7 @@ for sciencePackName,craftingTime in pairs{
   [string.format(scienceNames.blue  , "pack")] = 10,
   [string.format(scienceNames.purple, "pack")] = 20,
   [string.format(scienceNames.yellow, "pack")] = 20,
-  --["basic-logistics-science-pack"            ] = 20,
+  [pinkPackName                              ] = 30,
   --[string.format(scienceNames.white , "pack")] = 50,
 } do
   if data.raw.recipe[sciencePackName] then

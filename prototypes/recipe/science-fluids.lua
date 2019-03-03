@@ -1,8 +1,7 @@
-local scienceNames     = require("prototypes/settings").scienceNames
-local recipeMultiplier = 5
-local fluidPerPack     = 10
-
+local scienceNames         = require("prototypes/settings").scienceNames
+local fluidsPerPack        = require("prototypes/settings").fluidsPerPack
 local previousFluid        = require("prototypes/settings").previousFluid
+local recipeMultiplier     = require("prototypes/settings").recipeMultiplier
 local ingredientMultiplier = require("prototypes/settings").ingredientMultiplier
 
 
@@ -17,14 +16,14 @@ for scienceName,_ in pairs(previousFluid) do
   MoreScience.lib.recipe.setEngergyRequired(fluidName,
     MoreScience.lib.recipe.getEngergyRequired(packName) * recipeMultiplier)
   MoreScience.lib.recipe.setCraftingCategory(fluidName, "ms-chemical-crafting")
-  MoreScience.lib.recipe.addResult(fluidName, fluidName, fluidPerPack*recipeMultiplier, "fluid")
+  MoreScience.lib.recipe.addResult(fluidName, fluidName, fluidsPerPack*recipeMultiplier, "fluid")
 
 
 
   -- STEP 2a: basic ingredients ------------------------------------------------
-  MoreScience.lib.recipe.addIngredient(fluidName, "purified-water", fluidPerPack * recipeMultiplier, "fluid")
+  MoreScience.lib.recipe.addIngredient(fluidName, "purified-water", fluidsPerPack * recipeMultiplier, "fluid")
   if previousFluid[scienceName] then
-    MoreScience.lib.recipe.addIngredient(fluidName, string.format(previousFluid[scienceName], "fluid"), fluidPerPack * recipeMultiplier, "fluid")
+    MoreScience.lib.recipe.addIngredient(fluidName, string.format(previousFluid[scienceName], "fluid"), fluidsPerPack * recipeMultiplier, "fluid")
   end
 
 
@@ -57,6 +56,6 @@ for scienceName,_ in pairs(previousFluid) do
 
 
   -- STEP 3: add the fluid to the pack recipe instead
-  MoreScience.lib.recipe.editIngredient(packName, "ms-science-fluid", fluidName, fluidPerPack)
+  MoreScience.lib.recipe.editIngredient(packName, "ms-science-fluid", fluidName, fluidsPerPack)
 
 end

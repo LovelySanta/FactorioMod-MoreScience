@@ -55,7 +55,9 @@ createScienceFluid(scienceNames.gray  , "b2", 09, {r=068, g=043, b=005}, {r=068,
 
 createScienceFluid(scienceNames.orange, "c1", 15, {r=255, g=121, b=005}, {r=234, g=132, b=000})
 createScienceFluid(scienceNames.cyan  , "c2", 05, {r=000, g=198, b=198}, {r=000, g=239, b=207})
+createScienceFluid(scienceNames.blue  , "c3", 08, {r=012, g=070, b=206}, {r=000, g=012, b=255})
 
-createScienceFluid(scienceNames.blue  , "d1", 08, {r=012, g=070, b=206}, {r=000, g=012, b=255})
-createScienceFluid(scienceNames.purple, "d2", 10, {r=159, g=027, b=247}, {r=159, g=027, b=247})
-createScienceFluid(scienceNames.yellow, "d3", 02, {r=255, g=193, b=000}, {r=255, g=193, b=000})
+createScienceFluid(scienceNames.purple, "d1", 10, {r=159, g=027, b=247}, {r=159, g=027, b=247})
+createScienceFluid(scienceNames.yellow, "d2", 02, {r=255, g=193, b=000}, {r=255, g=193, b=000})
+
+createScienceFluid(scienceNames.pink  , "e1", 13, {r=255, g=068, b=235}, {r=255, g=068, b=235})

@@ -2,7 +2,7 @@
 Debug = {}
 
 Debug.enabled = true
-Debug.returnValue = 8
+Debug.returnValue = 9
 
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
@@ -340,9 +340,32 @@ function Debug:reseachAllTechnologies()
   researchTechnology("character-logistic-slots-4")
   researchTechnology("character-logistic-trash-slots-3")
 
-
-
   if self.returnValue == 8 then
+    return
+  end
+
+--------------------------------------------------------------------------------
+----- Pink science                                                         -----
+--------------------------------------------------------------------------------
+
+  researchTechnology("advanced-logistic-science-pack")
+
+  researchTechnology("character-logistic-slots-5")
+  researchTechnology("character-logistic-slots-6")
+  researchTechnology("character-logistic-trash-slots-4")
+  researchTechnology("character-logistic-trash-slots-5")
+  researchTechnology("inserter-capacity-bonus-7")
+  researchTechnology("braking-force-7")
+  researchTechnology("worker-robots-speed-5")
+
+  researchTechnology("rocket")
+  researchTechnology("rocketpart-hull-component")
+  researchTechnology("rocketpart-ion-thruster")
+  researchTechnology("rocketpart-fusion-reactor")
+  researchTechnology("rocketpart-shield-array")
+  researchTechnology("rocket-silo")
+
+  if self.returnValue == 9 then
     return
   end
 
