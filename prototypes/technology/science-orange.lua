@@ -58,7 +58,7 @@ end
 -- add tech ingredient to other science packs
 for techName,techLevels in pairs{
   ["research-speed-%i"                      ] = {4, 5, 6},
-  ["mining-productivity-%i"                 ] = {4, 8, 12, 16},
+  ["mining-productivity-%i"                 ] = {2, 3, 4},
 
   -- Oil related stuff
   ["fluid-handling-%i"                      ] = {2, 3},

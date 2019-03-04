@@ -206,7 +206,7 @@ function Debug:reseachAllTechnologies()
   researchTechnology("chemical-science-pack")
   researchTechnology("research-speed-4")
 
-  researchTechnology("mining-productivity-4")
+  researchTechnology("mining-productivity-2")
   researchTechnology("fluid-handling-3")
   researchTechnology("fluid-wagon")
   researchTechnology("braking-force-4")
@@ -274,7 +274,6 @@ function Debug:reseachAllTechnologies()
 --------------------------------------------------------------------------------
 
   researchTechnology("production-science-pack")
-  researchTechnology("mining-productivity-8")
 
   researchTechnology("coal-liquefaction")
   researchTechnology("nuclear-fuel-reprocessing")
@@ -304,7 +303,7 @@ function Debug:reseachAllTechnologies()
 
   researchTechnology("utility-science-pack")
   researchTechnology("research-speed-6")
-  researchTechnology("mining-productivity-12")
+  researchTechnology("mining-productivity-3")
   researchTechnology("braking-force-6")
 
   researchTechnology("military-4")

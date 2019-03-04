@@ -3,7 +3,7 @@ local scienceNames      = require("prototypes/settings").scienceNames
 local purpleScienceName = scienceNames.purple
 
 --------------------------------------------------------------------------------
------ blue science research                                               -----
+----- purple science research                                              -----
 --------------------------------------------------------------------------------
 MoreScience.lib.technology.changeIcon(string.format(purpleScienceName, "pack"), scienceTech.icon .. "potion-purple.png", scienceTech.icon_size)
 
@@ -24,7 +24,7 @@ MoreScience.lib.technology.moveRecipeUnlock(string.format(purpleScienceName, "pa
 
 -- other technologies that depend on this one
 for _,techName in pairs{
-  "mining-productivity-8",
+  "mining-productivity-3",
   "inserter-capacity-bonus-5",
 } do
   MoreScience.lib.technology.addPrerequisite(techName, string.format(purpleScienceName, "pack"))

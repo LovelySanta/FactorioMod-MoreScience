@@ -9,7 +9,7 @@ data:extend{
   },
   {
     type = "recipe-category",
-    name = "ms-rocket-crafting"
+    name = require("prototypes/settings").rocketParts.category
   },
   {
     type = "recipe-category",

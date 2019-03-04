@@ -26,7 +26,7 @@ MoreScience.lib.technology.moveRecipeUnlock(string.format(blueScienceName, "pack
 -- other technologies that depend on this one
 for _,techName in pairs{
   "research-speed-4",
-  "mining-productivity-4",
+  "mining-productivity-2",
 } do
   MoreScience.lib.technology.addPrerequisite(techName, string.format(blueScienceName, "pack"))
 end

@@ -61,3 +61,4 @@ createScienceFluid(scienceNames.purple, "d1", 10, {r=159, g=027, b=247}, {r=159,
 createScienceFluid(scienceNames.yellow, "d2", 02, {r=255, g=193, b=000}, {r=255, g=193, b=000})
 
 createScienceFluid(scienceNames.pink  , "e1", 13, {r=255, g=068, b=235}, {r=255, g=068, b=235})
+createScienceFluid(scienceNames.white , "e2", 01, {r=200, g=200, b=200}, {r=200, g=200, b=200})

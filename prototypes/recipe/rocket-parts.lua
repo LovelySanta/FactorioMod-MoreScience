@@ -6,6 +6,7 @@ local hullComponent =
   name = rocketParts.hull,
   energy_required = 40,
   enabled = false,
+  category = rocketParts.category,
   ingredients =
   {
     {"low-density-structure", 25},
@@ -20,6 +21,7 @@ local ionThruster =
   name = rocketParts.engine1,
   energy_required = hullComponent.energy_required * 3,
   enabled = false,
+  category = rocketParts.category,
   ingredients =
   {
     {"low-density-structure", 10},
@@ -35,6 +37,7 @@ local ionBooster =
   name = rocketParts.engine2,
   energy_required = ionThruster.energy_required * (5 + 5),
   enabled = false,
+  category = rocketParts.category,
   ingredients =
   {
     {"low-density-structure", 30},
@@ -51,6 +54,7 @@ local fusionReactor =
   name = rocketParts.power,
   energy_required = ionBooster.energy_required / 2,
   enabled = false,
+  category = rocketParts.category,
   ingredients =
   {
     {"fusion-reactor-equipment", 1},
@@ -66,6 +70,7 @@ local shieldArray =
   name = rocketParts.defence,
   energy_required = ionBooster.energy_required / 3,
   enabled = false,
+  category = rocketParts.category,
   ingredients =
   {
     {"low-density-structure", 20},
@@ -82,6 +87,7 @@ local laserArray =
   name = rocketParts.attack,
   energy_required = shieldArray.energy_required,
   enabled = false,
+  category = rocketParts.category,
   ingredients =
   {
     {"low-density-structure", 20},

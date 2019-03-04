@@ -19,6 +19,3 @@ createRocketPart(rocketParts.engine2, "c2")
 createRocketPart(rocketParts.power  , "d" )
 createRocketPart(rocketParts.defence, "e1")
 createRocketPart(rocketParts.attack , "e2")
-
--- satellite is also a rocket part
-data.raw["item"]["satellite"].subgroup = "ms-science-" .. rocketParts.subgroup

@@ -3,7 +3,7 @@ local scienceNames    = require("prototypes/settings").scienceNames
 local yellowScienceName = scienceNames.yellow
 
 --------------------------------------------------------------------------------
------ blue science research                                               -----
+----- yellow science research                                              -----
 --------------------------------------------------------------------------------
 MoreScience.lib.technology.changeIcon(string.format(yellowScienceName, "pack"), scienceTech.icon .. "potion-yellow.png", scienceTech.icon_size)
 
@@ -19,12 +19,12 @@ MoreScience.lib.technology.addRecipeUnlock(string.format(yellowScienceName, "pac
 MoreScience.lib.technology.moveRecipeUnlock(string.format(yellowScienceName, "pack"), string.format(yellowScienceName, "pack"), string.format(yellowScienceName, "pack")) -- this is just for unlock ordening
 
 --------------------------------------------------------------------------------
------ other purple science technologies                                    -----
+----- other yellow science technologies                                    -----
 --------------------------------------------------------------------------------
 
 -- other technologies that depend on this one
 for _,techName in pairs{
-  "mining-productivity-12",
+  "mining-productivity-3",
   "research-speed-6",
   "braking-force-6",
   "worker-robots-storage-3",

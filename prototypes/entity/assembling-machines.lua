@@ -54,7 +54,11 @@ local rocketAssembling = util.table.deepcopy(assemblingMachine1)
 rocketAssembling.name = "rocket-assembling-machine"
 rocketAssembling.localised_name = nil
 
-rocketAssembling.crafting_categories = {"ms-rocket-crafting"}
+rocketAssembling.icon      = data.raw["item"]["rocket-assembling-machine"].icon
+rocketAssembling.icon_size = data.raw["item"]["rocket-assembling-machine"].icon_size
+rocketAssembling.icons     = util.table.deepcopy(data.raw["item"]["rocket-assembling-machine"].icons)
+
+rocketAssembling.crafting_categories = {require("prototypes/settings").rocketParts.category}
 rocketAssembling.crafting_speed = 1
 rocketAssembling.energy_usage = "500kW"
 

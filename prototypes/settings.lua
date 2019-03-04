@@ -37,6 +37,7 @@ settings.previousFluid = {
   [settings.scienceNames.blue  ] = settings.scienceNames.orange ,
   [settings.scienceNames.purple] = settings.scienceNames.cyan   ,
   [settings.scienceNames.yellow] = settings.scienceNames.blue   ,
+  [settings.scienceNames.white ] = nil                          ,
 
   [settings.scienceNames.orange] = settings.scienceNames.green  ,
   [settings.scienceNames.cyan  ] = settings.scienceNames.green  ,
@@ -53,6 +54,7 @@ settings.ingredientMultiplier = {
   [settings.scienceNames.blue  ] = 3,
   [settings.scienceNames.purple] = 3,
   [settings.scienceNames.yellow] = 3,
+  [settings.scienceNames.white ] = 1,
 
   [settings.scienceNames.orange] = 1,
   [settings.scienceNames.cyan  ] = 1,
@@ -64,6 +66,7 @@ settings.ingredientMultiplier = {
 --------------------------------------------------------------------------------
 settings.rocketParts = {
   subgroup = "rocket-parts"             ,
+  category = "ms-rocket-crafting",
 
   hull     = "rocketpart-hull-component",
   engine1  = "rocketpart-ion-thruster"  ,
@@ -71,6 +74,7 @@ settings.rocketParts = {
   power    = "rocketpart-fusion-reactor",
   defence  = "rocketpart-shield-array"  ,
   attack   = "rocketpart-laser-array"   ,
+  payload  = "rocketpart-payload-%s[%s]",
 }
 
 

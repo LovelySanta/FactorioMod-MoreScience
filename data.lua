@@ -11,11 +11,6 @@ require(categoryPath .. "item-groups")
 signalPath = "prototypes/signal/"
 require(signalPath .. "color-signal")
 
--- entities
-entityPath = "prototypes/entity/"
-require(entityPath .. "research-labs")
-require(entityPath .. "assembling-machines")
-
 -- fluids
 fluidPath = "prototypes/fluid/"
 require(fluidPath .. "science-fluids")
@@ -27,7 +22,13 @@ require(itemPath .. "science-bottles")
 require(itemPath .. "science-packs")
 require(itemPath .. "assembling-machines")
 require(itemPath .. "rocket-parts")
+require(itemPath .. "rocket-payloads")
 require(itemPath .. "rocket")
+
+-- entities
+entityPath = "prototypes/entity/"
+require(entityPath .. "research-labs")
+require(entityPath .. "assembling-machines")
 
 -- recipes
 recipePath = "prototypes/recipe/"
@@ -37,6 +38,7 @@ require(recipePath .. "science-packs")
 require(recipePath .. "science-fluids")
 require(recipePath .. "assembling-machines")
 require(recipePath .. "rocket-parts")
+require(recipePath .. "rocket-payloads")
 require(recipePath .. "rocket")
 
 -- technology
@@ -56,3 +58,4 @@ require(technologyPath .. "science-purple")
 require(technologyPath .. "science-yellow")
 require(technologyPath .. "science-pink")
 require(technologyPath .. "science-rocket")
+require(technologyPath .. "science-white")
