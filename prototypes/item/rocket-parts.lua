@@ -13,9 +13,11 @@ local function createRocketPart(name, order)
   }}
 end
 
-createRocketPart(rocketParts.hull   , "b" )
-createRocketPart(rocketParts.engine1, "c1")
-createRocketPart(rocketParts.engine2, "c2")
-createRocketPart(rocketParts.power  , "d" )
-createRocketPart(rocketParts.defence, "e1")
-createRocketPart(rocketParts.attack , "e2")
+createRocketPart(rocketParts.hull     , "b" )
+createRocketPart(rocketParts.engine1  , "c1")
+createRocketPart(rocketParts.engine2  , "c2")
+createRocketPart(rocketParts.power    , "d" )
+createRocketPart(rocketParts.defence  , "e1")
+createRocketPart(rocketParts.attack   , "e2")
+
+createRocketPart(string.format(rocketParts.container, "mk1"), "f" )

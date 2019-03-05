@@ -66,7 +66,7 @@ settings.ingredientMultiplier = {
 --------------------------------------------------------------------------------
 settings.rocketParts = {
   subgroup = "rocket-parts"             ,
-  category = "ms-rocket-crafting",
+  category = "ms-rocket-crafting"       ,
 
   hull     = "rocketpart-hull-component",
   engine1  = "rocketpart-ion-thruster"  ,
@@ -75,6 +75,11 @@ settings.rocketParts = {
   defence  = "rocketpart-shield-array"  ,
   attack   = "rocketpart-laser-array"   ,
   payload  = "rocketpart-payload-%s[%s]",
+}
+settings.rocketParts.container = string.format(settings.rocketParts.payload, "%s", "container")
+
+settings.rocket = {
+  subgroup = "rocket-assembly",
 }
 
 

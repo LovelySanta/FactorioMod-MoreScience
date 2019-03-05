@@ -1,14 +1,23 @@
+local rocket      = require ("prototypes/settings").rocket
+local rocketGroup = "ms-science-" .. rocket.subgroup
+
 --------------------------------------------------------------------------------
 ----- Rocket-silo                                                          -----
 --------------------------------------------------------------------------------
-data.raw["item"]["rocket-silo"].subgroup = "ms-science-rocket-assembly"
-
+MoreScience.lib.item.setSubgroup   ("item", "rocket-silo", rocketGroup)
+MoreScience.lib.item.setOrderstring("item", "rocket-silo", "a[rocket-silo]")
 
 
 --------------------------------------------------------------------------------
 ----- Rocket-MK1                                                           -----
 --------------------------------------------------------------------------------
+MoreScience.lib.item.changeIcon    ("item", "rocket-part", "__MoreScience__/graphics/technology/rocket-tech.png", 250)
+MoreScience.lib.item.setSubgroup   ("item", "rocket-part", rocketGroup)
+MoreScience.lib.item.setOrderstring("item", "rocket-part", "b[rocket-part]")
 
-data.raw["item"]["rocket-part"].icon = "__MoreScience__/graphics/technology/rocket-tech.png"
-data.raw["item"]["rocket-part"].icon_size = 250
-data.raw["item"]["rocket-part"].subgroup = data.raw["item"]["rocket-silo"].subgroup
+
+--------------------------------------------------------------------------------
+----- Satellite                                                            -----
+--------------------------------------------------------------------------------
+MoreScience.lib.item.setSubgroup   ("item", "satellite", rocketGroup)
+MoreScience.lib.item.setOrderstring("item", "satellite", "c[rocket-part]")

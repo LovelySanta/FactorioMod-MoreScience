@@ -8,21 +8,21 @@ categoryPath = "prototypes/categories/"
 signalPath = "prototypes/signal/"
 --require(signalPath .. "" .. updates)
 
--- entities
-entityPath = "prototypes/entity/"
---require(entityPath .. "" .. updates)
-
 -- fluids
 fluidPath = "prototypes/fluid/"
---require(fluidPath .. "" .. updates)
+require(fluidPath .. "science-fluids" .. updates)
 
 -- items
 itemPath = "prototypes/item/"
 --require(itemPath .. "research-labs" .. updates)
 
+-- entities
+entityPath = "prototypes/entity/"
+--require(entityPath .. "" .. updates)
+
 -- recipes
 recipePath = "prototypes/recipe/"
---require(recipePath .. "" .. updates)
+require(recipePath .. "science-fluids" .. updates)
 
 -- technology
 technologyPath = "prototypes/technology/"

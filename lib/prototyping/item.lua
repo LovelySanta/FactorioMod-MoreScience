@@ -144,7 +144,7 @@ if not MoreScience.lib.item then MoreScience.lib.item = {}
     if not data.raw[itemType] then return end
     if not data.raw[itemType][itemName] then return end
 
-    data.raw[itemType][itemName].localised_name = localeString
+    data.raw[itemType][itemName].localised_name = util.table.deepcopy(localeString)
   end
 
 

@@ -7,14 +7,15 @@ local rocketParts  = require("prototypes/settings").rocketParts
 data:extend{
   {
     type = "recipe",
-    name = string.format(rocketParts.payload, "mk1", "empty"),
+    name = string.format(rocketParts.payload, "mk1", "empty-bottle"),
     energy_required = 300,
     category = "ms-advanced-crafting",
     ingredients =
     {
       util.table.deepcopy(data.raw["item"]["satellite"].rocket_launch_product),
+      {string.format(rocketParts.container, "mk1"), 1},
     },
-    result = string.format(rocketParts.payload, "mk1", "empty"),
+    result = string.format(rocketParts.payload, "mk1", "empty-bottle"),
     result_count = 1,
     enabled = false,
   },
@@ -25,14 +26,16 @@ data:extend{
     category = "ms-advanced-crafting",
     ingredients =
     {
-      {string.format(rocketParts.payload, "mk1", "full"), 1}
+      {string.format(rocketParts.payload, "mk1", string.format(scienceNames.white, "pack")), 1}
     },
     results = {
-      util.table.deepcopy(data.raw["item"]["satellite"].rocket_launch_product)
+      util.table.deepcopy(data.raw["item"]["satellite"].rocket_launch_product),
+      {string.format(rocketParts.container, "mk1"), 1},
     },
+    main_product = string.format(scienceNames.white, "pack"),
     enabled = false,
   },
 }
-MoreScience.lib.recipe.editIngredient(string.format(rocketParts.payload, "mk1", "empty"), string.format(scienceNames.white, "pack"), "empty-bottle", 1)
+MoreScience.lib.recipe.editIngredient(string.format(rocketParts.payload, "mk1", "empty-bottle"), string.format(scienceNames.white, "pack"), "empty-bottle", 1)
 data.raw["item"]["satellite"].rocket_launch_product = data.raw["recipe"][string.format(scienceNames.white, "pack")].ingredients[1]
-MoreScience.lib.recipe.addIngredient("satellite", string.format(rocketParts.payload, "mk1", "empty"), 1, "item")
+MoreScience.lib.recipe.addIngredient("satellite", string.format(rocketParts.payload, "mk1", "empty-bottle"), 1, "item")

@@ -59,9 +59,9 @@ for _,scienceFluid in pairs{
   string.format(scienceNames.orange, "fluid"),
   string.format(scienceNames.cyan  , "fluid"),
   string.format(scienceNames.blue  , "fluid"),
-  --string.format(scienceNames.pink  , "fluid"),
   --string.format(scienceNames.purple, "fluid"),
   --string.format(scienceNames.yellow, "fluid"),
+  --string.format(scienceNames.pink  , "fluid"),
   --string.format(scienceNames.white , "fluid"),
 } do
   for _,barrelingRecipe in pairs{
@@ -69,5 +69,27 @@ for _,scienceFluid in pairs{
     "empty-%s-barrel",
   } do
     MoreScience.lib.technology.moveRecipeUnlock(techName, techName.."-3", string.format(barrelingRecipe, scienceFluid))
+  end
+end
+
+-- the other barreling recipes are unlocked with the tech
+for _,scienceName in pairs{
+  --scienceNames.red   ,
+  --scienceNames.green ,
+  --scienceNames.gray  ,
+  --scienceNames.orange,
+  --scienceNames.cyan  ,
+  --scienceNames.blue  ,
+  scienceNames.purple,
+  scienceNames.yellow,
+  scienceNames.pink  ,
+  scienceNames.white ,
+} do
+  for _,barrelingRecipe in pairs{
+    "fill-%s-barrel",
+    "empty-%s-barrel",
+  } do
+    MoreScience.lib.technology.moveRecipeUnlock(techName, string.format(scienceName, "pack"), string.format(barrelingRecipe, string.format(scienceName, "fluid")))
+    --MoreScience.lib.technology.addPrerequisite(string.format(scienceName, "pack"), techName.."-3")
   end
 end

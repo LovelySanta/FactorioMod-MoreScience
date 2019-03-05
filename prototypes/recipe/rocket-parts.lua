@@ -98,17 +98,35 @@ local laserArray =
   result = rocketParts.attack,
 }
 
+local payloadContainer =
+{
+  type = "recipe",
+  name = string.format(rocketParts.container, "mk1"),
+  energy_required = fusionReactor.energy_required / 2,
+  category = rocketParts.category,
+  ingredients =
+  {
+    {"low-density-structure", 5},
+    {"flying-robot-frame", 1}
+  },
+  result = string.format(rocketParts.container, "mk1"),
+  result_count = 1,
+  enabled = false,
+}
+
 -- Rocket MK1 calculation:
 data:extend({    --      amount:   lds    rcu    rf
   hullComponent, --      30        25     1      0
 
-  ionThruster,   --      5 (+5)    10     60     75
-  ionBooster,    --      1         30     40     150
+  ionThruster  , --      5 (+5)    10     60     75
+  ionBooster   , --      1         30     40     150
 
   fusionReactor, --      2         0      15     (50)
 
-  shieldArray,   --      3         20     50     0
-  laserArray,    --      3         20     50     0
+  shieldArray  , --      3         20     50     0
+  laserArray   , --      3         20     50     0
                  --               ----    ----   ----
                  --     total:    1000    1000   1000
+
+  payloadContainer,
 })

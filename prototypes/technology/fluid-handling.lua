@@ -83,6 +83,7 @@ data:extend{fluidHandling3}
 -- add prerequisites for this technology
 MoreScience.lib.technology.addPrerequisite(fluidHandling3.name, fluidHandling2.name)
 MoreScience.lib.technology.addPrerequisite(fluidHandling3.name, string.format(scienceNames.blue, "pack"))
+MoreScience.lib.technology.addPrerequisite(fluidHandling3.name, string.format(scienceNames.cyan, "pack"))
 
 -- other technologies that depend on this one
 for _,tech in pairs{

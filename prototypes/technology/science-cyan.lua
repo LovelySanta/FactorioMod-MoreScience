@@ -70,6 +70,7 @@ for techName,techLevels in pairs{
   ["mining-productivity-%i"                 ] = {1, 2, 3, 4},
 
   ["electric-engine"                        ] = {},
+  ["fluid-wagon"                            ] = {},
   ["braking-force-%i"                       ] = {3, 4, 5, 6, 7},
   ["advanced-material-processing-%i"        ] = {2},
 

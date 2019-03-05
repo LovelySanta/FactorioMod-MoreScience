@@ -1,18 +1,18 @@
 data:extend{
   {
     type = "recipe-category",
-    name = "ms-manual-crafting"
+    name = "ms-manual-crafting",
   },
   {
     type = "recipe-category",
-    name = "ms-advanced-crafting"
+    name = "ms-advanced-crafting",
   },
   {
     type = "recipe-category",
-    name = require("prototypes/settings").rocketParts.category
+    name = require("prototypes/settings").rocketParts.category,
   },
   {
     type = "recipe-category",
-    name = "ms-chemical-crafting"
+    name = "ms-chemical-crafting",
   },
 }

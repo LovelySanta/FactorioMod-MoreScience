@@ -59,3 +59,25 @@ for scienceName,_ in pairs(previousFluid) do
   MoreScience.lib.recipe.editIngredient(packName, "ms-science-fluid", fluidName, fluidsPerPack)
 
 end
+
+
+-- special recipe for space science fluid
+data:extend{
+  {
+    type = "recipe",
+    name = string.format(scienceNames.white, "fluid"),
+    energy_required = 30,
+    enabled = false,
+    category = "ms-chemical-crafting",
+    ingredients =
+    {
+      {string.format(scienceNames.white, "pack"), 5}
+    },
+    results =
+    {
+      {type = "item", name = "empty-bottle", amount = 5},
+      {type = "fluid", name = string.format(scienceNames.white, "fluid"), amount = 5 * fluidsPerPack},
+    },
+    main_product = string.format(scienceNames.white, "fluid"),
+  },
+}

@@ -22,9 +22,12 @@ MoreScience.lib.technology.removeIngredient(string.format(whiteScienceName, "pac
 MoreScience.lib.technology.addIngredient   (string.format(whiteScienceName, "pack"), 4, string.format(scienceNames.yellow, "pack"))
 MoreScience.lib.technology.addIngredient   (string.format(whiteScienceName, "pack"), 5, string.format(scienceNames.pink  , "pack"))
 
-MoreScience.lib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.payload, "mk1", "empty"))
-MoreScience.lib.technology.moveRecipeUnlock(string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack"), "satellite") -- this is just for unlock ordening
-MoreScience.lib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack"))
+MoreScience.lib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.container, "mk1")                )
+MoreScience.lib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.payload  , "mk1", "empty-bottle"))
+MoreScience.lib.technology.moveRecipeUnlock(string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack" )  , "satellite"    ) -- this is just for unlock ordening
+MoreScience.lib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "fluid")                   )
+MoreScience.lib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack" )                   )
+
 --------------------------------------------------------------------------------
 ----- other purple science technologies                                    -----
 --------------------------------------------------------------------------------

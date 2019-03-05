@@ -2,7 +2,7 @@
 Debug = {}
 
 Debug.enabled = true
-Debug.returnValue = 9
+Debug.returnValue = 10
 
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
@@ -365,6 +365,16 @@ function Debug:reseachAllTechnologies()
   researchTechnology("rocket-silo")
 
   if self.returnValue == 9 then
+    return
+  end
+
+--------------------------------------------------------------------------------
+----- Infinite science (infusing)                                          -----
+--------------------------------------------------------------------------------
+
+  researchTechnology("space-science-pack")
+
+  if self.returnValue == 10 then
     return
   end
 
