@@ -28,12 +28,14 @@ end
 createSubgroup("raw-material", "-a[science-basics]-a")
 
 -- science bottling
-createSubgroup("bottling"    , "-b[science-bottling]-a"         )
-createSubgroup("fluid"       , "-b[science-bottling]-b"         )
+createSubgroup("bottling"    , "-b[science-bottling]-a")
+createSubgroup("fluid"       , "-b[science-bottling]-b")
 
-createSubgroup("barrel"      , "-b[science-bottling]-c1[barrel]")
-createSubgroup("barrel-fill" , "-b[science-bottling]-c2[fill]"  )
-createSubgroup("barrel-empty", "-b[science-bottling]-c3[empty]" )
+createSubgroup("barrel"      , "-b[science-bottling]-c1")
+createSubgroup("barrel-fill" , "-b[science-bottling]-c2")
+createSubgroup("barrel-empty", "-b[science-bottling]-c3")
+
+createSubgroup("infused-science-pack", "-c[science-pack]-b")
 
 -- science rocket
 local rocketParts = require ("prototypes/settings").rocketParts
@@ -42,4 +44,4 @@ local rocket      = require ("prototypes/settings").rocket
 createSubgroup(rocket.subgroup     , "-d[science-rocket]-b")
 
 -- science pack
-MoreScience.lib.item.setOrderstring("item-subgroup", "science-pack", subgroupOrdering .. "-c[science-pack]-a[regular-science-pack]")
+MoreScience.lib.item.setOrderstring("item-subgroup", "science-pack", subgroupOrdering .. "-c[science-pack]-a")

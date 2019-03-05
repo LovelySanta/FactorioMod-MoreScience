@@ -88,7 +88,7 @@ for techName,techLevels in pairs{
 
   ["laser"                                  ] = {},
   ["laser-turrets"                          ] = {},
-  ["energy-weapons-damage-%i"               ] = {1, 2, 3, 4, 5, 6},
+  ["energy-weapons-damage-%i"               ] = {1, 2, 3, 4, 5, 6, 7},
   ["laser-turret-speed-%i"                  ] = {1, 2, 3, 4, 5, 6, 7},
 
   -- armor

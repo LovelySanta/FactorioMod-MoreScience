@@ -8,6 +8,8 @@ data:extend{
     ingredients =
     {
       {"assembling-machine-3", 1},
+      {"low-density-structure", 10},
+      {"rocket-control-unit", 1},
     },
     result = "rocket-assembling-machine",
     result_count = 1,

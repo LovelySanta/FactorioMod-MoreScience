@@ -109,6 +109,9 @@ for techName,techLevels in pairs{
   ["physical-projectile-damage-%i"          ] = {4, 5, 6, 7},
   ["stronger-explosives-%i"                 ] = {3, 4, 5, 6, 7},
   ["tanks"                                  ] = {},
+  ["artillery"                              ] = {},
+  ["artillery-shell-range-1"                ] = {},
+  ["artillery-shell-speed-1"                ] = {},
 
   ["laser"                                  ] = {},
   ["laser-turrets"                          ] = {},

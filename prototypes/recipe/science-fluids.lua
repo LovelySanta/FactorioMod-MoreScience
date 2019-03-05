@@ -62,22 +62,40 @@ end
 
 
 -- special recipe for space science fluid
-data:extend{
+data:extend{{
+  type = "recipe",
+  name = string.format(scienceNames.white, "fluid"),
+  energy_required = 30,
+  enabled = false,
+  category = "ms-chemical-crafting",
+  ingredients =
   {
+    {string.format(scienceNames.white, "pack"), 5}
+  },
+  results =
+  {
+    {type = "item", name = "empty-bottle", amount = 5},
+    {type = "fluid", name = string.format(scienceNames.white, "fluid"), amount = 5 * fluidsPerPack},
+  },
+  main_product = string.format(scienceNames.white, "fluid"),
+}}
+
+
+for scienceColor,scienceName in pairs(scienceNames) do
+  local regularPack = data.raw["recipe"][string.format(scienceName, "pack")]
+
+  data:extend{{
     type = "recipe",
-    name = string.format(scienceNames.white, "fluid"),
-    energy_required = 30,
-    enabled = false,
+    name = "infused-"..string.format(scienceName, "pack"),
+    energy_required = 2 * (regularPack and regularPack.energy_required or 50),
+    enabled = true,
     category = "ms-chemical-crafting",
     ingredients =
     {
-      {string.format(scienceNames.white, "pack"), 5}
+      {string.format(scienceName, "pack"), 2},
+      {type = "fluid", name = string.format(scienceNames.white, "fluid"), amount = fluidsPerPack},
+      {type = "fluid", name = "purified-water"                          , amount = fluidsPerPack},
     },
-    results =
-    {
-      {type = "item", name = "empty-bottle", amount = 5},
-      {type = "fluid", name = string.format(scienceNames.white, "fluid"), amount = 5 * fluidsPerPack},
-    },
-    main_product = string.format(scienceNames.white, "fluid"),
-  },
-}
+    result = "infused-"..string.format(scienceName, "pack"),
+  }}
+end

@@ -373,6 +373,15 @@ function Debug:reseachAllTechnologies()
 --------------------------------------------------------------------------------
 
   researchTechnology("space-science-pack")
+  researchTechnology("infused-automation-science-pack")
+  researchTechnology("infused-military-science-pack")
+  researchTechnology("infused-logistic-science-pack")
+  researchTechnology("infused-advanced-automation-science-pack")
+  researchTechnology("infused-electric-power-science-pack")
+  researchTechnology("infused-chemical-science-pack")
+  researchTechnology("infused-production-science-pack")
+  researchTechnology("infused-utility-science-pack")
+  researchTechnology("infused-advanced-logistic-science-pack")
 
   if self.returnValue == 10 then
     return
