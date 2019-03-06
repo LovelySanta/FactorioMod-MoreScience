@@ -15,4 +15,12 @@ data:extend{
     type = "recipe-category",
     name = "ms-chemical-crafting",
   },
+  {
+  type = "recipe-category",
+  name = "ms-seed-extractor",
+},
+{
+  type = "recipe-category",
+  name = "ms-wood-plantation",
+},
 }

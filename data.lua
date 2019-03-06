@@ -25,11 +25,13 @@ require(itemPath .. "assembling-machines")
 require(itemPath .. "rocket-parts")
 require(itemPath .. "rocket-payloads")
 require(itemPath .. "rocket")
+require(itemPath .. "tree-farm")
 
 -- entities
 entityPath = "prototypes/entity/"
 require(entityPath .. "research-labs")
 require(entityPath .. "assembling-machines")
+require(entityPath .. "tree-farm")
 
 -- recipes
 recipePath = "prototypes/recipe/"
@@ -42,6 +44,7 @@ require(recipePath .. "assembling-machines")
 require(recipePath .. "rocket-parts")
 require(recipePath .. "rocket-payloads")
 require(recipePath .. "rocket")
+require(recipePath .. "tree-farm")
 
 -- technology
 technologyPath = "prototypes/technology/"
@@ -63,3 +66,4 @@ require(technologyPath .. "science-pink")
 require(technologyPath .. "science-rocket")
 require(technologyPath .. "science-white")
 require(technologyPath .. "science-infused")
+require(technologyPath .. "tree-farm")

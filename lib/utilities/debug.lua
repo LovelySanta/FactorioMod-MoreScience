@@ -162,6 +162,7 @@ function Debug:reseachAllTechnologies()
 --------------------------------------------------------------------------------
 
   researchTechnology("electric-power-science-pack")
+  researchTechnology("wood-plantation")
   researchTechnology("research-speed-3")
 
   researchTechnology("mining-productivity-1")

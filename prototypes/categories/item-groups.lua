@@ -1,8 +1,8 @@
-
+local group = "ms-science"
 --------------------------------------------------------------------------------
 ----- science pack group                                                   -----
 --------------------------------------------------------------------------------
-data.raw["item-subgroup"]["science-pack"].group = "ms-science"
+data.raw["item-subgroup"]["science-pack"].group = group
 data:extend{
   {
     type = "item-group",
@@ -19,7 +19,7 @@ data:extend{
 local subgroupOrdering = data.raw["item-subgroup"]["science-pack"].order
 local function createSubgroup(subgroupName, subgroupOrder)
   local subgroup = util.table.deepcopy(data.raw["item-subgroup"]["science-pack"])
-  subgroup.name = "ms-science-" .. subgroupName
+  subgroup.name = subgroup.group .. "-" .. subgroupName
   subgroup.order = subgroupOrdering .. subgroupOrder .. "["..subgroupName.."]"
   data:extend{subgroup}
 end
@@ -45,3 +45,13 @@ createSubgroup(rocket.subgroup     , "-d[science-rocket]-b")
 
 -- science pack
 MoreScience.lib.item.setOrderstring("item-subgroup", "science-pack", subgroupOrdering .. "-c[science-pack]-a")
+
+--------------------------------------------------------------------------------
+----- tree farm                                                            -----
+--------------------------------------------------------------------------------
+data:extend{{
+  type = "item-subgroup",
+  name = group .. "-treefarm",
+  group = "intermediate-products",
+  order = data.raw["item-subgroup"]["raw-resource"].order .. "-z"
+}}
