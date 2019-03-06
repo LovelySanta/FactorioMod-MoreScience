@@ -52,6 +52,7 @@ addInfusedSciencePack(scienceNames.purple, "d2")
 addInfusedSciencePack(scienceNames.yellow, "d3")
 addInfusedSciencePack(scienceNames.pink  , "d1")
 MoreScience.lib.technology.addRecipeUnlock(            string.format(scienceNames.white , "pack"), "infused-"..string.format(scienceNames.white , "pack"))
+MoreScience.lib.technology.addRecipeUnlock(            string.format(scienceNames.white , "pack"), "lab-mk2"                                             )
 
 MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.red   , "pack"),             string.format(scienceNames.white , "pack"))
 MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.green , "pack"), "infused-"..string.format(scienceNames.red   , "pack"))
