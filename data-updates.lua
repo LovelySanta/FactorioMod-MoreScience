@@ -10,11 +10,11 @@ signalPath = "prototypes/signal/"
 
 -- fluids
 fluidPath = "prototypes/fluid/"
-require(fluidPath .. "science-fluids" .. updates)
+--require(fluidPath .. "" .. updates)
 
 -- items
 itemPath = "prototypes/item/"
---require(itemPath .. "research-labs" .. updates)
+require(itemPath .. "barreling" .. updates)
 
 -- entities
 entityPath = "prototypes/entity/"
@@ -22,8 +22,8 @@ entityPath = "prototypes/entity/"
 
 -- recipes
 recipePath = "prototypes/recipe/"
-require(recipePath .. "science-fluids" .. updates)
+require(recipePath .. "barreling" .. updates)
 
 -- technology
 technologyPath = "prototypes/technology/"
-require(technologyPath .. "fluid-handling" .. updates)
+require(technologyPath .. "barreling" .. updates)

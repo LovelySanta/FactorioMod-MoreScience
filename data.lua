@@ -18,6 +18,7 @@ require(fluidPath .. "science-fluids")
 -- items
 itemPath = "prototypes/item/"
 require(itemPath .. "research-labs")
+require(itemPath .. "barreling")
 require(itemPath .. "science-bottles")
 require(itemPath .. "science-packs")
 require(itemPath .. "assembling-machines")
@@ -33,6 +34,7 @@ require(entityPath .. "assembling-machines")
 -- recipes
 recipePath = "prototypes/recipe/"
 require(recipePath .. "research-labs")
+require(recipePath .. "barreling")
 require(recipePath .. "science-bottles")
 require(recipePath .. "science-packs")
 require(recipePath .. "science-fluids")
@@ -45,6 +47,7 @@ require(recipePath .. "rocket")
 technologyPath = "prototypes/technology/"
 require(technologyPath .. "basic-automation")
 require(technologyPath .. "fluid-handling")
+require(technologyPath .. "barreling")
 require(technologyPath .. "military")
 require(technologyPath .. "flight")
 
