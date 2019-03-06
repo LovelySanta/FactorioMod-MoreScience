@@ -45,7 +45,7 @@ for scienceName,_ in pairs(previousFluid) do
 
 
 
-  -- STEP 2c: move the ingredients over to the fluid
+  -- STEP 2c: move the ingredients over to the fluid ---------------------------
   for _,ingredient in pairs(ingredients) do
     local amount = math.floor((ingredient.amount + 0.5) * ingredientMultiplier[scienceName])
     amount = amount > 0 and amount or 1 -- minimal require 1
@@ -55,11 +55,19 @@ for scienceName,_ in pairs(previousFluid) do
 
 
 
-  -- STEP 3: add the fluid to the pack recipe instead
+  -- STEP 3: add the fluid to the pack recipe instead --------------------------
   MoreScience.lib.recipe.editIngredient(packName, "ms-science-fluid", fluidName, fluidsPerPack)
 
+  -- STEP 4: allow productivity on the science fluid ---------------------------
+  MoreScience.lib.module.allowModuleOnRecipe({
+    "productivity-module"  ,
+    "productivity-module-2",
+    "productivity-module-3",
+  }, fluidName)
 end
 
+-- regular red science pack require double the amount of purified water since it has no previous fluid
+MoreScience.lib.recipe.editIngredient(string.format(scienceNames.red, "fluid"), "purified-water", "purified-water", 2)
 
 -- special recipe for space science fluid
 data:extend{{
@@ -79,23 +87,3 @@ data:extend{{
   },
   main_product = string.format(scienceNames.white, "fluid"),
 }}
-
-
-for scienceColor,scienceName in pairs(scienceNames) do
-  local regularPack = data.raw["recipe"][string.format(scienceName, "pack")]
-
-  data:extend{{
-    type = "recipe",
-    name = "infused-"..string.format(scienceName, "pack"),
-    energy_required = 2 * (regularPack and regularPack.energy_required or 50),
-    enabled = true,
-    category = "ms-chemical-crafting",
-    ingredients =
-    {
-      {string.format(scienceName, "pack"), 2},
-      {type = "fluid", name = string.format(scienceNames.white, "fluid"), amount = fluidsPerPack},
-      {type = "fluid", name = "purified-water"                          , amount = fluidsPerPack},
-    },
-    result = "infused-"..string.format(scienceName, "pack"),
-  }}
-end

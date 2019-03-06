@@ -7,4 +7,5 @@ require("lib.utilities.table")
 
 require("lib.prototyping.item")
 require("lib.prototyping.recipe")
+require("lib.prototyping.module")
 require("lib.prototyping.technology")

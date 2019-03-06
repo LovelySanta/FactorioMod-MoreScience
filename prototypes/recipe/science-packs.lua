@@ -1,4 +1,5 @@
-local scienceNames = require("prototypes/settings").scienceNames
+local scienceNames  = require("prototypes/settings").scienceNames
+local fluidsPerPack = require("prototypes/settings").fluidsPerPack
 
 --------------------------------------------------------------------------------
 ----- red science pack basic (manual craftable)                            -----
@@ -58,7 +59,7 @@ MoreScience.lib.recipe.addResult    (pinkPackName, pinkPackName         , 01, "i
 
 
 --------------------------------------------------------------------------------
------ organise all science pack recipes                                    -----
+----- organise all regular science pack recipes                            -----
 --------------------------------------------------------------------------------
 for sciencePackName,craftingTime in pairs{
   [string.format(scienceNames.red   , "pack")] = 2.5,
@@ -81,4 +82,53 @@ for sciencePackName,craftingTime in pairs{
     MoreScience.lib.recipe.addIngredient      (sciencePackName, "empty-bottle"    , 1 , "item")
     MoreScience.lib.recipe.addIngredient      (sciencePackName, "ms-science-fluid", 1, "fluid")
   end
+end
+
+for sciencePackName,craftingTime in pairs{
+  [string.format(scienceNames.red   , "pack")] = 2.5,
+  [string.format(scienceNames.green , "pack")] = 3,
+  [string.format(scienceNames.gray  , "pack")] = 5,
+  --[orangePackName                            ] = 5,
+  --[cyanPackName                              ] = 10,
+  [string.format(scienceNames.blue  , "pack")] = 10,
+  [string.format(scienceNames.purple, "pack")] = 20,
+  [string.format(scienceNames.yellow, "pack")] = 20,
+  --[pinkPackName                              ] = 30,
+  --[string.format(scienceNames.white , "pack")] = 50,
+} do
+  if data.raw.recipe[sciencePackName] then
+    MoreScience.lib.module.removeModuleFromRecipe({
+      "productivity-module"  ,
+      "productivity-module-2",
+      "productivity-module-3",
+    }, sciencePackName)
+  end
+end
+
+--------------------------------------------------------------------------------
+----- infused-science-packs                                                -----
+--------------------------------------------------------------------------------
+for scienceColor,scienceName in pairs(scienceNames) do
+  local regularPack = data.raw["recipe"][string.format(scienceName, "pack")]
+
+  data:extend{{
+    type = "recipe",
+    name = "infused-"..string.format(scienceName, "pack"),
+    energy_required = 2 * (regularPack and regularPack.energy_required or 50),
+    enabled = true,
+    category = "ms-chemical-crafting",
+    ingredients =
+    {
+      {string.format(scienceName, "pack"), 2},
+      {type = "fluid", name = string.format(scienceNames.white, "fluid"), amount = fluidsPerPack},
+      {type = "fluid", name = "purified-water"                          , amount = fluidsPerPack},
+    },
+    result = "infused-"..string.format(scienceName, "pack"),
+  }}
+
+  MoreScience.lib.module.allowModuleOnRecipe({
+    "productivity-module"  ,
+    "productivity-module-2",
+    "productivity-module-3",
+  }, "infused-"..string.format(scienceName, "pack"))
 end
