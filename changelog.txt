@@ -1,4 +1,24 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0 - 0.17 release
+Date: 08. 03. 2019
+  Features:
+    - New way of obtaining space science packs: now send a payload into space and retrieve it back (and reuse it)
+    - Science fluid and infusing recipes now allow productivity modules
+  Minor features:
+    - Stack size of barreling can be changed (default setting is now 15, base game is 10)
+    - Setting to enable an empty barrel recycling recipe
+  Changes:
+    - Naming of the science packs have changed to reflect the changes of the base game
+    - Bottling research has been split into two (now also consists of purification research)
+    - Pink science is now only for rocket crafting, no other logistics
+    - The rocketparts are build in there own assembling machine
+    - Infused science packs only unlock infinite science research, no new technologies
+  Balancing:
+    - Wood farming technology is made easier (now require orange and cyan science pack instead of purple)
+  Modding:
+    - Labs now (should) accept science packs from other mods
+    - No mod compatibility yet in 0.17, other mods will be supported in future releases
+---------------------------------------------------------------------------------------------------
 Version: 0.1.20
 Date: 7. 11. 2018
   Features:

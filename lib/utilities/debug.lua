@@ -29,310 +29,229 @@ function Debug:reseachAllTechnologies()
 
 
 --------------------------------------------------------------------------------
------ Start of the game: minor defence and automation of power             -----
+----- Red science                                                          -----
 --------------------------------------------------------------------------------
 
-  -- Automation & Logistics: smelter setup
   researchTechnology("basic-automation")
-  researchTechnology("automation")
-  researchTechnology("logistics")
+  researchTechnology("steel-processing")
+  researchTechnology("brick-processing")
 
-  -- Military: first defence systems
+  researchTechnology("automation")
+  researchTechnology("electronics")
+
+  researchTechnology("logistics")
+  researchTechnology("fast-inserter")
+  researchTechnology("optics")
+
   researchTechnology("military")
   researchTechnology("stone-walls")
   researchTechnology("turrets")
+  researchTechnology("heavy-armor")
+  researchTechnology("weapon-shooting-speed-1")
+  researchTechnology("physical-projectile-damage-1")
 
-  -- Military: bonusses
-  researchTechnology("bullet-damage-1")
-  researchTechnology("bullet-speed-1")
-  researchTechnology("shotgun-shell-damage-1")
-  researchTechnology("shotgun-shell-speed-1")
+  researchTechnology("fluid-handling")
+  researchTechnology("purification-research")
+  researchTechnology("bottling-research")
+  researchTechnology("research-speed-1")
 
-  -- Character management: light
-  researchTechnology("optics")
+  researchTechnology("logistic-science-pack")
 
   if self.returnValue == 1 then
     return
   end
 
-
-
 --------------------------------------------------------------------------------
------ Advancing to basic defence and automation of basic (green) science   -----
+----- Green science                                                        -----
 --------------------------------------------------------------------------------
 
-  -- Science: research green science (and bottling)
-  researchTechnology("electronics")
   researchTechnology("automation-2")
-  researchTechnology("steel-processing")
-  researchTechnology("basic-science-research-1")
-
-  researchTechnology("fluid-handling")
-  researchTechnology("bottling-research")
-
-  -- Science: bonusses
-  researchTechnology("research-speed-1")
-  researchTechnology("research-speed-2")
-
-  -- Character managment: inventory
   researchTechnology("toolbelt")
-
-  -- Power network: beter power poles
-  researchTechnology("electric-energy-distribution-1")
-
-  -- Logistics: landfill
+  researchTechnology("steel-axe")
+  researchTechnology("circuit-network")
+  researchTechnology("solar-energy")
+  researchTechnology("advanced-material-processing")
+  researchTechnology("concrete")
   researchTechnology("landfill")
 
-  -- Military: basic defence systems
+  researchTechnology("engine")
+  researchTechnology("logistics-2")
+  researchTechnology("inserter-capacity-bonus-1")
+  researchTechnology("automobilism")
+  researchTechnology("railway")
+
+  researchTechnology("research-speed-2")
+  researchTechnology("electric-energy-distribution-1")
+
   researchTechnology("military-2")
   researchTechnology("gates")
+  researchTechnology("weapon-shooting-speed-2")
+  researchTechnology("physical-projectile-damage-2")
+  researchTechnology("stronger-explosives-1")
 
-  -- Military: Armor upgrades
-  researchTechnology("heavy-armor")
-
-  -- Military: bonusses
-  researchTechnology("bullet-damage-2")
-  researchTechnology("bullet-speed-2")
-  researchTechnology("bullet-speed-3")
-  researchTechnology("gun-turret-damage-1")
-  researchTechnology("gun-turret-damage-2")
-  researchTechnology("shotgun-shell-damage-2")
-  researchTechnology("shotgun-shell-speed-2")
-  researchTechnology("shotgun-shell-speed-3")
 
   if self.returnValue == 2 then
     return
   end
 
-
-
 --------------------------------------------------------------------------------
------ Establishing beter defence systems (gray science)                    -----
+----- Gray science                                                         -----
 --------------------------------------------------------------------------------
 
-  -- Science: research gray science
-  researchTechnology("basic-military-science-research")
+  researchTechnology("military-science-pack")
 
-  -- Military: bonusses
-  researchTechnology("bullet-damage-3")
-  researchTechnology("bullet-damage-4")
-  researchTechnology("bullet-speed-4")
-  researchTechnology("gun-turret-damage-3")
-  researchTechnology("gun-turret-damage-4")
-  researchTechnology("shotgun-shell-damage-3")
-  researchTechnology("shotgun-shell-damage-4")
-  researchTechnology("shotgun-shell-speed-4")
-  researchTechnology("grenade-damage-1")
-  researchTechnology("grenade-damage-2")
-  researchTechnology("grenade-damage-3")
+  researchTechnology("physical-projectile-damage-3")
+  researchTechnology("stronger-explosives-2")
 
   if self.returnValue == 3 then
     return
   end
 
-
-
 --------------------------------------------------------------------------------
------ Get specific automation research (orange science)                    -----
+----- Orange science                                                       -----
 --------------------------------------------------------------------------------
 
-  -- Science: research orange science
-  researchTechnology("basic-automation-science-research")
+  researchTechnology("advanced-automation-science-pack")
 
-  -- Science: bonusses
-  researchTechnology("research-speed-3")
-
-  -- Automation: getting into oil processing
-  researchTechnology("circuit-network")
   researchTechnology("oil-processing")
-  researchTechnology("plastics")
-  researchTechnology("advanced-electronics")
-  researchTechnology("sulfur-processing")
-  researchTechnology("battery")
+  researchTechnology("fluid-handling-2")
+  researchTechnology("lubricant")
 
-  -- Automation: optional research
-  researchTechnology("engine")
-  researchTechnology("advanced-material-processing")
-  researchTechnology("concrete")
-  researchTechnology("modules")
-  researchTechnology("speed-module")
-  researchTechnology("productivity-module")
-
-  -- Automation: bonusses
-  researchTechnology("mining-productivity-1")
-
-  -- Logistics: trains
-  researchTechnology("railway")
   researchTechnology("automated-rail-transportation")
   researchTechnology("rail-signals")
+  researchTechnology("braking-force-1")
+  researchTechnology("braking-force-2")
 
-  -- Military: beter armor
-  researchTechnology("modular-armor")
-  researchTechnology("night-vision-equipment")
-
-  -- Military: advanced defence systems
-  researchTechnology("flammables")
-  researchTechnology("flamethrower")
+  researchTechnology("sulfur")
   researchTechnology("explosives")
-  researchTechnology("land-mine")
-  researchTechnology("rocketry")
-
-  -- Military: optional research
-  researchTechnology("laser")
   researchTechnology("cliff-explosives")
+  researchTechnology("sulfur-processing")
 
-  -- Military: bonusses
-  researchTechnology("flamethrower-damage-1")
-  researchTechnology("flamethrower-damage-2")
-  researchTechnology("rocket-damage-1")
-  researchTechnology("rocket-damage-2")
-  researchTechnology("rocket-speed-1")
-  researchTechnology("rocket-speed-2")
+  researchTechnology("plastics")
+  researchTechnology("advanced-electronics")
+  researchTechnology("stack-inserter")
+  researchTechnology("inserter-capacity-bonus-2")
+
+  researchTechnology("modules")
+  researchTechnology("productivity-module")
+  researchTechnology("speed-module")
+  researchTechnology("effectivity-module")
+
+  researchTechnology("flammables")
+  researchTechnology("rocket-fuel")
+  researchTechnology("rocketry")
+  researchTechnology("weapon-shooting-speed-3")
+  researchTechnology("weapon-shooting-speed-4")
+  researchTechnology("physical-projectile-damage-3")
+  researchTechnology("physical-projectile-damage-4")
+
+  researchTechnology("land-mine")
+  researchTechnology("stronger-explosives-3")
+  researchTechnology("stronger-explosives-4")
+
+  researchTechnology("flamethrower")
+  researchTechnology("refined-flammables-1")
+  researchTechnology("refined-flammables-2")
 
   if self.returnValue == 4 then
     return
   end
 
-
-
 --------------------------------------------------------------------------------
------ Get beter power source (light blue science)                          -----
+----- Cyan science                                                         -----
 --------------------------------------------------------------------------------
 
-  -- Science: research light blue science
-  researchTechnology("basic-power-science-research")
+  researchTechnology("electric-power-science-pack")
+  researchTechnology("wood-plantation")
+  researchTechnology("research-speed-3")
 
-  -- Power: solar energy
-  researchTechnology("solar-energy")
+  researchTechnology("mining-productivity-1")
+  researchTechnology("braking-force-3")
+
+  researchTechnology("battery")
   researchTechnology("electric-energy-accumulators-1")
+  researchTechnology("electric-engine")
 
-  -- Power: optional research
-  researchTechnology("effectivity-module")
+  researchTechnology("flight")
+  researchTechnology("robotics")
+  researchTechnology("construction-robotics")
 
-  -- Military: electricity powered defence
+  researchTechnology("combat-robotics")
+  researchTechnology("follower-robot-count-1")
+  researchTechnology("follower-robot-count-2")
+
+  researchTechnology("laser")
   researchTechnology("laser-turrets")
-
-  -- Military: armor upgrades
-  researchTechnology("solar-panel-equipment")
-  researchTechnology("battery-equipment")
-  researchTechnology("energy-shield-equipment")
-
-  -- Military: bonusses
-  researchTechnology("laser-turret-damage-1")
-  researchTechnology("laser-turret-damage-2")
+  researchTechnology("energy-weapons-damage-1")
+  researchTechnology("energy-weapons-damage-2")
+  researchTechnology("energy-weapons-damage-3")
   researchTechnology("laser-turret-speed-1")
   researchTechnology("laser-turret-speed-2")
+
+  researchTechnology("modular-armor")
+  researchTechnology("solar-panel-equipment")
+  researchTechnology("battery-equipment")
+  researchTechnology("belt-immunity-equipment")
+  researchTechnology("night-vision-equipment")
+  researchTechnology("personal-roboport-equipment")
+  researchTechnology("energy-shield-equipment")
 
   if self.returnValue == 5 then
     return
   end
 
-
-
 --------------------------------------------------------------------------------
------ Get more basic technology research (blue science)                         -----
+----- Blue science                                                         -----
 --------------------------------------------------------------------------------
 
-  -- Science: research blue science
-  researchTechnology("basic-science-research-2")
-
-  -- Science: bonusses
+  researchTechnology("chemical-science-pack")
   researchTechnology("research-speed-4")
 
-  -- Automation: advance automation process
+  researchTechnology("mining-productivity-2")
+  researchTechnology("fluid-handling-3")
+  researchTechnology("fluid-wagon")
+  researchTechnology("braking-force-4")
+
   researchTechnology("advanced-oil-processing")
-
-  -- Automation: optional research
   researchTechnology("advanced-material-processing-2")
-  researchTechnology("advanced-electronics-2")
-  researchTechnology("electric-engine")
-  researchTechnology("speed-module-2")
-  researchTechnology("productivity-module-2")
+  researchTechnology("concrete-2")
 
-  -- Automation: bonusses
-  researchTechnology("mining-productivity-4")
-
-  -- Logistics: barreling
-  researchTechnology("fluid-handling-2")
-
-  -- Power network: beter power
   researchTechnology("electric-energy-distribution-2")
+  researchTechnology("uranium-processing")
   researchTechnology("nuclear-power")
+
+  researchTechnology("advanced-electronics-2")
+  researchTechnology("productivity-module-2")
+  researchTechnology("speed-module-2")
   researchTechnology("effectivity-module-2")
 
-  -- Military: extra defence systems
-  researchTechnology("flying")
-  researchTechnology("combat-robotics")
+  researchTechnology("inserter-capacity-bonus-3")
+  researchTechnology("inserter-capacity-bonus-4")
+
   researchTechnology("military-3")
+  researchTechnology("refined-flammables-3")
+
   researchTechnology("explosive-rocketry")
+  researchTechnology("stronger-explosives-5")
+
+  researchTechnology("tanks")
+  researchTechnology("weapon-shooting-speed-5")
+  researchTechnology("physical-projectile-damage-5")
+
   researchTechnology("combat-robotics-2")
-
-  -- Military: armor upgrades
-  researchTechnology("battery-mk2-equipment")
-  researchTechnology("exoskeleton-equipment")
-  researchTechnology("power-armor")
-  researchTechnology("energy-shield-mk2-equipment")
-  researchTechnology("personal-laser-defense-equipment")
-  researchTechnology("discharge-defense-equipment")
-
-  -- Military: bonusses
-  researchTechnology("bullet-damage-5")
-  researchTechnology("bullet-speed-5")
-  researchTechnology("gun-turret-damage-5")
-  researchTechnology("shotgun-shell-damage-5")
-  researchTechnology("shotgun-shell-speed-5")
-  researchTechnology("grenade-damage-4")
-  researchTechnology("grenade-damage-5")
-  researchTechnology("flamethrower-damage-3")
-  researchTechnology("flamethrower-damage-4")
-  researchTechnology("rocket-damage-3")
-  researchTechnology("rocket-damage-4")
-  researchTechnology("rocket-damage-5")
-  researchTechnology("rocket-speed-3")
-  researchTechnology("rocket-speed-4")
-  researchTechnology("rocket-speed-5")
-  researchTechnology("laser-turret-damage-3")
-  researchTechnology("laser-turret-damage-4")
-  researchTechnology("laser-turret-speed-3")
-  researchTechnology("laser-turret-speed-4")
-  researchTechnology("combat-robot-damage-1")
-  researchTechnology("combat-robot-damage-2")
-  researchTechnology("combat-robot-damage-3")
-  researchTechnology("combat-robot-damage-4")
-  researchTechnology("follower-robot-count-1")
-  researchTechnology("follower-robot-count-2")
   researchTechnology("follower-robot-count-3")
   researchTechnology("follower-robot-count-4")
+  researchTechnology("energy-weapons-damage-4")
+  researchTechnology("laser-turret-speed-3")
+  researchTechnology("laser-turret-speed-4")
 
-  if self.returnValue == 6 then
-    return
-  end
-
-
-
---------------------------------------------------------------------------------
------ Get specific logistic technology (pink science)                         -----
---------------------------------------------------------------------------------
-
-  -- Science: research pink science
-  researchTechnology("basic-logistics-science-research")
-
-  -- Logistics: Inserters
-  researchTechnology("logistics-2")
-  researchTechnology("stack-inserter")
-
-  -- Logistics: train network
-  researchTechnology("fluid-wagon")
-
-  -- Logistics: barreling
-  researchTechnology("fluid-handling-3")
-
-  -- Logistics: robot network
-  researchTechnology("robotics")
-  researchTechnology("construction-robotics")
+  researchTechnology("low-density-structure")
+  researchTechnology("roboports")
   researchTechnology("logistic-robotics")
-
-  -- Logistics inventory managing
+  researchTechnology("worker-robots-storage-1")
+  researchTechnology("worker-robots-speed-1")
+  researchTechnology("worker-robots-speed-2")
+  researchTechnology("worker-robots-speed-3")
   researchTechnology("character-logistic-slots-1")
   researchTechnology("character-logistic-slots-2")
   researchTechnology("character-logistic-slots-3")
@@ -340,165 +259,105 @@ function Debug:reseachAllTechnologies()
   researchTechnology("character-logistic-trash-slots-2")
   researchTechnology("auto-character-logistic-trash-slots")
 
-  -- Military: armor upgrades
-  researchTechnology("personal-roboport-equipment")
+  researchTechnology("power-armor")
+  researchTechnology("energy-shield-mk2-equipment")
+  researchTechnology("discharge-defense-equipment")
+  researchTechnology("personal-laser-defense-equipment")
+  researchTechnology("exoskeleton-equipment")
+  researchTechnology("battery-mk2-equipment")
 
-  -- Military: tanks
-  researchTechnology("automobilism")
-  researchTechnology("tanks")
+  if self.returnValue == 6 then
+    return
+  end
 
-  -- Logistics: bonusses
-  researchTechnology("inserter-capacity-bonus-1")
-  researchTechnology("inserter-capacity-bonus-2")
-  researchTechnology("inserter-capacity-bonus-3")
-  researchTechnology("braking-force-1")
-  researchTechnology("braking-force-2")
-  researchTechnology("worker-robots-storage-1")
-  researchTechnology("worker-robots-speed-1")
-  researchTechnology("worker-robots-speed-2")
+--------------------------------------------------------------------------------
+----- Purple science                                                       -----
+--------------------------------------------------------------------------------
 
-  -- Military: bonusses
-  researchTechnology("cannon-shell-damage-1")
-  researchTechnology("cannon-shell-damage-2")
-  researchTechnology("cannon-shell-damage-3")
-  researchTechnology("cannon-shell-speed-1")
-  researchTechnology("cannon-shell-speed-2")
-  researchTechnology("cannon-shell-speed-3")
+  researchTechnology("production-science-pack")
+
+  researchTechnology("coal-liquefaction")
+  researchTechnology("nuclear-fuel-reprocessing")
+  researchTechnology("kovarex-enrichment-process")
+
+  researchTechnology("effectivity-module-3")
+  researchTechnology("effect-transmission")
+  researchTechnology("productivity-module-3")
+  researchTechnology("speed-module-3")
+
+  researchTechnology("logistics-3")
+  researchTechnology("braking-force-5")
+  researchTechnology("inserter-capacity-bonus-5")
+  researchTechnology("inserter-capacity-bonus-6")
+  researchTechnology("worker-robots-storage-2")
+
+  researchTechnology("automation-3")
+  researchTechnology("research-speed-5")
 
   if self.returnValue == 7 then
     return
   end
 
-
-
 --------------------------------------------------------------------------------
------ Get advanced technology research (purple science)                    -----
+----- Yellow science                                                       -----
 --------------------------------------------------------------------------------
 
-  -- Science: research purple science
-  researchTechnology("advanced-science-research-1")
+  researchTechnology("utility-science-pack")
+  researchTechnology("research-speed-6")
+  researchTechnology("mining-productivity-3")
+  researchTechnology("braking-force-6")
 
-  -- Science: bonusses
-  researchTechnology("research-speed-5")
+  researchTechnology("military-4")
+  researchTechnology("artillery")
+  researchTechnology("rocket-control-unit")
+  researchTechnology("atomic-bomb")
 
-  -- Automation
-  researchTechnology("automation-3")
-  researchTechnology("logistics-3")
+  researchTechnology("combat-robotics-3")
+  researchTechnology("follower-robot-count-5")
+  researchTechnology("follower-robot-count-6")
 
-  -- Automation: optional research
-  researchTechnology("coal-liquefaction")
-  researchTechnology("productivity-module-3")
-  researchTechnology("wood-plantation")
+  researchTechnology("refined-flammables-4")
+  researchTechnology("refined-flammables-5")
+  researchTechnology("refined-flammables-6")
+  researchTechnology("stronger-explosives-6")
 
-  -- Logistics: inventory management
-  researchTechnology("character-logistic-slots-4")
-  researchTechnology("character-logistic-slots-5")
+  researchTechnology("uranium-ammo")
+  researchTechnology("weapon-shooting-speed-6")
+  researchTechnology("physical-projectile-damage-6")
 
-  -- Automation: bonusses
-  researchTechnology("mining-productivity-8")
+  researchTechnology("energy-weapons-damage-5")
+  researchTechnology("energy-weapons-damage-6")
+  researchTechnology("laser-turret-speed-5")
+  researchTechnology("laser-turret-speed-6")
+  researchTechnology("laser-turret-speed-7")
 
-  -- Logistics: bonusses
-  researchTechnology("inserter-capacity-bonus-4")
-  researchTechnology("inserter-capacity-bonus-5")
-  researchTechnology("inserter-capacity-bonus-6")
-  researchTechnology("braking-force-3")
-  researchTechnology("braking-force-4")
-  researchTechnology("braking-force-5")
-  researchTechnology("worker-robots-storage-2")
-  researchTechnology("worker-robots-speed-3")
+  researchTechnology("logistic-system")
+  researchTechnology("power-armor-2")
+  researchTechnology("fusion-reactor-equipment")
+  researchTechnology("personal-roboport-equipment-2")
+  researchTechnology("worker-robots-storage-3")
   researchTechnology("worker-robots-speed-4")
-
-  -- Power network
-  researchTechnology("nuclear-fuel-reprocessing")
+  researchTechnology("character-logistic-slots-4")
+  researchTechnology("character-logistic-trash-slots-3")
 
   if self.returnValue == 8 then
     return
   end
 
-
-
 --------------------------------------------------------------------------------
------ Get more advanced technology research (yellow science)               -----
+----- Pink science                                                         -----
 --------------------------------------------------------------------------------
 
-  -- Science: research yellow science
-  researchTechnology("advanced-science-research-2")
+  researchTechnology("advanced-logistic-science-pack")
 
-  -- Science: bonusses
-  researchTechnology("research-speed-6")
-
-  -- Automation: modules
-  researchTechnology("speed-module-3")
-  researchTechnology("effectivity-module-3")
-  researchTechnology("effect-transmission")
-
-  -- Logistics: robot network
-  researchTechnology("logistic-system")
-
-  -- Logistics: inventory management
+  researchTechnology("character-logistic-slots-5")
   researchTechnology("character-logistic-slots-6")
-
-  -- Power
-  researchTechnology("kovarex-enrichment-process")
-
-  -- Military: extra defence systems
-  researchTechnology("military-4")
-  researchTechnology("combat-robotics-3")
-  researchTechnology("uranium-ammo")
-  researchTechnology("atomic-bomb")
-  researchTechnology("artillery")
-
-  -- Military: armor upgrades
-  researchTechnology("fusion-reactor-equipment")
-  researchTechnology("personal-roboport-equipment-2")
-  researchTechnology("power-armor-2")
-
-  -- Automation: bonusses
-  researchTechnology("mining-productivity-12")
-
-  -- Logistics: bonusses
+  researchTechnology("character-logistic-trash-slots-4")
+  researchTechnology("character-logistic-trash-slots-5")
   researchTechnology("inserter-capacity-bonus-7")
-  researchTechnology("braking-force-6")
   researchTechnology("braking-force-7")
-  researchTechnology("worker-robots-storage-3")
   researchTechnology("worker-robots-speed-5")
 
-  -- Military: bonusses
-  researchTechnology("bullet-damage-6")
-  researchTechnology("bullet-speed-6")
-  researchTechnology("gun-turret-damage-6")
-  researchTechnology("shotgun-shell-damage-6")
-  researchTechnology("shotgun-shell-speed-6")
-  researchTechnology("grenade-damage-6")
-  researchTechnology("flamethrower-damage-5")
-  researchTechnology("flamethrower-damage-6")
-  researchTechnology("rocket-damage-6")
-  researchTechnology("rocket-speed-6")
-  researchTechnology("rocket-speed-7")
-  researchTechnology("laser-turret-damage-5")
-  researchTechnology("laser-turret-damage-6")
-  researchTechnology("laser-turret-damage-7")
-  researchTechnology("laser-turret-speed-5")
-  researchTechnology("laser-turret-speed-6")
-  researchTechnology("laser-turret-speed-7")
-  researchTechnology("combat-robot-damage-5")
-  researchTechnology("follower-robot-count-5")
-  researchTechnology("follower-robot-count-6")
-  researchTechnology("cannon-shell-damage-4")
-  researchTechnology("cannon-shell-damage-5")
-  researchTechnology("cannon-shell-speed-4")
-  researchTechnology("cannon-shell-speed-5")
-
-
-  if self.returnValue == 9 then
-    return
-  end
-
---------------------------------------------------------------------------------
------ Infinite science research                                            -----
---------------------------------------------------------------------------------
-
-  -- Science: research technology
   researchTechnology("rocket")
   researchTechnology("rocketpart-hull-component")
   researchTechnology("rocketpart-ion-thruster")
@@ -506,21 +365,27 @@ function Debug:reseachAllTechnologies()
   researchTechnology("rocketpart-shield-array")
   researchTechnology("rocket-silo")
 
-  -- Science: research infinite science
-  researchTechnology("infinite-science-research")
-  researchTechnology("infused-basic-science-research-1")
-  researchTechnology("infused-basic-science-research-2")
-  researchTechnology("infused-basic-science-research-3")
-  researchTechnology("infused-advanced-science-research-1")
-  researchTechnology("infused-advanced-science-research-2")
-  researchTechnology("infused-basic-military-science-research")
-  researchTechnology("infused-basic-automation-science-research")
-  researchTechnology("infused-basic-power-science-research")
-  researchTechnology("infused-basic-logistics-science-research")
+  if self.returnValue == 9 then
+    return
+  end
+
+--------------------------------------------------------------------------------
+----- Infinite science (infusing)                                          -----
+--------------------------------------------------------------------------------
+
+  researchTechnology("space-science-pack")
+  researchTechnology("infused-automation-science-pack")
+  researchTechnology("infused-military-science-pack")
+  researchTechnology("infused-logistic-science-pack")
+  researchTechnology("infused-advanced-automation-science-pack")
+  researchTechnology("infused-electric-power-science-pack")
+  researchTechnology("infused-chemical-science-pack")
+  researchTechnology("infused-production-science-pack")
+  researchTechnology("infused-utility-science-pack")
+  researchTechnology("infused-advanced-logistic-science-pack")
 
   if self.returnValue == 10 then
     return
   end
-
 
 end

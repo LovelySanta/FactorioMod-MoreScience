@@ -413,6 +413,39 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
 
 
 
+  function MoreScience.lib.recipe.getResultCount(recipeName, resultName)
+    if not data.raw["recipe"][recipeName] then return end
+    recipePrototypeCleanup(recipeName)
+
+    if data.raw["recipe"][recipeName].result then
+      return data.raw["recipe"][recipeName].result_count or 1
+    elseif data.raw["recipe"][recipeName].results then
+      for resultIndex, result in pairs(data.raw["recipe"][recipeName].results) do
+        return data.raw["recipe"][recipeName].results[resultIndex].amount or 1
+      end
+
+    elseif data.raw["recipe"][recipeName].normal then
+      if data.raw["recipe"][recipeName].normal.result then
+        return data.raw["recipe"][recipeName].normal.result_count or 1
+      elseif data.raw["recipe"][recipeName].normal.results then
+        for resultIndex, result in pairs(data.raw["recipe"][recipeName].normal.results) do
+          return data.raw["recipe"][recipeName].normal.results[resultIndex].amount or 1
+        end
+      end
+
+    elseif data.raw["recipe"][recipeName].expensive then
+      if data.raw["recipe"][recipeName].expensive.result then
+        return data.raw["recipe"][recipeName].expensive.result_count or 1
+      elseif data.raw["recipe"][recipeName].expensive.results then
+        for resultIndex, result in pairs(data.raw["recipe"][recipeName].expensive.results) do
+          return data.raw["recipe"][recipeName].expensive.results[resultIndex].amount or 1
+        end
+      end
+    end
+  end
+
+
+
   function MoreScience.lib.recipe.setResultCount(recipeName, resultName, resultAmount)
     if not data.raw["recipe"][recipeName] then return end
     recipePrototypeCleanup(recipeName)
@@ -605,6 +638,17 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
 
 
 
+  function MoreScience.lib.recipe.getEngergyRequired(recipeName)
+    if not data.raw["recipe"][recipeName] then return end
+    recipePrototypeCleanup(recipeName)
+
+    return data.raw["recipe"][recipeName]          .energy_required or
+           data.raw["recipe"][recipeName].normal   .energy_required or
+           data.raw["recipe"][recipeName].expensive.energy_required
+  end
+
+
+
   function MoreScience.lib.recipe.setLocalisedName(recipeName, localeString)
     if not data.raw["recipe"][recipeName] then return end
 
@@ -625,6 +669,14 @@ if not MoreScience.lib.recipe then MoreScience.lib.recipe = {}
     if not data.raw["recipe"][recipeName] then return end
 
     MoreScience.lib.item.setOrderstring("recipe", recipeName, orderstring)
+  end
+
+
+
+  function MoreScience.lib.recipe.setShowMadeIn(recipeName, enableShowMadeIn)
+    if not data.raw["recipe"][recipeName] then return end
+
+    data.raw["recipe"][recipeName].always_show_made_in = enableShowMadeIn
   end
 
 end -- end of MoreScience.lib.recipe

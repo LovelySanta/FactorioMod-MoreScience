@@ -1,5 +1,4 @@
-require 'util'
-local treefarmSubgroup = "treefarm"
+local treefarmSubgroup = "ms-science-treefarm"
 
 --------------------------------------------------------------------------------
 ----- hand-saw                                                             -----
@@ -10,7 +9,6 @@ local handSaw =
   name = "hand-saw",
   icon = "__MoreScience__/graphics/icons/hand-saw.png",
   icon_size = 512,
-  flags = {"goes-to-main-inventory"},
   subgroup = "tool",
   order = "a[mining]-c[hand-saw]",
   stack_size = 20
@@ -76,13 +74,13 @@ treeSeed.subgroup = treefarmSubgroup
 
 
 --------------------------------------------------------------------------------
------ raw-wood                                                             -----
+----- wood                                                             -----
 --------------------------------------------------------------------------------
-data.raw["item"]["raw-wood"].subgroup = treefarmSubgroup
-data.raw["item"]["raw-wood"].order = "c[wood]-g[raw-wood]"
+data.raw["item"]["wood"].subgroup = treefarmSubgroup
+data.raw["item"]["wood"].order = "c[wood]-g[wood]"
 
 
-data:extend({
+data:extend{
   handSaw,
 
   seedExtractor,
@@ -90,4 +88,4 @@ data:extend({
 
   treeSeed,
   tree,
-})
+}

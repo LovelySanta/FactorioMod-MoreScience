@@ -19,10 +19,10 @@ As I am altering all science packs, I also alter the space science pack.  You'll
 
 # Extensions
 Extensions have been made so this mod is able to work together with bigger mods/modpacks. More info on the extension page themselves:
-+ [More Science - BobAngels Extension](https://mods.factorio.com/mod/MoreScience-BobAngelsExtension)
-+ [More Science - ScienceCostTweaker Extension](https://mods.factorio.com/mod/MoreScience-ScienceCostTweakerExtension)
-+ [More Science - Sea Block extension](https://mods.factorio.com/mod/MoreScience-SeaBlockExtension)
-+ [More Science - Space Extension](https://mods.factorio.com/mod/MoreScience-SpaceExtension)
++ [More Science - BobAngels Extension](https://mods.factorio.com/mod/MoreScience-BobAngelsExtension) (factorio 0.16)
++ [More Science - ScienceCostTweaker Extension](https://mods.factorio.com/mod/MoreScience-ScienceCostTweakerExtension) (factorio 0.16)
++ [More Science - Sea Block extension](https://mods.factorio.com/mod/MoreScience-SeaBlockExtension) (factorio 0.16)
++ [More Science - Space Extension](https://mods.factorio.com/mod/MoreScience-SpaceExtension) (factorio 0.16)
 
 # Credits
 + Thanks to [Arch666angel](https://mods.factorio.com/user/Arch666Angel) for providing me the graphics of the sand, glass, rocket parts and wood plantation buildings.

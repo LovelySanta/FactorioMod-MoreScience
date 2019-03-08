@@ -6,7 +6,7 @@ local handSaw =
 {
   type = "recipe",
   name = "hand-saw",
-  energy_required = data.raw["recipe"]["steel-axe"].energy_required,
+  energy_required = 2,
   enabled = false,
   ingredients =
   {
@@ -31,7 +31,7 @@ local seedExtractor =
   {
     {"chemical-plant", 1},
     {handSaw.name, 1},
-    {"raw-wood", data.raw["item"]["raw-wood"].stack_size / 2},
+    {"wood", data.raw["item"]["wood"].stack_size / 2},
   },
   result = "seed-extractor",
 }
@@ -51,7 +51,7 @@ local woodPlantation  =
     {"assembling-machine-3", 1},
     {"sand", data.raw["item"]["sand"].stack_size},
     {"landfill", data.raw["item"]["sand"].stack_size},
-    {"raw-wood", data.raw["item"]["raw-wood"].stack_size},
+    {"wood", data.raw["item"]["wood"].stack_size},
     {handSaw.name, data.raw["item"]["hand-saw"].stack_size},
   },
   result = "wood-plantation",
@@ -68,7 +68,7 @@ local organicTree =
   name = "organic-tree",
   energy_required = 60 * 5,
   enabled = false,
-  category = "wood-plantation",
+  category = "ms-wood-plantation",
   ingredients =
   {
     {"tree-seed", 1},
@@ -88,7 +88,7 @@ local treeSeed =
   localised_name = util.table.deepcopy(data.raw["item"]["tree-seed"].localised_name),
   energy_required = 60,
   enabled = false,
-  category = "seed-extractor",
+  category = "ms-seed-extractor",
   ingredients = {
     {organicTree.result, 1},
   },
@@ -110,7 +110,7 @@ local treeSeedCreator =
   enabled = treeSeed.enabled,
   category = treeSeed.category,
   ingredients = {
-    {"raw-wood", 100},
+    {"wood", 100},
     {"sand", 10},
   },
   results =
@@ -129,8 +129,8 @@ local treeSeedCreator =
 local rawWoodProduction =
 {
   type = "recipe",
-  name = "raw-wood-creator",
-  localised_name = {"item-name.raw-wood"},
+  name = "wood-creator",
+  localised_name = {"item-name.wood"},
   energy_required = organicTree.energy_required * 2,
   enabled = false,
   category = "advanced-crafting",
@@ -138,12 +138,12 @@ local rawWoodProduction =
     {organicTree.result, 1},
     {handSaw.name, 1},
   },
-  result = "raw-wood",
+  result = "wood",
   result_count = 25
 }
 
 
-data:extend({
+data:extend{
   handSaw,
 
   seedExtractor,
@@ -154,4 +154,4 @@ data:extend({
   organicTree,
 
   rawWoodProduction,
-})
+}

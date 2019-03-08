@@ -1,13 +1,14 @@
-require 'util'
+local scienceNames = require("prototypes/settings").scienceNames
 
-local woodPlantation = util.table.deepcopy(data.raw["technology"]["automation-3"])
+local woodPlantation = util.table.deepcopy(data.raw["technology"]["automation-2"])
 woodPlantation.name = "wood-plantation"
 woodPlantation.icon = "__MoreScience__/graphics/technology/wood-plantation-tech.png"
 woodPlantation.icon_size = 128
 woodPlantation.prerequisites =
 {
-  "automation-3",
   "landfill",
+  string.format(scienceNames.orange, "pack"),
+  string.format(scienceNames.cyan  , "pack"),
 }
 woodPlantation.effects =
 {
@@ -37,10 +38,15 @@ woodPlantation.effects =
   },
   {
     type = "unlock-recipe",
-    recipe = "raw-wood-creator",
+    recipe = "wood-creator",
   }
 }
-woodPlantation.unit.count = woodPlantation.unit.count * 2
+woodPlantation.unit =
+{
+  count = 3 * data.raw["technology"]["battery"].unit.count,
+  ingredients = util.table.deepcopy(data.raw["technology"]["battery"].unit.ingredients),
+  time = 2 * data.raw["technology"]["battery"].unit.time,
+}
 
 data:extend({
   woodPlantation,

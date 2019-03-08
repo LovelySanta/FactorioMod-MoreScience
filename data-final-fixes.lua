@@ -1,10 +1,9 @@
+--require "graphics/screenshots/science-order" --   <<<-- for screenshot purpose only
 
 -- technology tree cleanup
 local containsExtension = false
 for _,extension in pairs({
-  "BobAngelsExtension",
-  "ScienceCostTweakerExtension",
-  "OmniExtension",
+  -- when modules present, we don't remove redundant prerequisites here
 }) do
   if mods["MoreScience-" .. extension] then
     containsExtension = true
@@ -12,6 +11,6 @@ for _,extension in pairs({
   end
 end
 if not containsExtension then
-  log("cleaning up the tech tree")
+  MoreScience.lib.debug.log("----- Cleaning up the tech tree -----")
   MoreScience.lib.technology.removeAllRedundantPrerequisites()
 end

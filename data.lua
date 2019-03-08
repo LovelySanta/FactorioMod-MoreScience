@@ -1,54 +1,69 @@
 -- include library
 require("lib/lib")
+MoreScience.lib.debug.enable() -- enable logging to factorio-current.log
 
 -- categories
 categoryPath = "prototypes/categories/"
-require(categoryPath .. "science-group")
-require(categoryPath .. "science-subgroup")
-require(categoryPath .. "tree-farm")
-
--- entities
-entityPath = "prototypes/entity/"
-require(entityPath .. "research-lab")
-require(entityPath .. "rocket-assembly")
-require(entityPath .. "tree-farm")
-
--- fluids
-fluidPath = "prototypes/fluid/"
-require(fluidPath .. "science-fluid")
-
--- items
-itemPath = "prototypes/item/"
-require(itemPath .. "empty-bottle")
-require(itemPath .. "regular-science-pack")
-require(itemPath .. "infused-science-pack")
-require(itemPath .. "research-lab")
-require(itemPath .. "rocket-parts")
-require(itemPath .. "rocket-assembly")
-require(itemPath .. "tree-farm")
+require(categoryPath .. "crafting-categories")
+require(categoryPath .. "item-groups")
 
 -- signals
 signalPath = "prototypes/signal/"
 require(signalPath .. "color-signal")
 
+-- fluids
+fluidPath = "prototypes/fluid/"
+require(fluidPath .. "science-fluids")
+
+-- items
+itemPath = "prototypes/item/"
+require(itemPath .. "research-labs")
+require(itemPath .. "barreling")
+require(itemPath .. "science-bottles")
+require(itemPath .. "science-packs")
+require(itemPath .. "assembling-machines")
+require(itemPath .. "rocket-parts")
+require(itemPath .. "rocket-payloads")
+require(itemPath .. "rocket")
+require(itemPath .. "tree-farm")
+
+-- entities
+entityPath = "prototypes/entity/"
+require(entityPath .. "research-labs")
+require(entityPath .. "assembling-machines")
+require(entityPath .. "tree-farm")
+
 -- recipes
 recipePath = "prototypes/recipe/"
-require(recipePath .. "empty-bottle")
-require(recipePath .. "science-fluid")
-require(recipePath .. "regular-science-pack")
-require(recipePath .. "infused-science-pack")
-require(recipePath .. "research-lab")
+require(recipePath .. "research-labs")
+require(recipePath .. "barreling")
+require(recipePath .. "science-bottles")
+require(recipePath .. "science-packs")
+require(recipePath .. "science-fluids")
+require(recipePath .. "assembling-machines")
 require(recipePath .. "rocket-parts")
-require(recipePath .. "rocket-assembly")
+require(recipePath .. "rocket-payloads")
+require(recipePath .. "rocket")
 require(recipePath .. "tree-farm")
 
 -- technology
 technologyPath = "prototypes/technology/"
-require(technologyPath .. "regular-science-packs")
-require(technologyPath .. "military-science-pack")
-require(technologyPath .. "automation-science-pack")
-require(technologyPath .. "power-science-pack")
-require(technologyPath .. "logistics-science-pack")
-require(technologyPath .. "infused-science-packs")
-require(technologyPath .. "rocket-science")
+require(technologyPath .. "basic-automation")
+require(technologyPath .. "fluid-handling")
+require(technologyPath .. "barreling")
+require(technologyPath .. "military")
+require(technologyPath .. "flight")
+
+require(technologyPath .. "science-red")
+require(technologyPath .. "science-green")
+require(technologyPath .. "science-gray")
+require(technologyPath .. "science-orange")
+require(technologyPath .. "science-cyan")
+require(technologyPath .. "science-blue")
+require(technologyPath .. "science-purple")
+require(technologyPath .. "science-yellow")
+require(technologyPath .. "science-pink")
+require(technologyPath .. "science-rocket")
+require(technologyPath .. "science-white")
+require(technologyPath .. "science-infused")
 require(technologyPath .. "tree-farm")

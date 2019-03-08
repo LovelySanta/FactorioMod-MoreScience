@@ -9,6 +9,17 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
 
 
+  function MoreScience.lib.technology.changeIcon(technologyName, newIconFile, newIconSize)
+    if not data.raw["technology"] then return end
+    if not data.raw["technology"][technologyName] then return end
+
+    data.raw["technology"][technologyName].icon = newIconFile
+    data.raw["technology"][technologyName].icon_size = newIconSize
+    data.raw["technology"][technologyName].icons = nil
+  end
+
+
+
   function MoreScience.lib.technology.removePrerequisite(technologyName, prerequisiteToRemove)
     if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].prerequisites then
       for index, prerequisite in pairs(data.raw["technology"][technologyName].prerequisites) do
@@ -54,7 +65,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
       end
       if not moved then
         MoreScience.lib.debug.log(string.format("WARNING: Could not move prerequisite %q from technology %q to %q. Adding it instead.", oldPrerequisite, technologyName, newPrerequisite))
-        addPrerequisiteTechnology(technologyName, newPrerequisite)
+        MoreScience.lib.technology.addPrerequisite(technologyName, newPrerequisite)
       end
     end
   end
@@ -63,14 +74,19 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
   function MoreScience.lib.technology.removeRecipeUnlock(technologyName, recipeToRemove)
     if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].effects then
+      local removed = false
       for index, effect in pairs(data.raw["technology"][technologyName].effects) do
         if effect.type == "unlock-recipe" and effect.recipe == recipeToRemove then
           table.remove(data.raw["technology"][technologyName].effects, index)
+          removed = true
           if table_size(data.raw["technology"][technologyName].effects) == 0 then
             data.raw["technology"][technologyName].effects = nil
           end
           break
         end
+      end
+      if not removed then
+        MoreScience.lib.debug.log(string.format("WARNING: Could not remove recipe-unlock %q from technology %q.", recipeToRemove, technologyName))
       end
     end
   end
@@ -115,7 +131,7 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
           break
         end
       end
-      if not moved then
+      if not removed then
         MoreScience.lib.debug.log(string.format("WARNING: Tried moving recipe-unlock %q from %q, which wasn't present, adding it to %q instead.", recipeToMove, oldTechnologyName, newTechnologyName))
       end
     else
@@ -127,7 +143,12 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
 
 
   function MoreScience.lib.technology.removeIngredient(technologyName, sciencePackName)
-    if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].unit.ingredients then
+    if not data.raw["technology"][technologyName] then
+      MoreScience.lib.debug.log(string.format("WARNING: Tried removing ingredient %q to technology %q, which doesn't exist.", sciencePackName, technologyName))
+      return
+    end
+
+    if data.raw["technology"][technologyName].unit.ingredients then
       for index, ingredient in pairs(data.raw["technology"][technologyName].unit.ingredients) do
         if ingredient[1] == sciencePackName then
           table.remove(data.raw["technology"][technologyName].unit.ingredients, index)
@@ -137,13 +158,21 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
           break
         end
       end
+    else
+      MoreScience.lib.debug.log(string.format("WARNING: Tried removing ingredient %q to technology %q, but no ingredients present in the technology.", sciencePackName, technologyName))
+      return
     end
   end
 
 
 
   function MoreScience.lib.technology.addIngredient(technologyName, sciencePackAmount, sciencePackName)
-    if data.raw["technology"][technologyName] and data.raw["technology"][technologyName].unit.ingredients then
+    if not data.raw["technology"][technologyName] then
+      MoreScience.lib.debug.log(string.format("WARNING: Tried adding ingredient %q to technology %q, which doesn't exist.", sciencePackName, technologyName))
+      return
+    end
+
+    if data.raw["technology"][technologyName].unit.ingredients then
       for index, ingredient in pairs(data.raw["technology"][technologyName].unit.ingredients) do
         if ingredient[1] == sciencePackName then
           MoreScience.lib.debug.log(string.format("WARNING: Tried adding ingredient %q to %q which was already present. Increased amount instead.", sciencePackName, technologyName))
@@ -152,6 +181,9 @@ if not MoreScience.lib.technology then MoreScience.lib.technology = {}
         end
       end
       table.insert(data.raw["technology"][technologyName].unit.ingredients, {sciencePackName, sciencePackAmount})
+    else
+      MoreScience.lib.debug.log(string.format("WARNING: Tried adding ingredient %q to technology %q, but no ingredients present in the technology.", sciencePackName, technologyName))
+      return
     end
   end
 
