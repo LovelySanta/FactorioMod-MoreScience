@@ -52,7 +52,7 @@ MoreScience.lib.recipe.addResult    (cyanPackName, cyanPackName          , 01, "
 local pinkPackName = string.format(scienceNames.pink, "pack")
 MoreScience.lib.recipe.create       (pinkPackName)
 MoreScience.lib.recipe.addIngredient(pinkPackName, "rocket-control-unit", 01 ,"item")
-MoreScience.lib.recipe.addIngredient(pinkPackName, "effectivity-module" , 01 ,"item")
+MoreScience.lib.recipe.addIngredient(pinkPackName, "effectivity-module" , 02 ,"item")
 MoreScience.lib.recipe.addIngredient(pinkPackName, "nuclear-fuel"       , 01 ,"item")
 MoreScience.lib.recipe.addResult    (pinkPackName, pinkPackName         , 01, "item")
 
@@ -115,7 +115,7 @@ for scienceColor,scienceName in pairs(scienceNames) do
     type = "recipe",
     name = "infused-"..string.format(scienceName, "pack"),
     energy_required = 2 * (regularPack and regularPack.energy_required or 50),
-    enabled = true,
+    enabled = false,
     category = "ms-chemical-crafting",
     ingredients =
     {

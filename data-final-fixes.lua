@@ -1,4 +1,4 @@
-require "graphics/screenshots/science-order"
+--require "graphics/screenshots/science-order" --   <<<-- for screenshot purpose only
 
 -- technology tree cleanup
 local containsExtension = false
