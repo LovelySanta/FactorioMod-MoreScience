@@ -56,9 +56,9 @@ for _,techName in pairs{
   "advanced-material-processing-2",
   "electric-energy-distribution-2",
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, string.format(cyanScienceName, "pack"))
+  LSlib.technology.addPrerequisite(techName, string.format(cyanScienceName, "pack"))
 end
-MoreScience.lib.technology.movePrerequisite("mining-productivity-1", "advanced-electronics", string.format(cyanScienceName, "pack"))
+LSlib.technology.movePrerequisite("mining-productivity-1", "advanced-electronics", string.format(cyanScienceName, "pack"))
 
 -- add tech ingredient to other science packs
 for techName,techLevels in pairs{
@@ -130,23 +130,23 @@ for techName,techLevels in pairs{
 
   ["rocket-silo"                            ] = {},
 } do
-  if MoreScience.lib.table.isEmpty(techLevels) then
-    MoreScience.lib.technology.addIngredient(techName, 1, string.format(cyanScienceName, "pack"))
+  if LSlib.utils.table.isEmpty(techLevels) then
+    LSlib.technology.addIngredient(techName, 1, string.format(cyanScienceName, "pack"))
   else
     for _,techLevel in pairs(techLevels) do
-      MoreScience.lib.technology.addIngredient(string.format(techName, techLevel), 1, string.format(cyanScienceName, "pack"))
+      LSlib.technology.addIngredient(string.format(techName, techLevel), 1, string.format(cyanScienceName, "pack"))
 
     end
   end
 end
 
-MoreScience.lib.technology.removeIngredient  ("research-speed-3"           , string.format(scienceNames.blue  , "pack") )
-MoreScience.lib.technology.removeIngredient  ("braking-force-3"            , string.format(scienceNames.blue  , "pack") )
-MoreScience.lib.technology.removeIngredient  ("braking-force-3"            , string.format(scienceNames.purple, "pack") )
+LSlib.technology.removeIngredient  ("research-speed-3"           , string.format(scienceNames.blue  , "pack") )
+LSlib.technology.removeIngredient  ("braking-force-3"            , string.format(scienceNames.blue  , "pack") )
+LSlib.technology.removeIngredient  ("braking-force-3"            , string.format(scienceNames.purple, "pack") )
 
-MoreScience.lib.technology.addPrerequisite   ("effectivity-module-2"       , "electric-energy-distribution-2"           )
+LSlib.technology.addPrerequisite   ("effectivity-module-2"       , "electric-energy-distribution-2"           )
 
-MoreScience.lib.technology.addPrerequisite   ("night-vision-equipment"     , "laser"                                    )
-MoreScience.lib.technology.movePrerequisite  ("battery-equipment"          , "battery", "electric-energy-accumulators-1")
-MoreScience.lib.technology.removeIngredient  ("personal-roboport-equipment", string.format(scienceNames.blue  , "pack") )
-MoreScience.lib.technology.removePrerequisite("personal-roboport-equipment", string.format(scienceNames.blue  , "pack") )
+LSlib.technology.addPrerequisite   ("night-vision-equipment"     , "laser"                                    )
+LSlib.technology.movePrerequisite  ("battery-equipment"          , "battery", "electric-energy-accumulators-1")
+LSlib.technology.removeIngredient  ("personal-roboport-equipment", string.format(scienceNames.blue  , "pack") )
+LSlib.technology.removePrerequisite("personal-roboport-equipment", string.format(scienceNames.blue  , "pack") )

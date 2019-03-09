@@ -12,7 +12,7 @@ local cratePrototype = data.raw["item"][string.format(rocketParts.container, "mk
 
 cratePrototype.icon      = nil
 cratePrototype.icon_size = nil
-cratePrototype.icons     = MoreScience.lib.item.getIcons("item", "infinity-chest", 1, {0,0}, nil) or {}
+cratePrototype.icons     = LSlib.item.getIcons("item", "infinity-chest", 1, {0,0}, nil) or {}
 
 cratePrototype.stack_size = 1
 
@@ -26,7 +26,7 @@ local rocketPayload = util.table.deepcopy(cratePrototype)
 rocketPayload.name = string.format(rocketPayload.name, "empty-bottle")
 rocketPayload.order = string.format(rocketPayload.order, "a1[empty-bottle]")
 
-local rocketPayloadIcons = MoreScience.lib.item.getIcons("item", "empty-bottle", .48, {0,8}, nil)
+local rocketPayloadIcons = LSlib.item.getIcons("item", "empty-bottle", .48, {0,8}, nil)
 for _,iconLayer in pairs(rocketPayloadIcons or {}) do
   table.insert(rocketPayload.icons, iconLayer)
 end
@@ -38,7 +38,7 @@ rocketPayload = util.table.deepcopy(cratePrototype)
 rocketPayload.name = string.format(rocketPayload.name, string.format(scienceNames.white, "pack"))
 rocketPayload.order = string.format(rocketPayload.order, "a2["..string.format(scienceNames.white, "pack").."]")
 
-local rocketPayloadIcons = MoreScience.lib.item.getIcons("tool", string.format(scienceNames.white, "pack"), .48, {0,8}, nil)
+local rocketPayloadIcons = LSlib.item.getIcons("tool", string.format(scienceNames.white, "pack"), .48, {0,8}, nil)
 for _,iconLayer in pairs(rocketPayloadIcons or {}) do
   table.insert(rocketPayload.icons, iconLayer)
 end

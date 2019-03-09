@@ -18,9 +18,9 @@ for _,scienceFluid in pairs({
   local barrelName = scienceFluid.."-barrel"
 
   if data.raw["item"][barrelName] then -- Barrel item
-    MoreScience.lib.item.setSubgroup     ("item", barrelName, "ms-science-barrel"                  )
-    MoreScience.lib.item.setOrderstring  ("item", barrelName, data.raw["fluid"][scienceFluid].order)
-    MoreScience.lib.item.setLocalisedName("item", barrelName, {"item-name.filled-barrel", data.raw["fluid"][scienceFluid].localised_name[2]})
+    LSlib.item.setSubgroup     ("item", barrelName, "ms-science-barrel"                  )
+    LSlib.item.setOrderstring  ("item", barrelName, data.raw["fluid"][scienceFluid].order)
+    LSlib.item.setLocalisedName("item", barrelName, {"item-name.filled-barrel", data.raw["fluid"][scienceFluid].localised_name[2]})
   end
 
 end

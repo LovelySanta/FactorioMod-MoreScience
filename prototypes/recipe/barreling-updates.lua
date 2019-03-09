@@ -38,9 +38,9 @@ for _,scienceFluid in pairs({
       "empty", -- Empty barrel recipe
     }) do
       if data.raw["recipe"][barreling.."-"..barrelName] then
-        MoreScience.lib.recipe.setSubgroup     (barreling.."-"..barrelName, data.raw["item"][barrelName].subgroup.."-"..barreling)
-        MoreScience.lib.recipe.setOrderstring  (barreling.."-"..barrelName, data.raw["fluid"][scienceFluid].order)
-        MoreScience.lib.recipe.setLocalisedName(barreling.."-"..barrelName, {"recipe-name."..barreling..(barreling=="empty" and "-filled" or "").."-barrel", data.raw["fluid"][scienceFluid].localised_name[2]})
+        LSlib.recipe.setSubgroup     (barreling.."-"..barrelName, data.raw["item"][barrelName].subgroup.."-"..barreling)
+        LSlib.recipe.setOrderstring  (barreling.."-"..barrelName, data.raw["fluid"][scienceFluid].order)
+        LSlib.recipe.setLocalisedName(barreling.."-"..barrelName, {"recipe-name."..barreling..(barreling=="empty" and "-filled" or "").."-barrel", data.raw["fluid"][scienceFluid].localised_name[2]})
       end
     end
   end

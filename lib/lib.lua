@@ -1,11 +1,7 @@
-if not MoreScience then MoreScience = {} end
-if not MoreScience.lib then MoreScience.lib = {} end
 
-require("lib.utilities.log")
-require("lib.utilities.util")
-require("lib.utilities.table")
+if not LSlib then LSlib = {}
 
-require("lib.prototyping.item")
-require("lib.prototyping.recipe")
-require("lib.prototyping.module")
-require("lib.prototyping.technology")
+  require "prototyping/prototyping"
+  require "utils/utils"
+
+end

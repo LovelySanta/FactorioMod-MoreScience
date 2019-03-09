@@ -3,8 +3,8 @@ local function numberToString(number)
 end
 
 local function getFluidOrder(scienceName)
-  return MoreScience.lib.util.stringSplit(
-           MoreScience.lib.util.stringSplit(
+  return LSlib.utils.string.split(
+           LSlib.utils.string.split(
              data.raw["fluid"][string.format(scienceName, "fluid")].order,
            "-")[3],
          "[")[1]
@@ -54,8 +54,8 @@ local function alterSciencePack(scienceName, scienceNumber)
   }
   data.raw["tool"][ sciencePack.name] = util.table.deepcopy(sciencePack)
 
-  MoreScience.lib.item.setSubgroup   ("tool", sciencePack.name, "science-pack")
-  MoreScience.lib.item.setOrderstring("tool", sciencePack.name, "z-MoreScience-" .. getFluidOrder(scienceName) .. "[" ..  sciencePack.name .. "]")
+  LSlib.item.setSubgroup   ("tool", sciencePack.name, "science-pack")
+  LSlib.item.setOrderstring("tool", sciencePack.name, "z-MoreScience-" .. getFluidOrder(scienceName) .. "[" ..  sciencePack.name .. "]")
 
   addInfusedSciencePack(scienceName, scienceNumber)
 end

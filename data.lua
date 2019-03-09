@@ -1,6 +1,10 @@
 -- include library
 require("lib/lib")
-MoreScience.lib.debug.enable() -- enable logging to factorio-current.log
+
+require("src/debug")
+if Debug.enabled then
+  LSlib.utils.log.enable() -- enable logging to factorio-current.log
+end
 
 -- categories
 categoryPath = "prototypes/categories/"
