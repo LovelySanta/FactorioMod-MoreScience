@@ -5,10 +5,10 @@ local grayScienceName = scienceNames.gray
 --------------------------------------------------------------------------------
 ----- gray science research                                               -----
 --------------------------------------------------------------------------------
-MoreScience.lib.technology.changeIcon(string.format(grayScienceName, "pack"), scienceTech.icon .. "potion-gray.png", scienceTech.icon_size)
+LSlib.technology.changeIcon(string.format(grayScienceName, "pack"), scienceTech.icon .. "potion-gray.png", scienceTech.icon_size)
 
-MoreScience.lib.technology.addRecipeUnlock(string.format(grayScienceName, "pack"), string.format(grayScienceName, "fluid"))
-MoreScience.lib.technology.moveRecipeUnlock(string.format(grayScienceName, "pack"), string.format(grayScienceName, "pack"), string.format(grayScienceName, "pack")) -- this is just for unlock ordening
+LSlib.technology.addRecipeUnlock(string.format(grayScienceName, "pack"), string.format(grayScienceName, "fluid"))
+LSlib.technology.moveRecipeUnlock(string.format(grayScienceName, "pack"), string.format(grayScienceName, "pack"), string.format(grayScienceName, "pack")) -- this is just for unlock ordening
 
 
 --------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ for _,techName in pairs{
   "modular-armor",
   "flight"       ,
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, string.format(grayScienceName, "pack"))
+  LSlib.technology.addPrerequisite(techName, string.format(grayScienceName, "pack"))
 end
 
 -- add tech ingredient to other science packs
@@ -32,11 +32,11 @@ for techName,techLevels in pairs{
   ["rocket-control-unit"] = {},
   ["rocket-silo"        ] = {},
 } do
-  if MoreScience.lib.table.isEmpty(techLevels) then
-    MoreScience.lib.technology.addIngredient(techName, 1, string.format(grayScienceName, "pack"))
+  if LSlib.utils.table.isEmpty(techLevels) then
+    LSlib.technology.addIngredient(techName, 1, string.format(grayScienceName, "pack"))
   else
     for _,techLevel in pairs(techLevels) do
-      MoreScience.lib.technology.addIngredient(string.format(techName, techLevel), 1, string.format(grayScienceName, "pack"))
+      LSlib.technology.addIngredient(string.format(techName, techLevel), 1, string.format(grayScienceName, "pack"))
 
     end
   end

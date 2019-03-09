@@ -56,7 +56,7 @@ data:extend{
     order = "c-a"
   },
 }
-MoreScience.lib.technology.removeRecipeUnlock("oil-processing", "chemical-plant")
+LSlib.technology.removeRecipeUnlock("oil-processing", "chemical-plant")
 
 --------------------------------------------------------------------------------
 ----- bottling research                                                    -----
@@ -145,8 +145,8 @@ data:extend{brick}
 for _,recipeName in pairs{
   "stone-brick"
 } do
-  MoreScience.lib.recipe.disable(recipeName)
-  MoreScience.lib.technology.addRecipeUnlock(brick.name, recipeName)
+  LSlib.recipe.disable(recipeName)
+  LSlib.technology.addRecipeUnlock(brick.name, recipeName)
 end
 
 -- other technologies that depend on this one
@@ -155,7 +155,7 @@ for _,techName in pairs{
   "oil-processing",
   "advanced-material-processing",
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, brick.name)
+  LSlib.technology.addPrerequisite(techName, brick.name)
 end
 
 
@@ -165,8 +165,8 @@ end
 --------------------------------------------------------------------------------
 
 -- research speed 1
-MoreScience.lib.technology.removePrerequisite("research-speed-1", "automation-2"         )
-MoreScience.lib.technology.addPrerequisite   ("research-speed-1", "bottling-research"    )
-MoreScience.lib.technology.removeIngredient  ("research-speed-1", "logistic-science-pack")
+LSlib.technology.removePrerequisite("research-speed-1", "automation-2"         )
+LSlib.technology.addPrerequisite   ("research-speed-1", "bottling-research"    )
+LSlib.technology.removeIngredient  ("research-speed-1", "logistic-science-pack")
 
-MoreScience.lib.technology.addPrerequisite("fast-inserter", "logistics")
+LSlib.technology.addPrerequisite("fast-inserter", "logistics")

@@ -60,7 +60,7 @@ for _,techName in pairs{
   "inserter-capacity-bonus-7"       ,
   "braking-force-7"                 ,
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, string.format(pinkScienceName, "pack"))
+  LSlib.technology.addPrerequisite(techName, string.format(pinkScienceName, "pack"))
 end
 
 -- add tech ingredient to other science packs
@@ -72,11 +72,11 @@ for techName,techLevels in pairs{
   ["braking-force-%i"                 ] = {7},
   ["rocket-silo"                      ] = {},
 } do
-  if MoreScience.lib.table.isEmpty(techLevels) then
-    MoreScience.lib.technology.addIngredient(techName, 1, string.format(pinkScienceName, "pack"))
+  if LSlib.utils.table.isEmpty(techLevels) then
+    LSlib.technology.addIngredient(techName, 1, string.format(pinkScienceName, "pack"))
   else
     for _,techLevel in pairs(techLevels) do
-      MoreScience.lib.technology.addIngredient(string.format(techName, techLevel), 1, string.format(pinkScienceName, "pack"))
+      LSlib.technology.addIngredient(string.format(techName, techLevel), 1, string.format(pinkScienceName, "pack"))
 
     end
   end

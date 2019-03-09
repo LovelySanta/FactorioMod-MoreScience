@@ -17,7 +17,7 @@ for fluidName,newTechName in pairs{
     "fill-%s-barrel",
     "empty-%s-barrel",
   } do
-    MoreScience.lib.technology.moveRecipeUnlock(techName, newTechName, string.format(barrelingRecipe, fluidName))
+    LSlib.technology.moveRecipeUnlock(techName, newTechName, string.format(barrelingRecipe, fluidName))
   end
 end
 
@@ -26,8 +26,8 @@ for _,barrelingRecipe in pairs{
   "fill-%s-barrel",
   "empty-%s-barrel",
 } do
-  MoreScience.lib.recipe.setSubgroup   (string.format(barrelingRecipe, "purified-water"), "ms-science-raw-material"                )
-  MoreScience.lib.recipe.setOrderstring(string.format(barrelingRecipe, "purified-water"), data.raw["fluid"]["purified-water"].order)
+  LSlib.recipe.setSubgroup   (string.format(barrelingRecipe, "purified-water"), "ms-science-raw-material"                )
+  LSlib.recipe.setOrderstring(string.format(barrelingRecipe, "purified-water"), data.raw["fluid"]["purified-water"].order)
 end
 
 --------------------------------------------------------------------------------
@@ -45,7 +45,7 @@ for _,oilFluid in pairs{
     "fill-%s-barrel",
     "empty-%s-barrel",
   } do
-    MoreScience.lib.technology.moveRecipeUnlock(techName, techName.."-2", string.format(barrelingRecipe, oilFluid))
+    LSlib.technology.moveRecipeUnlock(techName, techName.."-2", string.format(barrelingRecipe, oilFluid))
   end
 end
 
@@ -68,7 +68,7 @@ for _,scienceFluid in pairs{
     "fill-%s-barrel",
     "empty-%s-barrel",
   } do
-    MoreScience.lib.technology.moveRecipeUnlock(techName, techName.."-3", string.format(barrelingRecipe, scienceFluid))
+    LSlib.technology.moveRecipeUnlock(techName, techName.."-3", string.format(barrelingRecipe, scienceFluid))
   end
 end
 
@@ -89,7 +89,7 @@ for _,scienceName in pairs{
     "fill-%s-barrel",
     "empty-%s-barrel",
   } do
-    MoreScience.lib.technology.moveRecipeUnlock(techName, string.format(scienceName, "pack"), string.format(barrelingRecipe, string.format(scienceName, "fluid")))
-    --MoreScience.lib.technology.addPrerequisite(string.format(scienceName, "pack"), techName.."-3")
+    LSlib.technology.moveRecipeUnlock(techName, string.format(scienceName, "pack"), string.format(barrelingRecipe, string.format(scienceName, "fluid")))
+    --LSlib.technology.addPrerequisite(string.format(scienceName, "pack"), techName.."-3")
   end
 end

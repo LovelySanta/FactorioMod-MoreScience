@@ -46,11 +46,11 @@ for prerequisite,techName in pairs{
     "laser-turret-speed-5"        ,
   },
 } do
-  if not MoreScience.lib.table.isTable(techName) then
-    MoreScience.lib.technology.addPrerequisite(techName, prerequisite)
+  if not LSlib.utils.table.isTable(techName) then
+    LSlib.technology.addPrerequisite(techName, prerequisite)
   else
     for _,tech in pairs(techName) do
-      MoreScience.lib.technology.addPrerequisite(tech, prerequisite)
+      LSlib.technology.addPrerequisite(tech, prerequisite)
     end
   end
 end

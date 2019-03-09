@@ -24,11 +24,11 @@ data:extend{earlySciencePack}
 --------------------------------------------------------------------------------
 
 local orangePackName = string.format(scienceNames.orange, "pack")
-MoreScience.lib.recipe.create       (orangePackName)
-MoreScience.lib.recipe.addIngredient(orangePackName, "fast-inserter"       , 02 ,"item")
-MoreScience.lib.recipe.addIngredient(orangePackName, "assembling-machine-1", 01 ,"item")
-MoreScience.lib.recipe.addIngredient(orangePackName, "concrete"            , 20 ,"item")
-MoreScience.lib.recipe.addResult    (orangePackName, orangePackName        , 01, "item")
+LSlib.recipe.create       (orangePackName)
+LSlib.recipe.addIngredient(orangePackName, "fast-inserter"       , 02 ,"item")
+LSlib.recipe.addIngredient(orangePackName, "assembling-machine-1", 01 ,"item")
+LSlib.recipe.addIngredient(orangePackName, "concrete"            , 20 ,"item")
+LSlib.recipe.addResult    (orangePackName, orangePackName        , 01, "item")
 
 
 
@@ -37,11 +37,11 @@ MoreScience.lib.recipe.addResult    (orangePackName, orangePackName        , 01,
 --------------------------------------------------------------------------------
 
 local cyanPackName = string.format(scienceNames.cyan, "pack")
-MoreScience.lib.recipe.create       (cyanPackName)
-MoreScience.lib.recipe.addIngredient(cyanPackName, "small-lamp"          , 03 ,"item")
-MoreScience.lib.recipe.addIngredient(cyanPackName, "medium-electric-pole", 01 ,"item")
-MoreScience.lib.recipe.addIngredient(cyanPackName, "solar-panel"         , 01 ,"item")
-MoreScience.lib.recipe.addResult    (cyanPackName, cyanPackName          , 01, "item")
+LSlib.recipe.create       (cyanPackName)
+LSlib.recipe.addIngredient(cyanPackName, "small-lamp"          , 03 ,"item")
+LSlib.recipe.addIngredient(cyanPackName, "medium-electric-pole", 01 ,"item")
+LSlib.recipe.addIngredient(cyanPackName, "solar-panel"         , 01 ,"item")
+LSlib.recipe.addResult    (cyanPackName, cyanPackName          , 01, "item")
 
 
 
@@ -50,11 +50,11 @@ MoreScience.lib.recipe.addResult    (cyanPackName, cyanPackName          , 01, "
 --------------------------------------------------------------------------------
 
 local pinkPackName = string.format(scienceNames.pink, "pack")
-MoreScience.lib.recipe.create       (pinkPackName)
-MoreScience.lib.recipe.addIngredient(pinkPackName, "rocket-control-unit", 01 ,"item")
-MoreScience.lib.recipe.addIngredient(pinkPackName, "effectivity-module" , 02 ,"item")
-MoreScience.lib.recipe.addIngredient(pinkPackName, "nuclear-fuel"       , 01 ,"item")
-MoreScience.lib.recipe.addResult    (pinkPackName, pinkPackName         , 01, "item")
+LSlib.recipe.create       (pinkPackName)
+LSlib.recipe.addIngredient(pinkPackName, "rocket-control-unit", 01 ,"item")
+LSlib.recipe.addIngredient(pinkPackName, "effectivity-module" , 02 ,"item")
+LSlib.recipe.addIngredient(pinkPackName, "nuclear-fuel"       , 01 ,"item")
+LSlib.recipe.addResult    (pinkPackName, pinkPackName         , 01, "item")
 
 
 
@@ -74,13 +74,13 @@ for sciencePackName,craftingTime in pairs{
   --[string.format(scienceNames.white , "pack")] = 50,
 } do
   if data.raw.recipe[sciencePackName] then
-    MoreScience.lib.recipe.disable            (sciencePackName)
-    MoreScience.lib.recipe.setCraftingCategory(sciencePackName, "ms-advanced-crafting")
-    MoreScience.lib.recipe.setShowMadeIn      (sciencePackName, true)
-    MoreScience.lib.recipe.setEngergyRequired (sciencePackName, craftingTime)
+    LSlib.recipe.disable            (sciencePackName)
+    LSlib.recipe.setCraftingCategory(sciencePackName, "ms-advanced-crafting")
+    LSlib.recipe.setShowMadeIn      (sciencePackName, true)
+    LSlib.recipe.setEngergyRequired (sciencePackName, craftingTime)
 
-    MoreScience.lib.recipe.addIngredient      (sciencePackName, "empty-bottle"    , 1 , "item")
-    MoreScience.lib.recipe.addIngredient      (sciencePackName, "ms-science-fluid", 1, "fluid")
+    LSlib.recipe.addIngredient      (sciencePackName, "empty-bottle"    , 1 , "item")
+    LSlib.recipe.addIngredient      (sciencePackName, "ms-science-fluid", 1, "fluid")
   end
 end
 
@@ -97,7 +97,7 @@ for sciencePackName,craftingTime in pairs{
   --[string.format(scienceNames.white , "pack")] = 50,
 } do
   if data.raw.recipe[sciencePackName] then
-    MoreScience.lib.module.removeModuleFromRecipe({
+    LSlib.recipe.removeModuleEffect({
       "productivity-module"  ,
       "productivity-module-2",
       "productivity-module-3",
@@ -126,7 +126,7 @@ for scienceColor,scienceName in pairs(scienceNames) do
     result = "infused-"..string.format(scienceName, "pack"),
   }}
 
-  MoreScience.lib.module.allowModuleOnRecipe({
+  LSlib.recipe.allowModuleEffect({
     "productivity-module"  ,
     "productivity-module-2",
     "productivity-module-3",

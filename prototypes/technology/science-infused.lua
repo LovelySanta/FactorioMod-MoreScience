@@ -38,8 +38,8 @@ local function addInfusedSciencePack(scienceName, order)
     },
   })
 
-  MoreScience.lib.technology.addIngredient  ("infused-"..string.format(scienceName, "pack"), 2, string.format(scienceName, "pack"))
-  MoreScience.lib.technology.addRecipeUnlock("infused-"..string.format(scienceName, "pack"), "infused-"..string.format(scienceName, "pack"))
+  LSlib.technology.addIngredient  ("infused-"..string.format(scienceName, "pack"), 2, string.format(scienceName, "pack"))
+  LSlib.technology.addRecipeUnlock("infused-"..string.format(scienceName, "pack"), "infused-"..string.format(scienceName, "pack"))
 end
 
 addInfusedSciencePack(scienceNames.red   , "a1")
@@ -51,20 +51,20 @@ addInfusedSciencePack(scienceNames.blue  , "d1")
 addInfusedSciencePack(scienceNames.purple, "d2")
 addInfusedSciencePack(scienceNames.yellow, "d3")
 addInfusedSciencePack(scienceNames.pink  , "d1")
-MoreScience.lib.technology.addRecipeUnlock(            string.format(scienceNames.white , "pack"), "infused-"..string.format(scienceNames.white , "pack"))
-MoreScience.lib.technology.addRecipeUnlock(            string.format(scienceNames.white , "pack"), "lab-mk2"                                             )
+LSlib.technology.addRecipeUnlock(            string.format(scienceNames.white , "pack"), "infused-"..string.format(scienceNames.white , "pack"))
+LSlib.technology.addRecipeUnlock(            string.format(scienceNames.white , "pack"), "lab-mk2"                                             )
 
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.red   , "pack"),             string.format(scienceNames.white , "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.green , "pack"), "infused-"..string.format(scienceNames.red   , "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.gray  , "pack"), "infused-"..string.format(scienceNames.red   , "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.orange, "pack"), "infused-"..string.format(scienceNames.green , "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.cyan  , "pack"), "infused-"..string.format(scienceNames.green , "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.blue  , "pack"), "infused-"..string.format(scienceNames.orange, "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.purple, "pack"), "infused-"..string.format(scienceNames.blue  , "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.purple, "pack"), "infused-"..string.format(scienceNames.cyan  , "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.yellow, "pack"), "infused-"..string.format(scienceNames.blue  , "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.pink  , "pack"), "infused-"..string.format(scienceNames.purple, "pack"))
-MoreScience.lib.technology.addPrerequisite("infused-"..string.format(scienceNames.pink  , "pack"), "infused-"..string.format(scienceNames.yellow, "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.red   , "pack"),             string.format(scienceNames.white , "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.green , "pack"), "infused-"..string.format(scienceNames.red   , "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.gray  , "pack"), "infused-"..string.format(scienceNames.red   , "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.orange, "pack"), "infused-"..string.format(scienceNames.green , "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.cyan  , "pack"), "infused-"..string.format(scienceNames.green , "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.blue  , "pack"), "infused-"..string.format(scienceNames.orange, "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.purple, "pack"), "infused-"..string.format(scienceNames.blue  , "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.purple, "pack"), "infused-"..string.format(scienceNames.cyan  , "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.yellow, "pack"), "infused-"..string.format(scienceNames.blue  , "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.pink  , "pack"), "infused-"..string.format(scienceNames.purple, "pack"))
+LSlib.technology.addPrerequisite("infused-"..string.format(scienceNames.pink  , "pack"), "infused-"..string.format(scienceNames.yellow, "pack"))
 
 --------------------------------------------------------------------------------
 ----- other infused science technologies                                   -----
@@ -97,7 +97,7 @@ for _,techName in pairs{
   "artillery-shell-range-1"     ,
   "artillery-shell-speed-1"     ,
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.gray, "pack"))
+  LSlib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.gray, "pack"))
 end
 for _,techName in pairs{
   "physical-projectile-damage-7",
@@ -109,23 +109,23 @@ for _,techName in pairs{
   "artillery-shell-range-1"     ,
   "artillery-shell-speed-1"     ,
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.yellow, "pack"))
+  LSlib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.yellow, "pack"))
 end
 for _,techName in pairs{
   "mining-productivity-4"       ,
   "follower-robot-count-7"      ,
   "energy-weapons-damage-7"     ,
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.cyan, "pack"))
+  LSlib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.cyan, "pack"))
 end
 for _,techName in pairs{
   "mining-productivity-4"       ,
   "follower-robot-count-7"      ,
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.purple, "pack"))
+  LSlib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.purple, "pack"))
 end
 for _,techName in pairs{
   "worker-robots-speed-6"       ,
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.pink, "pack"))
+  LSlib.technology.addPrerequisite(techName, "infused-"..string.format(scienceNames.pink, "pack"))
 end

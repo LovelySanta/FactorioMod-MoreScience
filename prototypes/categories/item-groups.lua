@@ -44,7 +44,7 @@ local rocket      = require ("prototypes/settings").rocket
 createSubgroup(rocket.subgroup     , "-d[science-rocket]-b")
 
 -- science pack
-MoreScience.lib.item.setOrderstring("item-subgroup", "science-pack", subgroupOrdering .. "-c[science-pack]-a")
+LSlib.item.setOrderstring("item-subgroup", "science-pack", subgroupOrdering .. "-c[science-pack]-a")
 
 --------------------------------------------------------------------------------
 ----- tree farm                                                            -----

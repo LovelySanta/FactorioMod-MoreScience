@@ -11,23 +11,23 @@ for scienceName,_ in pairs(previousFluid) do
   local fluidName = string.format(scienceName, "fluid")
 
   -- extract the recipe result amount to use this in the fluid recipe
-  local recipeResultMultiplier = MoreScience.lib.recipe.getResultCount(packName, packName)
-  MoreScience.lib.recipe.setResultCount(packName, packName, 1)
+  local recipeResultMultiplier = LSlib.recipe.getResultCount(packName, packName)
+  LSlib.recipe.setResultCount(packName, packName, 1)
 
   -- STEP 1: create basic recipe -----------------------------------------------
-  MoreScience.lib.recipe.create(fluidName)
-  MoreScience.lib.recipe.disable(fluidName)
-  MoreScience.lib.recipe.setEngergyRequired(fluidName,
-    MoreScience.lib.recipe.getEngergyRequired(packName) * recipeMultiplier)
-  MoreScience.lib.recipe.setCraftingCategory(fluidName, "ms-chemical-crafting")
-  MoreScience.lib.recipe.addResult(fluidName, fluidName, fluidsPerPack * recipeMultiplier * recipeResultMultiplier, "fluid")
+  LSlib.recipe.create(fluidName)
+  LSlib.recipe.disable(fluidName)
+  LSlib.recipe.setEngergyRequired(fluidName,
+    LSlib.recipe.getEngergyRequired(packName) * recipeMultiplier)
+  LSlib.recipe.setCraftingCategory(fluidName, "ms-chemical-crafting")
+  LSlib.recipe.addResult(fluidName, fluidName, fluidsPerPack * recipeMultiplier * recipeResultMultiplier, "fluid")
 
 
 
   -- STEP 2a: basic ingredients ------------------------------------------------
-  MoreScience.lib.recipe.addIngredient(fluidName, "purified-water", fluidsPerPack * recipeMultiplier * recipeResultMultiplier, "fluid")
+  LSlib.recipe.addIngredient(fluidName, "purified-water", fluidsPerPack * recipeMultiplier * recipeResultMultiplier, "fluid")
   if previousFluid[scienceName] then
-    MoreScience.lib.recipe.addIngredient(fluidName, string.format(previousFluid[scienceName], "fluid"), fluidsPerPack * recipeMultiplier * recipeResultMultiplier, "fluid")
+    LSlib.recipe.addIngredient(fluidName, string.format(previousFluid[scienceName], "fluid"), fluidsPerPack * recipeMultiplier * recipeResultMultiplier, "fluid")
   end
 
 
@@ -53,17 +53,17 @@ for scienceName,_ in pairs(previousFluid) do
   for _,ingredient in pairs(ingredients) do
     local amount = math.floor((ingredient.amount + 0.5) * ingredientMultiplier[scienceName])
     amount = amount > 0 and amount or 1 -- minimal require 1
-    MoreScience.lib.recipe.addIngredient   (fluidName, ingredient.name, ingredient.amount*ingredientMultiplier[scienceName], ingredient.type)
-    MoreScience.lib.recipe.removeIngredient(packName , ingredient.name)
+    LSlib.recipe.addIngredient   (fluidName, ingredient.name, ingredient.amount*ingredientMultiplier[scienceName], ingredient.type)
+    LSlib.recipe.removeIngredient(packName , ingredient.name)
   end
 
 
 
   -- STEP 3: add the fluid to the pack recipe instead --------------------------
-  MoreScience.lib.recipe.editIngredient(packName, "ms-science-fluid", fluidName, fluidsPerPack)
+  LSlib.recipe.editIngredient(packName, "ms-science-fluid", fluidName, fluidsPerPack)
 
   -- STEP 4: allow productivity on the science fluid ---------------------------
-  MoreScience.lib.module.allowModuleOnRecipe({
+  LSlib.recipe.allowModuleEffect({
     "productivity-module"  ,
     "productivity-module-2",
     "productivity-module-3",
@@ -71,7 +71,7 @@ for scienceName,_ in pairs(previousFluid) do
 end
 
 -- regular red science pack require double the amount of purified water since it has no previous fluid
-MoreScience.lib.recipe.editIngredient(string.format(scienceNames.red, "fluid"), "purified-water", "purified-water", 2)
+LSlib.recipe.editIngredient(string.format(scienceNames.red, "fluid"), "purified-water", "purified-water", 2)
 
 -- special recipe for space science fluid
 data:extend{{

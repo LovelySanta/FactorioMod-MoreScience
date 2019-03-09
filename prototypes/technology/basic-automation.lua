@@ -27,12 +27,12 @@ for _, recipeName in pairs{
   "electric-mining-drill",
   "lab",
 } do
-  MoreScience.lib.recipe.disable(recipeName)
-  MoreScience.lib.technology.addRecipeUnlock("basic-automation", recipeName)
+  LSlib.recipe.disable(recipeName)
+  LSlib.technology.addRecipeUnlock("basic-automation", recipeName)
 end
 
 -- other technologies that depend on this
-MoreScience.lib.technology.addPrerequisite("automation"      , "basic-automation")
-MoreScience.lib.technology.addPrerequisite("logistics"       , "basic-automation")
-MoreScience.lib.technology.addPrerequisite("steel-processing", "basic-automation")
-MoreScience.lib.technology.addPrerequisite("optics"          , "basic-automation")
+LSlib.technology.addPrerequisite("automation"      , "basic-automation")
+LSlib.technology.addPrerequisite("logistics"       , "basic-automation")
+LSlib.technology.addPrerequisite("steel-processing", "basic-automation")
+LSlib.technology.addPrerequisite("optics"          , "basic-automation")

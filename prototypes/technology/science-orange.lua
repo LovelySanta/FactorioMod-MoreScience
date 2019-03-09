@@ -52,7 +52,7 @@ for _,techName in pairs{
   "automated-rail-transportation",
   --"automobilism",
 } do
-  MoreScience.lib.technology.addPrerequisite(techName, string.format(orangeScienceName, "pack"))
+  LSlib.technology.addPrerequisite(techName, string.format(orangeScienceName, "pack"))
 end
 
 -- add tech ingredient to other science packs
@@ -165,40 +165,40 @@ for techName,techLevels in pairs{
   ["rocket-silo"                            ] = {},
 
 } do
-  if MoreScience.lib.table.isEmpty(techLevels) then
-    MoreScience.lib.technology.addIngredient(techName, 1, string.format(orangeScienceName, "pack"))
+  if LSlib.utils.table.isEmpty(techLevels) then
+    LSlib.technology.addIngredient(techName, 1, string.format(orangeScienceName, "pack"))
   else
     for _,techLevel in pairs(techLevels) do
-      MoreScience.lib.technology.addIngredient(string.format(techName, techLevel), 1, string.format(orangeScienceName, "pack"))
+      LSlib.technology.addIngredient(string.format(techName, techLevel), 1, string.format(orangeScienceName, "pack"))
 
     end
   end
 end
 
-MoreScience.lib.technology.removeIngredient("braking-force-1", string.format(scienceNames.blue, "pack")                                 )
-MoreScience.lib.technology.movePrerequisite("braking-force-1", string.format(scienceNames.blue, "pack"), "automated-rail-transportation")
-MoreScience.lib.technology.addPrerequisite ("braking-force-2", "lubricant"                                                              )
-MoreScience.lib.technology.removeIngredient("braking-force-2", string.format(scienceNames.blue, "pack")                                 )
+LSlib.technology.removeIngredient("braking-force-1", string.format(scienceNames.blue, "pack")                                 )
+LSlib.technology.movePrerequisite("braking-force-1", string.format(scienceNames.blue, "pack"), "automated-rail-transportation")
+LSlib.technology.addPrerequisite ("braking-force-2", "lubricant"                                                              )
+LSlib.technology.removeIngredient("braking-force-2", string.format(scienceNames.blue, "pack")                                 )
 
-MoreScience.lib.technology.addPrerequisite ("stronger-explosives-3", "explosives"                              )
-MoreScience.lib.technology.removeIngredient("stronger-explosives-3", string.format(scienceNames.blue  , "pack"))
-MoreScience.lib.technology.addPrerequisite ("stronger-explosives-4", "rocketry"                                )
-MoreScience.lib.technology.removeIngredient("stronger-explosives-4", string.format(scienceNames.blue  , "pack"))
-MoreScience.lib.technology.removeIngredient("stronger-explosives-4", string.format(scienceNames.yellow, "pack"))
+LSlib.technology.addPrerequisite ("stronger-explosives-3", "explosives"                              )
+LSlib.technology.removeIngredient("stronger-explosives-3", string.format(scienceNames.blue  , "pack"))
+LSlib.technology.addPrerequisite ("stronger-explosives-4", "rocketry"                                )
+LSlib.technology.removeIngredient("stronger-explosives-4", string.format(scienceNames.blue  , "pack"))
+LSlib.technology.removeIngredient("stronger-explosives-4", string.format(scienceNames.yellow, "pack"))
 
-MoreScience.lib.technology.addPrerequisite ("refined-flammables-2", "explosives")
+LSlib.technology.addPrerequisite ("refined-flammables-2", "explosives")
 
-MoreScience.lib.technology.addPrerequisite("weapon-shooting-speed-3", "rocketry")
-MoreScience.lib.technology.addPrerequisite("physical-projectile-damage-4", "explosives")
+LSlib.technology.addPrerequisite("weapon-shooting-speed-3", "rocketry")
+LSlib.technology.addPrerequisite("physical-projectile-damage-4", "explosives")
 
 for _,recipeName in pairs{
   "solid-fuel-from-petroleum-gas",
   "solid-fuel-from-light-oil"    ,
   "solid-fuel-from-heavy-oil"    ,
 } do
-  MoreScience.lib.technology.moveRecipeUnlock("oil-processing", "flammables", recipeName)
+  LSlib.technology.moveRecipeUnlock("oil-processing", "flammables", recipeName)
 end
 
-MoreScience.lib.technology.movePrerequisite("inserter-capacity-bonus-1", "stack-inserter", "fast-inserter")
-MoreScience.lib.technology.addPrerequisite ("inserter-capacity-bonus-1", "logistics-2")
-MoreScience.lib.technology.addPrerequisite ("inserter-capacity-bonus-2", "stack-inserter")
+LSlib.technology.movePrerequisite("inserter-capacity-bonus-1", "stack-inserter", "fast-inserter")
+LSlib.technology.addPrerequisite ("inserter-capacity-bonus-1", "logistics-2")
+LSlib.technology.addPrerequisite ("inserter-capacity-bonus-2", "stack-inserter")

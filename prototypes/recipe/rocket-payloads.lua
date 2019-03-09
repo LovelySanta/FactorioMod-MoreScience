@@ -36,6 +36,6 @@ data:extend{
     enabled = false,
   },
 }
-MoreScience.lib.recipe.editIngredient(string.format(rocketParts.payload, "mk1", "empty-bottle"), string.format(scienceNames.white, "pack"), "empty-bottle", 1)
+LSlib.recipe.editIngredient(string.format(rocketParts.payload, "mk1", "empty-bottle"), string.format(scienceNames.white, "pack"), "empty-bottle", 1)
 data.raw["item"]["satellite"].rocket_launch_product = data.raw["recipe"][string.format(scienceNames.white, "pack")].ingredients[1]
-MoreScience.lib.recipe.addIngredient("satellite", string.format(rocketParts.payload, "mk1", "empty-bottle"), 1, "item")
+LSlib.recipe.addIngredient("satellite", string.format(rocketParts.payload, "mk1", "empty-bottle"), 1, "item")

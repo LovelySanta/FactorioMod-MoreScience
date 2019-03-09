@@ -1,6 +1,6 @@
 
-MoreScience.lib.item.setSubgroup     ("item", "lab", "ms-science-bottling")
-MoreScience.lib.item.setLocalisedName("item", "lab", {"item-tier-name.mk1", {"item-name.lab"}})
+LSlib.item.setSubgroup     ("item", "lab", "ms-science-bottling")
+LSlib.item.setLocalisedName("item", "lab", {"item-tier-name.mk1", {"item-name.lab"}})
 
 --------------------------------------------------------------------------------
 ----- Burner lab                                                           -----
@@ -25,4 +25,4 @@ data:extend{labMK2}
 --------------------------------------------------------------------------------
 ----- Lab MK1 - base game lab                                              -----
 --------------------------------------------------------------------------------
-MoreScience.lib.item.setOrderstring("item", "lab", data.raw["item"]["lab"].order  .. "-mk1")
+LSlib.item.setOrderstring("item", "lab", data.raw["item"]["lab"].order  .. "-mk1")

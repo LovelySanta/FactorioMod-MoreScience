@@ -43,8 +43,8 @@ end
 
 -- purified water
 createScienceFluid("purified-water"                , "a" , 00, {r=155, g=255, b=246}, {r=155, g=255, b=246})
-MoreScience.lib.item.setLocalisedName("fluid", "purified-water", nil                      )
-MoreScience.lib.item.setSubgroup     ("fluid", "purified-water", "ms-science-raw-material")
+LSlib.item.setLocalisedName("fluid", "purified-water", nil                      )
+LSlib.item.setSubgroup     ("fluid", "purified-water", "ms-science-raw-material")
 
 -- science fluids
 local scienceNames = require("prototypes/settings").scienceNames
