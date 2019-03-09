@@ -1,5 +1,5 @@
 -- include library
-require("lib/lib")
+require("LSlib/lib")
 
 require("src/debug")
 if Debug.enabled then
