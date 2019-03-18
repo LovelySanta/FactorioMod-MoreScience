@@ -11,6 +11,10 @@ categoryPath = "prototypes/categories/"
 require(categoryPath .. "crafting-categories")
 require(categoryPath .. "item-groups")
 
+-- tiles
+tilePath = "prototypes/tile/"
+--require(tilePath .. "green-water")
+
 -- signals
 signalPath = "prototypes/signal/"
 require(signalPath .. "color-signal")

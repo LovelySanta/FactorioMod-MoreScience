@@ -19,7 +19,7 @@ data:extend{
     energy_required = 1,
     ingredients =
     {
-      {"wood", 2}
+      {"wood", 1}
     },
     result = "cork",
     result_count = 5,

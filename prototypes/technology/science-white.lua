@@ -4,7 +4,7 @@ local whiteScienceName = scienceNames.white
 local rocketParts      = require("prototypes/settings").rocketParts
 
 --------------------------------------------------------------------------------
------ blue science research                                               -----
+----- white science research                                               -----
 --------------------------------------------------------------------------------
 LSlib.technology.changeIcon(string.format(whiteScienceName, "pack"), scienceTech.icon .. "potion-white.png", scienceTech.icon_size)
 
@@ -29,7 +29,7 @@ LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), strin
 LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack" )                   )
 
 --------------------------------------------------------------------------------
------ other purple science technologies                                    -----
+----- other white science technologies                                     -----
 --------------------------------------------------------------------------------
 
 -- other technologies that depend on this one

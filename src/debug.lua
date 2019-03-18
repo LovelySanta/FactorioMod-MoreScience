@@ -2,7 +2,7 @@
 Debug = {}
 
 Debug.enabled = false
-Debug.returnValue = 10
+Debug.returnValue = 0
 
 function Debug:reseachAllTechnologies()
   force = game.forces["player"]
@@ -27,6 +27,9 @@ function Debug:reseachAllTechnologies()
     return reportFail(technologyName)
   end
 
+  if self.returnValue == 0 then
+    return
+  end
 
 --------------------------------------------------------------------------------
 ----- Red science                                                          -----
