@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 18. 03. 2019
+  Balancing:
+    - Wood saw recipe (organic tree -> wood) is faster
+    - The saw recipe requires iron instead of steel (less raw resources required)
+    - The cork recipe requires now less wood, as balancing for the 0.17 wood change
+  Fixes:
+    - Converted 'emissions' to 'emissions_per_second_per_watt' in lab prototype
+  Modding:
+    - The lib is released as separate GitHub module (LSlib: https://github.com/LovelySanta/FactorioModLib )
+    - Extended LSlib functionality
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 11. 03. 2019
+  Fixes:
+    - Fixed wood plantation required assembling machines 3 instead of 2's with the easier science
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0 - 0.17 release
 Date: 08. 03. 2019
   Features:
@@ -45,7 +62,7 @@ Date: 11. 9. 2018
   Changes:
     - Changed colors of some barrels and color of military science fluid to match the bottled version
     - Sand to glass smelting time changed from 0.5 to 3.5 seconds to match stone brick smelting
-  Fixed:
+  Fixes:
     - Fixed science fluids and there barrels not showing up correctly in the signal menu
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.16

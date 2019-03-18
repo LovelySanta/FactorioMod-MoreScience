@@ -10,8 +10,9 @@ local handSaw =
   enabled = false,
   ingredients =
   {
-    {"steel-plate", 2},
+    {"iron-plate", 2},
     {"iron-stick", 1},
+    {"wood", 1},
   },
   result = "hand-saw",
 }
@@ -48,7 +49,7 @@ local woodPlantation  =
   energy_required = seedExtractor.energy_required,
   enabled = false,
   ingredients = {
-    {"assembling-machine-3", 1},
+    {"assembling-machine-2", 1},
     {"sand", data.raw["item"]["sand"].stack_size},
     {"landfill", data.raw["item"]["sand"].stack_size},
     {"wood", data.raw["item"]["wood"].stack_size},
@@ -131,7 +132,7 @@ local rawWoodProduction =
   type = "recipe",
   name = "wood-creator",
   localised_name = {"item-name.wood"},
-  energy_required = organicTree.energy_required * 2,
+  energy_required = organicTree.energy_required / 2,
   enabled = false,
   category = "advanced-crafting",
   ingredients = {
@@ -139,7 +140,7 @@ local rawWoodProduction =
     {handSaw.name, 1},
   },
   result = "wood",
-  result_count = 25
+  result_count = 50
 }
 
 

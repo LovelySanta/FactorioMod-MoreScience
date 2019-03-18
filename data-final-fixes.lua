@@ -2,9 +2,10 @@
 
 -- technology tree cleanup
 local containsExtension = false
-for _,extension in pairs({
+for _,extension in pairs{
   -- when modules present, we don't remove redundant prerequisites here
-}) do
+  "ScienceCostTweakerExtension",
+} do
   if mods["MoreScience-" .. extension] then
     containsExtension = true
     break
