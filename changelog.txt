@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 29. 03. 2019
+  Modding:
+    - Fixed the base game renaming "electric-energy-accumulators-1" to "electric-energy-accumulators" in v0.17.23
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 18. 03. 2019
   Balancing:

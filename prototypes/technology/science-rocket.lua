@@ -80,4 +80,4 @@ LSlib.technology.addRecipeUnlock(rocketParts.defence, rocketParts.attack)
 data.raw["technology"]["rocket-silo"].order = data.raw["technology"][rocketTechName].order .. "-b"
 
 --LSlib.technology.addPrerequisite("rocket-silo", "solar-energy")
---LSlib.technology.addPrerequisite("rocket-silo", "electric-energy-accumulators-1")
+--LSlib.technology.addPrerequisite("rocket-silo", "electric-energy-accumulators")

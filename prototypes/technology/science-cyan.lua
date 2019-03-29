@@ -82,7 +82,7 @@ for techName,techLevels in pairs{
 
   -- power
   ["battery"                                ] = {},
-  ["electric-energy-accumulators-%i"        ] = {1},
+  ["electric-energy-accumulators"           ] = {},
   ["electric-energy-distribution-%i"        ] = {2},
   ["rocket-control-unit"                    ] = {},
 
@@ -147,6 +147,6 @@ LSlib.technology.removeIngredient  ("braking-force-3"            , string.format
 LSlib.technology.addPrerequisite   ("effectivity-module-2"       , "electric-energy-distribution-2"           )
 
 LSlib.technology.addPrerequisite   ("night-vision-equipment"     , "laser"                                    )
-LSlib.technology.movePrerequisite  ("battery-equipment"          , "battery", "electric-energy-accumulators-1")
+LSlib.technology.movePrerequisite  ("battery-equipment"          , "battery", "electric-energy-accumulators"  )
 LSlib.technology.removeIngredient  ("personal-roboport-equipment", string.format(scienceNames.blue  , "pack") )
 LSlib.technology.removePrerequisite("personal-roboport-equipment", string.format(scienceNames.blue  , "pack") )
