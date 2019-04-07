@@ -22,6 +22,7 @@ LSlib.technology.removeIngredient(string.format(whiteScienceName, "pack"),    st
 LSlib.technology.addIngredient   (string.format(whiteScienceName, "pack"), 4, string.format(scienceNames.yellow, "pack"))
 LSlib.technology.addIngredient   (string.format(whiteScienceName, "pack"), 5, string.format(scienceNames.pink  , "pack"))
 
+-- unlock effects
 LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.container, "mk1")                )
 LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.payload  , "mk1", "empty-bottle"))
 LSlib.technology.moveRecipeUnlock(string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack" )  , "satellite"    ) -- this is just for unlock ordening

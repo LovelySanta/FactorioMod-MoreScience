@@ -7,6 +7,7 @@ local grayScienceName = scienceNames.gray
 --------------------------------------------------------------------------------
 LSlib.technology.changeIcon(string.format(grayScienceName, "pack"), scienceTech.icon .. "potion-gray.png", scienceTech.icon_size)
 
+-- unlock effects
 LSlib.technology.addRecipeUnlock(string.format(grayScienceName, "pack"), string.format(grayScienceName, "fluid"))
 LSlib.technology.moveRecipeUnlock(string.format(grayScienceName, "pack"), string.format(grayScienceName, "pack"), string.format(grayScienceName, "pack")) -- this is just for unlock ordening
 

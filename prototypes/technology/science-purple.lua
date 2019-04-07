@@ -7,6 +7,9 @@ local purpleScienceName = scienceNames.purple
 --------------------------------------------------------------------------------
 LSlib.technology.changeIcon(string.format(purpleScienceName, "pack"), scienceTech.icon .. "potion-purple.png", scienceTech.icon_size)
 
+-- prerequisites this technology depend on
+LSlib.technology.addPrerequisite(string.format(purpleScienceName, "pack"), "fluid-handling-3")
+
 -- ingredients
 LSlib.technology.removeIngredient(string.format(purpleScienceName, "pack"),    string.format(scienceNames.green , "pack"))
 LSlib.technology.addIngredient   (string.format(purpleScienceName, "pack"), 2, string.format(scienceNames.green , "pack"))
@@ -15,6 +18,7 @@ LSlib.technology.addIngredient   (string.format(purpleScienceName, "pack"), 4, s
 LSlib.technology.removeIngredient(string.format(purpleScienceName, "pack"),    string.format(scienceNames.blue  , "pack"))
 LSlib.technology.addIngredient   (string.format(purpleScienceName, "pack"), 5, string.format(scienceNames.blue  , "pack"))
 
+-- unlock effects
 LSlib.technology.addRecipeUnlock(string.format(purpleScienceName, "pack"), string.format(purpleScienceName, "fluid"))
 LSlib.technology.moveRecipeUnlock(string.format(purpleScienceName, "pack"), string.format(purpleScienceName, "pack"), string.format(purpleScienceName, "pack")) -- this is just for unlock ordening
 

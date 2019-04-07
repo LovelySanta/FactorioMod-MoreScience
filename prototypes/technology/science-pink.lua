@@ -49,7 +49,7 @@ data:extend({
 })
 
 --------------------------------------------------------------------------------
------ other orange science technologies                                    -----
+----- other pink science technologies                                    -----
 --------------------------------------------------------------------------------
 
 -- other technologies that depend on this one

@@ -5,6 +5,7 @@ local containsExtension = false
 for _,extension in pairs{
   -- when modules present, we don't remove redundant prerequisites here
   "ScienceCostTweakerExtension",
+  "BobAngelsExtension",
 } do
   if mods["MoreScience-" .. extension] then
     containsExtension = true

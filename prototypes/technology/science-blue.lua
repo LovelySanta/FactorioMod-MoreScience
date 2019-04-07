@@ -16,6 +16,7 @@ LSlib.technology.removeIngredient(string.format(blueScienceName, "pack"),    str
 LSlib.technology.addIngredient   (string.format(blueScienceName, "pack"), 3, string.format(scienceNames.green , "pack"))
 LSlib.technology.addIngredient   (string.format(blueScienceName, "pack"), 5, string.format(scienceNames.orange, "pack"))
 
+-- unlock effects
 LSlib.technology.addRecipeUnlock(string.format(blueScienceName, "pack"), string.format(blueScienceName, "fluid"))
 LSlib.technology.moveRecipeUnlock(string.format(blueScienceName, "pack"), string.format(blueScienceName, "pack"), string.format(blueScienceName, "pack")) -- this is just for unlock ordening
 

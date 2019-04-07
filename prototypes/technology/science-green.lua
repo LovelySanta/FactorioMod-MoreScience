@@ -10,6 +10,7 @@ LSlib.technology.changeIcon(string.format(greenScienceName, "pack"), scienceTech
 -- prerequisites this technology depend on
 LSlib.technology.addPrerequisite(string.format(greenScienceName, "pack"), "bottling-research")
 
+-- unlock effects
 LSlib.technology.addRecipeUnlock(string.format(greenScienceName, "pack"), string.format(greenScienceName, "fluid"))
 LSlib.technology.moveRecipeUnlock(string.format(greenScienceName, "pack"), string.format(greenScienceName, "pack"), string.format(greenScienceName, "pack")) -- this is just for unlock ordening
 
