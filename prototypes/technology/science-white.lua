@@ -8,6 +8,9 @@ local rocketParts      = require("prototypes/settings").rocketParts
 --------------------------------------------------------------------------------
 LSlib.technology.changeIcon(string.format(whiteScienceName, "pack"), scienceTech.icon .. "potion-white.png", scienceTech.icon_size)
 
+-- prerequisites this technology depend on
+LSlib.technology.addPrerequisite(string.format(whiteScienceName, "pack"), "electric-energy-accumulators")
+
 -- ingredients
 LSlib.technology.removeIngredient(string.format(whiteScienceName, "pack"),    string.format(scienceNames.green , "pack"))
 LSlib.technology.addIngredient   (string.format(whiteScienceName, "pack"), 2, string.format(scienceNames.green , "pack"))

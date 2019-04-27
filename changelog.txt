@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 27. 04. 2019
+  Changes:
+    - Changed empty barrel recycling recipe icon
+  Modding:
+    - Changed potion graphics locations from set01-old and set02-old to set03 and set04 respectively
+    - Added incompatible marker to make obvious that (currently) this is not compatible with the 30 More Science Pakcs mod
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 Date: 29. 03. 2019
   Modding:
