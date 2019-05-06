@@ -1,6 +1,6 @@
 {
   "name": "MoreScience",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "factorio_version": "0.17",
   "title": "More Science",
   "author": "lovely_santa",
@@ -8,7 +8,6 @@
   "homepage": "https://mods.factorio.com/mod/MoreScience",
   "description": "Changes the science pack recipes, take it to the next level. Just so it isn't always the same boring vanilla recipes...",
   "dependencies": [
-    "base >= 0.17.23",
-    "!MoreSciencePacks"
+    "base >= 0.17.35"
   ]
 }

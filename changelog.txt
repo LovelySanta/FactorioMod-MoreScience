@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.5
+Date: 06. 05. 2019
+  Bugfixes:
+    - Fixed renaming the character entity type and name from "player" to "character"
+    - Fixed renaming the technology "personal-roboport-equipment-2" to "personal-roboport-mk2-equipment"
+    - Fixed renaming the technology power-armor-2 to power-armor-mk2
+  Modding:
+    - Removed incompatible marker with the 30 More Science Pakcs mod, but there is no compatibility yet
+---------------------------------------------------------------------------------------------------
 Version: 0.2.4
 Date: 27. 04. 2019
   Changes:
@@ -18,7 +27,7 @@ Date: 18. 03. 2019
     - Wood saw recipe (organic tree -> wood) is faster
     - The saw recipe requires iron instead of steel (less raw resources required)
     - The cork recipe requires now less wood, as balancing for the 0.17 wood change
-  Fixes:
+  Bugfixes:
     - Converted 'emissions' to 'emissions_per_second_per_watt' in lab prototype
   Modding:
     - The lib is released as separate GitHub module (LSlib: https://github.com/LovelySanta/FactorioModLib )
@@ -26,7 +35,7 @@ Date: 18. 03. 2019
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 11. 03. 2019
-  Fixes:
+  Bugfixes:
     - Fixed wood plantation required assembling machines 3 instead of 2's with the easier science
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0 - 0.17 release
@@ -60,7 +69,7 @@ Version: 0.1.19
 Date: 22. 9. 2018
   Changes:
     - Removed iron pickaxe required for red science fluid.
-  Fixes:
+  Bugfixes:
     - Fixed missing localisation on the lamp color setting.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.18
@@ -75,7 +84,7 @@ Date: 11. 9. 2018
   Changes:
     - Changed colors of some barrels and color of military science fluid to match the bottled version
     - Sand to glass smelting time changed from 0.5 to 3.5 seconds to match stone brick smelting
-  Fixes:
+  Bugfixes:
     - Fixed science fluids and there barrels not showing up correctly in the signal menu
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.16
@@ -137,7 +146,7 @@ Version: 0.1.8
 Date: 28. 5. 2018
   Changes:
     - Updated infused science research so the technology tree doesn't look so messy
-  Fixes:
+  Bugfixes:
     - Debug options where enabled, so all research was done when starting a new map
     - Fixed order of science pack so technology tree isn't so mixed up
 ---------------------------------------------------------------------------------------------------
@@ -153,7 +162,7 @@ Date: 9. 5. 2018
   Features:
     - Added wood plantation for automatic wood production
     - Added readme
-  Fixes:
+  Bugfixes:
     - Fixed picking up a burner lab or lab mk2 would return a lab mk1 instead
   Modding:
     - Added some mod compatibility with bobrevamp mod
@@ -168,7 +177,7 @@ Date: 7. 5. 2018
   Changes:
     - Now rocket require more rocket-specific parts (thanks Arch666angel for the graphics)
     - Extra research required to unlock the rocket silo
-  Fixes:
+  Bugfixes:
     - Fixed robotics research wasn't depending on logistics science research (but required the pack anyway)
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.4
@@ -177,20 +186,20 @@ Date: 5. 5. 2018
     - Fluid colors and barreling match there icon color up to advanced science
   Changes:
     - Trains now only require up to basic automation science packs instead of basic logistics science packs.
-  Fixes:
+  Bugfixes:
     - Burner lab and lab mk2 entities had no local english translation
     - Lab item and entity local translation mismatches
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 3. 5. 2018
-  Fixes:
+  Bugfixes:
     - Pipes where disabled by accident
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 2. 5. 2018
   Changes:
     - Fluid handling 2 requires oil processing, moved recipes unlock to Fluid handling 1
-  Fixes:
+  Bugfixes:
     - Fixed disabling recipes wasn't working correctly
     - Fixed mod not checking if it existed before in on_configuration_changed
 ---------------------------------------------------------------------------------------------------
@@ -200,7 +209,7 @@ Date: 1. 5. 2018
     - Added burner lab to conduct early game research
   Changes:
     - Fluid handling 2 now only require red science
-  Fixes:
+  Bugfixes:
     - Fixed could not conduct science as there was no lab
     - Fixed shotgun shell damage and speed 2 wheren't depending on green science research
 ---------------------------------------------------------------------------------------------------
