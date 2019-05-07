@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.6
+Date: 07. 05. 2019
+  Bugfixes:
+    - Fixed long loading times for the technology tree cleanup
+  Modding:
+    - Updated "emissions_per_second_per_watt" to "emissions_per_minute" on the Lab burner
+---------------------------------------------------------------------------------------------------
 Version: 0.2.5
 Date: 06. 05. 2019
   Bugfixes:

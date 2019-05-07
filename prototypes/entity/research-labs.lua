@@ -60,7 +60,8 @@ labMK0.energy_source =
   fuel_category = "chemical",
   effectivity = 1,
   fuel_inventory_size = 1,
-  emissions_per_second_per_watt = 3.33333e-05,
+  --emissions_per_second_per_watt = 3.33333e-05,
+  emissions_per_minute = 9,
   smoke =
   {
     {
