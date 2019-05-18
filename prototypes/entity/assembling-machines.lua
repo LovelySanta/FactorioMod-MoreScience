@@ -3,7 +3,8 @@
 ----- Assembling machine 0 (hand crafting)                      -----
 --------------------------------------------------------------------------------
 
-table.insert(data.raw["character"]["character"].crafting_categories, "ms-manual-crafting")
+table.insert(data.raw["character"     ]["character"].crafting_categories, "ms-manual-crafting")
+table.insert(data.raw["god-controller"]["default"  ].crafting_categories, "ms-manual-crafting")
 
 
 
