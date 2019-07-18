@@ -5,16 +5,12 @@ local scienceNames     = require("prototypes/settings").scienceNames
 --------------------------------------------------------------------------------
 local labMK0 = util.table.deepcopy(data.raw["recipe"]["lab"])
 labMK0.name = "lab-mk0"
-for index,ingredient in pairs(labMK0.ingredients) do
-  if ingredient[1] == "transport-belt" then
-    table.remove(labMK0.ingredients, index)
-    break
-  end
-end
-table.insert(labMK0.ingredients, {"boiler", 1})
-labMK0.result = "lab-mk0"
 labMK0.enabled = true
 data:extend{labMK0}
+LSlib.recipe.removeIngredient(labMK0.name, "transport-belt")
+LSlib.recipe.addIngredient(labMK0.name, "boiler", 1)
+LSlib.recipe.editResult(labMK0.name, "lab", labMK0.name, 1)
+LSlib.recipe.enable(labMK0.name)
 
 
 
@@ -25,7 +21,7 @@ data.raw["recipe"]["lab"].ingredients = {
   {"lab-mk0", 1},
   {"transport-belt", 4}
 }
-data.raw["recipe"]["lab"].energy_required = labMK0.energy_required * 5
+LSlib.recipe.setEngergyRequired("lab", 5 * LSlib.recipe.getEngergyRequired("lab"))
 
 
 
@@ -34,6 +30,8 @@ data.raw["recipe"]["lab"].energy_required = labMK0.energy_required * 5
 --------------------------------------------------------------------------------
 local labMK2 = util.table.deepcopy(data.raw["recipe"]["lab"])
 labMK2.name = "lab-mk2"
+labMK2.normal = nil
+labMK2.expensive = nil
 labMK2.category = "ms-advanced-crafting"
 labMK2.energy_required = 120
 labMK2.ingredients = {

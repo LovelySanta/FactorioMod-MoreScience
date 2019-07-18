@@ -93,7 +93,7 @@ for techName,techLevels in pairs{
 
   -- armor
   ["modular-armor"                          ] = {},
-  ["power-armor%s"                          ] = {"", "-2"},
+  ["power-armor%s"                          ] = {"", "-mk2"},
   ["effectivity-module-%i"                  ] = {2},
 
   -- equipment
@@ -101,7 +101,7 @@ for techName,techLevels in pairs{
   ["belt-immunity-equipment"                ] = {},
   ["night-vision-equipment"                 ] = {},
   ["battery%s-equipment"                    ] = {"", "-mk2"},
-  ["personal-roboport-equipment%s"          ] = {"", "-2"},
+  ["personal-roboport%s-equipment"          ] = {"", "-mk2"},
   ["energy-shield%s-equipment"              ] = {"", "-mk2"},
   ["discharge-defense-equipment"            ] = {},
   ["personal-laser-defense-equipment"       ] = {},
