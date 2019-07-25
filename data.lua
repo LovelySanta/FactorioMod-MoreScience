@@ -1,5 +1,5 @@
 -- include library
-require("LSlib/lib")
+require("__LSlib__/LSlib")
 LSlib.utils.log.enable()
 
 require("src/debug")
