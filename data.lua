@@ -1,6 +1,5 @@
 -- include library
 require("__LSlib__/LSlib")
-LSlib.utils.log.enable()
 
 require("src/debug")
 if Debug.enabled then
