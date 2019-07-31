@@ -1,7 +1,8 @@
-local scienceNames = require("prototypes/settings").scienceNames
-local rocketParts  = require("prototypes/settings").rocketParts
-local payloads     = require("prototypes/settings").rocketPayloads
-local rocket       = require("prototypes/settings").rocket
+local scienceNames   = require("prototypes/settings").scienceNames
+local rocketParts    = require("prototypes/settings").rocketParts
+local payloads       = require("prototypes/settings").rocketPayloads
+local rocket         = require("prototypes/settings").rocket
+local rocketCauldron = require("prototypes/settings").rocketCauldron
 
 --------------------------------------------------------------------------------
 ----- space-science-packs                                                  -----
@@ -23,10 +24,16 @@ cratePrototype.order    = "d[payloads]-%s"
 
 -- payload to put into the rocket
 local rocketPayload = util.table.deepcopy(cratePrototype)
-rocketPayload.name = string.format(rocketPayload.name, "empty-bottle")
-rocketPayload.order = string.format(rocketPayload.order, "a1[empty-bottle]")
+local itemInCrateName = settings.startup["MS-rocket-launching-extended"].value and string.format(scienceNames.mixing, "pack") or "empty-bottle"
+rocketPayload.name = string.format(rocketPayload.name, itemInCrateName)
+if settings.startup["MS-rocket-launching-extended"].value == true then
+  rocketPayload.subgroup = "ms-science-" .. rocketCauldron.subgroup
+else
+  rocketPayload.subgroup = "ms-science-" .. rocketParts.subgroup
+end
+rocketPayload.order = "a[" .. rocketCauldron.subgroup .. "]-b-d"
 
-local rocketPayloadIcons = LSlib.item.getIcons("item", "empty-bottle", .48, {0,8}, nil)
+local rocketPayloadIcons = LSlib.item.getIcons("item", itemInCrateName, .48, {0,8}, nil)
 for _,iconLayer in pairs(rocketPayloadIcons or {}) do
   table.insert(rocketPayload.icons, iconLayer)
 end

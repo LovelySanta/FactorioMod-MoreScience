@@ -15,6 +15,8 @@ settings.scienceNames = {
   cyan   = "electric-power-science-%s",
   orange = "advanced-%s"              ,
   pink   = "advanced-%s"              ,
+
+  mixing = "rainbow-science-%s"       ,
 }
 settings.scienceNames.orange = string.format(settings.scienceNames.orange, settings.scienceNames.red  )
 settings.scienceNames.pink   = string.format(settings.scienceNames.pink  , settings.scienceNames.green)
@@ -77,6 +79,11 @@ settings.rocketParts = {
   payload  = "rocketpart-payload-%s[%s]",
 }
 settings.rocketParts.container = string.format(settings.rocketParts.payload, "%s", "container")
+
+settings.rocketCauldron = {
+  subgroup = "science-cauldron"          ,
+  category = "ms-science-cauldron"       ,
+}
 
 settings.rocket = {
   subgroup = "rocket-assembly",

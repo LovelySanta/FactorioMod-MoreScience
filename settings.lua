@@ -16,7 +16,6 @@ data:extend{
     default_value = 15,
     order = "MS-b[barreling]-a[recycling]",
   },
-
   { -- allow barrel recycling recipe
     type = "bool-setting",
     name = "MS-allow-empty-barrel-recycling",
@@ -25,5 +24,11 @@ data:extend{
     order = "MS-b[barreling]-a[recycling]",
   },
 
-
+  { -- rocket lauching extended
+    type = "bool-setting",
+    name = "MS-rocket-launching-extended",
+    setting_type = "startup",
+    default_value = false,
+    order = "MS-c[rocket]-a[extended]",
+  },
 }

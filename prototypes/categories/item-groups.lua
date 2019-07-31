@@ -38,10 +38,12 @@ createSubgroup("barrel-empty", "-b[science-bottling]-c3")
 createSubgroup("infused-science-pack", "-c[science-pack]-b")
 
 -- science rocket
-local rocketParts = require ("prototypes/settings").rocketParts
-createSubgroup(rocketParts.subgroup, "-d[science-rocket]-a")
-local rocket      = require ("prototypes/settings").rocket
-createSubgroup(rocket.subgroup     , "-d[science-rocket]-b")
+local rocketParts    = require ("prototypes/settings").rocketParts
+createSubgroup(rocketParts.subgroup   , "-d[science-rocket]-a")
+local rocketCauldron = require ("prototypes/settings").rocketCauldron
+createSubgroup(rocketCauldron.subgroup, "-d[science-rocket]-b")
+local rocket         = require ("prototypes/settings").rocket
+createSubgroup(rocket.subgroup        , "-d[science-rocket]-c")
 
 -- science pack
 LSlib.item.setOrderstring("item-subgroup", "science-pack", subgroupOrdering .. "-c[science-pack]-a")

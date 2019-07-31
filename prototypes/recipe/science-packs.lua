@@ -109,26 +109,28 @@ end
 ----- infused-science-packs                                                -----
 --------------------------------------------------------------------------------
 for scienceColor,scienceName in pairs(scienceNames) do
-  local regularPack = data.raw["recipe"][string.format(scienceName, "pack")]
+  if scienceColor ~= "mixing" then -- not the mixing one
+    local regularPack = data.raw["recipe"][string.format(scienceName, "pack")]
 
-  data:extend{{
-    type = "recipe",
-    name = "infused-"..string.format(scienceName, "pack"),
-    energy_required = 2 * (regularPack and regularPack.energy_required or 50),
-    enabled = false,
-    category = "ms-chemical-crafting",
-    ingredients =
-    {
-      {string.format(scienceName, "pack"), 2},
-      {type = "fluid", name = string.format(scienceNames.white, "fluid"), amount = fluidsPerPack},
-      {type = "fluid", name = "purified-water"                          , amount = fluidsPerPack},
-    },
-    result = "infused-"..string.format(scienceName, "pack"),
-  }}
+    data:extend{{
+      type = "recipe",
+      name = "infused-"..string.format(scienceName, "pack"),
+      energy_required = 2 * (regularPack and regularPack.energy_required or 50),
+      enabled = false,
+      category = "ms-chemical-crafting",
+      ingredients =
+      {
+        {string.format(scienceName, "pack"), 2},
+        {type = "fluid", name = string.format(scienceNames.white, "fluid"), amount = fluidsPerPack},
+        {type = "fluid", name = "purified-water"                          , amount = fluidsPerPack},
+      },
+      result = "infused-"..string.format(scienceName, "pack"),
+    }}
 
-  LSlib.recipe.allowModuleEffect({
-    "productivity-module"  ,
-    "productivity-module-2",
-    "productivity-module-3",
-  }, "infused-"..string.format(scienceName, "pack"))
+    LSlib.recipe.allowModuleEffect({
+      "productivity-module"  ,
+      "productivity-module-2",
+      "productivity-module-3",
+    }, "infused-"..string.format(scienceName, "pack"))
+  end
 end

@@ -13,6 +13,10 @@ data:extend{
   },
   {
     type = "recipe-category",
+    name = require("prototypes/settings").rocketCauldron.category,
+  },
+  {
+    type = "recipe-category",
     name = "ms-chemical-crafting",
   },
   {

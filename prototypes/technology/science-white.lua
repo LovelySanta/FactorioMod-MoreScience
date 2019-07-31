@@ -10,6 +10,9 @@ LSlib.technology.changeIcon(string.format(whiteScienceName, "pack"), scienceTech
 
 -- prerequisites this technology depend on
 LSlib.technology.addPrerequisite(string.format(whiteScienceName, "pack"), "electric-energy-accumulators")
+if settings.startup["MS-rocket-launching-extended"].value == true then
+  LSlib.technology.addPrerequisite(string.format(whiteScienceName, "pack"), string.format(scienceNames.mixing, "pack"))
+end
 
 -- ingredients
 LSlib.technology.removeIngredient(string.format(whiteScienceName, "pack"),    string.format(scienceNames.green , "pack"))
@@ -26,11 +29,15 @@ LSlib.technology.addIngredient   (string.format(whiteScienceName, "pack"), 4, st
 LSlib.technology.addIngredient   (string.format(whiteScienceName, "pack"), 5, string.format(scienceNames.pink  , "pack"))
 
 -- unlock effects
-LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.container, "mk1")                )
-LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.payload  , "mk1", "empty-bottle"))
-LSlib.technology.moveRecipeUnlock(string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack" )  , "satellite"    ) -- this is just for unlock ordening
-LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "fluid")                   )
-LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack" )                   )
+LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.container, "mk1"))
+if settings.startup["MS-rocket-launching-extended"].value == true then
+  LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.payload  , "mk1", string.format(scienceNames.mixing, "pack")))
+else
+  LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(rocketParts.payload  , "mk1", "empty-bottle"))
+end
+LSlib.technology.moveRecipeUnlock(string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack" )  , "satellite") -- this is just for unlock ordening
+LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "fluid")               )
+LSlib.technology.addRecipeUnlock (string.format(whiteScienceName, "pack"), string.format(whiteScienceName, "pack" )               )
 
 --------------------------------------------------------------------------------
 ----- other white science technologies                                     -----
