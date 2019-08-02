@@ -38,7 +38,6 @@ if settings.startup["MS-rocket-launching-extended"].value == true then
     enabled = false,
   }}
 
-  log(serpent.block(data.raw.recipe[string.format(rocketParts.payload, "mk1", string.format(scienceNames.mixing, "pack"))]))
   LSlib.recipe.editIngredient(string.format(rocketParts.payload, "mk1", string.format(scienceNames.mixing, "pack")), string.format(scienceNames.white , "pack"), string.format(scienceNames.mixing, "pack"), 1)
   LSlib.recipe.addIngredient("satellite", string.format(rocketParts.payload, "mk1", string.format(scienceNames.mixing, "pack")), 1, "item")
 else
