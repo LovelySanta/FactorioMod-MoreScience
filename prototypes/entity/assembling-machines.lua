@@ -55,6 +55,15 @@ local rocketAssembling = util.table.deepcopy(assemblingMachine1)
 rocketAssembling.name = "rocket-assembling-machine"
 rocketAssembling.localised_name = nil
 
+--support for modules
+rocketAssembling.module_specification = {module_slots = 4}
+rocketAssembling.allowed_effects = {
+  "consumption",
+  "speed",
+  "productivity",
+  "pollution"
+}
+
 rocketAssembling.icon      = data.raw["item"][rocketAssembling.name].icon
 rocketAssembling.icon_size = data.raw["item"][rocketAssembling.name].icon_size
 rocketAssembling.icons     = util.table.deepcopy(data.raw["item"][rocketAssembling.name].icons)

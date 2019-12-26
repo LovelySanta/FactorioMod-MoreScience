@@ -4,6 +4,13 @@ data:extend{{
   icon = "__MoreScience__/graphics/icons/assembling-machine-4.png",
   icon_size = 64,
   --flags = {},
+  module_specification = {module_slots = 4},
+  allowed_effects = {
+        "consumption",
+        "speed",
+        "productivity",
+        "pollution"
+  },
   subgroup = "ms-science-" .. require("prototypes/settings").rocketParts.subgroup,
   order = "a[" .. require("prototypes/settings").rocketParts.subgroup .. "]-a-a[assembling-machine]",
   place_result = "rocket-assembling-machine",
