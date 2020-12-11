@@ -47,7 +47,7 @@ function Debug:reseachAllTechnologies()
   researchTechnology("optics")
 
   researchTechnology("military")
-  researchTechnology("stone-walls")
+  researchTechnology("stone-wall")
   researchTechnology("turrets")
   researchTechnology("heavy-armor")
   researchTechnology("weapon-shooting-speed-1")

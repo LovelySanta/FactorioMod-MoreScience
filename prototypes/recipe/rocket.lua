@@ -14,3 +14,4 @@ data.raw["recipe"]["rocket-part"].ingredients =
   {rocketParts.defence, 03},
   {rocketParts.attack , 03},
 }
+data.raw["rocket-silo"]["rocket-silo"].rocket_parts_required = 1

@@ -30,7 +30,7 @@ local roboportTech = util.table.deepcopy(data.raw["technology"]["robotics"])
 roboportTech.name = "roboports"
 
 roboportTech.icon      = "__MoreScience__/graphics/technology/roboport-tech.png"
-roboportTech.icon_size = 277
+roboportTech.icon_size = 256
 roboportTech.icons     = nil
 
 roboportTech.prerequisites = {}

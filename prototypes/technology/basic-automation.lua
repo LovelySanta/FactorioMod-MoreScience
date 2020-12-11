@@ -4,8 +4,8 @@ data:extend({
   {
     type = "technology",
     name = "basic-automation",
-    icon = "__base__/graphics/technology/automation.png",
-    icon_size = 128,
+    icon = "__base__/graphics/technology/automation-1.png",
+    icon_size = 256, icon_mipmaps = 4,
     prerequisites = nil,
     unit =
     {

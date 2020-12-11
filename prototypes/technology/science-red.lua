@@ -138,8 +138,8 @@ brick.prerequisites =
 brick.effects = nil
 brick.unit = util.table.deepcopy(data.raw["technology"]["logistics"].unit)
 
-brick.order                                 = data.raw["technology"]["stone-walls"].order .. "[brick]"
-data.raw["technology"]["stone-walls"].order = data.raw["technology"]["stone-walls"].order .. "[wall]"
+brick.order                                 = data.raw["technology"]["stone-wall"].order .. "[brick]"
+data.raw["technology"]["stone-wall"].order = data.raw["technology"]["stone-wall"].order .. "[wall]"
 data:extend{brick}
 
 for _,recipeName in pairs{
@@ -151,7 +151,7 @@ end
 
 -- other technologies that depend on this one
 for _,techName in pairs{
-  "stone-walls",
+  "stone-wall",
   "oil-processing",
   "advanced-material-processing",
 } do

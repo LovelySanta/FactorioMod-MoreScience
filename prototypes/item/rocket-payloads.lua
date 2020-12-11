@@ -33,7 +33,7 @@ else
 end
 rocketPayload.order = "a[" .. rocketCauldron.subgroup .. "]-b-d"
 
-local rocketPayloadIcons = LSlib.item.getIcons("item", itemInCrateName, .48, {0,8}, nil)
+local rocketPayloadIcons = LSlib.item.getIcons("item", itemInCrateName, 0.48*2, {0,16}, nil)
 for _,iconLayer in pairs(rocketPayloadIcons or {}) do
   table.insert(rocketPayload.icons, iconLayer)
 end
@@ -45,7 +45,7 @@ rocketPayload = util.table.deepcopy(cratePrototype)
 rocketPayload.name = string.format(rocketPayload.name, string.format(scienceNames.white, "pack"))
 rocketPayload.order = string.format(rocketPayload.order, "a2["..string.format(scienceNames.white, "pack").."]")
 
-local rocketPayloadIcons = LSlib.item.getIcons("tool", string.format(scienceNames.white, "pack"), .48, {0,8}, nil)
+local rocketPayloadIcons = LSlib.item.getIcons("tool", string.format(scienceNames.white, "pack"), 0.48*2, {0,16}, nil)
 for _,iconLayer in pairs(rocketPayloadIcons or {}) do
   table.insert(rocketPayload.icons, iconLayer)
 end

@@ -65,7 +65,6 @@ require(technologyPath .. "fluid-handling")
 require(technologyPath .. "barreling")
 require(technologyPath .. "military")
 require(technologyPath .. "flight")
-
 require(technologyPath .. "science-red")
 require(technologyPath .. "science-green")
 require(technologyPath .. "science-gray")

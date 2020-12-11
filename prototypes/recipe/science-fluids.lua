@@ -17,12 +17,16 @@ for scienceName,_ in pairs(previousFluid) do
   -- STEP 1: create basic recipe -----------------------------------------------
   LSlib.recipe.create(fluidName)
   LSlib.recipe.disable(fluidName)
-  LSlib.recipe.setEngergyRequired(fluidName,
-    LSlib.recipe.getEngergyRequired(packName) * recipeMultiplier)
+  LSlib.recipe.setEnergyRequired(fluidName,
+    LSlib.recipe.getEnergyRequired(packName) * recipeMultiplier)
   LSlib.recipe.setCraftingCategory(fluidName, "ms-chemical-crafting")
   LSlib.recipe.addResult(fluidName, fluidName, fluidsPerPack * recipeMultiplier * recipeResultMultiplier, "fluid")
-
-
+  LSlib.recipe.setTints(fluidName,
+    LSlib.item.getFluidColors(fluidName)[1],        --Liquidcolor
+    LSlib.item.getFluidColors("purified-water")[1],  --Foamcolor
+    LSlib.item.getFluidColors(fluidName)[2],         --Smokecolor
+    LSlib.item.getFluidColors(fluidName)[1]         --Inner-Smokecolor
+  )
 
   -- STEP 2a: basic ingredients ------------------------------------------------
   LSlib.recipe.addIngredient(fluidName, "purified-water", fluidsPerPack * recipeMultiplier * recipeResultMultiplier, "fluid")
