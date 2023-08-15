@@ -80,6 +80,9 @@ end
 table.insert(labMK0.inputs, 1, string.format(scienceNames.red, "pack"))
 
 data:extend{labMK0}
+if DiscoScience and DiscoScience.prepareLab then
+  DiscoScience.prepareLab(data.raw["lab"]["lab-mk0"])
+end
 
 
 
@@ -105,3 +108,6 @@ for inputIndex, input in pairs(labMK2.inputs) do
 end
 
 data:extend{labMK2}
+if DiscoScience and DiscoScience.prepareLab then
+  DiscoScience.prepareLab(data.raw["lab"]["lab-mk2"])
+end
